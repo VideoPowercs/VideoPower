@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initPageLoader();
   disableContextActions();
   initStars();
-  initButtonSounds();
   initSectionButtonMotion();
   initGiveawayCarousel();
   initGiveawayButtonHover();
@@ -252,24 +251,19 @@ function initGiveawayCarousel() {
     if (!track || !slides.length) return;
 
     let index = 0;
-    let intervalId = null;
+    let intervalId = 0;
+    let unlockTimer = 0;
     let touchStartX = 0;
-    let interactionState = "idle";
-    let animationTimer = 0;
-    let cooldownTimer = 0;
-    let animationRunId = 0;
-    let detachTransitionEnd = null;
+    let isAnimating = false;
 
     const isMobile = () => window.innerWidth <= MOBILE_BREAKPOINT;
     const hasMultipleSlides = slides.length > 1;
-    const transitionDuration = () => (isMobile() ? 620 : 540);
-    const postTransitionCooldown = () => (isMobile() ? 520 : 440);
-    const isIdle = () => interactionState === "idle";
+    const transitionDuration = () => (isMobile() ? 560 : 420);
 
     function stopAutoPlay() {
       if (!intervalId) return;
       window.clearInterval(intervalId);
-      intervalId = null;
+      intervalId = 0;
     }
 
     function updateDotsAndTitle() {
@@ -282,43 +276,56 @@ function initGiveawayCarousel() {
       }
     }
 
-    function applyDesktop() {
+    function applyDesktop(animate) {
+      track.style.position = "relative";
       track.style.display = "block";
       track.style.transform = "none";
       track.style.transition = "none";
 
       slides.forEach((slide, slideIndex) => {
-        slide.classList.toggle("active", slideIndex === index);
+        const isActive = slideIndex === index;
+        slide.classList.toggle("active", isActive);
         slide.style.position = "absolute";
         slide.style.inset = "0";
         slide.style.minWidth = "auto";
         slide.style.willChange = "transform, opacity";
-        slide.style.opacity = slideIndex === index ? "1" : "0";
-        slide.style.transform = slideIndex === index ? "translateX(0) scale(1)" : "translateX(32px) scale(0.96)";
-        slide.style.zIndex = slideIndex === index ? "2" : "1";
+        slide.style.transition = animate
+          ? "transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.28s ease"
+          : "none";
+        slide.style.opacity = isActive ? "1" : "0";
+        slide.style.transform = isActive ? "translateX(0) scale(1)" : "translateX(32px) scale(0.96)";
+        slide.style.zIndex = isActive ? "2" : "1";
       });
     }
 
-    function applyMobile() {
+    function applyMobile(animate) {
+      track.style.position = "static";
       track.style.display = "flex";
-      track.style.transition = "transform 0.55s cubic-bezier(0.22, 1, 0.36, 1)";
+      track.style.transition = animate
+        ? "transform 0.56s cubic-bezier(0.22, 1, 0.36, 1)"
+        : "none";
       track.style.transform = `translateX(-${index * 100}%)`;
 
       slides.forEach((slide, slideIndex) => {
-        slide.classList.toggle("active", slideIndex === index);
+        const isActive = slideIndex === index;
+        slide.classList.toggle("active", isActive);
         slide.style.position = "relative";
         slide.style.inset = "auto";
         slide.style.minWidth = "100%";
         slide.style.willChange = "transform";
         slide.style.opacity = "1";
-        slide.style.transform = slideIndex === index ? "scale(1)" : "scale(0.98)";
+        slide.style.transition = animate
+          ? "transform 0.56s cubic-bezier(0.22, 1, 0.36, 1)"
+          : "none";
+        slide.style.transform = isActive ? "scale(1)" : "scale(0.985)";
         slide.style.zIndex = "1";
       });
     }
 
-    function render() {
-      if (isMobile()) applyMobile();
-      else applyDesktop();
+    function render(options = {}) {
+      const { animate = false } = options;
+      if (isMobile()) applyMobile(animate);
+      else applyDesktop(animate);
       updateDotsAndTitle();
     }
 
@@ -330,7 +337,7 @@ function initGiveawayCarousel() {
       stopAutoPlay();
       const delay = isMobile() ? MOBILE_INTERVAL : DESKTOP_INTERVAL;
       intervalId = window.setInterval(() => {
-        if (!isIdle()) return;
+        if (isAnimating) return;
         goTo(index + 1, false);
       }, delay);
     }
@@ -341,96 +348,34 @@ function initGiveawayCarousel() {
       if (nextButton) nextButton.disabled = shouldDisable;
     }
 
-    function clearTransitionListener() {
-      if (!detachTransitionEnd) return;
-      detachTransitionEnd();
-      detachTransitionEnd = null;
-    }
-
-    function clearTransitionWait() {
-      window.clearTimeout(animationTimer);
-      clearTransitionListener();
-    }
-
-    function clearNavigationLocks() {
-      clearTransitionWait();
-      window.clearTimeout(cooldownTimer);
-    }
-
-    function setInteractionState(nextState) {
-      interactionState = nextState;
-      carousel.dataset.carouselState = nextState;
-    }
-
-    function unlockArrows(runId) {
-      if (runId !== animationRunId) return;
-      setInteractionState("idle");
+    function unlockNavigation() {
+      window.clearTimeout(unlockTimer);
+      isAnimating = false;
+      carousel.dataset.carouselState = "idle";
       setArrowsDisabled(false);
     }
 
-    function startCooldown(runId) {
-      if (runId !== animationRunId) return;
-      window.clearTimeout(cooldownTimer);
-      setInteractionState("cooldown");
+    function lockNavigation() {
+      isAnimating = true;
+      carousel.dataset.carouselState = "animating";
       setArrowsDisabled(true);
-      cooldownTimer = window.setTimeout(() => {
-        unlockArrows(runId);
-      }, postTransitionCooldown());
-    }
-
-    function finishTransition(runId) {
-      if (runId !== animationRunId) return;
-      clearTransitionWait();
-      startCooldown(runId);
-    }
-
-    function bindTransitionCompletion(runId, transitionSource) {
-      if (!transitionSource) {
-        finishTransition(runId);
-        return;
-      }
-
-      const handleTransitionEnd = (event) => {
-        if (runId !== animationRunId) return;
-        if (isMobile()) {
-          if (event.target !== track || event.propertyName !== "transform") return;
-        } else if (
-          event.target !== slides[index] ||
-          (event.propertyName !== "transform" && event.propertyName !== "opacity")
-        ) {
-          return;
-        }
-
-        finishTransition(runId);
-      };
-
-      transitionSource.addEventListener("transitionend", handleTransitionEnd);
-      detachTransitionEnd = () => {
-        transitionSource.removeEventListener("transitionend", handleTransitionEnd);
-      };
-
-      animationTimer = window.setTimeout(() => {
-        finishTransition(runId);
-      }, transitionDuration() + 160);
+      window.clearTimeout(unlockTimer);
+      unlockTimer = window.setTimeout(() => {
+        unlockNavigation();
+      }, transitionDuration() + 140);
     }
 
     function goTo(nextIndex, restartAutoPlay = true) {
-      if (!hasMultipleSlides || !isIdle()) return false;
+      if (!hasMultipleSlides || isAnimating) return false;
 
-      clearNavigationLocks();
-      animationRunId += 1;
-      const currentRunId = animationRunId;
-      setInteractionState("animating");
-      setArrowsDisabled(true);
+      lockNavigation();
       index = (nextIndex + slides.length) % slides.length;
-      render();
+      render({ animate: true });
 
       if (restartAutoPlay) {
         startAutoPlay();
       }
 
-      const transitionSource = isMobile() ? track : slides[index];
-      bindTransitionCompletion(currentRunId, transitionSource);
       return true;
     }
 
@@ -438,7 +383,7 @@ function initGiveawayCarousel() {
       prevButton.addEventListener("click", (event) => {
         event.preventDefault();
         event.stopPropagation();
-        if (prevButton.disabled || !isIdle()) return;
+        if (prevButton.disabled || isAnimating) return;
         prevButton.dataset.soundReady = "true";
         goTo(index - 1);
       });
@@ -448,21 +393,32 @@ function initGiveawayCarousel() {
       nextButton.addEventListener("click", (event) => {
         event.preventDefault();
         event.stopPropagation();
-        if (nextButton.disabled || !isIdle()) return;
+        if (nextButton.disabled || isAnimating) return;
         nextButton.dataset.soundReady = "true";
         goTo(index + 1);
       });
     }
 
-    carousel.addEventListener("mouseenter", stopAutoPlay);
-    carousel.addEventListener("mouseleave", startAutoPlay);
+    carousel.addEventListener("mouseenter", () => {
+      if (!isMobile()) stopAutoPlay();
+    });
+
+    carousel.addEventListener("mouseleave", () => {
+      if (!isMobile()) startAutoPlay();
+    });
 
     carousel.addEventListener("touchstart", (event) => {
+      if (event.target.closest(".giveaway-arrow")) return;
       touchStartX = event.changedTouches[0].clientX;
       stopAutoPlay();
     }, { passive: true });
 
     carousel.addEventListener("touchend", (event) => {
+      if (event.target.closest(".giveaway-arrow")) {
+        startAutoPlay();
+        return;
+      }
+
       const touchEndX = event.changedTouches[0].clientX;
       const delta = touchEndX - touchStartX;
 
@@ -475,16 +431,13 @@ function initGiveawayCarousel() {
     }, { passive: true });
 
     window.addEventListener("resize", debounce(() => {
-      animationRunId += 1;
-      clearNavigationLocks();
-      setInteractionState("idle");
-      setArrowsDisabled(false);
-      render();
+      unlockNavigation();
+      render({ animate: false });
       startAutoPlay();
     }, 160));
 
-    render();
-    setInteractionState("idle");
+    render({ animate: false });
+    carousel.dataset.carouselState = "idle";
     setArrowsDisabled(false);
     startAutoPlay();
   });
@@ -531,30 +484,39 @@ function initGiveawayButtonHover() {
 }
 
 function initSpecialsCountdown() {
-  const chips = [...document.querySelectorAll(".countdown-chip[data-countdown-key][data-countdown-duration-ms]")];
+  const chips = [...document.querySelectorAll(".countdown-chip[data-countdown-duration-ms], .countdown-chip[data-countdown-target]")];
   if (!chips.length) return;
 
-  const storagePrefix = "videopower-special-countdown:";
+  const storagePrefix = "videopower-special-countdown-session:";
 
   const readTargetTime = (chip) => {
     const countdownKey = String(chip.dataset.countdownKey || "").trim();
+    const explicitTarget = Date.parse(String(chip.dataset.countdownTarget || "").trim());
     const durationMs = Number(chip.dataset.countdownDurationMs || 0);
 
-    if (!countdownKey || !Number.isFinite(durationMs) || durationMs <= 0) {
+    if (Number.isFinite(explicitTarget) && explicitTarget > 0) {
+      return explicitTarget;
+    }
+
+    if (!Number.isFinite(durationMs) || durationMs <= 0) {
       return null;
     }
 
-    const storageKey = `${storagePrefix}${countdownKey}`;
     const now = Date.now();
 
+    if (!countdownKey) {
+      return now + durationMs;
+    }
+
     try {
-      const savedTarget = Number(window.localStorage.getItem(storageKey));
+      const storageKey = `${storagePrefix}${countdownKey}`;
+      const savedTarget = Number(window.sessionStorage.getItem(storageKey));
       if (Number.isFinite(savedTarget) && savedTarget > now) {
         return savedTarget;
       }
 
       const nextTarget = now + durationMs;
-      window.localStorage.setItem(storageKey, String(nextTarget));
+      window.sessionStorage.setItem(storageKey, String(nextTarget));
       return nextTarget;
     } catch (error) {
       return now + durationMs;
@@ -573,7 +535,7 @@ function initSpecialsCountdown() {
   if (!countdownTargets.size) return;
 
   const formatCountdown = (remainingMs) => {
-    if (remainingMs <= 0) return "EVENT ENDED";
+    if (remainingMs <= 0) return "EVENT HAS ENDED";
 
     const totalMinutes = Math.floor(remainingMs / 60000);
     const days = Math.floor(totalMinutes / (60 * 24));
@@ -586,7 +548,9 @@ function initSpecialsCountdown() {
   const renderCountdowns = () => {
     const now = Date.now();
     countdownTargets.forEach((targetTime, chip) => {
-      chip.textContent = formatCountdown(targetTime - now);
+      const remaining = targetTime - now;
+      chip.textContent = formatCountdown(remaining);
+      chip.dataset.countdownEnded = remaining <= 0 ? "true" : "false";
     });
   };
 
@@ -598,25 +562,25 @@ function initYoutubeVideos() {
   const container = document.getElementById("videos-grid");
   if (!container) return;
 
+  const MAX_RESULTS = 4;
+
   const fallbackVideos = [
     {
-      title: "CHECK OUT THE VIDEOPOWER CHANNEL.",
+      title: "Check Out The VideoPower Channel.",
       url: "https://www.youtube.com/@VideoPower_cs",
       image: "https://yt3.ggpht.com/PZjQ4YWcWgdS5jBH6zKqCJvKxIjX2lMv4fGL5Ra--6uhPibujxW0AWfQrAUqJNYgUrwA3ZZwmGwvEw=s607-c-fcrop64=1,380f0000c7f0ffff-rw-nd-v1"
     },
     {
-      title: "CHECK OUT VIDEOPOWER'S LATEST VIDEOS.",
+      title: "Check Out VideoPower's Latest Videos.",
       url: "https://www.youtube.com/@VideoPower_cs/videos",
       image: "https://yt3.ggpht.com/PZjQ4YWcWgdS5jBH6zKqCJvKxIjX2lMv4fGL5Ra--6uhPibujxW0AWfQrAUqJNYgUrwA3ZZwmGwvEw=s607-c-fcrop64=1,380f0000c7f0ffff-rw-nd-v1"
     },
     {
-      title: "CHECK OUT THE VIDEOPOWER COMMUNITY PAGE.",
+      title: "Check Out The VideoPower Community Page.",
       url: "https://www.youtube.com/@VideoPower_cs/community",
       image: "https://yt3.ggpht.com/PZjQ4YWcWgdS5jBH6zKqCJvKxIjX2lMv4fGL5Ra--6uhPibujxW0AWfQrAUqJNYgUrwA3ZZwmGwvEw=s607-c-fcrop64=1,380f0000c7f0ffff-rw-nd-v1"
     }
   ];
-
-  const MAX_RESULTS = fallbackVideos.length;
 
   function renderLoading() {
     container.innerHTML = "";
@@ -639,9 +603,22 @@ function initYoutubeVideos() {
     }
   }
 
+  function createMeta(className, iconSrc, text) {
+    const meta = document.createElement("span");
+    meta.className = className;
+
+    const icon = document.createElement("img");
+    icon.className = className === "video-date" ? "clock-icon" : "duration-icon";
+    icon.src = iconSrc;
+    icon.alt = className === "video-date" ? "Clock" : "Duration";
+
+    meta.append(icon, document.createTextNode(text));
+    return meta;
+  }
+
   function createCard(video) {
     const card = document.createElement("a");
-    card.className = "video-card video-card--fallback";
+    card.className = "video-card";
     card.href = video.url;
     card.target = "_blank";
     card.rel = "noopener noreferrer";
@@ -652,11 +629,36 @@ function initYoutubeVideos() {
     image.loading = "lazy";
 
     const info = document.createElement("div");
-    info.className = "video-info video-info--compact";
+    info.className = "video-info";
+    const hasDate = Boolean(video.date);
+    const hasLength = Boolean(video.length);
+
+    if (!hasDate && !hasLength) {
+      info.classList.add("video-info--compact");
+      card.classList.add("video-card--fallback");
+    }
 
     const title = document.createElement("h3");
     title.textContent = video.title;
     info.append(title);
+
+    if (hasDate) {
+      const date = createMeta(
+        "video-date",
+        "https://cdn-icons-png.freepik.com/512/11738/11738460.png?ga=GA1.1.292190565.1765117586",
+        video.date
+      );
+      info.append(date);
+    }
+
+    if (hasLength) {
+      const length = createMeta(
+        "video-length",
+        "https://cdn-icons-png.freepik.com/512/12000/12000206.png?ga=GA1.1.292190565.1765117586",
+        video.length
+      );
+      info.append(length);
+    }
 
     card.append(image, info);
     return card;
@@ -669,11 +671,24 @@ function initYoutubeVideos() {
     });
   }
 
+  async function fetchVideos() {
+    const response = await fetch("/api/videos", {
+      headers: {
+        Accept: "application/json"
+      }
+    });
+
+    if (!response.ok) throw new Error("Videos request failed.");
+    const videos = await response.json();
+    if (!Array.isArray(videos) || !videos.length) throw new Error("No videos found.");
+    return videos;
+  }
+
   renderLoading();
 
-  window.setTimeout(() => {
-    renderVideos(fallbackVideos);
-  }, 420);
+  fetchVideos()
+    .then(renderVideos)
+    .catch(() => renderVideos(fallbackVideos));
 }
 
 function initHamburgerMenu() {
@@ -699,6 +714,7 @@ function initHamburgerMenu() {
     document.body.classList.add("menu-open");
     hamburger.setAttribute("aria-expanded", "true");
     hamburger.setAttribute("aria-label", "Close navigation");
+    nav.scrollTop = 0;
     syncNavAccessibility();
   }
 
@@ -721,17 +737,17 @@ function initHamburgerMenu() {
     toggleMenu();
   });
 
-  hamburger.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      toggleMenu();
-    }
-  });
-
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
       if (isMobile()) closeMenu();
     });
+  });
+
+  nav.addEventListener("click", (event) => {
+    if (!isMobile()) return;
+    if (event.target === nav) {
+      closeMenu();
+    }
   });
 
   document.addEventListener("click", (event) => {
@@ -747,13 +763,13 @@ function initHamburgerMenu() {
     }
   });
 
-  window.addEventListener("resize", () => {
+  window.addEventListener("resize", debounce(() => {
     if (!isMobile()) {
       closeMenu();
     } else {
       syncNavAccessibility();
     }
-  });
+  }, 120));
 
   syncNavAccessibility();
 }
