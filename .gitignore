@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+.vercel/
+.netlify/
+*.log
+*.pid
+*.key
+*.pem
+*.crt
+service-account*.json
