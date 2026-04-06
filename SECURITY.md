@@ -1,144 +1,94 @@
-# 🔐 Security Policy
+# 🔒 Security Policy
 
-🛡️ Our Commitment
+![Security Policy](https://img.shields.io/badge/Security-Policy-blue?style=for-the-badge)
+![Responsible Disclosure](https://img.shields.io/badge/Responsible-Disclosure-green?style=for-the-badge)
+![Vulnerability Reports](https://img.shields.io/badge/Vulnerability-Reporting-orange?style=for-the-badge)
 
-Security is a core priority, not an afterthought.
-We are committed to:
+---
 
-🚀 Rapid vulnerability response
-🔍 Transparent communication
-🧠 Continuous security improvements
-🤝 Collaboration with security researchers
-📦 Supported Versions
-Version	Status	Security Updates
-5.1.x	✅ Active	✔ Full
-5.0.x	❌ EOL	✖ None
-4.0.x	⚠ Limited	✔ Critical Only
-< 4.0	❌ Deprecated	✖ None
+## Supported Versions
 
-⚠ Warning: Unsupported versions may contain known exploitable vulnerabilities.
-Upgrade immediately to stay protected.
+The following versions actively receive security updates:
 
-🚨 Reporting a Vulnerability
+| Version | Support Status |
+|--------|---------------|
+| 5.1.x | ✅ Fully supported |
+| 5.0.x | ❌ Unsupported |
+| 4.0.x | ✅ Supported |
+| < 4.0 | ❌ Unsupported |
 
-We welcome responsible disclosures from developers, researchers, and ethical hackers.
+> ⚠ Only supported versions receive security patches. Unsupported versions may contain unpatched vulnerabilities and should be upgraded immediately.
 
-❗ Never report vulnerabilities publicly
+---
 
-Do NOT use:
+## Reporting a Vulnerability
 
-GitHub Issues
-Discussions
-Social media
+We greatly appreciate responsible security disclosures. Please follow these guidelines.
 
-This protects users until a fix is deployed.
+### ❗ Do **not** report vulnerabilities via public issues
 
-📩 Report via:
-GitHub Security Advisories (preferred)
-Email: security@[yourdomain].com (replace this)
-🧾 What to include
+Public exposure may endanger users before a fix is available.
 
-Provide as much detail as possible:
+When reporting, include the following:
 
-🧩 Vulnerability description
-🔁 Reproduction steps
-📍 Affected versions / environments
-⚖ Expected vs actual behavior
-💥 Impact & severity assessment
-🛠 Suggested mitigation (optional)
-🧪 Proof-of-concept (safe & minimal)
-⏱️ Response & SLA
-Stage	Timeframe
-📬 Acknowledgment	≤ 48 hours
-🔍 Initial triage	≤ 3 business days
-🛠 Fix / mitigation	≤ 7 business days
-📢 Disclosure	Coordinated
+- **Clear description** of the vulnerability
+- **Steps to reproduce** the issue
+- **Affected versions**
+- **Expected vs. actual behavior**
+- **Estimated impact**
+- *(Optional)* Suggested fix or patch
+- *(Optional)* Minimal, safe proof-of-concept
 
-For critical issues, response is accelerated immediately.
+### 🕒 Response Timeline
 
-🔐 Vulnerability Severity Classification
-Level	Description
-🔴 Critical	Remote code execution, data breach
-🟠 High	Privilege escalation, auth bypass
-🟡 Medium	Limited data exposure, DoS
-🟢 Low	Minor issues, low impact
-🤝 Responsible Disclosure Policy
+- **24–48 hours:** Acknowledgment of receipt
+- **Within 7 business days:** Initial mitigation or proposed fix
+- **Ongoing:** Updates for complex issues
 
-We follow coordinated disclosure:
+### 🤝 Responsible Disclosure
 
-No public disclosure before fix release
-Credit is given unless anonymity requested
-Clear communication throughout the process
-🧪 Security Testing Rules
+We publicly credit reporters after fixes are released unless anonymity is requested.
 
-To ensure safety:
+### 🧪 Testing Rules
 
-❌ No testing on production systems
-❌ No data exfiltration or destruction
-❌ No service disruption
-✅ Use isolated environments only
+- Do **not** test vulnerabilities on production systems
+- Use dedicated, isolated test environments only
 
-Violating these may result in report rejection.
+### 🔐 Secure Communication
 
-🏆 Recognition
+PGP-encrypted email is supported for highly sensitive reports.
 
-We value contributors to security.
+**PGP Key:**  
+[Insert link to your PGP key]
 
-Eligible reporters may receive:
+---
 
-📛 Public acknowledgment
-⭐ Contributor recognition
-🧾 Mention in release notes
+## 🧩 CVE Handling Policy
 
-(Optional: Add bounty program if applicable)
+We follow industry-standard best practices for managing Common Vulnerabilities and Exposures (CVE).
 
-🔐 Secure Communication
+- **CVE Assignment:** Request CVE IDs for confirmed vulnerabilities via GitHub Security Advisories or MITRE
+- **Patch Development:** Security fixes are prioritized; backports may be provided for supported versions
+- **Public Advisory:** Security advisories are released with CVE details and reporter credit
+- **Timeline:** CVEs are published after coordinated disclosure and included in release notes
 
-For sensitive vulnerabilities, use encryption.
+---
 
-PGP Key:
-[Add your public key link here]
+## 🔐 Security Best Practices
 
-🧩 CVE & Advisory Policy
+- Always use the **latest supported version**
+- Keep **dependencies up to date**
+- Enforce **strong authentication and RBAC**
+- Perform **regular security and configuration audits**
+- Enable **logging and monitoring**
+- Use **HTTPS/TLS** for all communications
+- Store secrets securely (Vault, encrypted environment variables, etc.)
+- Follow the **principle of least privilege**
 
-We follow industry best practices:
+---
 
-🆔 CVE IDs assigned via GitHub or MITRE
-🛠 Security patches prioritized
-🔁 Backports for supported versions
-📢 Public advisories after fixes
-📝 Included in release notes
-🛠 Security Architecture (Overview)
+## 📚 Additional Resources
 
-We apply multiple layers of security:
-
-🔒 Input validation & sanitization
-🔑 Authentication & RBAC
-📦 Dependency monitoring
-🧱 Secure coding practices
-🔍 Static & dynamic analysis
-📊 Logging & anomaly detection
-🔐 Best Practices for Users
-
-Stay secure by following:
-
-⬆ Always use latest version
-🔄 Regularly update dependencies
-🔑 Use strong passwords & MFA
-🔍 Perform audits & scans
-🌐 Enforce HTTPS/TLS
-🔒 Protect secrets (Vault, env encryption)
-⚖ Apply least privilege principle
-📚 Security Resources
-OWASP Top 10
-https://owasp.org/www-project-top-ten/
-GitHub Security Advisories
-https://docs.github.com/en/code-security/security-advisories
-OpenPGP
-https://www.openpgp.org/
-⚡ Final Note
-
-Security is a shared responsibility.
-If you find something — report it responsibly.
-
-🛡️ Secure code. Safe users. Trusted systems.
+- https://owasp.org/www-project-top-ten/
+- https://docs.github.com/en/code-security/security-advisories
+- https://www.openpgp.org/
