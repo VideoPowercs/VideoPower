@@ -1,6 +1,6 @@
 # The VideoPowerCodes.com website
 
-Welcome to videopowercodes.com — your hub for everything related to CS and skins! 😊
+Welcome to VideoPowerCodes.com — your hub for everything related to CS and skins! 😊
 
 What does this website offer? 🤔
 
