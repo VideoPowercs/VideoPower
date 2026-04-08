@@ -1,4 +1,4 @@
-# The videopowercodes.com Website
+# The VideoPowerCodes.com website
 
 Welcome to videopowercodes.com — your hub for everything related to CS and skins! 😊
 
@@ -6,9 +6,9 @@ What does this website offer? 🤔
 
 On this website, you’ll find a variety of exciting sections, including:
 
-💰 BONUSES — Claim instant bonuses and start enjoying them right away.
-🍿 VIDEOS — Watch the latest videos from VideoPower.
-⭐ SPECIALS — Explore limited-time offers, ongoing events, and exclusive bonus opportunities.
-🎁 GIVEAWAYS — Enter giveaways for a chance to win great prizes.
-🚨 NEWS — Coming soon!
-🛍️ MERCH — Browse and shop official VideoPower merchandise.
+💰 Bonuses — Claim instant bonuses and start enjoying them right away.
+🍿 Videos — Watch the latest videos from VideoPower.
+⭐ Specials — Explore limited-time offers, ongoing events, and exclusive bonus opportunities.
+🎁 Giveaways — Enter giveaways for a chance to win great prizes.
+🚨 News — Coming soon!
+🛍️ Merch — Browse and shop official VideoPower merchandise.
