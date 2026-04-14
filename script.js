@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initPageLoader();
   disableContextActions();
   initStars();
+  initFloatingImagesMotion();
   initSectionButtonMotion();
   initGiveawayCarousel();
   initGiveawayButtonHover();
@@ -229,6 +230,106 @@ function initStars() {
 
   resizeCanvas();
   start();
+}
+
+function initFloatingImagesMotion() {
+  const images = Array.from(document.querySelectorAll(".floating-images img"));
+  if (!images.length) return;
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion) return;
+
+  const timers = [];
+  const randomBetween = (min, max) => min + Math.random() * (max - min);
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+  const profiles = [
+    { x: 22, y: 24, z: 54, rx: 12, ry: 34, rz: 20, scale: 0.08, glow: 30, brightness: 0.11 },
+    { x: 18, y: 20, z: 46, rx: 9, ry: 28, rz: 24, scale: 0.07, glow: 26, brightness: 0.09 },
+    { x: 24, y: 26, z: 58, rx: 13, ry: 38, rz: 18, scale: 0.09, glow: 32, brightness: 0.12 },
+    { x: 17, y: 19, z: 42, rx: 8, ry: 24, rz: 22, scale: 0.07, glow: 24, brightness: 0.08 },
+    { x: 21, y: 23, z: 50, rx: 11, ry: 32, rz: 26, scale: 0.08, glow: 28, brightness: 0.1 }
+  ];
+
+  function applyPose(image, pose, durationMs) {
+    image.style.transitionDuration = `${durationMs}ms`;
+    image.style.transitionTimingFunction = pose.timing;
+    image.style.transform = `
+      translate3d(${pose.x}px, ${pose.y}px, ${pose.z}px)
+      rotateX(${pose.rx}deg)
+      rotateY(${pose.ry}deg)
+      rotateZ(${pose.rz}deg)
+      scale(${pose.scale})
+    `;
+    image.style.filter = `
+      drop-shadow(0 0 ${pose.glow}px rgba(255, 178, 44, 0.2))
+      drop-shadow(0 18px 28px rgba(0, 0, 0, 0.34))
+      saturate(${pose.saturate})
+      contrast(${pose.contrast})
+      brightness(${pose.brightness})
+    `;
+  }
+
+  function createPose(profile, intensity = 1, drift = 1) {
+    const spinBias = randomBetween(0.7, 1.2);
+
+    return {
+      x: randomBetween(-profile.x, profile.x) * intensity,
+      y: randomBetween(-profile.y, profile.y) * intensity + randomBetween(-5, 14) * drift,
+      z: randomBetween(-8, profile.z) * intensity,
+      rx: randomBetween(-profile.rx, profile.rx) * intensity,
+      ry: randomBetween(-profile.ry, profile.ry) * intensity * spinBias,
+      rz: randomBetween(-profile.rz, profile.rz) * intensity,
+      scale: clamp(randomBetween(0.99, 1.01 + profile.scale * intensity), 0.97, 1.09),
+      glow: clamp(randomBetween(14, profile.glow), 14, 34),
+      saturate: clamp(randomBetween(0.98, 1.08 + profile.brightness), 0.96, 1.18),
+      contrast: clamp(randomBetween(0.98, 1.08), 0.96, 1.12),
+      brightness: clamp(randomBetween(0.97, 1.04 + profile.brightness), 0.95, 1.12),
+      timing: [
+        "cubic-bezier(0.22, 1, 0.36, 1)",
+        "cubic-bezier(0.34, 1.12, 0.64, 1)",
+        "cubic-bezier(0.18, 0.96, 0.3, 1)"
+      ][Math.floor(randomBetween(0, 3))]
+    };
+  }
+
+  function scheduleImage(image, profile) {
+    const idleDelay = randomBetween(700, 5200);
+    const burstTimer = window.setTimeout(() => {
+      const activeDuration = randomBetween(2400, 5200);
+      const burstIntensity = randomBetween(0.7, 1.18);
+      applyPose(image, createPose(profile, burstIntensity, 1), activeDuration);
+
+      const settleTimer = window.setTimeout(() => {
+        const settleDuration = randomBetween(2800, 6200);
+        applyPose(image, createPose(profile, randomBetween(0.16, 0.34), 0.35), settleDuration);
+
+        const nextTimer = window.setTimeout(() => {
+          scheduleImage(image, profile);
+        }, randomBetween(900, 4200));
+
+        timers.push(nextTimer);
+      }, activeDuration + randomBetween(120, 520));
+
+      timers.push(settleTimer);
+    }, idleDelay);
+
+    timers.push(burstTimer);
+  }
+
+  images.forEach((image, index) => {
+    const profile = profiles[index % profiles.length];
+    applyPose(image, createPose(profile, 0.12, 0.18), 0);
+
+    const startTimer = window.setTimeout(() => {
+      scheduleImage(image, profile);
+    }, randomBetween(0, 3600));
+
+    timers.push(startTimer);
+  });
+
+  window.addEventListener("beforeunload", () => {
+    timers.forEach((timer) => window.clearTimeout(timer));
+  }, { once: true });
 }
 
 function initGiveawayCarousel() {
