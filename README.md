@@ -10,5 +10,6 @@ On this website, you’ll find a variety of exciting sections, including:
 🍿 Videos — Watch the latest videos from VideoPower.
 ⭐ Specials — Explore limited-time offers, ongoing events, and exclusive bonus opportunities.
 🎁 Giveaways — Enter giveaways for a chance to win great prizes.
-🚨 News — Coming soon!
+❓ Faq — Quick answers about the website.
+🚨 News — Soon!
 🛍️ Merch — Browse and shop official VideoPower merchandise.
