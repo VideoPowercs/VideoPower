@@ -6,10 +6,10 @@ What does this website offer? 🤔
 
 On this website, you’ll find a variety of exciting sections, including:
 
-💰 Bonuses — Claim instant bonuses and start enjoying them right away.
-🍿 Videos — Watch the latest videos from VideoPower.
-⭐ Specials — Explore limited-time offers, ongoing events, and exclusive bonus opportunities.
-🎁 Giveaways — Enter giveaways for a chance to win great prizes.
-❓ Faq — Quick answers about the website.
-🚨 News — Soon!
-🛍️ Merch — Browse and shop official VideoPower merchandise.
+💰 BONUSES — Claim instant bonuses and start enjoying them right away.
+🍿 VIDEOS — Watch the latest videos from VideoPower.
+⭐ SPECIALS — Explore limited-time offers, ongoing events, and exclusive bonus opportunities.
+🎁 GIVEAWAYS — Enter giveaways for a chance to win great prizes.
+❓ FAQ — Quick answers about the website.
+🚨 NEWS — Soon!
+🛍️ MERCH — Browse and shop official VideoPower merchandise.
