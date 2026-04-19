@@ -2,18 +2,33 @@ if ("scrollRestoration" in window.history) {
   window.history.scrollRestoration = "manual";
 }
 
+const YOUTUBE_CHANNEL_ID = "UCVQXiCVDW0rF2a9pCv1pR-g";
+
 document.addEventListener("DOMContentLoaded", () => {
   initScrollReset();
   initPageLoader();
+  initHomepagePopup();
   disableContextActions();
-  initStars();
-  initFloatingImagesMotion();
-  initSectionButtonMotion();
-  initGiveawayCarousel();
-  initGiveawayButtonHover();
+  initPromoCodeCopy();
+  initFaqAccordion();
   initSpecialsCountdown();
-  initYoutubeVideos();
   initHamburgerMenu();
+  initTouchInteractionCleanup();
+
+  const runDeferredEnhancements = () => {
+    initStars();
+    initFloatingImagesMotion();
+    initSectionButtonMotion();
+    initGiveawayCarousel();
+    initGiveawayButtonHover();
+    initYoutubeVideos();
+  };
+
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(runDeferredEnhancements, { timeout: 120 });
+  } else {
+    window.setTimeout(runDeferredEnhancements, 24);
+  }
 });
 
 function initScrollReset() {
@@ -41,17 +56,36 @@ function initScrollReset() {
 function initPageLoader() {
   const loader = document.getElementById("page-loader");
   if (!loader) return;
+  document.documentElement.classList.remove("loader-ready");
+  document.documentElement.classList.remove("fonts-ready");
   const loaderBarFill = loader.querySelector(".page-loader__bar-fill");
-  const MIN_LOADER_VISIBLE_MS = 680;
-  const FINISH_HOLD_MS = 130;
-  const HIDE_TRANSITION_MS = 360;
+  const MIN_LOADER_VISIBLE_MS = 1150;
+  const FINISH_HOLD_MS = 180;
+  const HIDE_TRANSITION_MS = 340;
   const startTime = window.performance.now();
   const fontsReady = document.fonts?.ready
     ? document.fonts.ready.catch(() => undefined)
     : Promise.resolve();
+  const fontReadyTimeout = new Promise((resolve) => {
+    window.setTimeout(resolve, 1400);
+  });
+  const loaderReadyGate = Promise.race([fontsReady, fontReadyTimeout]);
   let hasHidden = false;
+  let hasRevealed = false;
   let progress = 8;
   let animationId = 0;
+  let visibleSince = startTime;
+
+  fontsReady.then(() => {
+    document.documentElement.classList.add("fonts-ready");
+  });
+
+  const revealLoader = () => {
+    if (hasRevealed) return;
+    hasRevealed = true;
+    visibleSince = window.performance.now();
+    document.documentElement.classList.add("loader-ready");
+  };
 
   const setProgress = (value) => {
     progress = Math.max(0, Math.min(100, value));
@@ -72,7 +106,8 @@ function initPageLoader() {
   const hideLoader = () => {
     if (hasHidden) return;
     hasHidden = true;
-    const elapsed = window.performance.now() - startTime;
+    revealLoader();
+    const elapsed = window.performance.now() - visibleSince;
     const remaining = Math.max(0, MIN_LOADER_VISIBLE_MS - elapsed);
 
     window.setTimeout(() => {
@@ -84,6 +119,7 @@ function initPageLoader() {
         loader.classList.add("is-hidden");
         loader.setAttribute("aria-hidden", "true");
         document.body.classList.remove("is-loading");
+        document.dispatchEvent(new CustomEvent("videopower:loader-hidden"));
 
         window.setTimeout(() => {
           if (loader.parentNode) {
@@ -95,7 +131,10 @@ function initPageLoader() {
   };
 
   const finalizeLoader = () => {
-    fontsReady.then(hideLoader);
+    loaderReadyGate.then(() => {
+      revealLoader();
+      hideLoader();
+    });
   };
 
   setProgress(progress);
@@ -107,6 +146,61 @@ function initPageLoader() {
 
   animationId = window.requestAnimationFrame(animateProgress);
   window.addEventListener("load", finalizeLoader, { once: true });
+}
+
+function initHomepagePopup() {
+  const popup = document.getElementById("homepage-popup");
+  const closeButton = document.getElementById("homepage-popup-close");
+  if (!popup || !closeButton) return;
+  const POPUP_DELAY_MS = 850;
+  let isOpen = false;
+
+  const closePopup = () => {
+    if (!isOpen) return;
+    isOpen = false;
+    popup.classList.remove("is-visible");
+    popup.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("popup-open");
+    closeButton.blur();
+  };
+
+  const openPopup = () => {
+    if (isOpen || document.body.classList.contains("is-loading")) return false;
+    isOpen = true;
+    popup.classList.add("is-visible");
+    popup.setAttribute("aria-hidden", "false");
+    document.body.classList.add("popup-open");
+    return true;
+  };
+
+  const requestOpen = () => {
+    window.setTimeout(() => {
+      window.requestAnimationFrame(() => {
+        openPopup();
+      });
+    }, POPUP_DELAY_MS);
+  };
+
+  closeButton.addEventListener("click", closePopup);
+
+  popup.addEventListener("click", (event) => {
+    const closer = event.target.closest("[data-popup-close='true']");
+    if (closer) {
+      closePopup();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closePopup();
+    }
+  });
+
+  if (document.body.classList.contains("is-loading")) {
+    document.addEventListener("videopower:loader-hidden", requestOpen, { once: true });
+  } else {
+    requestOpen();
+  }
 }
 
 function disableContextActions() {
@@ -584,6 +678,156 @@ function initGiveawayButtonHover() {
   });
 }
 
+function initTouchInteractionCleanup() {
+  const touchMedia = window.matchMedia("(hover: none), (pointer: coarse)");
+  if (!touchMedia.matches) return;
+  const touchFocusableSelector =
+    ".btn, .promo-copy-btn, #bonuses .code-block a, a.footer-nav-link, .main-nav a, .main-nav .nav-social-link, .social-icon, .hamburger";
+
+  const clearTouchStates = () => {
+    document.querySelectorAll(".promo-banner.is-button-hovered, .giveaway-card.is-cta-hovered").forEach((element) => {
+      element.classList.remove("is-button-hovered", "is-cta-hovered");
+    });
+
+    const activeElement = document.activeElement;
+    if (activeElement instanceof HTMLElement && activeElement.matches(touchFocusableSelector)) {
+      activeElement.blur();
+    }
+
+    document.querySelectorAll(touchFocusableSelector).forEach((element) => {
+      if (element instanceof HTMLElement) {
+        element.blur();
+      }
+    });
+
+    if (window.getSelection) {
+      const selection = window.getSelection();
+      if (selection && selection.rangeCount > 0) {
+        selection.removeAllRanges();
+      }
+    }
+  };
+
+  const scheduleCleanup = () => {
+      window.setTimeout(clearTouchStates, 60);
+  };
+
+  document.addEventListener("touchend", scheduleCleanup, { passive: true });
+  document.addEventListener("touchcancel", clearTouchStates, { passive: true });
+  document.addEventListener("contextmenu", clearTouchStates);
+  window.addEventListener("pagehide", clearTouchStates);
+}
+
+function initPromoCodeCopy() {
+  const copyButton = document.querySelector(".promo-copy-btn");
+  if (!(copyButton instanceof HTMLButtonElement)) return;
+
+  const codeToCopy = String(copyButton.dataset.copyText || "").trim();
+  if (!codeToCopy) return;
+
+  const defaultLabel = copyButton.textContent.trim() || "COPY CODE";
+  let resetTimer = 0;
+
+  const setButtonState = (label, className = "") => {
+    window.clearTimeout(resetTimer);
+    copyButton.textContent = label;
+    copyButton.classList.remove("is-copied", "is-error");
+    if (className) {
+      copyButton.classList.add(className);
+    }
+    resetTimer = window.setTimeout(() => {
+      copyButton.textContent = defaultLabel;
+      copyButton.classList.remove("is-copied", "is-error");
+    }, 1800);
+  };
+
+  const fallbackCopy = () => {
+    const helperInput = document.createElement("textarea");
+    helperInput.value = codeToCopy;
+    helperInput.setAttribute("readonly", "");
+    helperInput.style.position = "fixed";
+    helperInput.style.top = "-9999px";
+    helperInput.style.left = "-9999px";
+    document.body.appendChild(helperInput);
+    helperInput.focus();
+    helperInput.select();
+
+    let copied = false;
+
+    try {
+      copied = document.execCommand("copy");
+    } catch (error) {
+      copied = false;
+    }
+
+    document.body.removeChild(helperInput);
+    return copied;
+  };
+
+  const copyCode = async () => {
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(codeToCopy);
+        return true;
+      } catch (error) {
+        return fallbackCopy();
+      }
+    }
+
+    return fallbackCopy();
+  };
+
+  copyButton.addEventListener("click", async () => {
+    const copied = await copyCode();
+    if (copied) {
+      setButtonState("COPIED!", "is-copied");
+      return;
+    }
+
+    setButtonState("TRY AGAIN", "is-error");
+  });
+}
+
+function initFaqAccordion() {
+  const faqItems = Array.from(document.querySelectorAll(".faq-item"));
+  if (!faqItems.length) return;
+
+  faqItems.forEach((item) => {
+    const summary = item.querySelector("summary");
+    if (!(summary instanceof HTMLElement)) return;
+
+    summary.addEventListener("click", (event) => {
+      event.preventDefault();
+      const isOpen = item.hasAttribute("open");
+
+      faqItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.removeAttribute("open");
+        }
+      });
+
+      if (isOpen) {
+        item.removeAttribute("open");
+      } else {
+        item.setAttribute("open", "");
+      }
+
+      window.requestAnimationFrame(() => {
+        summary.blur();
+        item.blur();
+
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
+      });
+    });
+
+    summary.addEventListener("pointerup", () => {
+      summary.blur();
+    });
+  });
+}
+
 function initSpecialsCountdown() {
   const chips = [...document.querySelectorAll(".countdown-chip[data-countdown-duration-ms], .countdown-chip[data-countdown-target]")];
   if (!chips.length) return;
@@ -663,23 +907,39 @@ function initYoutubeVideos() {
   const container = document.getElementById("videos-grid");
   if (!container) return;
 
-  const MAX_RESULTS = 4;
+  const MAX_RESULTS = 5;
+  const channelFeedUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${encodeURIComponent(YOUTUBE_CHANNEL_ID)}`;
 
   const fallbackVideos = [
     {
-      title: "Check Out The VideoPower Channel.",
+      title: "CHECK OUT THE VIDEOPOWER CHANNEL.",
       url: "https://www.youtube.com/@VideoPower_cs",
-      image: "https://yt3.ggpht.com/PZjQ4YWcWgdS5jBH6zKqCJvKxIjX2lMv4fGL5Ra--6uhPibujxW0AWfQrAUqJNYgUrwA3ZZwmGwvEw=s607-c-fcrop64=1,380f0000c7f0ffff-rw-nd-v1"
+      image: "https://yt3.ggpht.com/PZjQ4YWcWgdS5jBH6zKqCJvKxIjX2lMv4fGL5Ra--6uhPibujxW0AWfQrAUqJNYgUrwA3ZZwmGwvEw=s607-c-fcrop64=1,380f0000c7f0ffff-rw-nd-v1",
+      type: "VIDEO"
     },
     {
-      title: "Check Out VideoPower's Latest Videos.",
+      title: "CHECK OUT VIDEOPOWER VIDEOS.",
       url: "https://www.youtube.com/@VideoPower_cs/videos",
-      image: "https://yt3.ggpht.com/PZjQ4YWcWgdS5jBH6zKqCJvKxIjX2lMv4fGL5Ra--6uhPibujxW0AWfQrAUqJNYgUrwA3ZZwmGwvEw=s607-c-fcrop64=1,380f0000c7f0ffff-rw-nd-v1"
+      image: "https://yt3.ggpht.com/PZjQ4YWcWgdS5jBH6zKqCJvKxIjX2lMv4fGL5Ra--6uhPibujxW0AWfQrAUqJNYgUrwA3ZZwmGwvEw=s607-c-fcrop64=1,380f0000c7f0ffff-rw-nd-v1",
+      type: "VIDEO"
     },
     {
-      title: "Check Out The VideoPower Community Page.",
+      title: "CHECK OUT VIDEOPOWER SHORTS.",
+      url: "https://www.youtube.com/@VideoPower_cs/shorts",
+      image: "https://yt3.ggpht.com/PZjQ4YWcWgdS5jBH6zKqCJvKxIjX2lMv4fGL5Ra--6uhPibujxW0AWfQrAUqJNYgUrwA3ZZwmGwvEw=s607-c-fcrop64=1,380f0000c7f0ffff-rw-nd-v1",
+      type: "SHORT"
+    },
+    {
+      title: "CHECK OUT VIDEOPOWER COMMUNITY PAGE.",
       url: "https://www.youtube.com/@VideoPower_cs/community",
-      image: "https://yt3.ggpht.com/PZjQ4YWcWgdS5jBH6zKqCJvKxIjX2lMv4fGL5Ra--6uhPibujxW0AWfQrAUqJNYgUrwA3ZZwmGwvEw=s607-c-fcrop64=1,380f0000c7f0ffff-rw-nd-v1"
+      image: "https://yt3.ggpht.com/PZjQ4YWcWgdS5jBH6zKqCJvKxIjX2lMv4fGL5Ra--6uhPibujxW0AWfQrAUqJNYgUrwA3ZZwmGwvEw=s607-c-fcrop64=1,380f0000c7f0ffff-rw-nd-v1",
+      type: "COMMUNITY"
+    },
+    {
+      title: "CHECK OUT VIDEOPOWER PLAYLISTS.",
+      url: "https://www.youtube.com/@VideoPower_cs/playlists",
+      image: "https://yt3.ggpht.com/PZjQ4YWcWgdS5jBH6zKqCJvKxIjX2lMv4fGL5Ra--6uhPibujxW0AWfQrAUqJNYgUrwA3ZZwmGwvEw=s607-c-fcrop64=1,380f0000c7f0ffff-rw-nd-v1",
+      type: "PLAYLIST"
     }
   ];
 
@@ -717,12 +977,47 @@ function initYoutubeVideos() {
     return meta;
   }
 
-  function createCard(video) {
+  function resolveVideoType(video) {
+    const explicitType = String(video.type || "").trim().toUpperCase();
+    if (explicitType === "COMMUNITY" || explicitType === "PLAYLIST") return explicitType;
+    if (explicitType === "SHORT" || explicitType === "VIDEO") return explicitType;
+
+    const durationSeconds = Number(video.durationSeconds || 0);
+    const url = String(video.url || "").toLowerCase();
+    const title = String(video.title || "").toLowerCase();
+    const length = String(video.length || "").toLowerCase();
+    const hasVideoStyleTitle = title.includes("(") && title.includes(")");
+    const hasShortStyleKeyword = /\bkills?\b/.test(title);
+
+    const shortMatch = length.match(/(\d+)\s*min/);
+    const shortMinutes = shortMatch ? Number.parseInt(shortMatch[1], 10) : Number.NaN;
+
+    if (hasVideoStyleTitle) return "VIDEO";
+    if (hasShortStyleKeyword) return "SHORT";
+    if (url.includes("/shorts") || title.includes("#shorts")) return "SHORT";
+    if (durationSeconds > 0 && durationSeconds <= 90) return "SHORT";
+    if (durationSeconds > 90) return "VIDEO";
+    if (Number.isFinite(shortMinutes) && shortMinutes < 2) return "SHORT";
+    if (Number.isFinite(shortMinutes) && shortMinutes >= 2) return "VIDEO";
+    if (!shortMatch && length.includes("sec")) return "SHORT";
+    if (url.includes("/community")) return "COMMUNITY";
+    if (url.includes("/playlists") || title.includes("playlist")) return "PLAYLIST";
+    return "VIDEO";
+  }
+
+  function createCard(video, index) {
     const card = document.createElement("a");
     card.className = "video-card";
     card.href = video.url;
     card.target = "_blank";
     card.rel = "noopener noreferrer";
+
+    const videoType = resolveVideoType(video);
+    card.classList.add(`video-card--type-${videoType.toLowerCase()}`);
+
+    const badge = document.createElement("span");
+    badge.className = "video-card__badge";
+    badge.textContent = videoType;
 
     const image = document.createElement("img");
     image.src = video.image;
@@ -761,34 +1056,290 @@ function initYoutubeVideos() {
       info.append(length);
     }
 
-    card.append(image, info);
+    card.append(badge, image, info);
     return card;
   }
 
   function renderVideos(videos) {
     container.innerHTML = "";
-    videos.forEach((video) => {
-      container.appendChild(createCard(video));
+    videos.forEach((video, index) => {
+      container.appendChild(createCard(video, index));
     });
   }
 
-  async function fetchVideos() {
-    const response = await fetch("/api/videos", {
+  function formatPublishedDate(value) {
+    const parsed = Date.parse(String(value || ""));
+    if (Number.isNaN(parsed)) return "";
+
+    return new Date(parsed).toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric"
+    });
+  }
+
+  function parseIsoDurationToSeconds(value) {
+    const match = String(value || "").match(/P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+    if (!match) return 0;
+
+    const days = Number.parseInt(match[1] || "0", 10);
+    const hours = Number.parseInt(match[2] || "0", 10);
+    const minutes = Number.parseInt(match[3] || "0", 10);
+    const seconds = Number.parseInt(match[4] || "0", 10);
+
+    return (days * 86400) + (hours * 3600) + (minutes * 60) + seconds;
+  }
+
+  function formatDurationFromSeconds(totalSeconds) {
+    const secondsValue = Math.max(0, Number(totalSeconds) || 0);
+    const hours = Math.floor(secondsValue / 3600);
+    const minutes = Math.floor((secondsValue % 3600) / 60);
+    const seconds = secondsValue % 60;
+    const parts = [];
+
+    if (hours > 0) parts.push(`${hours} H`);
+    if (minutes > 0) parts.push(`${minutes} Min`);
+    if (hours === 0 && minutes === 0) parts.push(`${seconds} Sec`);
+    else if (seconds > 0) parts.push(`${seconds} Sec`);
+
+    return parts.join(" ");
+  }
+
+  function getVideoIdFromUrl(value) {
+    const url = String(value || "").trim();
+    if (!url) return "";
+
+    try {
+      const parsed = new URL(url);
+      if (parsed.searchParams.get("v")) {
+        return parsed.searchParams.get("v") || "";
+      }
+
+      const pathnameParts = parsed.pathname.split("/").filter(Boolean);
+      return pathnameParts[pathnameParts.length - 1] || "";
+    } catch (error) {
+      const match = url.match(/(?:v=|\/)([a-zA-Z0-9_-]{11})(?:[/?&#]|$)/);
+      return match?.[1] || "";
+    }
+  }
+
+  function normalizeFeedVideos(items) {
+    return items
+      .map((item) => {
+        const rawLink = item.link || item.guid || item.url || "";
+        const videoId = getVideoIdFromUrl(rawLink);
+        const title = String(item.title || "").trim();
+        const image =
+          String(item.thumbnail || item.enclosure?.link || "").trim() ||
+          (videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : "");
+
+        return {
+          title,
+          url: videoId ? `https://www.youtube.com/watch?v=${videoId}` : rawLink,
+          image,
+          date: formatPublishedDate(item.pubDate || item.published || item.isoDate || ""),
+          length: "",
+          videoId,
+          durationSeconds: 0
+        };
+      })
+      .filter((video) => video.title && video.url)
+      .slice(0, MAX_RESULTS);
+  }
+
+  function parseXmlVideos(xmlText) {
+    const parser = new DOMParser();
+    const xmlDocument = parser.parseFromString(xmlText, "application/xml");
+    const entries = [...xmlDocument.querySelectorAll("entry")].slice(0, MAX_RESULTS);
+
+    return entries
+      .map((entry) => {
+        const videoId =
+          entry.getElementsByTagName("yt:videoId")[0]?.textContent?.trim() ||
+          entry.getElementsByTagName("videoId")[0]?.textContent?.trim() ||
+          "";
+        const title = entry.getElementsByTagName("title")[0]?.textContent?.trim() || "";
+        const published = entry.getElementsByTagName("published")[0]?.textContent?.trim() || "";
+
+        return {
+          title,
+          url: videoId ? `https://www.youtube.com/watch?v=${videoId}` : "",
+          image: videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : "",
+          date: formatPublishedDate(published),
+          length: "",
+          videoId,
+          durationSeconds: 0
+        };
+      })
+      .filter((video) => video.title && video.url);
+  }
+
+  async function fetchVideosFromRss2Json() {
+    const rss2JsonUrl = new URL("https://api.rss2json.com/v1/api.json");
+    rss2JsonUrl.search = new URLSearchParams({
+      rss_url: channelFeedUrl,
+      count: String(MAX_RESULTS)
+    }).toString();
+
+    const response = await fetch(rss2JsonUrl.toString(), {
       headers: {
         Accept: "application/json"
       }
     });
 
-    if (!response.ok) throw new Error("Videos request failed.");
-    const videos = await response.json();
-    if (!Array.isArray(videos) || !videos.length) throw new Error("No videos found.");
+    if (!response.ok) throw new Error("rss2json request failed.");
+    const payload = await response.json();
+    const videos = normalizeFeedVideos(Array.isArray(payload.items) ? payload.items : []);
+    if (!videos.length) throw new Error("rss2json returned no videos.");
     return videos;
+  }
+
+  async function fetchVideosFromXmlProxy(proxyBaseUrl) {
+    const response = await fetch(`${proxyBaseUrl}${encodeURIComponent(channelFeedUrl)}`, {
+      headers: {
+        Accept: "application/xml,text/xml"
+      }
+    });
+
+    if (!response.ok) throw new Error("XML proxy request failed.");
+    const xmlText = await response.text();
+    const videos = parseXmlVideos(xmlText);
+    if (!videos.length) throw new Error("XML proxy returned no videos.");
+    return videos;
+  }
+
+  async function fetchVideosDirectXml() {
+    const response = await fetch(channelFeedUrl, {
+      headers: {
+        Accept: "application/xml,text/xml"
+      }
+    });
+
+    if (!response.ok) throw new Error("Direct feed request failed.");
+    const xmlText = await response.text();
+    const videos = parseXmlVideos(xmlText);
+    if (!videos.length) throw new Error("Direct feed returned no videos.");
+    return videos;
+  }
+
+  function parseDurationFromVideoPage(htmlText) {
+    const source = String(htmlText || "");
+    const approxDurationMatch = source.match(/"approxDurationMs":"(\d+)"/);
+    if (approxDurationMatch) {
+      return Math.round(Number.parseInt(approxDurationMatch[1], 10) / 1000);
+    }
+
+    const lengthSecondsMatch = source.match(/"lengthSeconds":"(\d+)"/);
+    if (lengthSecondsMatch) {
+      return Number.parseInt(lengthSecondsMatch[1], 10);
+    }
+
+    const isoDurationMatch = source.match(/"duration":"(P[^"]+)"/);
+    if (isoDurationMatch) {
+      return parseIsoDurationToSeconds(isoDurationMatch[1]);
+    }
+
+    return 0;
+  }
+
+  async function fetchDurationFromVideoPage(proxyBaseUrl, video) {
+    const videoUrl = String(video.url || "").trim();
+    if (!videoUrl) throw new Error("Missing video URL.");
+
+    const response = await fetch(`${proxyBaseUrl}${encodeURIComponent(videoUrl)}`, {
+      headers: {
+        Accept: "text/html,application/xhtml+xml"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error("Video page proxy request failed.");
+    }
+
+    const htmlText = await response.text();
+    const durationSeconds = parseDurationFromVideoPage(htmlText);
+    if (!durationSeconds) {
+      throw new Error("Duration not found in video page.");
+    }
+
+    return durationSeconds;
+  }
+
+  async function fetchVideoDurationSeconds(video) {
+    const strategies = [
+      () => fetchDurationFromVideoPage("https://api.allorigins.win/raw?url=", video),
+      () => fetchDurationFromVideoPage("https://api.codetabs.com/v1/proxy/?quest=", video)
+    ];
+
+    for (const strategy of strategies) {
+      try {
+        const durationSeconds = await strategy();
+        if (durationSeconds > 0) {
+          return durationSeconds;
+        }
+      } catch (error) {
+        continue;
+      }
+    }
+
+    return 0;
+  }
+
+  async function hydrateVideoDurations(videos) {
+    if (!videos.length) return videos;
+
+    const updatedVideos = await Promise.all(
+      videos.map(async (video) => {
+        const durationSeconds = await fetchVideoDurationSeconds(video);
+        return {
+          ...video,
+          durationSeconds,
+          length: durationSeconds > 0 ? formatDurationFromSeconds(durationSeconds) : video.length
+        };
+      })
+    );
+
+    return updatedVideos;
+  }
+
+  async function fetchVideos() {
+    const strategyPromises = [
+      fetchVideosFromRss2Json(),
+      fetchVideosFromXmlProxy("https://api.allorigins.win/raw?url="),
+      fetchVideosFromXmlProxy("https://api.codetabs.com/v1/proxy/?quest="),
+      fetchVideosDirectXml()
+    ];
+
+    if (typeof Promise.any === "function") {
+      return Promise.any(strategyPromises);
+    }
+
+    for (const strategyPromise of strategyPromises) {
+      try {
+        const videos = await strategyPromise;
+        if (videos.length) {
+          return videos;
+        }
+      } catch (error) {
+        continue;
+      }
+    }
+
+    throw new Error("No client-side video source returned data.");
   }
 
   renderLoading();
 
   fetchVideos()
-    .then(renderVideos)
+    .then((videos) => {
+      renderVideos(videos);
+
+      return hydrateVideoDurations(videos)
+        .then((videosWithDurations) => {
+          renderVideos(videosWithDurations);
+        })
+        .catch(() => undefined);
+    })
     .catch(() => renderVideos(fallbackVideos));
 }
 
@@ -978,7 +1529,7 @@ function initButtonSounds() {
 
     if (control.matches(".hamburger, .giveaway-arrow")) return "menu";
     if (control.matches(".video-card")) return "videos";
-    if (control.matches("#promo-code")) return "bonus";
+    if (control.matches("#promo-code, .promo-copy-btn")) return "bonus";
     if (control.matches(".social-icon")) return "social";
     if (href.endsWith("#bonuses")) return "partners";
     if (href.endsWith("#videos")) return "videos";
@@ -1025,7 +1576,7 @@ function initButtonSounds() {
 
   function findSoundControl(event) {
     const control = event.target.closest(
-      ".main-nav a, .footer-nav a, .btn, .video-card, #promo-code, .social-icon, .code-block a, .promo-banner, .giveaway-arrow, .hamburger"
+      ".main-nav a, .footer-nav a, .btn, .promo-copy-btn, .video-card, #promo-code, .social-icon, .code-block a, .promo-banner, .giveaway-arrow, .hamburger"
     );
 
     if (!control) return null;
