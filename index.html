@@ -10,7 +10,7 @@
   name="description"
   content="VideoPower website with giveaways, specials, bonuses and latest videos."
 />
-<title>Welcome to VideoPowerCodes.com!</title>
+<title>Welcome to VideoPower Codes</title>
 <link
   rel="icon"
   type="image/jpeg"
@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=block"
   rel="stylesheet"
 />
 <link rel="stylesheet" href="style.css" />
@@ -44,10 +44,30 @@
         src="https://yt3.ggpht.com/PZjQ4YWcWgdS5jBH6zKqCJvKxIjX2lMv4fGL5Ra--6uhPibujxW0AWfQrAUqJNYgUrwA3ZZwmGwvEw=s607-c-fcrop64=1,380f0000c7f0ffff-rw-nd-v1"
         alt="VideoPower loading"
         class="page-loader__logo"
+        fetchpriority="high"
+        decoding="async"
       />
-      <div class="page-loader__text">LOADING VIDEOPOWERCODES.COM...</div>
+      <div class="page-loader__text">LOADING VIDEOPOWER CODES...</div>
       <div class="page-loader__bar">
         <span class="page-loader__bar-fill"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="homepage-popup" id="homepage-popup" aria-hidden="true">
+    <div class="homepage-popup__backdrop" data-popup-close="true"></div>
+    <div class="homepage-popup__dialog" role="dialog" aria-modal="true" aria-labelledby="homepage-popup-title">
+      <button class="homepage-popup__close" id="homepage-popup-close" type="button" aria-label="Close popup">
+        <span></span>
+        <span></span>
+      </button>
+      <div class="homepage-popup__eyebrow">START HERE</div>
+      <h2 class="homepage-popup__title" id="homepage-popup-title">WELCOME TO VIDEOPOWER CODES</h2>
+      <p class="homepage-popup__text">DISCOVER BONUSES, SPECIAL OPPORTUNITIES, GIVEAWAYS, AND MORE IN ONE PLACE.</p>
+      <div class="homepage-popup__code">USE CODE: VIDEOPOWER</div>
+      <div class="homepage-popup__actions">
+        <a href="#bonuses" class="homepage-popup__button homepage-popup__button--primary" data-popup-close="true">BONUSES</a>
+        <a href="#specials" class="homepage-popup__button homepage-popup__button--secondary" data-popup-close="true">SPECIALS</a>
       </div>
     </div>
   </div>
@@ -68,6 +88,8 @@
             src="https://yt3.ggpht.com/PZjQ4YWcWgdS5jBH6zKqCJvKxIjX2lMv4fGL5Ra--6uhPibujxW0AWfQrAUqJNYgUrwA3ZZwmGwvEw=s607-c-fcrop64=1,380f0000c7f0ffff-rw-nd-v1"
             alt="Logo"
             class="logo"
+            fetchpriority="high"
+            decoding="async"
           />
         </a>
       </div>
@@ -83,13 +105,14 @@
         <a href="#videos" class="with-divider">VIDEOS</a>
         <a href="#specials" class="with-divider">SPECIALS</a>
         <a href="#giveaways" class="with-divider">GIVEAWAYS</a>
+        <a href="#faq" class="with-divider">FAQ</a>
         <span class="with-divider nav-soon" aria-disabled="true">
           <span class="nav-soon__label">NEWS</span>
           <span class="nav-soon__tag">SOON!</span>
         </span>
         <a href="https://videopower-shop.fourthwall.com/en-eur" target="_blank" rel="noopener noreferrer" class="with-divider nav-link--sale">MERCH <span class="nav-sale-tag">SALE!</span></a>
         <div class="nav-social-block" aria-label="Stay connected">
-          <div class="nav-social-title">STAY CONNECTED</div>
+          <div class="nav-social-title">STAY CONNECTED WITH VIDEOPOWER</div>
           <div class="nav-social-links">
             <a href="https://www.youtube.com/@VideoPower_cs" target="_blank" rel="noopener noreferrer" class="nav-social-link">
               <img src="https://img.icons8.com/?size=512&id=85064&format=png" alt="YouTube" />
@@ -111,9 +134,12 @@
           id="promo-code"
           aria-label="Use promo code VIDEOPOWER"
         >
-          <img src="https://cdn-icons-png.freepik.com/512/8189/8189214.png?ga=GA1.1.292190565.1765117586" alt="promo icon" />
+          <img src="https://cdn-icons-png.freepik.com/512/18732/18732537.png?ga=GA1.1.292190565.1765117586" alt="promo icon" />
           <span>USE CODE: VIDEOPOWER</span>
         </a>
+        <button type="button" class="promo-copy-btn" data-copy-text="VIDEOPOWER" aria-label="Copy promo code VIDEOPOWER">
+          COPY CODE
+        </button>
       </div>
     </header>
 
@@ -124,6 +150,8 @@
             src="https://yt3.ggpht.com/PZjQ4YWcWgdS5jBH6zKqCJvKxIjX2lMv4fGL5Ra--6uhPibujxW0AWfQrAUqJNYgUrwA3ZZwmGwvEw=s607-c-fcrop64=1,380f0000c7f0ffff-rw-nd-v1"
             alt="VP Logo"
             class="character-img"
+            fetchpriority="high"
+            decoding="async"
           />
           <p>CLICK THE "GIVEAWAYS" BUTTON TO VIEW GIVEAWAYS, AND CLICK THE "SPECIALS" BUTTON TO SEE BONUS OPPORTUNITIES.</p>
           <div class="hero-buttons">
@@ -138,27 +166,37 @@
           <img
             src="https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hazQ3X2FrNDdfY3JhbmVfZmxpZ2h0X2xpZ2h0LjM3YjY3NDcxNWM1YzY3N2JmMjc4MDRhZTQ2ZjRhMjc3ZmIyMDE2ZjcucG5n/auto/auto/85/notrim/76ecbaedc1c9cb3560383d99366f3536.webp"
             alt="Item 1"
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
           />
           <img
             src="https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hd3BfYXdwX3F1ZWVuc19nYW1iaXRfbGlnaHQuZWZiYTg3MDZiYTg0M2M0NWQyZjMxNzE0NjA4NWZmYjVlMTEwOWMxOS5wbmc-/auto/auto/85/notrim/0c5ea8af08b961732acbf557265cc334.webp"
             alt="Item 2"
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
           />
           <img
             src="https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9nbG9ja19nbG9ja19qZHBlZWtfbGlnaHQuNDM4NzllNWRjZjVmNTY0YWM1OWVlMDkxMThjOTU5Mzg0MzIxZTc5MS5wbmc-/auto/auto/85/notrim/1f4010412a17469c49bbe8035796a74e.webp"
             alt="Item 3"
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
           />
           <img
             src="https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3NwZWNpYWxpc3RfZ2xvdmVzX2dsb3ZlX3NwZWNpYWxpc3RfcXVpbHRlZF93aGl0ZV9saWdodC44MzQyOTVmZmY2YzQwZjBmMmU1NTUxNjFjNjNiZDllMGY5ODA3NGJkLnBuZw--/auto/auto/85/notrim/46a6d3f363406e34dafee3e97d9e4741.webp"
             alt="Item 4"
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
           />
           <img
             src="https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9rbmlmZV9tOV9iYXlvbmV0X2FhX2ZhZGVfbGlnaHQuNTZlNDM2N2ZkZDRiZGRkMzRiNDIwZjRjOWU4ODhlNjA5NWEyZTM5NC5wbmc-/auto/auto/85/notrim/0c3917e5889459e593746074bf1be6e3.webp"
             alt="Item 5"
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
           />
         </div>
       </section>
@@ -172,34 +210,11 @@
         <p class="partners-subtitle">CLAIM INSTANT BONUSES AND START ENJOYING THEM RIGHT AWAY.</p>
 
         <div class="partners-grid">
-          <div class="partner-card border-skinclub">
-            <span class="partner-trophy" aria-hidden="true">
-              <img src="https://cdn-icons-png.freepik.com/512/15738/15738891.png?ga=GA1.1.292190565.1765117586" alt="" />
-            </span>
-            <h3 class="partner-title">SKINCLUB</h3>
-            <div class="logo-wrapper skinclub-effect">
-              <img src="https://www.angvil.com/_next/image?url=%2Fimages%2Fsites%2Fskinclub.png&w=640&q=75" alt="SkinClub Logo" class="partner-logo" loading="lazy" />
-            </div>
-            <div class="partner-bonus-stack">
-              <div class="partner-description partner-description--main">
-                <span class="partner-description__label">MAIN BONUS</span>
-                <span class="partner-description__value">7% DEPOSIT BONUS</span>
-              </div>
-              <div class="partner-description partner-description--extra">
-                <span class="partner-description__label">EXTRA</span>
-                <span class="partner-description__value">BETTER ODDS IN CASES</span>
-              </div>
-            </div>
-            <div class="code-block skinclub-button">
-              <a href="https://l.skin.club/426VIDEOPOWER5V" target="_blank" rel="noopener noreferrer">CLAIM BONUS</a>
-            </div>
-          </div>
-
           <div class="partner-card border-hellcase">
             <span class="partner-trophy" aria-hidden="true">
               <img src="https://cdn-icons-png.freepik.com/512/15738/15738891.png?ga=GA1.1.292190565.1765117586" alt="" />
             </span>
-            <h3 class="partner-title">HELLCASE</h3>
+            <h3 class="partner-title">HELLCASE.COM</h3>
             <div class="logo-wrapper hellcase-effect">
               <img src="https://d1011j0lbv5k1u.cloudfront.net/assets/store-49835/49835-logo-1608740748.png" alt="Hellcase Logo" class="partner-logo" loading="lazy" />
             </div>
@@ -222,7 +237,7 @@
             <span class="partner-trophy" aria-hidden="true">
               <img src="https://cdn-icons-png.freepik.com/512/15738/15738891.png?ga=GA1.1.292190565.1765117586" alt="" />
             </span>
-            <h3 class="partner-title">SKINBARON</h3>
+            <h3 class="partner-title">SKINBARON.DE</h3>
             <div class="logo-wrapper skinbaron-effect">
               <img src="https://skinbaron.idevaffiliate.com/media/banners/Logo_horizontal-whitebaron.png" alt="SkinBaron Logo" class="partner-logo" loading="lazy" />
             </div>
@@ -245,7 +260,7 @@
             <span class="partner-trophy" aria-hidden="true">
               <img src="https://cdn-icons-png.freepik.com/512/15738/15738891.png?ga=GA1.1.292190565.1765117586" alt="" />
             </span>
-            <h3 class="partner-title">CLASHGG</h3>
+            <h3 class="partner-title">CLASH.GG</h3>
             <div class="logo-wrapper clash-effect">
               <img src="https://bonkku.com/wp-content/uploads/2024/02/clashgg-pic.png.webp" alt="Clash.GG Logo" class="partner-logo" loading="lazy" />
             </div>
@@ -260,7 +275,36 @@
               </div>
             </div>
             <div class="code-block clash-button">
-              <a href="https://clash.gg/r/VIDEOPOWERLEGIT" target="_blank" rel="noopener noreferrer">CLAIM BONUS</a>
+              <a href="https://clash.gg/r/VIDEOPOWERREAL" target="_blank" rel="noopener noreferrer">CLAIM BONUS</a>
+            </div>
+          </div>
+
+          <div class="partner-card border-skinclub partner-card--locked" aria-disabled="true">
+            <span class="partner-trophy" aria-hidden="true">
+              <img src="https://cdn-icons-png.freepik.com/512/15738/15738891.png?ga=GA1.1.292190565.1765117586" alt="" />
+            </span>
+            <h3 class="partner-title">SKINCLUB.EN</h3>
+            <div class="logo-wrapper skinclub-effect">
+              <img src="https://www.angvil.com/_next/image?url=%2Fimages%2Fsites%2Fskinclub.png&w=640&q=75" alt="SkinClub Logo" class="partner-logo" loading="lazy" />
+            </div>
+            <div class="partner-lock-panel" aria-hidden="true">
+              <span>
+                <strong>LOCKED</strong>
+                <em>CURRENTLY UNAVAILABLE</em>
+              </span>
+            </div>
+            <div class="partner-bonus-stack">
+              <div class="partner-description partner-description--main">
+                <span class="partner-description__label">MAIN BONUS</span>
+                <span class="partner-description__value">7% DEPOSIT BONUS</span>
+              </div>
+              <div class="partner-description partner-description--extra">
+                <span class="partner-description__label">EXTRA</span>
+                <span class="partner-description__value">BETTER ODDS IN CASES</span>
+              </div>
+            </div>
+            <div class="code-block skinclub-button code-block--disabled" aria-hidden="true">
+              <span>CLAIM BONUS</span>
             </div>
           </div>
         </div>
@@ -272,7 +316,7 @@
           <h2>VIDEOS</h2>
           <div class="title-line"></div>
         </div>
-        <p class="videos-subtitle">WATCH THE LATEST VIDEOS FROM VIDEOPOWER.</p>
+        <p class="videos-subtitle">WATCH VIDEOPOWER SHORTS AND VIDEOS.</p>
 
         <div class="videos-grid" id="videos-grid"></div>
       </section>
@@ -286,44 +330,56 @@
 
         <p class="specials-subtitle">LIMITED-TIME OFFERS AVAILABLE NOW! EXPLORE ONGOING EVENTS &amp; SPECIAL BONUS OPPORTUNITIES. DON'T MISS YOUR CHANCE!</p>
 
-        <div class="specials-grid">
-          <a href="https://l.skin.club/426VIDEOPOWER5V" target="_blank" rel="noopener noreferrer" class="promo-banner promo-banner--skinclub">
-            <span class="banner-corner-ribbon">LIMITED</span>
+          <div class="specials-grid">
+            <a href="https://hellca.se/videopower" target="_blank" rel="noopener noreferrer" class="promo-banner promo-banner--hellcase">
+              <span class="banner-corner-ribbon">
+                <img class="banner-corner-ribbon__icon" src="https://cdn-icons-png.freepik.com/512/5927/5927236.png?ga=GA1.1.292190565.1765117586" alt="" aria-hidden="true">
+                <span>LIMITED</span>
+              </span>
+              <div class="banner-bg">
+                <img src="https://pbs.twimg.com/media/HGGRnVmWgAA5Vb7?format=jpg&name=large" alt="Hellcase Sakura Chase Event" loading="lazy">
+              </div>
+              <div class="banner-overlay"></div>
+              <div class="banner-content">
+                <div class="glass-header">
+                  <div class="banner-meta">
+                    <div class="event-ribbon orange">HELLCASE EVENT</div>
+                    <div class="countdown-chip" data-countdown-target="2026-05-03T02:35:21.7953634+03:00">ENDS IN 15D 13H 40MIN</div>
+                  </div>
+                  <h3>Hellcase Sakura Chase Event!</h3>
+                </div>
+                <p>Drift into the Sakura Chase event and race through the action. Open event cases, chase exclusive rewards, and claim your bonuses with just one click.</p>
+                <span class="cta-button">DRIFT INTO THE EVENT NOW</span>
+              </div>
+            </a>
+
+          <div class="promo-banner promo-banner--skinclub promo-banner--locked" aria-disabled="true">
+            <span class="banner-corner-ribbon">
+              <img class="banner-corner-ribbon__icon" src="https://cdn-icons-png.freepik.com/512/5927/5927236.png?ga=GA1.1.292190565.1765117586" alt="" aria-hidden="true">
+              <span>LIMITED</span>
+            </span>
             <div class="banner-bg">
               <img src="https://pbs.twimg.com/media/HEWF1dxbYAAZhZk?format=jpg&name=medium" alt="Skin.Club Deep Dive Event" loading="lazy">
             </div>
             <div class="banner-overlay"></div>
-            <div class="banner-content">
-              <div class="glass-header">
-                <div class="banner-meta">
-                  <div class="event-ribbon purple">SKINCLUB EVENT</div>
-                  <div class="countdown-chip" data-countdown-target="2026-04-26T12:51:31.7639837+03:00">ENDS IN 19D 14H 35MIN</div>
+            <div class="promo-banner-lock" aria-hidden="true">
+              <span>
+                <strong>LOCKED</strong>
+                <em>CURRENTLY UNAVAILABLE</em>
+              </span>
+            </div>
+              <div class="banner-content">
+                <div class="glass-header">
+                  <div class="banner-meta">
+                    <div class="event-ribbon purple">SKINCLUB EVENT</div>
+                    <div class="countdown-chip" data-countdown-target="2026-04-26T12:51:31.7639837+03:00">ENDS IN 19D 14H 35MIN</div>
+                  </div>
+                  <h3>SkinClub Deep Dive!</h3>
                 </div>
-                <h3>SkinClub Deep Dive Event.</h3>
+                <p>Join the Deep Dive event today and receive an exclusive 7% bonus on your deposits.</p>
+                <span class="cta-button cta-button--disabled" aria-hidden="true">DIVE INTO THE EVENT NOW</span>
               </div>
-              <p>Join the Deep Dive event today and receive an exclusive 7% bonus on your deposits.</p>
-              <span class="cta-button">EXPLORE THE EVENT NOW!</span>
             </div>
-          </a>
-
-          <a href="https://hellca.se/videopower" target="_blank" rel="noopener noreferrer" class="promo-banner promo-banner--hellcase">
-            <span class="banner-corner-ribbon">LIMITED</span>
-            <div class="banner-bg">
-              <img src="https://pbs.twimg.com/media/HD32du3XQAAeSuZ?format=jpg&name=medium" alt="Hellcase Fireborn Event" loading="lazy">
-            </div>
-            <div class="banner-overlay"></div>
-            <div class="banner-content">
-              <div class="glass-header">
-                <div class="banner-meta">
-                  <div class="event-ribbon orange">HELLCASE EVENT</div>
-                  <div class="countdown-chip" data-countdown-target="2026-04-14T12:51:31.7639837+03:00">ENDS IN 7D 14H 35MIN</div>
-                </div>
-                <h3>Hellcase Bunny's Business Event.</h3>
-              </div>
-              <p>Hop into the Bunny's Business event and spring straight into the excitement. Open special event cases and claim your bonuses with just a click.</p>
-              <span class="cta-button">HOP INTO THE EVENT NOW!</span>
-            </div>
-          </a>
         </div>
       </section>
 
@@ -373,8 +429,8 @@
                   <img src="https://cdn-icons-png.freepik.com/512/10827/10827098.png" alt="Pin Icon">
                 </div>
                 <div class="giveaway-badges">
-                  <div class="active-tag">Active</div>
-                  <div class="price-tag active-price">$21</div>
+                  <div class="inactive-tag">Inactive</div>
+                  <div class="price-tag inactive-price">$21</div>
                 </div>
               </div>
               <img src="https://community.fastly.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIGz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwlcK3wjFU6s2neq1pJeOQC2mE_v5jovFlSha_nBovp3PRnt36d36UOlUmCcF2TOZfsRC_ldW1ML625AbZ2dhHyn_7jSgauCtp_a9cBpVVSdXG/360fx360f" alt="Skin Image" class="giveaway-img active">
@@ -399,6 +455,45 @@
             <h3 class="giveaway-title">Shinobu</h3>
             <a href="https://x.com/VideoPower_cs/status/2034368015286870402?s=20" target="_blank" rel="noopener noreferrer" class="btn enter-btn">ENTER GIVEAWAY</a>
           </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section dark-bg" aria-label="FAQ section">
+        <div class="faq-title">
+          <div class="title-line"></div>
+          <h2>FAQ</h2>
+          <div class="title-line"></div>
+        </div>
+        <p class="faq-subtitle">QUICK ANSWERS ABOUT THE WEBSITE.</p>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>HOW DO I CLAIM BONUSES?</summary>
+            <div class="faq-item__body">
+              <p>Go to the BONUSES section, choose the site where you want the bonus, and press the CLAIM BONUS button to get the official VideoPower bonus.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>WHAT IS THE FASTEST WAY TO GET THE CODE?</summary>
+            <div class="faq-item__body">
+              <p>Use the COPY CODE button in the header to copy the VIDEOPOWER code instantly, then paste it on the website when you register or make a deposit.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>WHY ARE SOME BONUS AND SPECIAL BLOCKS LOCKED?</summary>
+            <div class="faq-item__body">
+              <p>Locked blocks mean that the offer is currently unavailable, and they will unlock again when the offer is renewed.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>HOW DO I ENTER GIVEAWAYS?</summary>
+            <div class="faq-item__body">
+              <p>Go to the GIVEAWAYS section, choose the active giveaway you want, then press the ENTER GIVEAWAY button to open the TWITTER post and see the requirements.</p>
+            </div>
+          </details>
         </div>
       </section>
     </main>
@@ -428,6 +523,7 @@
             <a href="#videos" class="footer-nav-link">VIDEOS</a>
             <a href="#specials" class="footer-nav-link">SPECIALS</a>
             <a href="#giveaways" class="footer-nav-link">GIVEAWAYS</a>
+            <a href="#faq" class="footer-nav-link">FAQ</a>
             <span class="footer-nav-link footer-nav-soon" aria-disabled="true">
               <span class="nav-soon__label">NEWS</span>
               <span class="nav-soon__tag">SOON!</span>
@@ -440,7 +536,7 @@
 
         <div class="footer-side">
           <div class="social-wrapper">
-            <div class="social-title">STAY CONNECTED</div>
+            <div class="social-title">STAY CONNECTED WITH VIDEOPOWER</div>
             <div id="social-links-footer">
               <a href="https://www.youtube.com/@VideoPower_cs" target="_blank" class="social-icon" rel="noopener noreferrer">
                 <img src="https://img.icons8.com/?size=512&id=85064&format=png" alt="YouTube">
@@ -451,7 +547,7 @@
             </div>
           </div>
 
-          <p class="age-warning footer-glass-copy">Only individuals aged <span class="red-18">18</span> and over are allowed to participate. Please gamble responsibly.</p>
+          <p class="age-warning footer-glass-copy">Only individuals aged <img class="age-warning-icon" src="https://cdn-icons-png.freepik.com/512/11830/11830919.png?ga=GA1.1.292190565.1765117586" alt="18+" aria-hidden="true" /> and over are allowed to participate. Please gamble responsibly.</p>
         </div>
       </div>
     </footer>
