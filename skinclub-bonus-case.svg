@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 420" role="img" aria-label="SkinClub bonus case">
+  <defs>
+    <linearGradient id="caseTop" x1="82" y1="34" x2="512" y2="294" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff86ff"/>
+      <stop offset="0.42" stop-color="#fa00ff"/>
+      <stop offset="1" stop-color="#6800d8"/>
+    </linearGradient>
+    <linearGradient id="caseFront" x1="98" y1="172" x2="526" y2="386" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#481061"/>
+      <stop offset="0.5" stop-color="#e900f7"/>
+      <stop offset="1" stop-color="#22002d"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="130" y1="70" x2="486" y2="358" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.88"/>
+      <stop offset="0.5" stop-color="#ffc9ff" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.2"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="55%">
+      <stop offset="0" stop-color="#ff77ff" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#ff00ed" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="28" stdDeviation="20" flood-color="#000000" flood-opacity="0.45"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="16" flood-color="#fa00ff" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="310" cy="306" rx="240" ry="86" fill="url(#glow)"/>
+  <g filter="url(#shadow)">
+    <path d="M118 124 306 58l197 66 42 142-236 92L74 263Z" fill="url(#caseTop)"/>
+    <path d="M74 263 309 358l236-92-4 58-229 68L78 324Z" fill="url(#caseFront)"/>
+    <path d="M118 124 74 263l235 95 236-92-42-142-197 72Z" fill="none" stroke="#ffdbff" stroke-opacity="0.72" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M168 137 307 92l145 45" fill="none" stroke="url(#metal)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M108 260 310 328l201-70" fill="none" stroke="#ffffff" stroke-opacity="0.22" stroke-width="7" stroke-linecap="round"/>
+    <path d="M306 58v300" stroke="#ffffff" stroke-opacity="0.16" stroke-width="8"/>
+    <path d="M184 156 74 263M432 155l113 111" stroke="#ffffff" stroke-opacity="0.18" stroke-width="7"/>
+
+    <g transform="translate(233 150)">
+      <path d="M76 0 152 52 76 104 0 52Z" fill="#ffffff" fill-opacity="0.96"/>
+      <path d="M76 25 116 52 76 79 36 52Z" fill="#fa00ff"/>
+      <path d="M76 25v54" stroke="#7400d6" stroke-opacity="0.55" stroke-width="10" stroke-linecap="round"/>
+    </g>
+
+    <rect x="130" y="278" width="360" height="50" rx="12" fill="#09080d" fill-opacity="0.56"/>
+    <text x="310" y="313" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900" fill="#ffffff">SKINCLUB</text>
+  </g>
+</svg>
