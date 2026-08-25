@@ -1,0 +1,1478 @@
+/* Authoritative mobile layer. Loaded after the critical inline styles. */
+@media (max-width: 860px) {
+  /* BONUS cards: links still work, but visual geometry never reacts to touch. */
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:hover,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:focus,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:focus-within,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:active,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id].is-card-hovered,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id].is-card-pressing,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id].is-card-clicked,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id].is-card-mouse-held,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id].is-card-drag-locked,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragging,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:has(.bonus-reward-card__surface-link:active) {
+    z-index: auto !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__body,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__body,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__body,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:active .bonus-reward-card__body,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] .bonus-reward-card__body,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:has(.bonus-reward-card__surface-link:active) .bonus-reward-card__body {
+    background:
+      radial-gradient(circle at 50% -12%, rgba(255, 255, 255, 0.055), transparent 44%),
+      linear-gradient(180deg, rgba(27, 27, 30, 0.96), rgba(13, 13, 15, 0.97)) !important;
+    border-color: transparent !important;
+    box-shadow:
+      0 22px 42px rgba(0, 0, 0, 0.36),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__body::before,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__body::before,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__body::before,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:active .bonus-reward-card__body::before,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] .bonus-reward-card__body::before {
+    opacity: 0 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id] > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:hover > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:focus-within > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:active > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:has(.bonus-reward-card__surface-link:active) > .bonus-reward-card__item:not(.bonus-reward-card__item-stack) {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: translate3d(-50%, 0, 0) !important;
+    filter:
+      brightness(1.08)
+      saturate(1.06)
+      drop-shadow(0 18px 24px rgba(0, 0, 0, 0.46))
+      drop-shadow(0 0 14px rgba(255, 255, 255, 0.1)) !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #bonuses .bonus-reward-card--hellcase .bonus-reward-card__item-stack,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__item-stack,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-stack,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card--hellcase:active .bonus-reward-card__item-stack,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card--hellcase[class*="is-card-"] .bonus-reward-card__item-stack {
+    transform: translate3d(-50%, 0, 0) !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #bonuses .bonus-reward-card--hellcase .bonus-reward-card__item-layer--case,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__item-layer--case,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-layer--case,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card--hellcase:active .bonus-reward-card__item-layer--case,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card--hellcase[class*="is-card-"] .bonus-reward-card__item-layer--case {
+    transform: translateX(-50%) !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #bonuses .bonus-reward-card--hellcase .bonus-reward-card__item-layer--weapon,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__item-layer--weapon,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-layer--weapon,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card--hellcase:active .bonus-reward-card__item-layer--weapon,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card--hellcase[class*="is-card-"] .bonus-reward-card__item-layer--weapon {
+    transform: translateX(-50%) translateY(0) rotate(-4deg) !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__button,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__button,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__button,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id]:active .bonus-reward-card__button,
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] .bonus-reward-card__button {
+    filter: none !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.16),
+      0 12px 22px rgba(0, 0, 0, 0.2) !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id="hellcase"] .bonus-reward-card__logo--hellcase {
+    width: min(90%, 260px) !important;
+    max-height: 100px !important;
+  }
+
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id="skinbaron"] .bonus-reward-card__logo--skinbaron {
+    width: min(88%, 258px) !important;
+    max-height: 92px !important;
+  }
+
+  html.mobile-touch-lock body #bonuses .bonus-reward-card[data-bonus-id="skinclub"] .bonus-reward-card__item--skinclub {
+    width: min(90%, 265px) !important;
+    max-height: 190px !important;
+  }
+
+  /* SOCIALS: no card, avatar or button lift on press/hold. */
+  html.mobile-touch-lock body #news .news-team-member {
+    pointer-events: none !important;
+    touch-action: pan-y pinch-zoom !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  html.mobile-touch-lock body #news .news-team-member .news-team-actions,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action {
+    pointer-events: auto !important;
+  }
+
+  html.mobile-touch-lock body #news .news-team-member:hover,
+  html.mobile-touch-lock body #news .news-team-member:focus-within,
+  html.mobile-touch-lock body #news .news-team-member:active,
+  html.mobile-touch-lock body #news .news-team-member.is-news-action-pressing,
+  html.mobile-touch-lock body #news .news-team-member.is-news-action-dragging,
+  html.mobile-touch-lock body #news .news-team-member.is-news-link-dragging,
+  html.mobile-touch-lock body #news .news-team-member.is-news-action-resting {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #news .news-team-member:first-child::before,
+  html.mobile-touch-lock body #news .news-team-member:first-child:hover::before,
+  html.mobile-touch-lock body #news .news-team-member:first-child:focus-within::before,
+  html.mobile-touch-lock body #news .news-team-member:first-child:active::before,
+  html.mobile-touch-lock body #news .news-team-member:first-child.is-news-action-pressing::before,
+  html.mobile-touch-lock body #news .news-team-member:first-child.is-news-action-dragging::before,
+  html.mobile-touch-lock body #news .news-team-member:first-child.is-news-link-dragging::before,
+  html.mobile-touch-lock body #news .news-team-member:first-child.is-news-action-resting::before,
+  html.mobile-touch-lock body #news .news-team-member:first-child:has(.news-team-action.is-touch-pressed)::before,
+  html.mobile-touch-lock body #news .news-team-member:first-child:has(.news-team-action.is-link-dragging)::before,
+  html.mobile-touch-lock body #news .news-team-member:first-child:has(.news-team-action:active)::before {
+    opacity: 0.48 !important;
+    filter: blur(30px) saturate(1.18) brightness(1) !important;
+    transform: scale(1.16) !important;
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+    backface-visibility: hidden !important;
+  }
+
+  html.mobile-touch-lock body #news .news-team-member:first-child::after,
+  html.mobile-touch-lock body #news .news-team-member:first-child:hover::after,
+  html.mobile-touch-lock body #news .news-team-member:first-child:focus-within::after,
+  html.mobile-touch-lock body #news .news-team-member:first-child:active::after,
+  html.mobile-touch-lock body #news .news-team-member:first-child.is-news-action-pressing::after,
+  html.mobile-touch-lock body #news .news-team-member:first-child.is-news-action-dragging::after,
+  html.mobile-touch-lock body #news .news-team-member:first-child.is-news-link-dragging::after,
+  html.mobile-touch-lock body #news .news-team-member:first-child.is-news-action-resting::after,
+  html.mobile-touch-lock body #news .news-team-member:first-child:has(.news-team-action.is-touch-pressed)::after,
+  html.mobile-touch-lock body #news .news-team-member:first-child:has(.news-team-action.is-link-dragging)::after,
+  html.mobile-touch-lock body #news .news-team-member:first-child:has(.news-team-action:active)::after {
+    opacity: 1 !important;
+    background:
+      linear-gradient(180deg, rgba(10, 10, 12, 0.38), rgba(10, 10, 12, 0.78)),
+      radial-gradient(circle at 50% 20%, rgba(255, 169, 20, 0.1), transparent 48%) !important;
+    filter: none !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #news .news-team-member:last-child::before,
+  html.mobile-touch-lock body #news .news-team-member:last-child:hover::before,
+  html.mobile-touch-lock body #news .news-team-member:last-child:focus-within::before,
+  html.mobile-touch-lock body #news .news-team-member:last-child:active::before,
+  html.mobile-touch-lock body #news .news-team-member:last-child.is-news-action-pressing::before,
+  html.mobile-touch-lock body #news .news-team-member:last-child.is-news-action-dragging::before,
+  html.mobile-touch-lock body #news .news-team-member:last-child.is-news-link-dragging::before,
+  html.mobile-touch-lock body #news .news-team-member:last-child.is-news-action-resting::before,
+  html.mobile-touch-lock body #news .news-team-member:last-child:has(.news-team-action.is-touch-pressed)::before,
+  html.mobile-touch-lock body #news .news-team-member:last-child:has(.news-team-action.is-link-dragging)::before,
+  html.mobile-touch-lock body #news .news-team-member:last-child:has(.news-team-action:active)::before {
+    opacity: 0.24 !important;
+    filter: blur(30px) saturate(1.08) brightness(0.82) !important;
+    transform: scale(1.16) !important;
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+    backface-visibility: hidden !important;
+  }
+
+  html.mobile-touch-lock body #news .news-team-member:last-child::after,
+  html.mobile-touch-lock body #news .news-team-member:last-child:hover::after,
+  html.mobile-touch-lock body #news .news-team-member:last-child:focus-within::after,
+  html.mobile-touch-lock body #news .news-team-member:last-child:active::after,
+  html.mobile-touch-lock body #news .news-team-member:last-child.is-news-action-pressing::after,
+  html.mobile-touch-lock body #news .news-team-member:last-child.is-news-action-dragging::after,
+  html.mobile-touch-lock body #news .news-team-member:last-child.is-news-link-dragging::after,
+  html.mobile-touch-lock body #news .news-team-member:last-child.is-news-action-resting::after,
+  html.mobile-touch-lock body #news .news-team-member:last-child:has(.news-team-action.is-touch-pressed)::after,
+  html.mobile-touch-lock body #news .news-team-member:last-child:has(.news-team-action.is-link-dragging)::after,
+  html.mobile-touch-lock body #news .news-team-member:last-child:has(.news-team-action:active)::after {
+    opacity: 0.68 !important;
+    border: 0 !important;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 12, 0.28) 0%,
+      rgba(10, 10, 12, 0.44) 48%,
+      rgba(10, 10, 12, 0.74) 82%,
+      rgba(10, 10, 12, 0.92) 100%
+    ) !important;
+    box-shadow: inset 0 -34px 38px rgba(10, 10, 12, 0.78) !important;
+    filter: none !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #news .news-team-member__glow,
+  html.mobile-touch-lock body #news .news-team-member:hover .news-team-member__glow,
+  html.mobile-touch-lock body #news .news-team-member:focus-within .news-team-member__glow,
+  html.mobile-touch-lock body #news .news-team-member:active .news-team-member__glow {
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #news .news-team-member .news-team-member__avatar,
+  html.mobile-touch-lock body #news .news-team-member:hover .news-team-member__avatar,
+  html.mobile-touch-lock body #news .news-team-member:focus-within .news-team-member__avatar,
+  html.mobile-touch-lock body #news .news-team-member:active .news-team-member__avatar,
+  html.mobile-touch-lock body #news .news-team-member.is-news-action-pressing .news-team-member__avatar,
+  html.mobile-touch-lock body #news .news-team-member.is-news-action-dragging .news-team-member__avatar,
+  html.mobile-touch-lock body #news .news-team-member.is-news-link-dragging .news-team-member__avatar,
+  html.mobile-touch-lock body #news .news-team-member.is-news-action-resting .news-team-member__avatar,
+  html.mobile-touch-lock body #news .news-team-member:has(.news-team-action.is-touch-pressed) .news-team-member__avatar,
+  html.mobile-touch-lock body #news .news-team-member:has(.news-team-action.is-link-dragging) .news-team-member__avatar,
+  html.mobile-touch-lock body #news .news-team-member:has(.news-team-action:active) .news-team-member__avatar {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    box-shadow: 0 16px 26px rgba(0, 0, 0, 0.32) !important;
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+    backface-visibility: hidden !important;
+  }
+
+  html.mobile-touch-lock body #news .news-team-member .news-team-action,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action:hover,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action:focus,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action:focus-visible,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action:active,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action.is-touch-pressed,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action.is-link-drag-ready,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action.is-link-dragging,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action.is-return-resting {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+    -webkit-user-drag: none !important;
+    -webkit-touch-callout: none !important;
+    touch-action: manipulation !important;
+  }
+
+  html.mobile-touch-lock body #news .news-team-member .news-team-action::after,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action:hover::after,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action:focus-visible::after,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action:active::after,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action.is-touch-pressed::after {
+    opacity: 0 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #news .news-team-member .news-team-action img,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action:hover img,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action:focus-visible img,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action:active img,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action.is-touch-pressed img,
+  html.mobile-touch-lock body #news .news-team-member .news-team-action.is-link-dragging img {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* VIDEOS: fixed card geometry with no touch/hold darkening. */
+  html.mobile-touch-lock body #videos .videos-grid > .video-card,
+  html.mobile-touch-lock body #videos .videos-grid > .video-card:hover,
+  html.mobile-touch-lock body #videos .videos-grid > .video-card:focus,
+  html.mobile-touch-lock body #videos .videos-grid > .video-card:focus-visible,
+  html.mobile-touch-lock body #videos .videos-grid > .video-card:focus-within,
+  html.mobile-touch-lock body #videos .videos-grid > .video-card:active,
+  html.mobile-touch-lock body #videos .videos-grid > .video-card.is-touch-pressed,
+  html.mobile-touch-lock body #videos .videos-grid > .video-card.is-link-dragging,
+  html.mobile-touch-lock body #videos .videos-grid > .video-card.is-link-dragged,
+  html.mobile-touch-lock body #videos .videos-grid > .video-card.is-video-pressing,
+  html.mobile-touch-lock body #videos .videos-grid > .video-card.reveal-on-scroll.is-revealed:hover,
+  html.mobile-touch-lock body #videos .videos-grid > .video-card.reveal-on-scroll.is-revealed:focus-visible,
+  html.mobile-touch-lock body #videos .videos-grid > .video-card.section-stage-reveal.is-stage-revealed:hover,
+  html.mobile-touch-lock body #videos .videos-grid > .video-card.section-stage-reveal.is-stage-revealed:active {
+    margin: 0 !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+    -webkit-user-drag: none !important;
+    -webkit-touch-callout: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    touch-action: manipulation !important;
+  }
+
+  html.mobile-touch-lock body #videos .video-card:hover .video-info,
+  html.mobile-touch-lock body #videos .video-card:focus-within .video-info,
+  html.mobile-touch-lock body #videos .video-card:active .video-info,
+  html.mobile-touch-lock body #videos .video-card.is-touch-pressed .video-info,
+  html.mobile-touch-lock body #videos .video-card.is-link-dragging .video-info,
+  html.mobile-touch-lock body #videos .video-card.is-link-dragged .video-info,
+  html.mobile-touch-lock body #videos .video-card:hover .video-date,
+  html.mobile-touch-lock body #videos .video-card:active .video-date,
+  html.mobile-touch-lock body #videos .video-card.is-touch-pressed .video-date,
+  html.mobile-touch-lock body #videos .video-card:hover .video-media img,
+  html.mobile-touch-lock body #videos .video-card:active .video-media img,
+  html.mobile-touch-lock body #videos .video-card.is-touch-pressed .video-media img {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #videos .video-card .video-media::after,
+  html.mobile-touch-lock body #videos .video-card:hover .video-media::after,
+  html.mobile-touch-lock body #videos .video-card:focus-within .video-media::after,
+  html.mobile-touch-lock body #videos .video-card:active .video-media::after,
+  html.mobile-touch-lock body #videos .video-card.is-touch-pressed .video-media::after,
+  html.mobile-touch-lock body #videos .video-card.is-link-dragging .video-media::after,
+  html.mobile-touch-lock body #videos .video-card.is-link-dragged .video-media::after,
+  html.mobile-touch-lock body #videos .video-card.is-video-pressing .video-media::after {
+    background: transparent !important;
+    opacity: 0 !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* GIVEAWAYS: the featured Hellcase card and white watermark remain fixed. */
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:hover,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:focus,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:focus-within,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:active,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-touch-pressed,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-return-resting,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-giveaway-content-exiting {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:hover .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:focus-within .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:active .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-touch-pressed .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-return-resting .giveaway-image-wrapper {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:hover .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:focus .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:focus-within .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:active .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-touch-pressed .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-return-resting .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-giveaway-content-exiting .hellcase-giveaway-watermark {
+    position: absolute !important;
+    inset: auto !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    top: 18% !important;
+    right: 12% !important;
+    bottom: auto !important;
+    left: 12% !important;
+    display: block !important;
+    width: 76% !important;
+    height: 76% !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+    transform-origin: 50% 50% !important;
+    filter: brightness(0) saturate(0) invert(1) drop-shadow(0 10px 18px rgba(0, 0, 0, 0.28)) !important;
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+    backface-visibility: hidden !important;
+    pointer-events: none !important;
+    touch-action: none !important;
+    user-select: none !important;
+    -webkit-user-drag: none !important;
+    -webkit-touch-callout: none !important;
+  }
+
+  html.mobile-touch-lock body #giveaways .giveaway-card--shinobu .giveaway-image-wrapper::after,
+  html.mobile-touch-lock body #giveaways .giveaway-card--shinobu:hover .giveaway-image-wrapper::after,
+  html.mobile-touch-lock body #giveaways .giveaway-card--shinobu:focus-within .giveaway-image-wrapper::after,
+  html.mobile-touch-lock body #giveaways .giveaway-card--shinobu:active .giveaway-image-wrapper::after,
+  html.mobile-touch-lock body #giveaways .giveaway-card--shinobu.is-touch-pressed .giveaway-image-wrapper::after,
+  html.mobile-touch-lock body #giveaways .giveaway-card--shinobu.is-return-resting .giveaway-image-wrapper::after {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: translate3d(-50%, -50%, 0) !important;
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+
+  /* FOOTER: override the later critical orange touch state as well. */
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link:link,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link:visited,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link:hover,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link:focus,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link:focus-visible,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link:active,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link.is-touch-pressed,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link.is-link-drag-ready,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link.is-link-dragging,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link.is-link-dragged,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link .merch-label,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link:hover .merch-label,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link:active .merch-label,
+  html.mobile-touch-lock body .main-footer .footer-social-links a,
+  html.mobile-touch-lock body .main-footer .footer-social-links a:link,
+  html.mobile-touch-lock body .main-footer .footer-social-links a:visited,
+  html.mobile-touch-lock body .main-footer .footer-social-links a:hover,
+  html.mobile-touch-lock body .main-footer .footer-social-links a:focus,
+  html.mobile-touch-lock body .main-footer .footer-social-links a:focus-visible,
+  html.mobile-touch-lock body .main-footer .footer-social-links a:active,
+  html.mobile-touch-lock body .main-footer .footer-social-links a.is-touch-pressed,
+  html.mobile-touch-lock body .main-footer .footer-social-links a.is-link-drag-ready,
+  html.mobile-touch-lock body .main-footer .footer-social-links a.is-link-dragged,
+  html.mobile-touch-lock body .main-footer .footer-social-links a.is-link-dragging {
+    color: #bdbdc2 !important;
+    -webkit-text-fill-color: #bdbdc2 !important;
+    text-shadow: none !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+    -webkit-user-drag: none !important;
+    -webkit-touch-callout: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    touch-action: manipulation !important;
+  }
+
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link:hover,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link:focus-visible,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link:active,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link.is-touch-pressed {
+    min-height: 0 !important;
+    padding: 4px 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    line-height: 1.4 !important;
+  }
+
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link *,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link:hover *,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link:focus-visible *,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link:active *,
+  html.mobile-touch-lock body .main-footer .footer-nav .footer-nav-link.is-touch-pressed * {
+    background: none !important;
+    background-image: none !important;
+    background-clip: border-box !important;
+    -webkit-background-clip: border-box !important;
+    color: #bdbdc2 !important;
+    -webkit-text-fill-color: #bdbdc2 !important;
+  }
+
+  /* Floating skins: neutral colour on touch/hover and desktop motion loops. */
+  html.mobile-touch-lock body .hero .floating-images img,
+  html.mobile-touch-lock body .hero .floating-images img:hover,
+  html.mobile-touch-lock body .hero .floating-images img:focus-visible,
+  html.mobile-touch-lock body .hero .floating-images img.is-touch-pressed,
+  html.mobile-touch-lock body .hero:hover .floating-images img {
+    opacity: 1 !important;
+    filter:
+      drop-shadow(0 20px 26px rgba(0, 0, 0, 0.52))
+      saturate(1)
+      contrast(1)
+      brightness(1) !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body .hero .floating-images img:nth-child(1) {
+    top: 22% !important;
+    right: auto !important;
+    left: 35% !important;
+  }
+
+  html.mobile-touch-lock body .hero .floating-images img:nth-child(2) {
+    top: 16% !important;
+    right: 6% !important;
+    left: auto !important;
+  }
+
+  html.mobile-touch-lock body .hero .floating-images img:nth-child(3) {
+    right: 9% !important;
+    bottom: 16% !important;
+    left: auto !important;
+  }
+
+  html.mobile-touch-lock body .hero .floating-images img:nth-child(4) {
+    width: clamp(125px, 32vw, 175px) !important;
+    right: auto !important;
+    bottom: 20% !important;
+    left: 7% !important;
+  }
+
+  html.mobile-touch-lock body .hero .floating-images img:nth-child(5) {
+    width: clamp(104px, 28vw, 150px) !important;
+    top: 14% !important;
+    right: auto !important;
+    left: 6% !important;
+  }
+
+  html.mobile-touch-lock body .hero .floating-images img.is-floating-animated:nth-child(1) {
+    animation: vpFloatingM9Drift 5.8s ease-in-out infinite !important;
+  }
+
+  html.mobile-touch-lock body .hero .floating-images img.is-floating-animated:nth-child(2) {
+    animation: vpFloatingGlovesOrbit 6.6s cubic-bezier(0.45, 0, 0.2, 1) infinite !important;
+  }
+
+  html.mobile-touch-lock body .hero .floating-images img.is-floating-animated:nth-child(3) {
+    animation: vpFloatingAwpGlide 7.2s ease-in-out infinite !important;
+  }
+
+  html.mobile-touch-lock body .hero .floating-images img.is-floating-animated:nth-child(4) {
+    animation: vpFloatingHowlPulse 5.2s cubic-bezier(0.45, 0, 0.2, 1) infinite !important;
+  }
+
+  html.mobile-touch-lock body .hero .floating-images img.is-floating-animated:nth-child(5) {
+    animation: vpFloatingAkFigureEight 6.2s ease-in-out infinite !important;
+  }
+
+  /* The mobile page scrollbar now uses the desktop custom track and thumb. */
+  html.mobile-touch-lock.has-custom-scrollbar,
+  html.mobile-touch-lock.has-custom-scrollbar body {
+    scrollbar-width: none !important;
+    scrollbar-gutter: auto !important;
+    -ms-overflow-style: none !important;
+  }
+
+  html.mobile-touch-lock.has-custom-scrollbar::-webkit-scrollbar,
+  html.mobile-touch-lock.has-custom-scrollbar body::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  html.mobile-touch-lock.has-custom-scrollbar body .vp-scrollbar,
+  html.mobile-touch-lock.has-custom-scrollbar body .vp-scrollbar.is-hidden,
+  html.mobile-touch-lock.has-custom-scrollbar.is-loading body .vp-scrollbar,
+  html.mobile-touch-lock.has-custom-scrollbar.is-entering body .vp-scrollbar,
+  html.mobile-touch-lock.has-custom-scrollbar body.menu-open .vp-scrollbar,
+  html.mobile-touch-lock.has-custom-scrollbar body.is-loading .vp-scrollbar,
+  html.mobile-touch-lock.has-custom-scrollbar body.is-entering .vp-scrollbar {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+    z-index: 2400 !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 10px !important;
+    height: auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    touch-action: none !important;
+    cursor: grab !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock.has-custom-scrollbar body .vp-scrollbar__thumb,
+  html.mobile-touch-lock.has-custom-scrollbar body .vp-scrollbar__thumb:hover,
+  html.mobile-touch-lock.has-custom-scrollbar body .vp-scrollbar__thumb.is-dragging {
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 4px !important;
+    min-height: 140px !important;
+    margin: 0 0 0 auto !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: #bdbdc2 !important;
+    box-shadow: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    touch-action: none !important;
+    cursor: grab !important;
+    will-change: transform !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock.has-custom-scrollbar body .vp-scrollbar:hover .vp-scrollbar__thumb,
+  html.mobile-touch-lock.has-custom-scrollbar body .vp-scrollbar.is-hovered .vp-scrollbar__thumb,
+  html.mobile-touch-lock.has-custom-scrollbar body .vp-scrollbar__thumb:hover,
+  html.mobile-touch-lock.has-custom-scrollbar body .vp-scrollbar__thumb.is-dragging {
+    background: #bdbdc2 !important;
+  }
+
+  /* Viewport-fixed panel guarantees true edge-to-edge width. */
+  html.mobile-touch-lock body .main-header,
+  html.mobile-touch-lock body.menu-open .main-header {
+    box-sizing: border-box !important;
+  }
+
+  html.mobile-touch-lock body .main-header .main-nav,
+  html.mobile-touch-lock body .main-header .main-nav.show,
+  html.mobile-touch-lock body.menu-open .main-header .main-nav,
+  html.mobile-touch-lock body.menu-open .main-header .main-nav.show {
+    position: fixed !important;
+    top: 72px !important;
+    right: 0 !important;
+    bottom: auto !important;
+    left: 0 !important;
+    box-sizing: border-box !important;
+    width: 100vw !important;
+    width: 100dvw !important;
+    min-width: 100vw !important;
+    min-width: 100dvw !important;
+    max-width: 100vw !important;
+    max-width: 100dvw !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: min(48dvh, 330px) !important;
+    margin: 0 !important;
+    padding: 9px 16px 12px !important;
+    gap: 0 !important;
+    border-right: 0 !important;
+    border-left: 0 !important;
+    border-radius: 0 0 16px 16px !important;
+    background: rgba(10, 10, 12, 0.9) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    transform-origin: top center !important;
+  }
+
+  html.mobile-touch-lock body .main-header .hamburger span,
+  html.mobile-touch-lock body .main-header .hamburger span:nth-child(1),
+  html.mobile-touch-lock body .main-header .hamburger span:nth-child(2),
+  html.mobile-touch-lock body .main-header .hamburger span:nth-child(3),
+  html.mobile-touch-lock body.menu-open .main-header .hamburger span {
+    box-sizing: border-box !important;
+    inline-size: 23px !important;
+    min-inline-size: 23px !important;
+    max-inline-size: 23px !important;
+    block-size: 2px !important;
+    min-block-size: 2px !important;
+    max-block-size: 2px !important;
+    background-image: none !important;
+  }
+
+  html.mobile-touch-lock body .main-header .main-nav:not(.show) {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translate3d(0, -7px, 0) scale(0.992) !important;
+  }
+
+  html.mobile-touch-lock body .main-header .main-nav.show,
+  html.mobile-touch-lock body.menu-open .main-header .main-nav.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translate3d(0, 0, 0) scale(1) !important;
+  }
+
+  html.mobile-touch-lock body .main-header .main-nav > a,
+  html.mobile-touch-lock body .main-header .main-nav > a:hover,
+  html.mobile-touch-lock body .main-header .main-nav > a:focus,
+  html.mobile-touch-lock body .main-header .main-nav > a:focus-visible,
+  html.mobile-touch-lock body .main-header .main-nav > a:active,
+  html.mobile-touch-lock body .main-header .main-nav > a.is-touch-pressed,
+  html.mobile-touch-lock body .main-header .main-nav > a.is-active,
+  html.mobile-touch-lock body .main-header .main-nav > a[aria-current="page"] {
+    min-height: 41px !important;
+    padding-top: 9px !important;
+    padding-bottom: 8px !important;
+  }
+
+  html.mobile-touch-lock body .main-header .main-nav > a.is-active,
+  html.mobile-touch-lock body .main-header .main-nav > a.is-active:hover,
+  html.mobile-touch-lock body .main-header .main-nav > a.is-active:focus,
+  html.mobile-touch-lock body .main-header .main-nav > a.is-active:active,
+  html.mobile-touch-lock body .main-header .main-nav > a[aria-current="page"],
+  html.mobile-touch-lock body .main-header .main-nav > a[aria-current="page"]:hover,
+  html.mobile-touch-lock body .main-header .main-nav > a[aria-current="page"]:focus,
+  html.mobile-touch-lock body .main-header .main-nav > a[aria-current="page"]:active {
+    color: #ffa914 !important;
+    -webkit-text-fill-color: #ffa914 !important;
+  }
+
+  /* Opening the mobile menu must not change the viewport geometry or repaint the page. */
+  html.mobile-touch-lock.menu-open,
+  html.mobile-touch-lock.menu-open body,
+  html.mobile-touch-lock body.menu-open {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  html.mobile-touch-lock body .main-header .main-nav > a.is-active::after,
+  html.mobile-touch-lock body .main-header .main-nav > a[aria-current="page"]::after {
+    width: 100% !important;
+    opacity: 1 !important;
+    background: #ffa914 !important;
+  }
+
+  /* The mobile header is permanent chrome, independent from the hero entrance. */
+  html.mobile-touch-lock.hero-intro-pending body .main-header,
+  html.mobile-touch-lock.hero-intro-running body .main-header,
+  html.mobile-touch-lock body .main-header,
+  html.mobile-touch-lock body.menu-open .main-header {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translate3d(0, 0, 0) !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body .main-header .logo-container,
+  html.mobile-touch-lock body.menu-open .main-header .logo-container,
+  html.mobile-touch-lock body .main-header .logo-link,
+  html.mobile-touch-lock body.menu-open .main-header .logo-link {
+    z-index: 2504 !important;
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+    backface-visibility: visible !important;
+    will-change: auto !important;
+  }
+
+  html.mobile-touch-lock body .main-header .vp-logo-mark,
+  html.mobile-touch-lock body .main-header .logo-wordmark,
+  html.mobile-touch-lock body.menu-open .main-header .vp-logo-mark,
+  html.mobile-touch-lock body.menu-open .main-header .logo-wordmark {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+    object-fit: contain !important;
+    backface-visibility: visible !important;
+    will-change: auto !important;
+  }
+
+  /* Opaque header-colour menu: no page-darkening blur or touch-hover panel. */
+  html.mobile-touch-lock body .main-header .main-nav,
+  html.mobile-touch-lock body .main-header .main-nav.show,
+  html.mobile-touch-lock body.menu-open .main-header .main-nav,
+  html.mobile-touch-lock body.menu-open .main-header .main-nav.show {
+    z-index: 2501 !important;
+    background: linear-gradient(180deg, #101116 0%, #090a0d 100%) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html.mobile-touch-lock body .main-header .main-nav::before,
+  html.mobile-touch-lock body .main-header .main-nav::after,
+  html.mobile-touch-lock body .main-header .main-nav.show::before,
+  html.mobile-touch-lock body .main-header .main-nav.show::after {
+    content: none !important;
+    display: none !important;
+    opacity: 0 !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html.mobile-touch-lock body .main-header .main-nav > a,
+  html.mobile-touch-lock body .main-header .main-nav > a:hover,
+  html.mobile-touch-lock body .main-header .main-nav > a:focus,
+  html.mobile-touch-lock body .main-header .main-nav > a:focus-visible,
+  html.mobile-touch-lock body .main-header .main-nav > a:active,
+  html.mobile-touch-lock body .main-header .main-nav > a.is-touch-pressed,
+  html.mobile-touch-lock body .main-header .hamburger,
+  html.mobile-touch-lock body .main-header .hamburger:hover,
+  html.mobile-touch-lock body .main-header .hamburger:focus,
+  html.mobile-touch-lock body .main-header .hamburger:focus-visible,
+  html.mobile-touch-lock body .main-header .hamburger:active,
+  html.mobile-touch-lock body .main-header .hamburger.active {
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  /* Freeze the complete Hellcase watermark coordinate system on touch/hold. */
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:hover,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:focus,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:focus-within,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:active,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-touch-pressed,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-return-resting,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-link-dragging,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-giveaway-swapping,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-giveaway-content-exiting {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+    perspective: none !important;
+    transform-style: flat !important;
+    will-change: auto !important;
+  }
+
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:hover .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:focus-within .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:active .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-touch-pressed .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-return-resting .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-link-dragging .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-giveaway-swapping .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-giveaway-content-exiting .giveaway-image-wrapper {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+    perspective: none !important;
+    transform-style: flat !important;
+    will-change: auto !important;
+  }
+
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:hover .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:focus .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:focus-within .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:active .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-touch-pressed .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-return-resting .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-link-dragging .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-giveaway-swapping .hellcase-giveaway-watermark,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-giveaway-content-exiting .hellcase-giveaway-watermark {
+    position: absolute !important;
+    inset: auto !important;
+    top: 18% !important;
+    right: 12% !important;
+    bottom: auto !important;
+    left: 12% !important;
+    width: 76% !important;
+    height: 76% !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    transform-origin: 50% 50% !important;
+    transform-box: border-box !important;
+    filter: brightness(0) saturate(0) invert(1) drop-shadow(0 10px 18px rgba(0, 0, 0, 0.28)) !important;
+    animation: none !important;
+    transition: none !important;
+    pointer-events: none !important;
+    touch-action: none !important;
+    user-select: none !important;
+    -webkit-user-drag: none !important;
+    -webkit-touch-callout: none !important;
+    backface-visibility: hidden !important;
+    will-change: auto !important;
+  }
+
+  /* Pinch, double-tap zoom, and browser pull-to-refresh stay disabled on mobile. */
+  html.mobile-touch-lock,
+  html.mobile-touch-lock body {
+    overscroll-behavior-x: none !important;
+    overscroll-behavior-y: none !important;
+    touch-action: pan-x pan-y !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* The menu opens below the header without changing or compositing the header layer. */
+  html.mobile-touch-lock body .main-header .main-nav:not(.show) {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body .main-header .main-nav.show {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body .main-header .logo-container,
+  html.mobile-touch-lock body .main-header .logo-link,
+  html.mobile-touch-lock body .main-header .vp-logo-mark,
+  html.mobile-touch-lock body .main-header .logo-wordmark {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* The mobile Hellcase mark is outside the rotating image wrapper and cannot inherit its motion. */
+  html.mobile-touch-lock body #giveaways .hellcase-giveaway-watermark--carousel {
+    display: none !important;
+  }
+
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel .hellcase-giveaway-watermark-mobile,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:hover .hellcase-giveaway-watermark-mobile,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:focus .hellcase-giveaway-watermark-mobile,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:focus-within .hellcase-giveaway-watermark-mobile,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:active .hellcase-giveaway-watermark-mobile,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-touch-pressed .hellcase-giveaway-watermark-mobile,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-link-dragging .hellcase-giveaway-watermark-mobile,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-giveaway-swapping .hellcase-giveaway-watermark-mobile,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel.is-giveaway-content-exiting .hellcase-giveaway-watermark-mobile {
+    position: absolute !important;
+    top: 54px !important;
+    right: 12% !important;
+    bottom: auto !important;
+    left: 12% !important;
+    z-index: 1 !important;
+    display: block !important;
+    width: 76% !important;
+    height: 228px !important;
+    margin: 0 !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    opacity: 1 !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: brightness(0) saturate(0) invert(1) drop-shadow(0 10px 18px rgba(0, 0, 0, 0.28)) !important;
+    animation: none !important;
+    transition: none !important;
+    pointer-events: none !important;
+    touch-action: none !important;
+    user-select: none !important;
+    -webkit-user-drag: none !important;
+    -webkit-touch-callout: none !important;
+    backface-visibility: hidden !important;
+    will-change: auto !important;
+  }
+
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:hover .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:focus-within .giveaway-image-wrapper,
+  html.mobile-touch-lock body #giveaways .giveaway-card--featured-carousel:active .giveaway-image-wrapper {
+    position: relative !important;
+    z-index: 2 !important;
+    background: transparent !important;
+  }
+
+  /* Latest Videos never darkens or shifts while a finger is held on a card. */
+  html.mobile-touch-lock body #videos .video-card,
+  html.mobile-touch-lock body #videos .video-card:hover,
+  html.mobile-touch-lock body #videos .video-card:focus,
+  html.mobile-touch-lock body #videos .video-card:focus-within,
+  html.mobile-touch-lock body #videos .video-card:active,
+  html.mobile-touch-lock body #videos .video-card.is-touch-pressed,
+  html.mobile-touch-lock body #videos .video-card.is-video-pressing,
+  html.mobile-touch-lock body #videos .video-card.is-link-dragging,
+  html.mobile-touch-lock body #videos .video-card.is-link-dragged {
+    margin: 0 !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+    touch-action: pan-x pan-y !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  html.mobile-touch-lock body #videos .video-card::before,
+  html.mobile-touch-lock body #videos .video-card::after,
+  html.mobile-touch-lock body #videos .video-card:hover::before,
+  html.mobile-touch-lock body #videos .video-card:hover::after,
+  html.mobile-touch-lock body #videos .video-card:active::before,
+  html.mobile-touch-lock body #videos .video-card:active::after,
+  html.mobile-touch-lock body #videos .video-card.is-touch-pressed::before,
+  html.mobile-touch-lock body #videos .video-card.is-touch-pressed::after,
+  html.mobile-touch-lock body #videos .video-card.is-video-pressing::before,
+  html.mobile-touch-lock body #videos .video-card.is-video-pressing::after {
+    content: none !important;
+    display: none !important;
+    opacity: 0 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #videos .video-card .video-media::after,
+  html.mobile-touch-lock body #videos .video-card:hover .video-media::after,
+  html.mobile-touch-lock body #videos .video-card:focus-within .video-media::after,
+  html.mobile-touch-lock body #videos .video-card:active .video-media::after,
+  html.mobile-touch-lock body #videos .video-card.is-touch-pressed .video-media::after,
+  html.mobile-touch-lock body #videos .video-card.is-video-pressing .video-media::after,
+  html.mobile-touch-lock body #videos .video-card.is-link-dragging .video-media::after {
+    background: transparent !important;
+    opacity: 0 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #videos .video-card .video-info,
+  html.mobile-touch-lock body #videos .video-card:hover .video-info,
+  html.mobile-touch-lock body #videos .video-card:focus-within .video-info,
+  html.mobile-touch-lock body #videos .video-card:active .video-info,
+  html.mobile-touch-lock body #videos .video-card.is-touch-pressed .video-info,
+  html.mobile-touch-lock body #videos .video-card.is-video-pressing .video-info,
+  html.mobile-touch-lock body #videos .video-card .video-card__frame,
+  html.mobile-touch-lock body #videos .video-card:hover .video-card__frame,
+  html.mobile-touch-lock body #videos .video-card:active .video-card__frame,
+  html.mobile-touch-lock body #videos .video-card.is-touch-pressed .video-card__frame {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* The original header identity stays painted while only the menu panel is portaled. */
+  html.mobile-touch-lock body .main-header .logo-container,
+  html.mobile-touch-lock body .main-header .logo-link {
+    isolation: isolate !important;
+    contain: paint style !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translate3d(0, 0, 0) !important;
+    backface-visibility: hidden !important;
+  }
+
+  html.mobile-touch-lock body .main-header .vp-logo-mark,
+  html.mobile-touch-lock body .main-header .logo-wordmark {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translate3d(0, 0, 0) !important;
+    backface-visibility: hidden !important;
+  }
+
+  /* The menu is outside the sticky header so opening it cannot repaint the brand. */
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer,
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer.show {
+    position: fixed !important;
+    top: 72px !important;
+    right: 0 !important;
+    bottom: auto !important;
+    left: 0 !important;
+    z-index: 2498 !important;
+    display: flex !important;
+    width: 100dvw !important;
+    min-width: 100dvw !important;
+    max-width: 100dvw !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: min(48dvh, 330px) !important;
+    padding: 10px 16px 14px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 1px !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    border: 0 !important;
+    border-radius: 0 0 16px 16px !important;
+    background: linear-gradient(180deg, #101116 0%, #090a0d 100%) !important;
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    filter: none !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer:not(.show) {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer::before,
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer > a,
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer > a:hover,
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer > a:focus,
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer > a:active,
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer > a.is-touch-pressed,
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer > a.is-active,
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer > a[aria-current="page"] {
+    position: relative !important;
+    display: inline-flex !important;
+    width: fit-content !important;
+    min-height: 43px !important;
+    margin: 0 !important;
+    padding: 10px 2px 9px !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #bdbdc2 !important;
+    -webkit-text-fill-color: #bdbdc2 !important;
+    font-size: 15px !important;
+    line-height: 1.25 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer > a.is-active,
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer > a[aria-current="page"] {
+    color: #ffa914 !important;
+    -webkit-text-fill-color: #ffa914 !important;
+  }
+
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer > a::after {
+    content: "" !important;
+    position: absolute !important;
+    right: auto !important;
+    bottom: 5px !important;
+    left: 0 !important;
+    width: 0 !important;
+    height: 2px !important;
+    border-radius: 999px !important;
+    background: #ffa914 !important;
+    opacity: 0 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer > a.is-active::after,
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer > a[aria-current="page"]::after {
+    width: 100% !important;
+    opacity: 1 !important;
+  }
+
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer .nav-social-block {
+    display: none !important;
+  }
+
+  /* Every part of a mobile video card stays at its resting geometry on touch. */
+  html.mobile-touch-lock body #videos .video-card:hover,
+  html.mobile-touch-lock body #videos .video-card:focus-within,
+  html.mobile-touch-lock body #videos .video-card:active,
+  html.mobile-touch-lock body #videos .video-card.is-touch-pressed,
+  html.mobile-touch-lock body #videos .video-card.is-video-pressing {
+    top: auto !important;
+    bottom: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    transform: none !important;
+  }
+
+  html.mobile-touch-lock body #videos .video-card:hover *,
+  html.mobile-touch-lock body #videos .video-card:focus-within *,
+  html.mobile-touch-lock body #videos .video-card:active *,
+  html.mobile-touch-lock body #videos .video-card.is-touch-pressed *,
+  html.mobile-touch-lock body #videos .video-card.is-video-pressing * {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  html.mobile-touch-lock body #videos .video-card:hover .video-info,
+  html.mobile-touch-lock body #videos .video-card:focus-within .video-info,
+  html.mobile-touch-lock body #videos .video-card:active .video-info,
+  html.mobile-touch-lock body #videos .video-card.is-touch-pressed .video-info,
+  html.mobile-touch-lock body #videos .video-card.is-video-pressing .video-info {
+    top: auto !important;
+    bottom: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Keep the lower copy panel at its exact resting position for every touch state. */
+  html.mobile-touch-lock body #videos .video-card:hover .video-info,
+  html.mobile-touch-lock body #videos .video-card:focus .video-info,
+  html.mobile-touch-lock body #videos .video-card:focus-visible .video-info,
+  html.mobile-touch-lock body #videos .video-card:focus-within .video-info,
+  html.mobile-touch-lock body #videos .video-card:active .video-info,
+  html.mobile-touch-lock body #videos .video-card.is-touch-pressed .video-info,
+  html.mobile-touch-lock body #videos .video-card.is-video-pressing .video-info,
+  html.mobile-touch-lock body #videos .video-card.is-link-dragging .video-info,
+  html.mobile-touch-lock body #videos .video-card.is-link-dragged .video-info,
+  html.mobile-touch-lock body #videos .video-card:hover .video-date,
+  html.mobile-touch-lock body #videos .video-card:active .video-date,
+  html.mobile-touch-lock body #videos .video-card.is-touch-pressed .video-date {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* The active section is always marked with the same orange rule as desktop. */
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer > a.is-active::after,
+  html.mobile-touch-lock body > #main-nav.mobile-nav-layer > a[aria-current="page"]::after {
+    display: block !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: #ffa914 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  /* Match the desktop loading motion on mobile without changing desktop styles. */
+  html.mobile-touch-lock body.is-loading .page-loader__panel {
+    --loader-travel: min(38vw, 500px) !important;
+    --loader-cycle: 1.68s !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  html.mobile-touch-lock body.is-loading .page-loader__logo-shell {
+    animation: loaderShellTravel var(--loader-cycle) cubic-bezier(0.68, 0.04, 0.24, 0.98) infinite !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  html.mobile-touch-lock body.is-loading .page-loader__logo-shell::before {
+    animation: loaderShellTrail var(--loader-cycle) cubic-bezier(0.68, 0.04, 0.24, 0.98) infinite !important;
+  }
+
+  html.mobile-touch-lock body.is-loading .page-loader__logo {
+    animation: loaderLogoSettle var(--loader-cycle) ease-in-out infinite !important;
+    transform: none !important;
+  }
+
+  /* Keep the Explore cue at the true lower edge of the mobile hero. */
+  html.mobile-touch-lock body .hero {
+    position: relative !important;
+  }
+
+  html.mobile-touch-lock body .hero .hero-explore,
+  html.mobile-touch-lock body .hero .hero-explore:hover,
+  html.mobile-touch-lock body .hero .hero-explore:focus-visible,
+  html.mobile-touch-lock body .hero .hero-explore:active {
+    position: absolute !important;
+    right: 50% !important;
+    bottom: max(18px, env(safe-area-inset-bottom, 0px)) !important;
+    left: auto !important;
+    margin: 0 !important;
+    transform: translateX(50%) !important;
+  }
+
+  /* Keep the complete Bonuses section physically below the first mobile view.
+     It then enters naturally on scroll, matching the desktop landing layout. */
+  html.mobile-touch-lock body .hero {
+    min-height: 100svh !important;
+    min-height: 100dvh !important;
+  }
+
+  /* Show the mobile scroll thumb only while the visitor is actively scrolling. */
+  html.mobile-touch-lock.has-custom-scrollbar body .vp-scrollbar,
+  html.mobile-touch-lock.has-custom-scrollbar body .vp-scrollbar.is-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity 0.18s ease, visibility 0.18s ease !important;
+  }
+
+  html.mobile-touch-lock.has-custom-scrollbar body .vp-scrollbar.is-scroll-active,
+  html.mobile-touch-lock.has-custom-scrollbar body .vp-scrollbar:has(.vp-scrollbar__thumb.is-dragging) {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* Keep the mobile navigation drawer clean: no native or custom scroll rail. */
+@media (max-width: 860px) {
+  body > #main-nav.mobile-nav-layer,
+  body > #main-nav.mobile-nav-layer.show,
+  body.vp-mobile-menu-open > #main-nav.mobile-nav-layer,
+  body.vp-mobile-menu-open > #main-nav.mobile-nav-layer.show {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+
+  body > #main-nav.mobile-nav-layer::-webkit-scrollbar,
+  body > #main-nav.mobile-nav-layer.show::-webkit-scrollbar,
+  body.vp-mobile-menu-open::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  body.vp-mobile-menu-open .vp-scrollbar,
+  body.vp-mobile-menu-open .vp-scrollbar__thumb {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  html.mobile-touch-lock body.menu-open .main-nav,
+  html.mobile-touch-lock body.menu-open .main-nav.show {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+
+  html.mobile-touch-lock body.menu-open .main-nav::-webkit-scrollbar,
+  html.mobile-touch-lock body.menu-open .main-nav.show::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  html.mobile-touch-lock body.menu-open,
+  html.mobile-touch-lock body.menu-open .main-nav,
+  html.mobile-touch-lock body.menu-open .main-nav.show {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+
+  html.mobile-touch-lock body.menu-open::-webkit-scrollbar,
+  html.mobile-touch-lock body.menu-open .vp-scrollbar,
+  html.mobile-touch-lock body.menu-open .vp-scrollbar__thumb {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}

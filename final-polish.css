@@ -1,0 +1,2217 @@
+/* Final visual refinements loaded after the legacy style bundle. */
+
+/* Carry the header/footer tone through the page with a restrained soft atmosphere. */
+html body {
+  background-color: #090a0e !important;
+  background-image:
+    radial-gradient(circle at 14% 28%, rgba(16, 17, 22, 0.7), transparent 34%),
+    radial-gradient(circle at 86% 62%, rgba(11, 12, 16, 0.74), transparent 36%),
+    linear-gradient(180deg, #0d0e12 0%, #090a0e 48%, #0b0c10 78%, #090a0e 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Desktop Latest Videos cards keep their lower content at its resting height on hover. */
+@media (min-width: 861px) {
+  html body #videos .video-card:hover,
+  html body #videos .video-card.reveal-on-scroll.is-revealed:hover,
+  html body #videos .video-card:hover .video-info,
+  html body #videos .video-card.reveal-on-scroll.is-revealed:hover .video-info {
+    translate: 0 0 !important;
+    scale: 1 !important;
+    transform: none !important;
+  }
+}
+
+html body::after {
+  content: "" !important;
+  position: absolute !important;
+  top: calc(100vh + 32px) !important;
+  top: calc(100svh + 32px) !important;
+  right: -10vw !important;
+  bottom: 0 !important;
+  left: -10vw !important;
+  z-index: 0 !important;
+  display: block !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(circle at 18% 32%, rgba(25, 28, 37, 0.42), transparent 28%),
+    radial-gradient(circle at 82% 58%, rgba(18, 20, 27, 0.38), transparent 31%),
+    radial-gradient(circle at 50% 88%, rgba(16, 17, 22, 0.32), transparent 27%) !important;
+  opacity: 0.72 !important;
+  filter: blur(48px) !important;
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    transparent 0,
+    rgba(0, 0, 0, 0.18) 32px,
+    rgba(0, 0, 0, 0.72) 88px,
+    #000 136px
+  ) !important;
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0,
+    rgba(0, 0, 0, 0.18) 32px,
+    rgba(0, 0, 0, 0.72) 88px,
+    #000 136px
+  ) !important;
+  clip-path: inset(0) !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+/* Fill the complete desktop viewport with the same clean hero surface behind VIDEOPOWER. */
+@media (min-width: 861px) {
+  html body .hero {
+    min-height: 100vh !important;
+    min-height: 100svh !important;
+  }
+}
+
+/* Only the requested hero content animates; the page shell never re-enters afterward. */
+html body:not(.is-loading) .wrapper,
+html body .wrapper {
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+html body .page-loader {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* The custom link drag card stays fully solid for the complete desktop drag. */
+html body .external-link-url-preview {
+  opacity: 1 !important;
+  background: #8f8f91 !important;
+}
+
+/* The fixed site chrome is present immediately and never joins the hero reveal. */
+html body .main-header,
+html body.menu-open .main-header {
+  z-index: 2500 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  filter: none !important;
+  transform: translate3d(0, 0, 0) !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+html body .main-header > *,
+html body .main-header .logo-link,
+html body .main-header .main-nav {
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+/* Header and scrollbar are permanently outside every loading or entrance animation. */
+html body .main-header *,
+html body .vp-scrollbar,
+html body .vp-scrollbar__thumb {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Floating skins render first, then each starts its own continuous motion once decoded. */
+html body .hero .floating-images {
+  animation: none !important;
+  transition: none !important;
+}
+
+html body .hero .floating-images img:not(.is-floating-animated) {
+  animation: none !important;
+  will-change: auto !important;
+}
+
+html body .hero .floating-images img:not(.is-floating-animated):nth-child(1) {
+  transform: rotate(-7deg) !important;
+}
+
+html body .hero .floating-images img:not(.is-floating-animated):nth-child(2) {
+  transform: rotate(5deg) !important;
+}
+
+html body .hero .floating-images img:not(.is-floating-animated):nth-child(3) {
+  transform: rotate(1deg) !important;
+}
+
+html body .hero .floating-images img:not(.is-floating-animated):nth-child(4) {
+  transform: rotate(-2deg) !important;
+}
+
+html body .hero .floating-images img:not(.is-floating-animated):nth-child(5) {
+  transform: rotate(-3deg) !important;
+}
+
+html body .hero .floating-images img.is-floating-animated {
+  will-change: transform, filter !important;
+  transition: filter 0.26s ease !important;
+}
+
+html body .hero .floating-images img.is-floating-animated:nth-child(1) {
+  animation: vpFloatingM9Drift 5.8s ease-in-out infinite !important;
+}
+
+html body .hero .floating-images img.is-floating-animated:nth-child(2) {
+  animation: vpFloatingGlovesOrbit 6.6s cubic-bezier(0.45, 0, 0.2, 1) infinite !important;
+}
+
+html body .hero .floating-images img.is-floating-animated:nth-child(3) {
+  animation: vpFloatingAwpGlide 7.2s ease-in-out infinite !important;
+}
+
+html body .hero .floating-images img.is-floating-animated:nth-child(4) {
+  animation: vpFloatingHowlPulse 5.2s cubic-bezier(0.45, 0, 0.2, 1) infinite !important;
+}
+
+html body .hero .floating-images img.is-floating-animated:nth-child(5) {
+  animation: vpFloatingAkFigureEight 6.2s ease-in-out infinite !important;
+}
+
+@keyframes vpFloatingM9Drift {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-7deg) scale(1); }
+  36% { transform: translate3d(13px, -17px, 0) rotate(-2deg) scale(1.025); }
+  72% { transform: translate3d(-7px, -8px, 0) rotate(-10deg) scale(1.01); }
+}
+
+@keyframes vpFloatingGlovesOrbit {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(5deg) scale(1); }
+  28% { transform: translate3d(-12px, -13px, 0) rotate(10deg) scale(1.035); }
+  56% { transform: translate3d(5px, -24px, 0) rotate(2deg) scale(1.015); }
+  82% { transform: translate3d(12px, -7px, 0) rotate(7deg) scale(1.025); }
+}
+
+@keyframes vpFloatingAwpGlide {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(1deg) scale(1); }
+  30% { transform: translate3d(18px, -10px, 0) rotate(4deg) scale(1.018); }
+  64% { transform: translate3d(-11px, -21px, 0) rotate(-2deg) scale(1.032); }
+}
+
+@keyframes vpFloatingHowlPulse {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-2deg) scale(1); }
+  46% { transform: translate3d(-9px, -20px, 0) rotate(-6deg) scale(1.04); }
+  72% { transform: translate3d(7px, -11px, 0) rotate(1deg) scale(1.018); }
+}
+
+@keyframes vpFloatingAkFigureEight {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-3deg) scale(1); }
+  24% { transform: translate3d(15px, -11px, 0) rotate(1deg) scale(1.02); }
+  50% { transform: translate3d(0, -23px, 0) rotate(-5deg) scale(1.035); }
+  76% { transform: translate3d(-15px, -10px, 0) rotate(-8deg) scale(1.018); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body .hero .floating-images img.is-floating-animated {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Keep the desktop scrollbar visible from the first rendered frame onward. */
+@media (min-width: 861px) {
+  html.has-custom-scrollbar body .vp-scrollbar,
+  html.has-custom-scrollbar body .vp-scrollbar.is-hidden,
+  html.has-custom-scrollbar.is-loading body .vp-scrollbar,
+  html.has-custom-scrollbar.is-entering body .vp-scrollbar,
+  html.has-custom-scrollbar body.menu-open .vp-scrollbar,
+  html.has-custom-scrollbar body.is-loading .vp-scrollbar,
+  html.has-custom-scrollbar body.is-entering .vp-scrollbar {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    animation: none !important;
+  }
+
+  html.has-custom-scrollbar body .vp-scrollbar__thumb {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
+html.hero-intro-pending:not(.hero-intro-running) body .hero-content .hero-wordmark,
+html.hero-intro-pending:not(.hero-intro-running) body .hero-content .hero-intro-copy,
+html.hero-intro-pending:not(.hero-intro-running) body .hero .hero-static-actions,
+html.hero-intro-pending:not(.hero-intro-running) body .hero .hero-explore {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  animation: none !important;
+}
+
+html.hero-intro-pending.hero-intro-running body .hero-content .hero-wordmark,
+html.hero-intro-pending.hero-intro-running body .hero-content .hero-intro-copy,
+html.hero-intro-pending.hero-intro-running body .hero .hero-static-actions,
+html.hero-intro-pending.hero-intro-running body .hero .hero-explore {
+  transform-origin: center !important;
+  will-change: opacity, translate, scale !important;
+}
+
+html.hero-intro-pending.hero-intro-running body .hero-content .hero-wordmark {
+  animation: vpHeroWordmarkEntrance 0.2s cubic-bezier(0.16, 1, 0.3, 1) 0.02s both !important;
+}
+
+html.hero-intro-pending.hero-intro-running body .hero-content .hero-intro-copy {
+  animation: vpHeroDescriptionEntrance 0.18s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both !important;
+}
+
+html.hero-intro-pending.hero-intro-running body .hero .hero-static-actions {
+  animation: vpHeroActionsEntrance 0.3s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both !important;
+}
+
+html.hero-intro-pending.hero-intro-running body .hero .hero-explore {
+  animation: vpHeroExploreEntrance 0.3s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both !important;
+}
+
+/* Both JOIN GIVEAWAYS shadow layers are one state, revealed by the button group itself. */
+html body .hero-static-actions > .hero-static-action--giveaways,
+html body .hero-static-actions > .hero-static-action--giveaways:hover,
+html body .hero-static-actions > .hero-static-action--giveaways:focus-visible {
+  box-shadow:
+    0 13px 25px rgba(219, 139, 8, 0.3),
+    0 0 18px rgba(219, 139, 8, 0.2) !important;
+  filter: drop-shadow(0 12px 14px rgba(219, 139, 8, 0.36)) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Dedicated scroll stages: section copy, each bonus row, then connected copy and cards. */
+html.section-scroll-reveals body #bonuses .bonuses-reveal-title:not(.is-stage-revealed),
+html.section-scroll-reveals body #bonuses .bonuses-reveal-subtitle:not(.is-stage-revealed),
+html.section-scroll-reveals body #bonuses .bonus-reward-card:not(.is-stage-revealed),
+html.section-scroll-reveals body #news .news-team-heading:not(.is-stage-revealed),
+html.section-scroll-reveals body #news .news-team-member:not(.is-stage-revealed),
+html.section-scroll-reveals body #videos .videos-heading-row:not(.is-stage-revealed),
+html.section-scroll-reveals body #videos .videos-carousel-shell:not(.is-stage-revealed),
+html.section-scroll-reveals body #giveaways .giveaways-heading-row:not(.is-stage-revealed),
+html.section-scroll-reveals body #giveaways .giveaway-card:not(.is-stage-revealed) {
+  opacity: 0 !important;
+  transform: translate3d(0, 32px, 0) scale(0.982) !important;
+  filter: blur(9px) saturate(0.9) !important;
+}
+
+html.section-scroll-reveals body #bonuses .section-stage-reveal,
+html.section-scroll-reveals body #news .section-stage-reveal,
+html.section-scroll-reveals body #videos .section-stage-reveal,
+html.section-scroll-reveals body #giveaways .section-stage-reveal {
+  transition:
+    opacity 0.76s ease var(--section-stage-delay, 0ms),
+    transform 0.94s cubic-bezier(0.16, 1, 0.3, 1) var(--section-stage-delay, 0ms),
+    filter 0.76s ease var(--section-stage-delay, 0ms) !important;
+}
+
+html.section-scroll-reveals body #bonuses .section-stage-reveal.is-stage-revealed,
+html.section-scroll-reveals body #news .section-stage-reveal.is-stage-revealed,
+html.section-scroll-reveals body #videos .section-stage-reveal.is-stage-revealed,
+html.section-scroll-reveals body #giveaways .section-stage-reveal.is-stage-revealed {
+  opacity: 1 !important;
+  filter: blur(0) saturate(1) !important;
+}
+
+html.section-scroll-reveals body #bonuses .bonuses-reveal-title.section-stage-reveal.is-stage-revealed,
+html.section-scroll-reveals body #bonuses .bonuses-reveal-subtitle.section-stage-reveal.is-stage-revealed,
+html.section-scroll-reveals body #news .news-team-heading.section-stage-reveal.is-stage-revealed,
+html.section-scroll-reveals body #news .news-team-member.section-stage-reveal.is-stage-revealed:not(:hover):not(:focus-within),
+html.section-scroll-reveals body #bonuses .bonus-reward-card.section-stage-reveal.is-stage-revealed:not(:hover):not(:focus-within),
+html.section-scroll-reveals body #videos .videos-heading-row.section-stage-reveal.is-stage-revealed,
+html.section-scroll-reveals body #videos .videos-carousel-shell.section-stage-reveal.is-stage-revealed,
+html.section-scroll-reveals body #giveaways .giveaways-heading-row.section-stage-reveal.is-stage-revealed,
+html.section-scroll-reveals body #giveaways .giveaway-card.section-stage-reveal.is-stage-revealed:not(:hover):not(:focus-within) {
+  transform: translate3d(0, 0, 0) scale(1) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.section-scroll-reveals body #bonuses .bonuses-reveal-title,
+  html.section-scroll-reveals body #bonuses .bonuses-reveal-subtitle,
+  html.section-scroll-reveals body #bonuses .bonus-reward-card,
+  html.section-scroll-reveals body #news .news-team-heading,
+  html.section-scroll-reveals body #news .news-team-member,
+  html.section-scroll-reveals body #videos .videos-heading-row,
+  html.section-scroll-reveals body #videos .videos-carousel-shell,
+  html.section-scroll-reveals body #giveaways .giveaways-heading-row,
+  html.section-scroll-reveals body #giveaways .giveaway-card {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* The footer brand is static: no entrance, loading, hover or press animation. */
+html body .main-footer .footer-brand,
+html body .main-footer .footer-brand-lockup,
+html body .main-footer .footer-brand-lockup img {
+  animation: none !important;
+  transition: none !important;
+}
+
+html body .main-footer .footer-brand {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  filter: none !important;
+  will-change: auto !important;
+}
+
+/* Entrance reveals are one-shot and never replay while the user scrolls upward. */
+html body .reveal-on-scroll.reveal-without-motion,
+html body .section-stage-reveal.stage-reveal-without-motion {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Desktop video cards retain their full pre-reveal dimensions throughout the entrance. */
+@media (min-width: 861px) {
+  html.section-scroll-reveals body #videos .videos-carousel-shell.section-stage-reveal:not(.is-stage-revealed) {
+    transform: translate3d(0, 32px, 0) scale(1) !important;
+  }
+
+  /* Three full-size desktop cards; each carousel stop is exactly one card plus one gap. */
+  html body #videos .videos-grid {
+    gap: 28px !important;
+  }
+
+  html body #videos .videos-grid > .video-card {
+    flex: 0 0 calc((100% - 56px) / 3) !important;
+    width: calc((100% - 56px) / 3) !important;
+    min-width: calc((100% - 56px) / 3) !important;
+  }
+
+  html body #videos .videos-grid > .video-card,
+  html body #videos .videos-grid > .video-card:hover,
+  html body #videos .videos-grid > .video-card:focus-visible,
+  html body #videos .videos-grid > .video-card:active,
+  html body #videos .videos-grid > .video-card.is-touch-pressed,
+  html body #videos .videos-grid > .video-card.reveal-on-scroll.is-revealed,
+  html body #videos .videos-grid > .video-card.reveal-on-scroll.is-revealed:hover,
+  html body #videos .videos-grid > .video-card.reveal-on-scroll.is-revealed:focus-visible {
+    flex: 0 0 calc((100% - 56px) / 3) !important;
+    width: calc((100% - 56px) / 3) !important;
+    min-width: calc((100% - 56px) / 3) !important;
+    margin-block: 0 !important;
+    translate: none !important;
+    scale: 1 !important;
+    transform: translate3d(0, 0, 0) scale(1) !important;
+  }
+}
+
+@keyframes vpHeroWordmarkEntrance {
+  0% {
+    opacity: 0;
+    translate: 0 20px;
+    scale: 0.9;
+    clip-path: inset(34% 0 34% 0);
+  }
+
+  64% {
+    opacity: 1;
+    translate: 0 -1px;
+    scale: 1.018;
+    clip-path: inset(0 0 0 0);
+  }
+
+  100% {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes vpHeroDescriptionEntrance {
+  0% {
+    opacity: 0;
+    translate: 0 14px;
+    scale: 0.985;
+    clip-path: inset(0 50% 0 50%);
+  }
+
+  100% {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes vpHeroActionsEntrance {
+  0% {
+    opacity: 0;
+    translate: 0 16px;
+    scale: 0.96;
+  }
+
+  68% {
+    opacity: 1;
+    translate: 0 -1px;
+    scale: 1.01;
+  }
+
+  100% {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+
+@keyframes vpHeroExploreEntrance {
+  0% {
+    opacity: 0;
+    translate: 0 12px;
+    scale: 0.95;
+    clip-path: inset(0 0 100% 0);
+  }
+
+  72% {
+    opacity: 1;
+    translate: 0 -1px;
+    scale: 1.015;
+    clip-path: inset(0 0 0 0);
+  }
+
+  100% {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.hero-intro-pending.hero-intro-running body .hero-content .hero-wordmark,
+  html.hero-intro-pending.hero-intro-running body .hero-content .hero-intro-copy,
+  html.hero-intro-pending.hero-intro-running body .hero .hero-static-actions,
+  html.hero-intro-pending.hero-intro-running body .hero .hero-explore {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0s !important;
+  }
+}
+
+/* Stars remain visually above every surface without intercepting interaction. */
+html body canvas#stars,
+html body #stars {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483000 !important;
+  isolation: isolate !important;
+  pointer-events: none !important;
+}
+
+/* Reserve the finished carousel height before skeleton cards are inserted. */
+html body #videos .videos-carousel-shell {
+  height: 346px !important;
+  min-height: 346px !important;
+  max-height: 346px !important;
+}
+
+html body #videos .videos-carousel-arrow,
+html body #videos .videos-carousel-arrow:hover,
+html body #videos .videos-carousel-arrow:focus-visible,
+html body #videos .videos-carousel-arrow:active,
+html body #videos .videos-carousel-arrow:disabled {
+  top: 50% !important;
+  height: 58px !important;
+  min-height: 58px !important;
+  max-height: 58px !important;
+  margin-block: 0 !important;
+  box-sizing: border-box !important;
+  transform: translateY(-50%) !important;
+}
+
+/* Keep VideoPower 2 artwork equally dark before, during and after a button click. */
+html body #news .news-team-member:first-child::before,
+html body #news .news-team-member:first-child:hover::before,
+html body #news .news-team-member:first-child:focus-within::before,
+html body #news .news-team-member:first-child.is-news-action-pressing::before,
+html body #news .news-team-member:first-child.is-news-action-resting::before,
+html body #news .news-team-member:first-child.is-news-link-dragging::before,
+html body #news .news-team-member:first-child:has(.news-team-action:hover)::before,
+html body #news .news-team-member:first-child:has(.news-team-action:focus-visible)::before,
+html body #news .news-team-member:first-child:has(.news-team-action:active)::before {
+  opacity: 0.48 !important;
+  filter: blur(30px) saturate(1.18) brightness(1) !important;
+  transform: scale(1.16) !important;
+  transition: none !important;
+}
+
+html body #news .news-team-member:first-child::after,
+html body #news .news-team-member:first-child:hover::after,
+html body #news .news-team-member:first-child:focus-within::after,
+html body #news .news-team-member:first-child.is-news-action-pressing::after,
+html body #news .news-team-member:first-child.is-news-action-resting::after,
+html body #news .news-team-member:first-child.is-news-link-dragging::after,
+html body #news .news-team-member:first-child:has(.news-team-action:hover)::after,
+html body #news .news-team-member:first-child:has(.news-team-action:focus-visible)::after,
+html body #news .news-team-member:first-child:has(.news-team-action:active)::after {
+  opacity: 1 !important;
+  background:
+    linear-gradient(180deg, rgba(10, 10, 12, 0.38), rgba(10, 10, 12, 0.78)),
+    radial-gradient(circle at 50% 20%, rgba(255, 169, 20, 0.1), transparent 48%) !important;
+  filter: none !important;
+  transition: none !important;
+}
+
+/* Restore the VideoPower image blur while keeping its lower edge clean. */
+html body #news .news-team-member:last-child::before,
+html body #news .news-team-member:last-child:hover::before,
+html body #news .news-team-member:last-child:focus-within::before,
+html body #news .news-team-member:last-child:has(.news-team-action:hover)::before,
+html body #news .news-team-member:last-child:has(.news-team-action:focus-visible)::before {
+  opacity: 0.24 !important;
+  filter: blur(30px) saturate(1.08) brightness(0.82) !important;
+}
+
+html body #news .news-team-member:last-child::after,
+html body #news .news-team-member:last-child:hover::after,
+html body #news .news-team-member:last-child:focus-within::after,
+html body #news .news-team-member:last-child:has(.news-team-action:hover)::after,
+html body #news .news-team-member:last-child:has(.news-team-action:focus-visible)::after {
+  opacity: 0.68 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 12, 0.28) 0%,
+    rgba(10, 10, 12, 0.44) 48%,
+    rgba(10, 10, 12, 0.74) 82%,
+    rgba(10, 10, 12, 0.92) 100%
+  ) !important;
+  box-shadow: inset 0 -34px 38px rgba(10, 10, 12, 0.78) !important;
+}
+
+/* Let the profile return smoothly during a native link drag instead of freezing in mid-air. */
+html body #news .news-team-member.is-news-link-dragging .news-team-member__avatar,
+html body #news .news-team-member:has(.news-team-action.is-link-dragging) .news-team-member__avatar {
+  transform: translate3d(0, 0, 0) !important;
+  box-shadow: 0 16px 26px rgba(0, 0, 0, 0.32) !important;
+  transition:
+    transform 0.26s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.24s ease !important;
+}
+
+/* Social buttons keep their geometry and artwork completely still while pressed. */
+html body #news .news-team-action:active,
+html body #news .news-team-action.is-touch-pressed,
+html body #news .news-team-action:active img,
+html body #news .news-team-action.is-touch-pressed img,
+html body #news .news-team-action:active::after,
+html body #news .news-team-action.is-touch-pressed::after {
+  transform: none !important;
+  translate: 0 0 !important;
+  scale: 1 !important;
+  animation: none !important;
+  transition: none !important;
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+html body #news .news-team-action:active::after,
+html body #news .news-team-action.is-touch-pressed::after {
+  opacity: 0 !important;
+}
+
+html body #news .news-team-action:active img,
+html body #news .news-team-action.is-touch-pressed img {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Keep the profile lifted while the pointer is held down without completing the click. */
+html body #news .news-team-member.is-news-action-pressing:not(.is-news-link-dragging) .news-team-member__avatar,
+html body #news .news-team-member:not(.is-news-link-dragging):has(.news-team-action:active:not(.is-link-dragging)) .news-team-member__avatar {
+  transform: translate3d(0, -8px, 0) !important;
+  box-shadow: 0 16px 26px rgba(0, 0, 0, 0.32) !important;
+}
+
+/* These are real draggable anchors; override the legacy interaction reset. */
+html body .hero-static-actions > a.hero-static-action[draggable="true"] {
+  -webkit-user-drag: element !important;
+  user-select: none !important;
+}
+
+html body .hero-static-actions > a.hero-static-action[draggable="true"] *,
+html body .hero-static-actions > a.hero-static-action[draggable="true"] svg {
+  pointer-events: none !important;
+}
+
+/* Align the closed-giveaway notice with the card edge, without a frame. */
+html body #giveaways .giveaway-card--shinobu .giveaway-closed-message {
+  top: 10px !important;
+  left: -12px !important;
+  border: 0 !important;
+  outline: 0 !important;
+  border-radius: 0 14px 14px 0 !important;
+}
+
+/* Retain the giveaway hover depth while letting more of each card remain visible. */
+html body #giveaways .giveaway-card--shinobu::before {
+  background: rgba(5, 2, 8, 0.23) !important;
+}
+
+/* No separate transition band below EXPLORE. */
+html body .hero::after {
+  content: none !important;
+  display: none !important;
+  height: 0 !important;
+  background: none !important;
+  filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Keep every part of the Hellcase giveaway swap on one shared timeline. */
+html body #giveaways .giveaway-card--featured-carousel .giveaway-img {
+  transition:
+    opacity 0.34s ease,
+    transform 0.46s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  backface-visibility: hidden !important;
+  will-change: opacity, transform !important;
+}
+
+html body #giveaways .giveaway-card--featured-carousel .featured-skin-name,
+html body #giveaways .giveaway-card--featured-carousel .giveaway-title--price,
+html body #giveaways .giveaway-card--featured-carousel .featured-item-condition {
+  opacity: 1 !important;
+  transition:
+    opacity 0.2s ease,
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  will-change: opacity, transform !important;
+}
+
+html body #giveaways .giveaway-card--featured-carousel.is-giveaway-content-exiting .featured-skin-name {
+  opacity: 0 !important;
+  transform: translate3d(0, 7px, 0) !important;
+}
+
+html body #giveaways .giveaway-card--featured-carousel.is-giveaway-content-exiting .giveaway-title--price {
+  opacity: 0 !important;
+  transform: translate3d(0, 7px, 0) !important;
+}
+
+html body #giveaways .giveaway-card--featured-carousel.is-giveaway-content-exiting .featured-item-condition {
+  opacity: 0 !important;
+  transform: translate3d(0, -5px, 0) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body #giveaways .giveaway-card--featured-carousel .giveaway-img,
+  html body #giveaways .giveaway-card--featured-carousel .featured-skin-name,
+  html body #giveaways .giveaway-card--featured-carousel .giveaway-title--price,
+  html body #giveaways .giveaway-card--featured-carousel .featured-item-condition {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 600px) {
+  html body #videos .videos-carousel-shell {
+    height: 314px !important;
+    min-height: 314px !important;
+    max-height: 314px !important;
+  }
+
+  html body #videos .videos-carousel-arrow,
+  html body #videos .videos-carousel-arrow:hover,
+  html body #videos .videos-carousel-arrow:focus-visible,
+  html body #videos .videos-carousel-arrow:active,
+  html body #videos .videos-carousel-arrow:disabled {
+    height: 52px !important;
+    min-height: 52px !important;
+    max-height: 52px !important;
+  }
+
+  html body #giveaways .giveaway-card--shinobu .giveaway-closed-message {
+    top: 8px !important;
+    left: -12px !important;
+  }
+
+  html body::after {
+    opacity: 0.58 !important;
+    filter: blur(34px) !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 860px) {
+  html body #videos .videos-carousel-shell {
+    height: 330px !important;
+    min-height: 330px !important;
+    max-height: 330px !important;
+  }
+}
+
+/* A clean, header-matched footer inspired by the supplied reference. */
+html body .main-footer {
+  position: relative !important;
+  z-index: 2 !important;
+  isolation: isolate !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: clamp(76px, 9vw, 126px) 0 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.075) !important;
+  border-radius: 0 !important;
+  background: linear-gradient(180deg, #101116 0%, #0b0c10 52%, #090a0e 100%) !important;
+  box-shadow: 0 -18px 44px rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  contain-intrinsic-size: 1px 310px !important;
+}
+
+html body .main-footer::before,
+html body .main-footer::after {
+  content: none !important;
+  display: none !important;
+}
+
+html body .main-footer .footer-shell {
+  display: block !important;
+  width: min(100% - 48px, 1390px) !important;
+  max-width: 1390px !important;
+  margin: 0 auto !important;
+  padding: 54px 0 30px !important;
+}
+
+html body .main-footer .footer-main-row {
+  display: grid !important;
+  grid-template-columns: minmax(280px, 0.78fr) minmax(520px, 1.22fr) !important;
+  align-items: start !important;
+  gap: clamp(48px, 8vw, 132px) !important;
+}
+
+html body .main-footer .footer-brand,
+html body .main-footer .footer-directory {
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  contain: none !important;
+}
+
+html body .main-footer .footer-brand {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+html body .main-footer .footer-brand-lockup {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+  margin: 0 0 14px !important;
+  padding: 0 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  cursor: default !important;
+}
+
+html body .main-footer .footer-vp-logo-mark {
+  display: block !important;
+  flex: 0 0 44px !important;
+  width: 44px !important;
+  min-width: 44px !important;
+  max-width: 44px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  margin: 0 !important;
+  border-radius: 11px !important;
+  object-fit: cover !important;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.3)) !important;
+}
+
+html body .main-footer .footer-logo-wordmark {
+  display: block !important;
+  width: clamp(166px, 15vw, 224px) !important;
+  max-width: 224px !important;
+  height: auto !important;
+  max-height: 48px !important;
+  margin: 0 !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.28)) !important;
+}
+
+html body .main-footer .footer-tagline {
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.45) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.45) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1.6 !important;
+}
+
+html body .main-footer .footer-tagline strong {
+  color: #ffa914 !important;
+  -webkit-text-fill-color: #ffa914 !important;
+  font-weight: 900 !important;
+}
+
+html body .main-footer .footer-directory {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  gap: 22px !important;
+}
+
+html body .main-footer .footer-nav {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  width: auto !important;
+  margin: 4px 0 0 !important;
+  gap: clamp(20px, 2.8vw, 38px) !important;
+}
+
+html body .main-footer .footer-nav-link,
+html body .main-footer .footer-nav-link:hover,
+html body .main-footer .footer-nav-link:focus-visible,
+html body .main-footer .footer-nav-link:active,
+html body .main-footer .footer-nav-link.is-touch-pressed {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 0 !important;
+  padding: 4px 0 !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: rgba(255, 255, 255, 0.46) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.46) !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+html body .main-footer .footer-nav-link::before,
+html body .main-footer .footer-nav-link::after {
+  content: none !important;
+  display: none !important;
+}
+
+html body .main-footer .footer-nav-link:hover,
+html body .main-footer .footer-nav-link:focus-visible {
+  color: #ffa914 !important;
+  -webkit-text-fill-color: #ffa914 !important;
+  outline: 0 !important;
+}
+
+/* Footer navigation starts with the exact neutral used by header navigation. */
+html body .main-footer .footer-nav .footer-nav-link {
+  color: #bdbdc2 !important;
+  -webkit-text-fill-color: #bdbdc2 !important;
+}
+
+html body .main-footer .footer-nav .footer-nav-link:hover,
+html body .main-footer .footer-nav .footer-nav-link:focus-visible,
+html body .main-footer .footer-nav .footer-nav-link:active {
+  color: #ffa914 !important;
+  -webkit-text-fill-color: #ffa914 !important;
+}
+
+/* Footer navigation and social destinations remain native draggable anchors. */
+html body .main-footer .footer-nav a[draggable="true"],
+html body .main-footer .footer-social-links a[draggable="true"] {
+  -webkit-user-drag: element !important;
+  user-select: none !important;
+}
+
+html body .main-footer .footer-nav a.footer-nav-link[href^="https://videopower-shop"]:hover,
+html body .main-footer .footer-nav a.footer-nav-link[href^="https://videopower-shop"]:focus-visible,
+html body .main-footer .footer-nav a.footer-nav-link[href^="https://videopower-shop"]:active,
+html body .main-footer .footer-nav a.footer-nav-link[href^="https://videopower-shop"].is-touch-pressed {
+  color: #ffa914 !important;
+  -webkit-text-fill-color: #ffa914 !important;
+  background: transparent !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+html body .main-footer #social-links-footer.footer-social-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 24px !important;
+  margin: 0 !important;
+}
+
+html body .main-footer .footer-social-links a,
+html body .main-footer .footer-social-links a:active {
+  color: rgba(255, 255, 255, 0.34) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.34) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
+  transform: none !important;
+}
+
+html body .main-footer .footer-social-links a:hover,
+html body .main-footer .footer-social-links a:focus-visible {
+  color: #ffa914 !important;
+  -webkit-text-fill-color: #ffa914 !important;
+  outline: 0 !important;
+}
+
+html body .main-footer .footer-divider {
+  width: 100% !important;
+  height: 1px !important;
+  margin: 44px 0 26px !important;
+  background: rgba(255, 255, 255, 0.075) !important;
+}
+
+html body .main-footer .footer-bottom-row {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+}
+
+html body .main-footer .footer-legal {
+  display: flex !important;
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+html body .main-footer .footer-copyright {
+  align-self: flex-start !important;
+}
+
+html body .main-footer .footer-copyright,
+html body .main-footer .footer-responsible,
+html body .main-footer .footer-disclaimer {
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.3) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.3) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  line-height: 1.55 !important;
+  letter-spacing: 0 !important;
+}
+
+html body .main-footer .footer-responsible {
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 9px !important;
+}
+
+html body .main-footer .footer-age-badge {
+  display: inline-grid !important;
+  place-items: center !important;
+  width: 29px !important;
+  height: 29px !important;
+  border: 2px solid rgba(255, 77, 94, 0.72) !important;
+  border-radius: 50% !important;
+  color: #ff4d5e !important;
+  -webkit-text-fill-color: #ff4d5e !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+}
+
+html body .main-footer .footer-disclaimer {
+  width: auto !important;
+  max-width: 900px !important;
+  margin-top: 18px !important;
+  color: rgba(255, 255, 255, 0.22) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.22) !important;
+  font-size: 10px !important;
+  text-align: left !important;
+}
+
+@media (max-width: 860px) {
+  html body .main-footer {
+    margin-top: 64px !important;
+    contain-intrinsic-size: 1px 460px !important;
+  }
+
+  html body .main-footer .footer-shell {
+    width: min(100% - 36px, 640px) !important;
+    padding: 40px 0 28px !important;
+  }
+
+  html body .main-footer .footer-main-row {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+  }
+
+  html body .main-footer .footer-brand,
+  html body .main-footer .footer-directory {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  html body .main-footer .footer-nav,
+  html body .main-footer #social-links-footer.footer-social-links {
+    justify-content: flex-start !important;
+  }
+
+  html body .main-footer .footer-nav {
+    gap: 14px 24px !important;
+  }
+
+  html body .main-footer .footer-divider {
+    margin: 34px 0 24px !important;
+  }
+
+  html body .main-footer .footer-bottom-row {
+    display: flex !important;
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  html body .main-footer .footer-legal {
+    display: flex !important;
+    min-width: 0 !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  html body .main-footer .footer-disclaimer {
+    width: auto !important;
+    text-align: left !important;
+  }
+
+  html body .main-footer .footer-responsible {
+    justify-content: flex-start !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html body .main-footer .footer-logo-wordmark {
+    width: clamp(148px, 52vw, 190px) !important;
+  }
+
+  html body .main-footer .footer-vp-logo-mark {
+    flex-basis: 40px !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+  }
+
+  html body .main-footer .footer-tagline,
+  html body .main-footer .footer-nav-link {
+    font-size: 12px !important;
+  }
+}
+
+/* Mobile navigation is a compact header dropdown, never a full-screen layer. */
+@media (max-width: 860px) {
+  html body .main-header,
+  html body.menu-open .main-header {
+    overflow: visible !important;
+  }
+
+  html body .main-header .main-nav,
+  html body .main-header .main-nav.show,
+  html body.menu-open .main-header .main-nav,
+  html body.menu-open .main-header .main-nav.show {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    right: 12px !important;
+    bottom: auto !important;
+    left: 12px !important;
+    z-index: 2495 !important;
+    display: flex !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: min(68dvh, 520px) !important;
+    padding: 14px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 5px !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 18px !important;
+    background: linear-gradient(180deg, #101116 0%, #090a0d 100%) !important;
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.42) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    transform-origin: top center !important;
+  }
+
+  html body .main-header .main-nav:not(.show) {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translate3d(0, -8px, 0) scale(0.985) !important;
+  }
+
+  html body .main-header .main-nav.show,
+  html body.menu-open .main-header .main-nav.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translate3d(0, 0, 0) scale(1) !important;
+  }
+
+  html body .main-header .main-nav::before,
+  html body .main-header .main-nav::after,
+  html body .main-header .main-nav.show::before,
+  html body .main-header .main-nav.show::after {
+    content: none !important;
+    position: static !important;
+    inset: auto !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+  }
+
+  html body .main-header .main-nav > a,
+  html body .main-header .main-nav > a:hover,
+  html body .main-header .main-nav > a:focus-visible,
+  html body .main-header .main-nav > a:active,
+  html body .main-header .main-nav > a.is-touch-pressed {
+    width: 100% !important;
+    min-height: 42px !important;
+    padding: 10px 12px !important;
+    justify-content: flex-start !important;
+    border: 0 !important;
+    border-radius: 10px !important;
+    background: transparent !important;
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+    text-align: left !important;
+    transform: none !important;
+  }
+
+  html body .main-header .main-nav > a:hover,
+  html body .main-header .main-nav > a:focus-visible,
+  html body .main-header .main-nav > a:active,
+  html body .main-header .main-nav > a.is-active,
+  html body .main-header .main-nav > a[aria-current="page"] {
+    background: rgba(255, 169, 20, 0.08) !important;
+  }
+
+  html body .main-header .main-nav .nav-social-block {
+    display: none !important;
+  }
+}
+
+/* ===== 2026-08-20 mobile-only sizing and interaction polish ===== */
+@media (max-width: 860px) {
+  /* Keep the header identity visible while the compact menu is open. */
+  html body .main-header .logo-container,
+  html body.menu-open .main-header .logo-container,
+  html body .main-header .logo-link,
+  html body.menu-open .main-header .logo-link {
+    position: relative !important;
+    z-index: 2502 !important;
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  html body .main-header .vp-logo-mark,
+  html body .main-header .logo-wordmark,
+  html body.menu-open .main-header .vp-logo-mark,
+  html body.menu-open .main-header .logo-wordmark {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  /* Smaller neutral hamburger; its open state is a real X, not a cross icon. */
+  html body .main-header .hamburger,
+  html body .main-header .hamburger:hover,
+  html body .main-header .hamburger:focus,
+  html body .main-header .hamburger:focus-visible,
+  html body .main-header .hamburger:active,
+  html body .main-header .hamburger.active,
+  html body.menu-open .main-header .hamburger {
+    position: relative !important;
+    z-index: 2503 !important;
+    display: flex !important;
+    width: 36px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
+    height: 30px !important;
+    min-height: 30px !important;
+    max-height: 30px !important;
+    padding: 5px 6px !important;
+    flex: 0 0 36px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    border: 0 !important;
+    border-radius: 8px !important;
+    outline: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  html body .main-header .hamburger span,
+  html body .main-header .hamburger span:nth-child(1),
+  html body .main-header .hamburger span:nth-child(2),
+  html body .main-header .hamburger span:nth-child(3),
+  html body.menu-open .main-header .hamburger span {
+    position: static !important;
+    display: block !important;
+    width: 23px !important;
+    min-width: 23px !important;
+    max-width: 23px !important;
+    height: 2px !important;
+    min-height: 2px !important;
+    max-height: 2px !important;
+    margin: 0 !important;
+    flex: 0 0 2px !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: #bdbdc2 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+    transform-origin: 50% 50% !important;
+  }
+
+  html body .main-header .hamburger.active span:nth-child(1),
+  html body.menu-open .main-header .hamburger span:nth-child(1) {
+    transform: translate3d(0, 6px, 0) rotate(45deg) !important;
+  }
+
+  html body .main-header .hamburger.active span:nth-child(2),
+  html body.menu-open .main-header .hamburger span:nth-child(2) {
+    opacity: 0 !important;
+    transform: none !important;
+  }
+
+  html body .main-header .hamburger.active span:nth-child(3),
+  html body.menu-open .main-header .hamburger span:nth-child(3) {
+    transform: translate3d(0, -6px, 0) rotate(-45deg) !important;
+  }
+
+  /* Phone-width, taller compact navigation panel. */
+  html body .main-header .main-nav,
+  html body .main-header .main-nav.show,
+  html body.menu-open .main-header .main-nav,
+  html body.menu-open .main-header .main-nav.show {
+    top: calc(100% + 8px) !important;
+    right: 8px !important;
+    bottom: auto !important;
+    left: 8px !important;
+    width: calc(100vw - 16px) !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: min(58dvh, 500px) !important;
+    max-height: min(76dvh, 620px) !important;
+    padding: 18px 18px 24px !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 7px !important;
+    border-color: rgba(255, 255, 255, 0.07) !important;
+    border-radius: 18px !important;
+    background: linear-gradient(180deg, #101116 0%, #090a0d 100%) !important;
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.42) !important;
+  }
+
+  html body .main-header .main-nav > a,
+  html body .main-header .main-nav > a:hover,
+  html body .main-header .main-nav > a:focus,
+  html body .main-header .main-nav > a:focus-visible,
+  html body .main-header .main-nav > a:active,
+  html body .main-header .main-nav > a.is-touch-pressed,
+  html body .main-header .main-nav > a.is-active,
+  html body .main-header .main-nav > a[aria-current="page"] {
+    position: relative !important;
+    display: inline-flex !important;
+    width: fit-content !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 48px !important;
+    margin: 0 !important;
+    padding: 13px 2px 11px !important;
+    align-self: flex-start !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    outline: 0 !important;
+    background: transparent !important;
+    color: #bdbdc2 !important;
+    -webkit-text-fill-color: #bdbdc2 !important;
+    font-size: 15px !important;
+    line-height: 1.25 !important;
+    text-align: left !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    translate: 0 0 !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+    user-select: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  html body .main-header .main-nav > a .merch-label,
+  html body .main-header .main-nav > a:hover .merch-label,
+  html body .main-header .main-nav > a:focus .merch-label,
+  html body .main-header .main-nav > a:focus-visible .merch-label,
+  html body .main-header .main-nav > a:active .merch-label,
+  html body .main-header .main-nav > a.is-touch-pressed .merch-label,
+  html body .main-header .main-nav > a.is-active .merch-label,
+  html body .main-header .main-nav > a[aria-current="page"] .merch-label {
+    color: #bdbdc2 !important;
+    -webkit-text-fill-color: #bdbdc2 !important;
+    text-shadow: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  html body .main-header .main-nav > a::after,
+  html body .main-header .main-nav > a:hover::after,
+  html body .main-header .main-nav > a:focus::after,
+  html body .main-header .main-nav > a:focus-visible::after,
+  html body .main-header .main-nav > a:active::after,
+  html body .main-header .main-nav > a.is-touch-pressed::after {
+    content: "" !important;
+    position: absolute !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: 5px !important;
+    left: 0 !important;
+    display: block !important;
+    width: 0 !important;
+    height: 2px !important;
+    border-radius: 999px !important;
+    background: #ffa914 !important;
+    opacity: 0 !important;
+    box-shadow: 0 0 9px rgba(255, 169, 20, 0.48) !important;
+    transform: none !important;
+    transition: none !important;
+    pointer-events: none !important;
+  }
+
+  html body .main-header .main-nav > a.is-active::after,
+  html body .main-header .main-nav > a[aria-current="page"]::after,
+  html body .main-header .main-nav > a.is-active:hover::after,
+  html body .main-header .main-nav > a[aria-current="page"]:hover::after,
+  html body .main-header .main-nav > a.is-active:active::after,
+  html body .main-header .main-nav > a[aria-current="page"]:active::after {
+    width: 100% !important;
+    opacity: 1 !important;
+  }
+
+  /* Larger centre mark, smaller actions, and no pressed movement. */
+  html body .hero .hero-wordmark {
+    font-size: clamp(42px, 12.5vw, 58px) !important;
+    line-height: 0.94 !important;
+  }
+
+  html body .hero .hero-static-actions {
+    width: min(calc(100% - 36px), 320px) !important;
+    max-width: 320px !important;
+    gap: 8px !important;
+  }
+
+  html body .hero .hero-static-actions > .hero-static-action,
+  html body .hero .hero-static-actions > .hero-static-action:link,
+  html body .hero .hero-static-actions > .hero-static-action:visited,
+  html body .hero .hero-static-actions > .hero-static-action:hover,
+  html body .hero .hero-static-actions > .hero-static-action:focus,
+  html body .hero .hero-static-actions > .hero-static-action:focus-visible,
+  html body .hero .hero-static-actions > .hero-static-action:active,
+  html body .hero .hero-static-actions > .hero-static-action.is-touch-pressed,
+  html body .hero .hero-static-actions > .hero-static-action.is-button-hovered,
+  html body .hero .hero-static-actions > .hero-static-action.is-click-confirmed,
+  html body .hero .hero-static-actions > .hero-static-action.is-return-clean {
+    width: calc((100% - 8px) / 2) !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 44px !important;
+    max-height: 44px !important;
+    padding: 9px 6px !important;
+    flex: 0 0 calc((100% - 8px) / 2) !important;
+    font-size: 9px !important;
+    letter-spacing: 0 !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body .hero .hero-static-actions > .hero-static-action--giveaways,
+  html body .hero .hero-static-actions > .hero-static-action--giveaways:hover,
+  html body .hero .hero-static-actions > .hero-static-action--giveaways:focus-visible,
+  html body .hero .hero-static-actions > .hero-static-action--giveaways:active,
+  html body .hero .hero-static-actions > .hero-static-action--giveaways.is-touch-pressed,
+  html body .hero .hero-static-actions > .hero-static-action--giveaways.is-click-confirmed {
+    background: linear-gradient(180deg, #f0a00a 0%, #d88806 100%) !important;
+    color: #090909 !important;
+    -webkit-text-fill-color: #090909 !important;
+    box-shadow:
+      0 10px 20px rgba(219, 139, 8, 0.26),
+      0 0 14px rgba(219, 139, 8, 0.16) !important;
+  }
+
+  html body .hero .hero-static-actions > .hero-static-action--socials,
+  html body .hero .hero-static-actions > .hero-static-action--socials:hover,
+  html body .hero .hero-static-actions > .hero-static-action--socials:focus-visible,
+  html body .hero .hero-static-actions > .hero-static-action--socials:active,
+  html body .hero .hero-static-actions > .hero-static-action--socials.is-touch-pressed,
+  html body .hero .hero-static-actions > .hero-static-action--socials.is-click-confirmed {
+    background: rgba(23, 22, 22, 0.78) !important;
+    color: #a9a7a7 !important;
+    -webkit-text-fill-color: #a9a7a7 !important;
+    box-shadow: none !important;
+  }
+
+  html body .hero .hero-static-actions .hero-static-action__icon {
+    width: 15px !important;
+    height: 15px !important;
+    flex-basis: 15px !important;
+    margin-left: 6px !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  /* Smaller floating skins; their individual continuous motion remains intact. */
+  html body .hero .floating-images img:nth-child(1) {
+    width: clamp(118px, 31vw, 166px) !important;
+  }
+
+  html body .hero .floating-images img:nth-child(2) {
+    width: clamp(86px, 23vw, 126px) !important;
+  }
+
+  html body .hero .floating-images img:nth-child(3) {
+    width: clamp(112px, 29vw, 158px) !important;
+  }
+
+  html body .hero .floating-images img:nth-child(4) {
+    width: clamp(104px, 27vw, 148px) !important;
+  }
+
+  html body .hero .floating-images img:nth-child(5) {
+    width: clamp(72px, 18vw, 100px) !important;
+  }
+
+  /* Smaller bonus items. Card press/hover state never moves or reshapes a card. */
+  html body #bonuses .bonus-reward-card__item-stack {
+    width: min(72%, 205px) !important;
+    height: 138px !important;
+  }
+
+  html body #bonuses .bonus-reward-card__item--skinbaron {
+    width: min(66%, 190px) !important;
+    max-height: 132px !important;
+  }
+
+  html body #bonuses .bonus-reward-card[data-bonus-id="raingg"] > .bonus-reward-card__item,
+  html body #bonuses .bonus-reward-card__item--hypedrop {
+    width: min(58%, 205px) !important;
+    max-height: 140px !important;
+  }
+
+  html body #bonuses .bonus-reward-card__item--skinclub {
+    width: min(70%, 205px) !important;
+    max-height: 148px !important;
+  }
+
+  html body #bonuses .bonus-reward-card:hover,
+  html body #bonuses .bonus-reward-card:focus,
+  html body #bonuses .bonus-reward-card:focus-within,
+  html body #bonuses .bonus-reward-card:active,
+  html body #bonuses .bonus-reward-card.is-touch-pressed,
+  html body #bonuses .bonus-reward-card.is-card-pressed,
+  html body #bonuses .bonus-reward-card.is-card-holding,
+  html body #bonuses .bonus-reward-card.is-return-resting {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body #bonuses .bonus-reward-card:hover .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card:focus-within .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card:active .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card.is-card-pressed .bonus-reward-card__body {
+    translate: 0 0 !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Video card and its lower information area stay fixed when tapped. */
+  html body #videos .videos-grid > .video-card,
+  html body #videos .videos-grid > .video-card:hover,
+  html body #videos .videos-grid > .video-card:focus,
+  html body #videos .videos-grid > .video-card:focus-visible,
+  html body #videos .videos-grid > .video-card:active,
+  html body #videos .videos-grid > .video-card.is-touch-pressed,
+  html body #videos .videos-grid > .video-card.is-video-pressing {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+  }
+
+  html body #videos .video-card .video-info,
+  html body #videos .video-card:hover .video-info,
+  html body #videos .video-card:focus-visible .video-info,
+  html body #videos .video-card:active .video-info,
+  html body #videos .video-card.is-touch-pressed .video-info {
+    translate: 0 0 !important;
+    scale: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  /* Stay Connected art and buttons are entirely static on mobile. */
+  html body #news .news-team-member__avatar,
+  html body #news .news-team-member:hover .news-team-member__avatar,
+  html body #news .news-team-member:focus-within .news-team-member__avatar,
+  html body #news .news-team-member:active .news-team-member__avatar,
+  html body #news .news-team-member.is-news-action-pressing .news-team-member__avatar,
+  html body #news .news-team-member.is-news-action-resting .news-team-member__avatar,
+  html body #news .news-team-member:has(.news-team-action:active) .news-team-member__avatar {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body #news .news-team-action,
+  html body #news .news-team-action:hover,
+  html body #news .news-team-action:focus,
+  html body #news .news-team-action:focus-visible,
+  html body #news .news-team-action:active,
+  html body #news .news-team-action.is-touch-pressed,
+  html body #news .news-team-action.is-link-drag-ready,
+  html body #news .news-team-action.is-link-dragging,
+  html body #news .news-team-action.is-return-resting {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body #news .news-team-action::after,
+  html body #news .news-team-action:hover::after,
+  html body #news .news-team-action:focus-visible::after,
+  html body #news .news-team-action:active::after,
+  html body #news .news-team-action.is-touch-pressed::after,
+  html body #news .news-team-action.is-link-drag-ready::after,
+  html body #news .news-team-action.is-link-dragging::after,
+  html body #news .news-team-action.is-return-resting::after {
+    opacity: 0 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body #news .news-team-action img,
+  html body #news .news-team-action:hover img,
+  html body #news .news-team-action:focus-visible img,
+  html body #news .news-team-action:active img,
+  html body #news .news-team-action.is-touch-pressed img {
+    translate: 0 0 !important;
+    scale: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Only the Hellcase watermark is frozen; giveaway skins and copy keep rotating. */
+  html body #giveaways .giveaway-card--featured-carousel .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel:hover .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel:focus-within .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel:active .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel.is-touch-pressed .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel.is-return-resting .hellcase-giveaway-watermark {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: brightness(0) saturate(0) invert(1) !important;
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+
+  /* Footer links remain the same colour and position through every touch state. */
+  html body .main-footer .footer-nav-link,
+  html body .main-footer .footer-nav-link:hover,
+  html body .main-footer .footer-nav-link:focus,
+  html body .main-footer .footer-nav-link:focus-visible,
+  html body .main-footer .footer-nav-link:active,
+  html body .main-footer .footer-nav-link.is-touch-pressed,
+  html body .main-footer .footer-social-links a,
+  html body .main-footer .footer-social-links a:hover,
+  html body .main-footer .footer-social-links a:focus,
+  html body .main-footer .footer-social-links a:focus-visible,
+  html body .main-footer .footer-social-links a:active,
+  html body .main-footer .footer-social-links a.is-touch-pressed {
+    color: #bdbdc2 !important;
+    -webkit-text-fill-color: #bdbdc2 !important;
+    text-shadow: none !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===== 2026-08-20 definitive mobile touch lock and full-width menu ===== */
+@media (max-width: 860px) {
+  /* Bonus cards retain one visual state through tap, hold, focus and drag. */
+  html body #bonuses .bonus-reward-card[data-bonus-id],
+  html body #bonuses .bonus-reward-card[data-bonus-id]:hover,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:focus,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:active,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-hovered,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-pressing,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-clicked,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-mouse-held,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-drag-locked,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragging,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-return-resting {
+    z-index: auto !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:active .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-hovered .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-pressing .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-clicked .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-mouse-held .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-drag-locked .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragging .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged .bonus-reward-card__body {
+    background:
+      radial-gradient(circle at 50% -12%, rgba(255, 255, 255, 0.055), transparent 44%),
+      linear-gradient(180deg, rgba(27, 27, 30, 0.96), rgba(13, 13, 15, 0.97)) !important;
+    border-color: transparent !important;
+    box-shadow:
+      0 22px 42px rgba(0, 0, 0, 0.36),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__body::before,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__body::before,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__body::before,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:active .bonus-reward-card__body::before,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed .bonus-reward-card__body::before,
+  html body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] .bonus-reward-card__body::before {
+    opacity: 0 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body #bonuses .bonus-reward-card[data-bonus-id] > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
+  html body #bonuses .bonus-reward-card[data-bonus-id]:hover > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
+  html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
+  html body #bonuses .bonus-reward-card[data-bonus-id]:active > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
+  html body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] > .bonus-reward-card__item:not(.bonus-reward-card__item-stack) {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: translate3d(-50%, 0, 0) !important;
+    filter:
+      brightness(1.08)
+      saturate(1.06)
+      drop-shadow(0 18px 24px rgba(0, 0, 0, 0.46))
+      drop-shadow(0 0 14px rgba(255, 255, 255, 0.1)) !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body #bonuses .bonus-reward-card--hellcase .bonus-reward-card__item-stack,
+  html body #bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__item-stack,
+  html body #bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-stack,
+  html body #bonuses .bonus-reward-card--hellcase:active .bonus-reward-card__item-stack,
+  html body #bonuses .bonus-reward-card--hellcase[class*="is-card-"] .bonus-reward-card__item-stack {
+    transform: translate3d(-50%, 0, 0) !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body #bonuses .bonus-reward-card--hellcase .bonus-reward-card__item-layer--case,
+  html body #bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__item-layer--case,
+  html body #bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-layer--case,
+  html body #bonuses .bonus-reward-card--hellcase:active .bonus-reward-card__item-layer--case,
+  html body #bonuses .bonus-reward-card--hellcase[class*="is-card-"] .bonus-reward-card__item-layer--case {
+    transform: translateX(-50%) !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body #bonuses .bonus-reward-card--hellcase .bonus-reward-card__item-layer--weapon,
+  html body #bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__item-layer--weapon,
+  html body #bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-layer--weapon,
+  html body #bonuses .bonus-reward-card--hellcase:active .bonus-reward-card__item-layer--weapon,
+  html body #bonuses .bonus-reward-card--hellcase[class*="is-card-"] .bonus-reward-card__item-layer--weapon {
+    transform: translateX(-50%) translateY(0) rotate(-4deg) !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__button,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__button,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__button,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:active .bonus-reward-card__button,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed .bonus-reward-card__button,
+  html body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] .bonus-reward-card__button {
+    filter: none !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.16),
+      0 12px 22px rgba(0, 0, 0, 0.2) !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Requested mobile asset emphasis. */
+  html body #bonuses .bonus-reward-card__logo--hellcase {
+    width: min(90%, 260px) !important;
+    max-height: 100px !important;
+  }
+
+  html body #bonuses .bonus-reward-card__item--skinclub {
+    width: min(82%, 240px) !important;
+    max-height: 175px !important;
+  }
+
+  /* Long-holding a social button cannot lift its card art or the button. */
+  html body #news .news-team-member,
+  html body #news .news-team-member:hover,
+  html body #news .news-team-member:focus-within,
+  html body #news .news-team-member:active,
+  html body #news .news-team-member.is-news-action-pressing,
+  html body #news .news-team-member.is-news-action-dragging,
+  html body #news .news-team-member.is-news-link-dragging,
+  html body #news .news-team-member.is-news-action-resting {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  html body #news .news-team-member .news-team-member__avatar,
+  html body #news .news-team-member:hover .news-team-member__avatar,
+  html body #news .news-team-member:focus-within .news-team-member__avatar,
+  html body #news .news-team-member:active .news-team-member__avatar,
+  html body #news .news-team-member.is-news-action-pressing .news-team-member__avatar,
+  html body #news .news-team-member.is-news-action-dragging .news-team-member__avatar,
+  html body #news .news-team-member.is-news-link-dragging .news-team-member__avatar,
+  html body #news .news-team-member.is-news-action-resting .news-team-member__avatar,
+  html body #news .news-team-member:has(.news-team-action:active) .news-team-member__avatar {
+    top: auto !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body #news .news-team-member .news-team-action,
+  html body #news .news-team-member .news-team-action:hover,
+  html body #news .news-team-member .news-team-action:focus,
+  html body #news .news-team-member .news-team-action:focus-visible,
+  html body #news .news-team-member .news-team-action:active,
+  html body #news .news-team-member .news-team-action.is-touch-pressed,
+  html body #news .news-team-member .news-team-action.is-link-drag-ready,
+  html body #news .news-team-member .news-team-action.is-link-dragging,
+  html body #news .news-team-member .news-team-action.is-return-resting {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Video cards remain fixed; only a light darkening of the media is retained. */
+  html body #videos .video-card,
+  html body #videos .video-card:hover,
+  html body #videos .video-card:focus,
+  html body #videos .video-card:focus-visible,
+  html body #videos .video-card:focus-within,
+  html body #videos .video-card:active,
+  html body #videos .video-card.is-touch-pressed,
+  html body #videos .video-card.is-link-dragging,
+  html body #videos .video-card.is-link-dragged,
+  html body #videos .video-card.is-video-pressing,
+  html body #videos .video-card.reveal-on-scroll.is-revealed:hover,
+  html body #videos .video-card.reveal-on-scroll.is-revealed:focus-visible {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body #videos .video-card .video-info,
+  html body #videos .video-card:hover .video-info,
+  html body #videos .video-card:focus-within .video-info,
+  html body #videos .video-card:active .video-info,
+  html body #videos .video-card.is-touch-pressed .video-info,
+  html body #videos .video-card.is-link-dragging .video-info,
+  html body #videos .video-card.is-link-dragged .video-info,
+  html body #videos .video-card .video-date {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body #videos .video-card .video-media::after {
+    background: rgba(0, 0, 0, 0) !important;
+    transition: none !important;
+  }
+
+  html body #videos .video-card:hover .video-media::after,
+  html body #videos .video-card:focus-within .video-media::after,
+  html body #videos .video-card:active .video-media::after,
+  html body #videos .video-card.is-touch-pressed .video-media::after,
+  html body #videos .video-card.is-link-dragging .video-media::after {
+    background: rgba(0, 0, 0, 0.14) !important;
+  }
+
+  /* The Hellcase giveaway watermark never reacts; its carousel content still does. */
+  html body #giveaways .giveaway-card--featured-carousel .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel:hover .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel:focus .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel:focus-within .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel:active .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel.is-touch-pressed .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel.is-return-resting .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel.is-giveaway-content-exiting .hellcase-giveaway-watermark {
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    top: 18% !important;
+    right: 12% !important;
+    left: 12% !important;
+    transform: none !important;
+    filter: brightness(0) saturate(0) invert(1) !important;
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+
+  /* Footer copy never changes colour or position on touch/hold. */
+  html body .main-footer .footer-nav-link,
+  html body .main-footer .footer-nav-link:hover,
+  html body .main-footer .footer-nav-link:focus,
+  html body .main-footer .footer-nav-link:focus-visible,
+  html body .main-footer .footer-nav-link:active,
+  html body .main-footer .footer-nav-link.is-touch-pressed,
+  html body .main-footer .footer-nav-link.is-link-dragging,
+  html body .main-footer .footer-nav-link *,
+  html body .main-footer .footer-nav-link:hover *,
+  html body .main-footer .footer-nav-link:active *,
+  html body .main-footer .footer-social-links a,
+  html body .main-footer .footer-social-links a:hover,
+  html body .main-footer .footer-social-links a:focus,
+  html body .main-footer .footer-social-links a:focus-visible,
+  html body .main-footer .footer-social-links a:active,
+  html body .main-footer .footer-social-links a.is-touch-pressed,
+  html body .main-footer .footer-social-links a.is-link-dragging {
+    color: #bdbdc2 !important;
+    -webkit-text-fill-color: #bdbdc2 !important;
+    text-shadow: none !important;
+    translate: 0 0 !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html body .main-footer .footer-nav-link::before,
+  html body .main-footer .footer-nav-link::after,
+  html body .main-footer .footer-nav-link:hover::before,
+  html body .main-footer .footer-nav-link:hover::after,
+  html body .main-footer .footer-nav-link:active::before,
+  html body .main-footer .footer-nav-link:active::after {
+    opacity: 0 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Opaque floating skins are pulled inward without changing their motion loops. */
+  html body .hero .floating-images img,
+  html body .hero .floating-images img:hover,
+  html body .hero .floating-images img:focus-visible,
+  html body .hero .floating-images img.is-touch-pressed,
+  html body .hero:hover .floating-images img {
+    opacity: 1 !important;
+    filter:
+      drop-shadow(0 20px 26px rgba(0, 0, 0, 0.52))
+      drop-shadow(0 0 13px var(--artifact-glow, rgba(255, 169, 20, 0.2)))
+      saturate(1.08)
+      contrast(1.04)
+      brightness(1) !important;
+  }
+
+  html body .hero .floating-images img:nth-child(1) {
+    top: 24% !important;
+    right: 5% !important;
+    left: auto !important;
+  }
+
+  html body .hero .floating-images img:nth-child(2) {
+    top: 7% !important;
+    right: 3% !important;
+    left: auto !important;
+  }
+
+  html body .hero .floating-images img:nth-child(3) {
+    right: -4% !important;
+    left: auto !important;
+    bottom: 12% !important;
+  }
+
+  html body .hero .floating-images img:nth-child(4) {
+    right: auto !important;
+    bottom: 14% !important;
+    left: -4% !important;
+  }
+
+  html body .hero .floating-images img:nth-child(5) {
+    top: 8% !important;
+    right: auto !important;
+    left: 2% !important;
+  }
+
+  /* Use the same fixed custom page scrollbar styling as desktop. */
+  html.has-custom-scrollbar,
+  html.has-custom-scrollbar body {
+    scrollbar-width: none !important;
+    scrollbar-gutter: auto !important;
+    -ms-overflow-style: none !important;
+  }
+
+  html.has-custom-scrollbar::-webkit-scrollbar,
+  html.has-custom-scrollbar body::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  html.has-custom-scrollbar body .vp-scrollbar,
+  html.has-custom-scrollbar body .vp-scrollbar.is-hidden,
+  html.has-custom-scrollbar.is-loading body .vp-scrollbar,
+  html.has-custom-scrollbar.is-entering body .vp-scrollbar,
+  html.has-custom-scrollbar body.menu-open .vp-scrollbar,
+  html.has-custom-scrollbar body.is-loading .vp-scrollbar,
+  html.has-custom-scrollbar body.is-entering .vp-scrollbar {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+    z-index: 2400 !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 10px !important;
+    height: auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    touch-action: none !important;
+    cursor: grab !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.has-custom-scrollbar body .vp-scrollbar__thumb,
+  html.has-custom-scrollbar body .vp-scrollbar__thumb:hover,
+  html.has-custom-scrollbar body .vp-scrollbar__thumb.is-dragging {
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 4px !important;
+    min-height: 140px !important;
+    margin: 0 0 0 auto !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: #bdbdc2 !important;
+    box-shadow: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    touch-action: none !important;
+    cursor: grab !important;
+    will-change: transform !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html.has-custom-scrollbar body .vp-scrollbar:hover .vp-scrollbar__thumb,
+  html.has-custom-scrollbar body .vp-scrollbar.is-hovered .vp-scrollbar__thumb,
+  html.has-custom-scrollbar body .vp-scrollbar__thumb:hover,
+  html.has-custom-scrollbar body .vp-scrollbar__thumb.is-dragging {
+    background: #ffa914 !important;
+  }
+
+  /* Full viewport width, higher and shorter mobile navigation panel. */
+  html body .main-header .main-nav,
+  html body .main-header .main-nav.show,
+  html body.menu-open .main-header .main-nav,
+  html body.menu-open .main-header .main-nav.show {
+    position: absolute !important;
+    top: calc(100% + 1px) !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: 50% !important;
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: min(52dvh, 390px) !important;
+    padding: 10px 16px 14px !important;
+    gap: 1px !important;
+    border-right: 0 !important;
+    border-left: 0 !important;
+    border-radius: 0 0 16px 16px !important;
+  }
+
+  html body .main-header .main-nav:not(.show) {
+    transform: translate3d(-50%, -6px, 0) scale(0.99) !important;
+  }
+
+  html body .main-header .main-nav.show,
+  html body.menu-open .main-header .main-nav.show {
+    transform: translate3d(-50%, 0, 0) scale(1) !important;
+  }
+
+  html body .main-header .main-nav > a,
+  html body .main-header .main-nav > a:hover,
+  html body .main-header .main-nav > a:focus,
+  html body .main-header .main-nav > a:focus-visible,
+  html body .main-header .main-nav > a:active,
+  html body .main-header .main-nav > a.is-touch-pressed,
+  html body .main-header .main-nav > a.is-active,
+  html body .main-header .main-nav > a[aria-current="page"] {
+    min-height: 43px !important;
+    padding-top: 10px !important;
+    padding-bottom: 9px !important;
+  }
+}
