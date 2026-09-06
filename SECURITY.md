@@ -1,94 +1,46 @@
-# 🔒 Security Policy
-
-![Security Policy](https://img.shields.io/badge/Security-Policy-blue?style=for-the-badge)
-![Responsible Disclosure](https://img.shields.io/badge/Responsible-Disclosure-green?style=for-the-badge)
-![Vulnerability Reports](https://img.shields.io/badge/Vulnerability-Reporting-orange?style=for-the-badge)
-
----
-
-## Supported Versions
-
-The following versions actively receive security updates:
-
-| Version | Support Status |
-|--------|---------------|
-| 5.1.x | ✅ Fully supported |
-| 5.0.x | ❌ Unsupported |
-| 4.0.x | ✅ Supported |
-| < 4.0 | ❌ Unsupported |
-
-> ⚠ Only supported versions receive security patches. Unsupported versions may contain unpatched vulnerabilities and should be upgraded immediately.
-
----
+# Security Policy
 
 ## Reporting a Vulnerability
 
-We greatly appreciate responsible security disclosures. Please follow these guidelines.
+We take the security of this project seriously.
 
-### ❗ Do **not** report vulnerabilities via public issues
+If you discover a security vulnerability, please **do not open a public GitHub issue** or disclose the vulnerability publicly.
 
-Public exposure may endanger users before a fix is available.
+Instead, please report the vulnerability privately to the project maintainers. When submitting a report, include as much information as possible, such as:
 
-When reporting, include the following:
+* A description of the vulnerability
+* Steps to reproduce the issue
+* The potential security impact
+* Affected versions or components
+* Any proof-of-concept code, screenshots, or additional information that may help us investigate
 
-- **Clear description** of the vulnerability
-- **Steps to reproduce** the issue
-- **Affected versions**
-- **Expected vs. actual behavior**
-- **Estimated impact**
-- *(Optional)* Suggested fix or patch
-- *(Optional)* Minimal, safe proof-of-concept
+## Responsible Disclosure
 
-### 🕒 Response Timeline
+Please give the maintainers reasonable time to investigate and resolve the issue before publicly disclosing any information about the vulnerability.
 
-- **24–48 hours:** Acknowledgment of receipt
-- **Within 7 business days:** Initial mitigation or proposed fix
-- **Ongoing:** Updates for complex issues
+We appreciate responsible security research and will make every effort to review valid reports as quickly as possible.
 
-### 🤝 Responsible Disclosure
+## Supported Versions
 
-We publicly credit reporters after fixes are released unless anonymity is requested.
+Security updates are generally provided for the latest version of the project.
 
-### 🧪 Testing Rules
+| Version        | Supported |
+| -------------- | --------- |
+| Latest         | ✅ Yes     |
+| Older versions | ❌ No      |
 
-- Do **not** test vulnerabilities on production systems
-- Use dedicated, isolated test environments only
+Users are encouraged to keep their installation up to date to receive the latest security fixes and improvements.
 
-### 🔐 Secure Communication
+## Security Best Practices
 
-PGP-encrypted email is supported for highly sensitive reports.
+When using this project:
 
-**PGP Key:**  
-[Insert link to your PGP key]
+* Keep dependencies up to date.
+* Never commit passwords, API keys, access tokens, or other secrets to the repository.
+* Store sensitive configuration in environment variables or an appropriate secret-management system.
+* Review third-party dependencies before using them in production.
+* Follow the principle of least privilege when configuring permissions and access.
 
----
+## Thank You
 
-## 🧩 CVE Handling Policy
-
-We follow industry-standard best practices for managing Common Vulnerabilities and Exposures (CVE).
-
-- **CVE Assignment:** Request CVE IDs for confirmed vulnerabilities via GitHub Security Advisories or MITRE
-- **Patch Development:** Security fixes are prioritized; backports may be provided for supported versions
-- **Public Advisory:** Security advisories are released with CVE details and reporter credit
-- **Timeline:** CVEs are published after coordinated disclosure and included in release notes
-
----
-
-## 🔐 Security Best Practices
-
-- Always use the **latest supported version**
-- Keep **dependencies up to date**
-- Enforce **strong authentication and RBAC**
-- Perform **regular security and configuration audits**
-- Enable **logging and monitoring**
-- Use **HTTPS/TLS** for all communications
-- Store secrets securely (Vault, encrypted environment variables, etc.)
-- Follow the **principle of least privilege**
-
----
-
-## 📚 Additional Resources
-
-- https://owasp.org/www-project-top-ten/
-- https://docs.github.com/en/code-security/security-advisories
-- https://www.openpgp.org/
+Thank you for helping keep this project and its users safe.
