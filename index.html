@@ -118,6 +118,37 @@
 </style>
 
 <link rel="stylesheet" href="mobile-polish.css?v=20260825-mobile-hero-and-video-panel-v17" />
+
+<!-- =========================================================
+     CLEAN SECTION ROUTING
+     /bonuses
+     /socials
+     /videos
+     /giveaways
+     ========================================================= -->
+
+<script>
+(function () {
+  const sectionRoutes = {
+    "/bonuses": "bonuses",
+    "/socials": "news",
+    "/videos": "videos",
+    "/giveaways": "giveaways"
+  };
+
+  const currentPath =
+    window.location.pathname.replace(/\/+$/, "") || "/";
+
+  const targetId = sectionRoutes[currentPath];
+
+  if (!targetId) {
+    return;
+  }
+
+  window.__VP_INITIAL_SECTION__ = targetId;
+})();
+</script>
+
 </head>
 
 <body>
@@ -161,9 +192,9 @@
 
       <div class="homepage-popup__actions">
 
-        <!-- CHANGED: /bonuses -> / -->
+        <!-- CHANGED: / -> /bonuses -->
         <a
-          href="/"
+          href="/bonuses"
           class="homepage-popup__button homepage-popup__button--primary"
           data-home-route-link
           data-section-target="bonuses"
@@ -227,36 +258,36 @@
           Home
         </a>
 
-        <!-- CHANGED: /bonuses -> / -->
+        <!-- CHANGED: / -> /bonuses -->
         <a
-          href="/"
+          href="/bonuses"
           class="with-divider"
           data-section-target="bonuses"
         >
           Bonuses
         </a>
 
-        <!-- CHANGED: /socials -> / -->
+        <!-- CHANGED: / -> /socials -->
         <a
-          href="/"
+          href="/socials"
           class="with-divider"
           data-section-target="news"
         >
           Socials
         </a>
 
-        <!-- CHANGED: /videos -> / -->
+        <!-- CHANGED: / -> /videos -->
         <a
-          href="/"
+          href="/videos"
           class="with-divider"
           data-section-target="videos"
         >
           Videos
         </a>
 
-        <!-- CHANGED: /giveaways -> / -->
+        <!-- CHANGED: / -> /giveaways -->
         <a
-          href="/"
+          href="/giveaways"
           class="with-divider"
           data-section-target="giveaways"
         >
@@ -332,9 +363,9 @@
 
           <div class="hero-static-actions">
 
-            <!-- CHANGED: /giveaways -> / -->
+            <!-- CHANGED: / -> /giveaways -->
             <a
-              href="/"
+              href="/giveaways"
               class="hero-static-action hero-static-action--giveaways"
               data-section-target="giveaways"
               draggable="true"
@@ -352,9 +383,9 @@
               </svg>
             </a>
 
-            <!-- CHANGED: /socials -> / -->
+            <!-- CHANGED: / -> /socials -->
             <a
-              href="/"
+              href="/socials"
               class="hero-static-action hero-static-action--socials"
               data-section-target="news"
               draggable="true"
@@ -365,10 +396,10 @@
           </div>
         </div>
 
-        <!-- CHANGED: /bonuses -> / -->
+        <!-- CHANGED: / -> /bonuses -->
         <a
           class="hero-explore"
-          href="/"
+          href="/bonuses"
           data-section-target="bonuses"
           draggable="true"
           aria-label="Explore bonuses"
@@ -1202,10 +1233,10 @@
               aria-label="Footer navigation"
             >
 
-              <!-- CHANGED: /bonuses -> / -->
+              <!-- CHANGED: / -> /bonuses -->
               <a
                 class="footer-nav-link"
-                href="/"
+                href="/bonuses"
                 data-home-route-link
                 data-section-target="bonuses"
                 draggable="true"
@@ -1213,10 +1244,10 @@
                 Bonuses
               </a>
 
-              <!-- CHANGED: /socials -> / -->
+              <!-- CHANGED: / -> /socials -->
               <a
                 class="footer-nav-link"
-                href="/"
+                href="/socials"
                 data-home-route-link
                 data-section-target="news"
                 draggable="true"
@@ -1224,10 +1255,10 @@
                 Socials
               </a>
 
-              <!-- CHANGED: /videos -> / -->
+              <!-- CHANGED: / -> /videos -->
               <a
                 class="footer-nav-link"
-                href="/"
+                href="/videos"
                 data-home-route-link
                 data-section-target="videos"
                 draggable="true"
@@ -1235,10 +1266,10 @@
                 Videos
               </a>
 
-              <!-- CHANGED: /giveaways -> / -->
+              <!-- CHANGED: / -> /giveaways -->
               <a
                 class="footer-nav-link"
-                href="/"
+                href="/giveaways"
                 data-home-route-link
                 data-section-target="giveaways"
                 draggable="true"
@@ -1329,6 +1360,46 @@
 
 
   <script src="script.js?v=20260825-mobile-menu-video-v50"></script>
+
+
+  <!-- =========================================================
+       INITIAL SECTION ROUTING
+       ========================================================= -->
+
+  <script>
+    (function () {
+      function scrollToInitialSection() {
+        const targetId = window.__VP_INITIAL_SECTION__;
+
+        if (!targetId) {
+          return;
+        }
+
+        const target = document.getElementById(targetId);
+
+        if (!target) {
+          return;
+        }
+
+        setTimeout(function () {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }, 150);
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener(
+          "DOMContentLoaded",
+          scrollToInitialSection,
+          { once: true }
+        );
+      } else {
+        scrollToInitialSection();
+      }
+    })();
+  </script>
 
 </body>
 </html>
