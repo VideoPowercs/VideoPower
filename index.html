@@ -29,18 +29,14 @@
 />
 
 <meta
-  property="og:image"
-  content="https://videopowercodes.com/assets/videopower_profile.jpg"
-/>
-<meta property="og:image:alt" content="VideoPower Codes" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta
-  name="twitter:image"
-  content="https://videopowercodes.com/assets/videopower_profile.jpg"
-/>
-<meta
-  itemprop="image"
-  content="https://videopowercodes.com/assets/videopower_profile.jpg"
+property="og:image"
+content="https://videopowercodes.com/assets/videopower_profile.jpg"
+/> <meta property="og:image:alt" content="VideoPower Codes" /> <meta name="twitter:card" content="summary_large_image" /> <meta
+name="twitter:image"
+content="https://videopowercodes.com/assets/videopower_profile.jpg"
+/> <meta
+itemprop="image"
+content="https://videopowercodes.com/assets/videopower_profile.jpg"
 />
 
 <script type="application/ld+json">
@@ -133,7 +129,7 @@
   href="final-polish.css?v=20260824-desktop-video-static-v35"
 />
 
-<style id="vp-critical-intro-isolation-v57">
+<style id="vp-critical-intro-isolation-v58">
 
   html body .main-header,
   html body .main-header *,
@@ -179,14 +175,16 @@
 
 
   /* =========================================================
-     VIDEOPOWER NEW PRIZES BADGE
+     VIDEOPOWER NEW PRIZES BADGES
+     
+     Header + footer badges now use the SAME visual design
+     and effects as the Giveaways heading badge.
+     
+     Font is inherited from the surrounding site's normal
+     heading/navigation typography instead of Press Start 2P.
      ========================================================= */
 
   .vp-new-prize-badge {
-    --vp-badge-orange: #f6af15;
-    --vp-badge-orange-light: #ffc94f;
-    --vp-badge-orange-dark: #d47b00;
-
     position: relative;
 
     display: inline-flex;
@@ -196,7 +194,7 @@
     margin-left: 8px;
 
     min-height: 20px;
-    padding: 5px 9px;
+    padding: 6px 10px;
 
     overflow: hidden;
 
@@ -207,51 +205,50 @@
       linear-gradient(
         135deg,
         #ffc94f 0%,
-        #f6af15 35%,
-        #e89408 68%,
-        #c96d00 100%
+        #f6af15 48%,
+        #d47b00 100%
       );
 
-    border: 1px solid rgba(255, 207, 87, 0.95);
+    border:
+      1px solid rgba(255, 213, 100, 0.95);
 
     border-radius: 4px;
 
-    font-family:
-      "Press Start 2P",
-      monospace;
+    /*
+      Match the normal typography used by the site,
+      rather than the old pixel font.
+    */
+    font-family: inherit;
 
-    font-size: 6px;
-    font-weight: 400;
+    font-size: 7px;
+    font-weight: 700;
     line-height: 1;
 
-    letter-spacing: -0.15px;
+    letter-spacing: 0.15px;
     white-space: nowrap;
 
     vertical-align: middle;
 
     text-shadow:
-      0 1px 2px rgba(0, 0, 0, 0.8),
-      0 0 4px rgba(0, 0, 0, 0.5);
+      0 1px 3px rgba(0, 0, 0, 0.85);
 
     box-shadow:
-      0 0 0 1px rgba(246, 175, 21, 0.18),
-      0 0 7px rgba(246, 175, 21, 0.65),
-      0 0 16px rgba(246, 175, 21, 0.28),
-      inset 0 1px 0 rgba(255, 255, 255, 0.35),
-      inset 0 -2px 5px rgba(100, 45, 0, 0.25);
-
-    transform: translateY(-1px);
+      0 0 9px rgba(246, 175, 21, 0.7),
+      0 0 18px rgba(246, 175, 21, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.35);
 
     z-index: 5;
 
     isolation: isolate;
 
     animation:
-      vpNewPrizeFloat 2.8s ease-in-out infinite;
+      vpHeadingBadgePulse 2.2s ease-in-out infinite;
   }
 
 
-  /* Dark angled edge */
+  /*
+     SAME shine effect as the Giveaways heading badge
+  */
 
   .vp-new-prize-badge::before {
     content: "";
@@ -259,98 +256,79 @@
     position: absolute;
 
     top: 0;
-    left: -55%;
+    left: -60%;
 
-    width: 42%;
+    width: 35%;
     height: 100%;
 
     background:
       linear-gradient(
         100deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.05) 20%,
-        rgba(255, 255, 255, 0.72) 50%,
-        rgba(255, 255, 255, 0.05) 80%,
-        transparent 100%
+        transparent,
+        rgba(255, 255, 255, 0.7),
+        transparent
       );
 
     transform:
-      skewX(-20deg)
-      translateX(0);
+      skewX(-18deg);
 
-    z-index: 2;
+    animation:
+      vpHeadingBadgeShine 2.8s ease-in-out infinite;
 
     pointer-events: none;
 
-    animation:
-      vpNewPrizeShine 2.4s ease-in-out infinite;
+    z-index: 2;
   }
 
 
-  /* Little glowing particles */
+  /*
+     Small sparkle — kept subtle like the Giveaways badge
+  */
 
   .vp-new-prize-badge::after {
-    content: "✦  •  ✧";
+    content: "✦";
 
     position: absolute;
 
-    top: 50%;
-    right: 3px;
+    top: 3px;
+    right: 5px;
 
-    color: rgba(255, 255, 255, 0.82);
+    color: rgba(255, 255, 255, 0.9);
 
     font-family:
       Arial,
       sans-serif;
 
-    font-size: 5px;
+    font-size: 7px;
 
-    letter-spacing: 2px;
+    line-height: 1;
 
-    transform:
-      translateY(-50%)
-      rotate(-8deg);
+    text-shadow:
+      0 0 5px #ffffff,
+      0 0 10px rgba(255, 255, 255, 0.7);
 
-    opacity: 0.75;
-
-    z-index: 3;
+    animation:
+      vpGiveawaySpark 1.5s ease-in-out infinite;
 
     pointer-events: none;
 
-    animation:
-      vpNewPrizeParticles 1.7s ease-in-out infinite;
+    z-index: 3;
   }
 
 
   .vp-new-prize-badge--header {
     min-height: 19px;
-    padding: 5px 8px;
+    padding: 6px 9px;
 
-    font-size: 5px;
-
-    clip-path:
-      polygon(
-        5% 0,
-        100% 0,
-        94% 100%,
-        0 100%
-      );
+    font-size: 6px;
   }
 
 
   .vp-new-prize-badge--footer {
     min-height: 19px;
-    padding: 5px 8px;
+    padding: 6px 9px;
 
-    font-size: 5px;
-
-    clip-path:
-      polygon(
-        5% 0,
-        100% 0,
-        94% 100%,
-        0 100%
-      );
+    font-size: 6px;
   }
 
 
@@ -365,149 +343,6 @@
     display: inline-flex;
     align-items: center;
     gap: 2px;
-  }
-
-
-  /* =========================================================
-     GIVEAWAYS SECTION - NEW PRIZES SIDE BADGE
-     ========================================================= */
-
-  #giveaways {
-    position: relative;
-    overflow: visible;
-  }
-
-
-  .vp-giveaways-new-prizes {
-    position: absolute;
-
-    left: 0;
-    top: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 38px;
-    min-height: 145px;
-
-    transform:
-      translateY(-50%)
-      translateX(-2px);
-
-    background:
-      linear-gradient(
-        180deg,
-        #ffc94f 0%,
-        #f6af15 35%,
-        #e89408 70%,
-        #c96d00 100%
-      );
-
-    border:
-      1px solid rgba(255, 210, 94, 0.95);
-
-    border-left: none;
-
-    border-radius:
-      0 7px 7px 0;
-
-    box-shadow:
-      0 0 8px rgba(246, 175, 21, 0.65),
-      0 0 22px rgba(246, 175, 21, 0.25),
-      inset -2px 0 6px rgba(100, 45, 0, 0.2);
-
-    z-index: 15;
-
-    overflow: hidden;
-
-    pointer-events: none;
-
-    animation:
-      vpGiveawayBadgeFloat 3s ease-in-out infinite;
-  }
-
-
-  .vp-giveaways-new-prizes span {
-    position: relative;
-
-    display: block;
-
-    color: #ffffff;
-
-    font-family:
-      "Press Start 2P",
-      monospace;
-
-    font-size: 6px;
-
-    line-height: 1.4;
-
-    letter-spacing: 0.5px;
-
-    white-space: nowrap;
-
-    text-shadow:
-      0 2px 3px rgba(0, 0, 0, 0.75),
-      0 0 5px rgba(0, 0, 0, 0.45);
-
-    transform:
-      rotate(-90deg);
-
-    z-index: 4;
-  }
-
-
-  .vp-giveaways-new-prizes::before {
-    content: "";
-
-    position: absolute;
-
-    top: -30%;
-    left: -60%;
-
-    width: 45%;
-    height: 160%;
-
-    background:
-      linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.55),
-        transparent
-      );
-
-    transform:
-      rotate(18deg)
-      translateX(0);
-
-    animation:
-      vpGiveawayBadgeShine 3s ease-in-out infinite;
-
-    pointer-events: none;
-  }
-
-
-  .vp-giveaways-new-prizes::after {
-    content: "✦";
-
-    position: absolute;
-
-    top: 13px;
-    right: 8px;
-
-    color: rgba(255, 255, 255, 0.9);
-
-    font-size: 9px;
-
-    text-shadow:
-      0 0 5px #ffffff,
-      0 0 10px rgba(255, 255, 255, 0.7);
-
-    animation:
-      vpGiveawaySpark 1.5s ease-in-out infinite;
-
-    pointer-events: none;
   }
 
 
@@ -537,18 +372,22 @@
         #d47b00
       );
 
-    border: 1px solid rgba(255, 213, 100, 0.95);
+    border:
+      1px solid rgba(255, 213, 100, 0.95);
 
     border-radius: 4px;
 
-    font-family:
-      "Press Start 2P",
-      monospace;
+    /*
+      Same normal heading font as the Stay Connected
+      section rather than Press Start 2P.
+    */
+    font-family: inherit;
 
-    font-size: 6px;
+    font-size: 7px;
+    font-weight: 700;
     line-height: 1;
 
-    letter-spacing: 0;
+    letter-spacing: 0.15px;
 
     text-shadow:
       0 1px 3px rgba(0, 0, 0, 0.85);
@@ -595,113 +434,179 @@
   }
 
 
+  .vp-giveaways-heading-badge::after {
+    content: "✦";
+
+    position: absolute;
+
+    top: 3px;
+    right: 5px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-family:
+      Arial,
+      sans-serif;
+
+    font-size: 7px;
+
+    line-height: 1;
+
+    text-shadow:
+      0 0 5px #ffffff,
+      0 0 10px rgba(255, 255, 255, 0.7);
+
+    animation:
+      vpGiveawaySpark 1.5s ease-in-out infinite;
+
+    pointer-events: none;
+  }
+
+
+  /* =========================================================
+     NEW PRIZES BADGE DIRECTLY ON GIVEAWAY CARD
+     ========================================================= */
+
+  .giveaway-card--featured-carousel {
+    position: relative;
+    overflow: visible !important;
+  }
+
+
+  .vp-giveaways-new-prizes {
+    position: absolute;
+
+    top: -15px;
+    left: 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 27px;
+
+    padding: 7px 13px;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    background:
+      linear-gradient(
+        135deg,
+        #ffc94f 0%,
+        #f6af15 48%,
+        #d47b00 100%
+      );
+
+    border:
+      1px solid rgba(255, 213, 100, 0.95);
+
+    border-radius: 4px;
+
+    font-family: inherit;
+
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+
+    letter-spacing: 0.15px;
+
+    white-space: nowrap;
+
+    text-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.85);
+
+    box-shadow:
+      0 0 9px rgba(246, 175, 21, 0.75),
+      0 0 20px rgba(246, 175, 21, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+    z-index: 40;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    animation:
+      vpHeadingBadgePulse 2.2s ease-in-out infinite;
+  }
+
+
+  /*
+     Shine across the badge sitting directly on the card
+  */
+
+  .vp-giveaways-new-prizes::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -60%;
+
+    width: 35%;
+    height: 100%;
+
+    background:
+      linear-gradient(
+        100deg,
+        transparent,
+        rgba(255, 255, 255, 0.7),
+        transparent
+      );
+
+    transform: skewX(-18deg);
+
+    animation:
+      vpHeadingBadgeShine 2.8s ease-in-out infinite;
+
+    pointer-events: none;
+  }
+
+
+  /*
+     Sparkle on the card badge
+  */
+
+  .vp-giveaways-new-prizes::after {
+    content: "✦";
+
+    position: absolute;
+
+    top: 3px;
+    right: 5px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-family:
+      Arial,
+      sans-serif;
+
+    font-size: 7px;
+
+    line-height: 1;
+
+    text-shadow:
+      0 0 5px #ffffff,
+      0 0 10px rgba(255, 255, 255, 0.7);
+
+    animation:
+      vpGiveawaySpark 1.5s ease-in-out infinite;
+
+    pointer-events: none;
+  }
+
+
   /* =========================================================
      ANIMATIONS
      ========================================================= */
-
-  @keyframes vpNewPrizeFloat {
-
-    0%,
-    100% {
-      transform:
-        translateY(-1px)
-        scale(1);
-      filter: brightness(1);
-    }
-
-    50% {
-      transform:
-        translateY(-2px)
-        scale(1.035);
-      filter: brightness(1.12);
-    }
-  }
-
-
-  @keyframes vpNewPrizeShine {
-
-    0% {
-      left: -55%;
-    }
-
-    45%,
-    100% {
-      left: 125%;
-    }
-  }
-
-
-  @keyframes vpNewPrizeParticles {
-
-    0%,
-    100% {
-      opacity: 0.25;
-      transform:
-        translateY(-50%)
-        rotate(-8deg)
-        scale(0.8);
-    }
-
-    50% {
-      opacity: 1;
-      transform:
-        translateY(-50%)
-        rotate(5deg)
-        scale(1.12);
-    }
-  }
-
-
-  @keyframes vpGiveawayBadgeFloat {
-
-    0%,
-    100% {
-      transform:
-        translateY(-50%)
-        translateX(-2px);
-    }
-
-    50% {
-      transform:
-        translateY(calc(-50% - 4px))
-        translateX(-2px);
-    }
-  }
-
-
-  @keyframes vpGiveawayBadgeShine {
-
-    0% {
-      left: -60%;
-    }
-
-    55%,
-    100% {
-      left: 150%;
-    }
-  }
-
-
-  @keyframes vpGiveawaySpark {
-
-    0%,
-    100% {
-      opacity: 0.25;
-      transform: scale(0.7) rotate(0deg);
-    }
-
-    50% {
-      opacity: 1;
-      transform: scale(1.25) rotate(18deg);
-    }
-  }
-
 
   @keyframes vpHeadingBadgePulse {
 
     0%,
     100% {
       filter: brightness(1);
+
       box-shadow:
         0 0 9px rgba(246, 175, 21, 0.7),
         0 0 18px rgba(246, 175, 21, 0.28),
@@ -710,6 +615,7 @@
 
     50% {
       filter: brightness(1.12);
+
       box-shadow:
         0 0 13px rgba(246, 175, 21, 0.9),
         0 0 26px rgba(246, 175, 21, 0.36),
@@ -731,62 +637,69 @@
   }
 
 
-  /* =========================================================
-     RESPONSIVE
-     ========================================================= */
+  @keyframes vpGiveawaySpark {
 
-  @media (max-width: 1100px) {
+    0%,
+    100% {
+      opacity: 0.25;
 
-    .vp-giveaways-new-prizes {
-      left: 0;
-      width: 34px;
+      transform:
+        scale(0.7)
+        rotate(0deg);
     }
 
-    .vp-giveaways-new-prizes span {
-      font-size: 5px;
+    50% {
+      opacity: 1;
+
+      transform:
+        scale(1.25)
+        rotate(18deg);
     }
   }
 
+
+  /* =========================================================
+     RESPONSIVE
+     ========================================================= */
 
   @media (max-width: 700px) {
 
     .vp-new-prize-badge {
       margin-left: 6px;
+
       min-height: 17px;
-      padding: 4px 6px;
-      font-size: 4px;
+
+      padding: 5px 7px;
+
+      font-size: 5px;
     }
 
     .vp-new-prize-badge--header,
     .vp-new-prize-badge--footer {
       min-height: 17px;
-      padding: 4px 6px;
-      font-size: 4px;
+
+      padding: 5px 7px;
+
+      font-size: 5px;
     }
 
     .vp-giveaways-heading-badge {
       margin-left: 6px;
+
       padding: 5px 7px;
-      font-size: 4px;
+
+      font-size: 5px;
     }
 
     .vp-giveaways-new-prizes {
-      width: 29px;
-      min-height: 112px;
+      top: -13px;
+      left: 12px;
 
-      border-radius:
-        0 5px 5px 0;
-    }
+      min-height: 22px;
 
-    .vp-giveaways-new-prizes span {
-      font-size: 4px;
-      letter-spacing: 0;
-    }
+      padding: 6px 9px;
 
-    .vp-giveaways-new-prizes::after {
-      top: 8px;
-      right: 6px;
-      font-size: 7px;
+      font-size: 5px;
     }
   }
 
@@ -794,38 +707,20 @@
   @media (max-width: 480px) {
 
     .vp-giveaways-new-prizes {
-      position: absolute;
+      top: -11px;
+      left: 10px;
 
-      left: 4px;
-      top: 24px;
+      min-height: 20px;
 
-      width: auto;
-      min-height: 0;
-
-      padding: 6px 9px;
-
-      border:
-        1px solid rgba(255, 213, 100, 0.95);
-
-      border-radius: 4px;
-
-      transform: none;
-    }
-
-    .vp-giveaways-new-prizes span {
-      transform: none;
+      padding: 5px 8px;
 
       font-size: 4px;
+
+      border-radius: 4px;
     }
 
-    .vp-giveaways-new-prizes::after {
-      top: 2px;
-      right: 3px;
-      font-size: 6px;
-    }
-
-    .giveaways-heading-row {
-      padding-top: 48px;
+    .giveaway-card--featured-carousel {
+      margin-top: 12px;
     }
   }
 
@@ -835,11 +730,12 @@
     .vp-new-prize-badge,
     .vp-new-prize-badge::before,
     .vp-new-prize-badge::after,
+    .vp-giveaways-heading-badge,
+    .vp-giveaways-heading-badge::before,
+    .vp-giveaways-heading-badge::after,
     .vp-giveaways-new-prizes,
     .vp-giveaways-new-prizes::before,
-    .vp-giveaways-new-prizes::after,
-    .vp-giveaways-heading-badge,
-    .vp-giveaways-heading-badge::before {
+    .vp-giveaways-new-prizes::after {
       animation: none !important;
     }
   }
@@ -850,7 +746,6 @@
   rel="stylesheet"
   href="mobile-polish.css?v=20260825-mobile-hero-and-video-panel-v17"
 />
-
 
 <!-- =========================================================
      CLEAN SECTION ROUTING
@@ -883,7 +778,6 @@
 
 </head>
 
-
 <body>
 
   <div
@@ -893,1640 +787,1633 @@
     <div class="vp-scrollbar__thumb"></div>
   </div>
 
-
   <div
     class="homepage-popup"
     id="homepage-popup"
     aria-hidden="true"
   >
 
-    <div
-      class="homepage-popup__backdrop"
+```
+<div
+  class="homepage-popup__backdrop"
+  data-popup-close="true"
+></div>
+
+
+<div
+  class="homepage-popup__dialog"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="homepage-popup-title"
+>
+
+  <button
+    class="homepage-popup__close"
+    id="homepage-popup-close"
+    type="button"
+    aria-label="Close popup"
+  >
+    <span></span>
+    <span></span>
+  </button>
+
+
+  <div class="homepage-popup__eyebrow">
+    START HERE
+  </div>
+
+
+  <h2
+    class="homepage-popup__title"
+    id="homepage-popup-title"
+  >
+    WELCOME TO VIDEOPOWER CODES
+  </h2>
+
+
+  <p class="homepage-popup__text">
+    DISCOVER BONUSES, SPECIAL OPPORTUNITIES, GIVEAWAYS, AND MORE IN ONE PLACE.
+  </p>
+
+
+  <div class="homepage-popup__code">
+    USE CODE: VIDEOPOWER
+  </div>
+
+
+  <div class="homepage-popup__actions">
+
+    <a
+      href="/bonuses"
+      class="homepage-popup__button homepage-popup__button--primary"
+      data-home-route-link
+      data-section-target="bonuses"
       data-popup-close="true"
-    ></div>
+    >
+      BONUSES
+    </a>
 
+  </div>
 
-    <div
-      class="homepage-popup__dialog"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="homepage-popup-title"
+</div>
+```
+
+  </div>
+
+  <div id="home"></div>
+
+<canvas id="stars"></canvas>
+
+  <div class="wrapper">
+
+```
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="main-header">
+
+  <div class="logo-container">
+
+    <a
+      href="/"
+      class="logo-link"
+      aria-label="Back to home"
     >
 
-      <button
-        class="homepage-popup__close"
-        id="homepage-popup-close"
-        type="button"
-        aria-label="Close popup"
+      <img
+        src="assets/videopower_profile.jpg"
+        alt="VideoPower"
+        class="logo vp-logo-mark"
+        fetchpriority="high"
+        decoding="async"
+      />
+
+      <img
+        src="assets/videopowercodes-logo.png?v=20260529-wordmark-large"
+        alt="VideoPowerCodes"
+        class="logo-wordmark"
+        fetchpriority="high"
+        decoding="async"
+      />
+
+    </a>
+
+  </div>
+
+
+  <button
+    class="hamburger"
+    id="hamburger"
+    type="button"
+    aria-label="Open navigation"
+    aria-controls="main-nav"
+    aria-expanded="false"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+
+  <nav
+    class="main-nav"
+    id="main-nav"
+    aria-label="Primary Navigation"
+  >
+
+    <a
+      href="/"
+      class="with-divider is-active"
+      data-section-target="home"
+      aria-current="page"
+    >
+      Home
+    </a>
+
+
+    <a
+      href="/bonuses"
+      class="with-divider"
+      data-section-target="bonuses"
+    >
+      Bonuses
+    </a>
+
+
+    <a
+      href="/socials"
+      class="with-divider"
+      data-section-target="news"
+    >
+      Socials
+    </a>
+
+
+    <a
+      href="/videos"
+      class="with-divider"
+      data-section-target="videos"
+    >
+      Videos
+    </a>
+
+
+    <!-- GIVEAWAYS + NEW PRIZES BADGE -->
+
+    <a
+      href="/giveaways"
+      class="with-divider"
+      data-section-target="giveaways"
+    >
+
+      Giveaways
+
+      <span
+        class="vp-new-prize-badge vp-new-prize-badge--header"
+        aria-label="New prizes"
       >
-        <span></span>
-        <span></span>
-      </button>
+        NEW PRIZES!
+      </span>
+
+    </a>
 
 
-      <div class="homepage-popup__eyebrow">
-        START HERE
+    <a
+      href="https://videopower-shop.fourthwall.com/en-eur"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="with-divider nav-link--sale"
+    >
+
+      <span class="merch-label">
+        Merch
+      </span>
+
+    </a>
+
+
+    <div
+      class="nav-social-block"
+      aria-label="Stay connected"
+    >
+
+      <div class="nav-social-title">
+        STAY CONNECTED
       </div>
 
 
-      <h2
-        class="homepage-popup__title"
-        id="homepage-popup-title"
-      >
-        WELCOME TO VIDEOPOWER CODES
-      </h2>
-
-
-      <p class="homepage-popup__text">
-        DISCOVER BONUSES, SPECIAL OPPORTUNITIES, GIVEAWAYS, AND MORE IN ONE PLACE.
-      </p>
-
-
-      <div class="homepage-popup__code">
-        USE CODE: VIDEOPOWER
-      </div>
-
-
-      <div class="homepage-popup__actions">
+      <div class="nav-social-links">
 
         <a
-          href="/bonuses"
-          class="homepage-popup__button homepage-popup__button--primary"
-          data-home-route-link
-          data-section-target="bonuses"
-          data-popup-close="true"
+          href="https://www.youtube.com/@VideoPower_cs"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="nav-social-link"
         >
-          BONUSES
+
+          <img
+            src="https://img.icons8.com/?size=512&id=85064&format=png"
+            alt="YouTube"
+          />
+
+          <span>
+            YOUTUBE
+          </span>
+
+        </a>
+
+
+        <a
+          href="https://x.com/VideoPower_cs"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="nav-social-link"
+        >
+
+          <img
+            src="https://img.icons8.com/?size=512&id=de4vjQ6J061l&format=png"
+            alt="Twitter"
+          />
+
+          <span>
+            TWITTER
+          </span>
+
         </a>
 
       </div>
 
     </div>
 
-  </div>
+  </nav>
+
+</header>
 
 
-  <div id="home"></div>
-
-  <canvas id="stars"></canvas>
+<main>
 
 
-  <div class="wrapper">
+  <!-- =========================================================
+       HERO
+       ========================================================= -->
 
+  <section class="hero">
 
-    <!-- =========================================================
-         HEADER
-         ========================================================= -->
+    <div class="hero-content">
 
-    <header class="main-header">
-
-      <div class="logo-container">
-
-        <a
-          href="/"
-          class="logo-link"
-          aria-label="Back to home"
-        >
-
-          <img
-            src="assets/videopower_profile.jpg"
-            alt="VideoPower"
-            class="logo vp-logo-mark"
-            fetchpriority="high"
-            decoding="async"
-          />
-
-          <img
-            src="assets/videopowercodes-logo.png?v=20260529-wordmark-large"
-            alt="VideoPowerCodes"
-            class="logo-wordmark"
-            fetchpriority="high"
-            decoding="async"
-          />
-
-        </a>
-
+      <div
+        class="hero-wordmark"
+        aria-label="VIDEOPOWER"
+      >
+        VIDEOPOWER
       </div>
 
 
-      <button
-        class="hamburger"
-        id="hamburger"
-        type="button"
-        aria-label="Open navigation"
-        aria-controls="main-nav"
-        aria-expanded="false"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <p class="hero-intro-copy">
+
+        Use code
+
+        <span class="hero-intro-code">
+          VIDEOPOWER
+        </span>
+
+        on all partnered sites to unlock exclusive deposit bonuses,
+        free cases, and special partner deals.
+
+      </p>
 
 
-      <nav
-        class="main-nav"
-        id="main-nav"
-        aria-label="Primary Navigation"
-      >
+      <div class="hero-static-actions">
 
         <a
-          href="/"
-          class="with-divider is-active"
-          data-section-target="home"
-          aria-current="page"
+          href="/giveaways"
+          class="hero-static-action hero-static-action--giveaways"
+          data-section-target="giveaways"
+          draggable="true"
         >
-          Home
-        </a>
 
+          <span>
+            JOIN GIVEAWAYS
+          </span>
 
-        <a
-          href="/bonuses"
-          class="with-divider"
-          data-section-target="bonuses"
-        >
-          Bonuses
+          <svg
+            class="hero-static-action__icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+
+            <path d="M4 12h15"></path>
+            <path d="m13 6 6 6-6 6"></path>
+
+          </svg>
+
         </a>
 
 
         <a
           href="/socials"
-          class="with-divider"
+          class="hero-static-action hero-static-action--socials"
           data-section-target="news"
-        >
-          Socials
-        </a>
-
-
-        <a
-          href="/videos"
-          class="with-divider"
-          data-section-target="videos"
-        >
-          Videos
-        </a>
-
-
-        <!-- GIVEAWAYS + NEW PRIZES BADGE -->
-
-        <a
-          href="/giveaways"
-          class="with-divider"
-          data-section-target="giveaways"
-        >
-
-          Giveaways
-
-          <span
-            class="vp-new-prize-badge vp-new-prize-badge--header"
-            aria-label="New prizes"
-          >
-            NEW PRIZES!
-          </span>
-
-        </a>
-
-
-        <a
-          href="https://videopower-shop.fourthwall.com/en-eur"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="with-divider nav-link--sale"
-        >
-
-          <span class="merch-label">
-            Merch
-          </span>
-
-        </a>
-
-
-        <div
-          class="nav-social-block"
-          aria-label="Stay connected"
-        >
-
-          <div class="nav-social-title">
-            STAY CONNECTED
-          </div>
-
-
-          <div class="nav-social-links">
-
-            <a
-              href="https://www.youtube.com/@VideoPower_cs"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="nav-social-link"
-            >
-
-              <img
-                src="https://img.icons8.com/?size=512&id=85064&format=png"
-                alt="YouTube"
-              />
-
-              <span>
-                YOUTUBE
-              </span>
-
-            </a>
-
-
-            <a
-              href="https://x.com/VideoPower_cs"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="nav-social-link"
-            >
-
-              <img
-                src="https://img.icons8.com/?size=512&id=de4vjQ6J061l&format=png"
-                alt="Twitter"
-              />
-
-              <span>
-                TWITTER
-              </span>
-
-            </a>
-
-          </div>
-
-        </div>
-
-      </nav>
-
-    </header>
-
-
-    <main>
-
-
-      <!-- =========================================================
-           HERO
-           ========================================================= -->
-
-      <section class="hero">
-
-        <div class="hero-content">
-
-          <div
-            class="hero-wordmark"
-            aria-label="VIDEOPOWER"
-          >
-            VIDEOPOWER
-          </div>
-
-
-          <p class="hero-intro-copy">
-
-            Use code
-
-            <span class="hero-intro-code">
-              VIDEOPOWER
-            </span>
-
-            on all partnered sites to unlock exclusive deposit bonuses,
-            free cases, and special partner deals.
-
-          </p>
-
-
-          <div class="hero-static-actions">
-
-            <a
-              href="/giveaways"
-              class="hero-static-action hero-static-action--giveaways"
-              data-section-target="giveaways"
-              draggable="true"
-            >
-
-              <span>
-                JOIN GIVEAWAYS
-              </span>
-
-              <svg
-                class="hero-static-action__icon"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                focusable="false"
-              >
-
-                <path d="M4 12h15"></path>
-                <path d="m13 6 6 6-6 6"></path>
-
-              </svg>
-
-            </a>
-
-
-            <a
-              href="/socials"
-              class="hero-static-action hero-static-action--socials"
-              data-section-target="news"
-              draggable="true"
-            >
-
-              <span>
-                VIEW SOCIALS
-              </span>
-
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <a
-          class="hero-explore"
-          href="/bonuses"
-          data-section-target="bonuses"
           draggable="true"
-          aria-label="Explore bonuses"
-        >
-
-          <span class="hero-explore-label">
-            EXPLORE
-          </span>
-
-          <span
-            class="hero-explore-arrow"
-            aria-hidden="true"
-          >
-            ↓
-          </span>
-
-        </a>
-
-
-        <div
-          class="floating-images"
-          aria-hidden="true"
-        >
-
-          <img
-            src="assets/floating-m9-fade.png"
-            alt="M9 Bayonet Fade"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-
-          <img
-            src="assets/floating-sport-gloves.png"
-            alt="Sport Gloves"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-
-          <img
-            src="assets/floating-awp-skin.png"
-            alt="AWP Skin"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-
-          <img
-            src="assets/floating-m4a4-howl.png"
-            alt="M4A4 Howl"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-
-          <img
-            src="assets/floating-ak47-jaguar.png"
-            alt="AK-47 Jaguar"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================================================
-           BONUSES
-           ========================================================= -->
-
-      <section
-        id="bonuses"
-        class="section dark-bg bonuses-reward-section"
-        aria-label="Bonuses section"
-      >
-
-        <div class="bonuses-reveal-title">
-
-          <h2>
-
-            <span class="bonuses-heading__plain">
-              Use Code
-            </span>
-
-            <span class="bonuses-heading__code">
-              VIDEOPOWER
-            </span>
-
-          </h2>
-
-        </div>
-
-
-        <p class="bonuses-reveal-subtitle">
-          Claim exclusive deposit bonuses, free cases, and partner deals.
-        </p>
-
-
-        <div class="bonus-reward-grid">
-
-
-          <article
-            class="bonus-reward-card bonus-reward-card--hellcase"
-            data-bonus-id="hellcase"
-            data-bonus-name="Hellcase"
-            data-bonus-url="https://hellca.se/videopower"
-            style="--bonus-accent: #ff8200; --bonus-button-text: #111111;"
-          >
-
-            <a
-              class="bonus-reward-card__surface-link"
-              href="https://hellca.se/videopower"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open Hellcase bonus"
-              draggable="true"
-            ></a>
-
-
-            <span class="bonus-reward-card__tag">
-              HOT DEAL!
-            </span>
-
-
-            <figure
-              class="bonus-reward-card__item bonus-reward-card__item--hellcase bonus-reward-card__item-stack"
-              aria-label="Hellcase Prestige case"
-            >
-
-              <img
-                class="bonus-reward-card__item-layer bonus-reward-card__item-layer--case"
-                src="https://cdnhell.com/head/img/case/prestige/img.png"
-                alt=""
-                loading="lazy"
-              />
-
-              <img
-                class="bonus-reward-card__item-layer bonus-reward-card__item-layer--weapon"
-                src="https://cdnhell.com/head/img/case/prestige/secondary_300x300.png"
-                alt=""
-                loading="lazy"
-              />
-
-            </figure>
-
-
-            <div class="bonus-reward-card__body">
-
-              <img
-                class="bonus-reward-card__logo bonus-reward-card__logo--hellcase"
-                src="https://www.esports-betting.pro/app/uploads/2022/08/LogosHellcase.svg"
-                alt="Hellcase"
-                loading="lazy"
-              />
-
-
-              <ul class="bonus-reward-card__perks">
-
-                <li>
-                  <span></span>
-                  +10% Deposit Bonus
-                </li>
-
-                <li>
-                  <span></span>
-                  $0.70 &amp; Free Case
-                </li>
-
-              </ul>
-
-
-              <a
-                class="bonus-reward-card__button"
-                href="https://hellca.se/videopower"
-                target="_blank"
-                rel="noopener noreferrer"
-                draggable="false"
-              >
-                CLAIM BONUS
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <article
-            class="bonus-reward-card bonus-reward-card--skinbaron"
-            data-bonus-id="skinbaron"
-            data-bonus-name="SkinBaron"
-            data-bonus-url="https://skinbaron.com/partner/videopower"
-            style="--bonus-accent: #1900ff; --bonus-button-text: #ffffff;"
-          >
-
-            <a
-              class="bonus-reward-card__surface-link"
-              href="https://skinbaron.com/partner/videopower"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open SkinBaron bonus"
-              draggable="true"
-            ></a>
-
-
-            <img
-              class="bonus-reward-card__item bonus-reward-card__item--skinbaron"
-              src="https://cdn.skinbaron.de/menu/csgo/Gloves/Specialist-Gloves/Blackbook.png"
-              alt="SkinBaron Specialist Gloves Black Tie"
-              loading="lazy"
-            />
-
-
-            <div class="bonus-reward-card__body">
-
-              <img
-                class="bonus-reward-card__logo bonus-reward-card__logo--skinbaron"
-                src="https://skinbaron.idevaffiliate.com/media/banners/Logo_horizontal-whitebaron.png"
-                alt="SkinBaron"
-                loading="lazy"
-              />
-
-
-              <ul class="bonus-reward-card__perks">
-
-                <li>
-                  <span></span>
-                  Skins Much Cheaper
-                </li>
-
-              </ul>
-
-
-              <a
-                class="bonus-reward-card__button"
-                href="https://skinbaron.com/partner/videopower"
-                target="_blank"
-                rel="noopener noreferrer"
-                draggable="false"
-              >
-                CLAIM BONUS
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <article
-            class="bonus-reward-card bonus-reward-card--hypedrop"
-            data-bonus-id="raingg"
-            data-bonus-name="Rain.GG"
-            data-bonus-url="https://rain.gg/r/videopower"
-            style="--bonus-accent: #f6af15; --bonus-button-text: #111111;"
-          >
-
-            <a
-              class="bonus-reward-card__surface-link"
-              href="https://rain.gg/r/videopower"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open Rain.GG bonus"
-              draggable="true"
-            ></a>
-
-
-            <img
-              class="bonus-reward-card__item bonus-reward-card__item--hypedrop"
-              src="assets/raingg-zipped.png"
-              alt="Rain.GG Zipped case"
-              loading="lazy"
-            />
-
-
-            <div class="bonus-reward-card__body">
-
-              <img
-                class="bonus-reward-card__logo bonus-reward-card__logo--hypedrop"
-                src="https://eryc.gg/assets/rain.png"
-                alt="Rain.GG"
-                loading="lazy"
-              />
-
-
-              <ul class="bonus-reward-card__perks">
-
-                <li>
-                  <span></span>
-                  +5% Deposit Bonus
-                </li>
-
-                <li>
-                  <span></span>
-                  3 Free Cases
-                </li>
-
-              </ul>
-
-
-              <a
-                class="bonus-reward-card__button"
-                href="https://rain.gg/r/videopower"
-                target="_blank"
-                rel="noopener noreferrer"
-                draggable="false"
-              >
-                CLAIM BONUS
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <article
-            class="bonus-reward-card bonus-reward-card--skinclub"
-            data-bonus-id="skinclub"
-            data-bonus-name="SkinClub"
-            data-bonus-url="https://l.skin.club/826VIDEOPOWER1V"
-            style="--bonus-accent: #fa00ff; --bonus-button-text: #ffffff;"
-          >
-
-            <a
-              class="bonus-reward-card__surface-link"
-              href="https://l.skin.club/826VIDEOPOWER1V"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open SkinClub bonus"
-              draggable="true"
-            ></a>
-
-
-            <img
-              class="bonus-reward-card__item bonus-reward-card__item--skinclub"
-              src="assets/skinclubcase.png"
-              alt="SkinClub case"
-              loading="lazy"
-            />
-
-
-            <div class="bonus-reward-card__body">
-
-              <img
-                class="bonus-reward-card__logo bonus-reward-card__logo--skinclub"
-                src="https://angvil.com/images/sites/skinclub.png"
-                alt="SkinClub"
-                loading="lazy"
-              />
-
-
-              <ul class="bonus-reward-card__perks">
-
-                <li>
-                  <span></span>
-                  +7% Deposit Bonus
-                </li>
-
-              </ul>
-
-
-              <a
-                class="bonus-reward-card__button"
-                href="https://l.skin.club/826VIDEOPOWER1V"
-                target="_blank"
-                rel="noopener noreferrer"
-                draggable="false"
-              >
-                CLAIM BONUS
-              </a>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================================================
-           SOCIALS
-           ========================================================= -->
-
-      <section
-        id="news"
-        class="section dark-bg news-team-section"
-        aria-label="Stay connected section"
-      >
-
-        <div class="news-team-heading">
-
-          <h2>
-            Stay <span>Connected</span>
-          </h2>
-
-          <p>
-            Subscribe to our YouTube channels so you never miss an upload,
-            and follow us on Twitter to stay updated.
-          </p>
-
-        </div>
-
-
-        <div class="news-team-panel">
-
-
-          <article
-            class="news-team-member"
-            style="--member-image: url('assets/videopower2_profile.jpg');"
-          >
-
-            <span
-              class="news-team-member__glow"
-              aria-hidden="true"
-            ></span>
-
-
-            <img
-              class="news-team-member__avatar"
-              src="assets/videopower2_profile.jpg"
-              alt="VideoPower 2"
-              loading="lazy"
-            />
-
-
-            <h3>
-              VideoPower 2
-            </h3>
-
-
-            <div class="news-team-actions">
-
-              <a
-                class="news-team-action news-team-action--youtube"
-                href="https://www.youtube.com/@VideoPower_cs2"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="VideoPower 2 YouTube"
-                draggable="true"
-              >
-
-                <img
-                  src="https://img.icons8.com/?size=512&id=85064&format=png"
-                  alt=""
-                  aria-hidden="true"
-                />
-
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <article
-            class="news-team-member"
-            style="--member-image: url('assets/videopower_profile.jpg');"
-          >
-
-            <span
-              class="news-team-member__glow"
-              aria-hidden="true"
-            ></span>
-
-
-            <img
-              class="news-team-member__avatar"
-              src="assets/videopower_profile.jpg"
-              alt="VideoPower"
-              loading="lazy"
-            />
-
-
-            <h3>
-              VideoPower
-            </h3>
-
-
-            <div class="news-team-actions">
-
-              <a
-                class="news-team-action news-team-action--youtube"
-                href="https://www.youtube.com/@VideoPower_cs"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="VideoPower YouTube"
-                draggable="true"
-              >
-
-                <img
-                  src="https://img.icons8.com/?size=512&id=85064&format=png"
-                  alt=""
-                  aria-hidden="true"
-                />
-
-              </a>
-
-
-              <a
-                class="news-team-action news-team-action--x"
-                href="https://x.com/VideoPower_cs"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="VideoPower Twitter"
-                draggable="true"
-              >
-
-                <img
-                  src="https://img.icons8.com/?size=512&id=de4vjQ6J061l&format=png"
-                  alt=""
-                  aria-hidden="true"
-                />
-
-              </a>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================================================
-           VIDEOS
-           ========================================================= -->
-
-      <section
-        id="videos"
-        class="section videos-modern-section"
-        aria-label="Videos section"
-      >
-
-        <div class="videos-heading-row">
-
-          <div class="videos-title">
-
-            <h2>
-              Latest <span>Videos</span>
-            </h2>
-
-          </div>
-
-
-          <p class="videos-subtitle">
-            Here you can see the five latest videos from the VideoPower 2 channel.
-          </p>
-
-        </div>
-
-
-        <div
-          class="videos-carousel-shell"
-          id="videos-carousel"
-        >
-
-          <button
-            class="videos-carousel-arrow videos-carousel-arrow--previous"
-            id="videos-previous"
-            type="button"
-            aria-label="Previous video"
-          >
-
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              focusable="false"
-            >
-
-              <path d="m15 4-8 8 8 8"></path>
-
-            </svg>
-
-          </button>
-
-
-          <div
-            class="videos-grid"
-            id="videos-grid"
-          ></div>
-
-
-          <button
-            class="videos-carousel-arrow videos-carousel-arrow--next"
-            id="videos-next"
-            type="button"
-            aria-label="Next video"
-          >
-
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              focusable="false"
-            >
-
-              <path d="m9 4 8 8-8 8"></path>
-
-            </svg>
-
-          </button>
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================================================
-           GIVEAWAYS
-           ========================================================= -->
-
-      <section
-        id="giveaways"
-        class="section dark-bg"
-        aria-label="Giveaways section"
-      >
-
-
-        <!-- SIDE NEW PRIZES BADGE -->
-
-        <div
-          class="vp-giveaways-new-prizes"
-          aria-hidden="true"
         >
 
           <span>
+            VIEW SOCIALS
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <a
+      class="hero-explore"
+      href="/bonuses"
+      data-section-target="bonuses"
+      draggable="true"
+      aria-label="Explore bonuses"
+    >
+
+      <span class="hero-explore-label">
+        EXPLORE
+      </span>
+
+      <span
+        class="hero-explore-arrow"
+        aria-hidden="true"
+      >
+        ↓
+      </span>
+
+    </a>
+
+
+    <div
+      class="floating-images"
+      aria-hidden="true"
+    >
+
+      <img
+        src="assets/floating-m9-fade.png"
+        alt="M9 Bayonet Fade"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+
+      <img
+        src="assets/floating-sport-gloves.png"
+        alt="Sport Gloves"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+
+      <img
+        src="assets/floating-awp-skin.png"
+        alt="AWP Skin"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+
+      <img
+        src="assets/floating-m4a4-howl.png"
+        alt="M4A4 Howl"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+
+      <img
+        src="assets/floating-ak47-jaguar.png"
+        alt="AK-47 Jaguar"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       BONUSES
+       ========================================================= -->
+
+  <section
+    id="bonuses"
+    class="section dark-bg bonuses-reward-section"
+    aria-label="Bonuses section"
+  >
+
+    <div class="bonuses-reveal-title">
+
+      <h2>
+
+        <span class="bonuses-heading__plain">
+          Use Code
+        </span>
+
+        <span class="bonuses-heading__code">
+          VIDEOPOWER
+        </span>
+
+      </h2>
+
+    </div>
+
+
+    <p class="bonuses-reveal-subtitle">
+      Claim exclusive deposit bonuses, free cases, and partner deals.
+    </p>
+
+
+    <div class="bonus-reward-grid">
+
+
+      <article
+        class="bonus-reward-card bonus-reward-card--hellcase"
+        data-bonus-id="hellcase"
+        data-bonus-name="Hellcase"
+        data-bonus-url="https://hellca.se/videopower"
+        style="--bonus-accent: #ff8200; --bonus-button-text: #111111;"
+      >
+
+        <a
+          class="bonus-reward-card__surface-link"
+          href="https://hellca.se/videopower"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Hellcase bonus"
+          draggable="true"
+        ></a>
+
+
+        <span class="bonus-reward-card__tag">
+          HOT DEAL!
+        </span>
+
+
+        <figure
+          class="bonus-reward-card__item bonus-reward-card__item--hellcase bonus-reward-card__item-stack"
+          aria-label="Hellcase Prestige case"
+        >
+
+          <img
+            class="bonus-reward-card__item-layer bonus-reward-card__item-layer--case"
+            src="https://cdnhell.com/head/img/case/prestige/img.png"
+            alt=""
+            loading="lazy"
+          />
+
+          <img
+            class="bonus-reward-card__item-layer bonus-reward-card__item-layer--weapon"
+            src="https://cdnhell.com/head/img/case/prestige/secondary_300x300.png"
+            alt=""
+            loading="lazy"
+          />
+
+        </figure>
+
+
+        <div class="bonus-reward-card__body">
+
+          <img
+            class="bonus-reward-card__logo bonus-reward-card__logo--hellcase"
+            src="https://www.esports-betting.pro/app/uploads/2022/08/LogosHellcase.svg"
+            alt="Hellcase"
+            loading="lazy"
+          />
+
+
+          <ul class="bonus-reward-card__perks">
+
+            <li>
+              <span></span>
+              +10% Deposit Bonus
+            </li>
+
+            <li>
+              <span></span>
+              $0.70 &amp; Free Case
+            </li>
+
+          </ul>
+
+
+          <a
+            class="bonus-reward-card__button"
+            href="https://hellca.se/videopower"
+            target="_blank"
+            rel="noopener noreferrer"
+            draggable="false"
+          >
+            CLAIM BONUS
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="bonus-reward-card bonus-reward-card--skinbaron"
+        data-bonus-id="skinbaron"
+        data-bonus-name="SkinBaron"
+        data-bonus-url="https://skinbaron.com/partner/videopower"
+        style="--bonus-accent: #1900ff; --bonus-button-text: #ffffff;"
+      >
+
+        <a
+          class="bonus-reward-card__surface-link"
+          href="https://skinbaron.com/partner/videopower"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open SkinBaron bonus"
+          draggable="true"
+        ></a>
+
+
+        <img
+          class="bonus-reward-card__item bonus-reward-card__item--skinbaron"
+          src="https://cdn.skinbaron.de/menu/csgo/Gloves/Specialist-Gloves/Blackbook.png"
+          alt="SkinBaron Specialist Gloves Black Tie"
+          loading="lazy"
+        />
+
+
+        <div class="bonus-reward-card__body">
+
+          <img
+            class="bonus-reward-card__logo bonus-reward-card__logo--skinbaron"
+            src="https://skinbaron.idevaffiliate.com/media/banners/Logo_horizontal-whitebaron.png"
+            alt="SkinBaron"
+            loading="lazy"
+          />
+
+
+          <ul class="bonus-reward-card__perks">
+
+            <li>
+              <span></span>
+              Skins Much Cheaper
+            </li>
+
+          </ul>
+
+
+          <a
+            class="bonus-reward-card__button"
+            href="https://skinbaron.com/partner/videopower"
+            target="_blank"
+            rel="noopener noreferrer"
+            draggable="false"
+          >
+            CLAIM BONUS
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="bonus-reward-card bonus-reward-card--hypedrop"
+        data-bonus-id="raingg"
+        data-bonus-name="Rain.GG"
+        data-bonus-url="https://rain.gg/r/videopower"
+        style="--bonus-accent: #f6af15; --bonus-button-text: #111111;"
+      >
+
+        <a
+          class="bonus-reward-card__surface-link"
+          href="https://rain.gg/r/videopower"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Rain.GG bonus"
+          draggable="true"
+        ></a>
+
+
+        <img
+          class="bonus-reward-card__item bonus-reward-card__item--hypedrop"
+          src="assets/raingg-zipped.png"
+          alt="Rain.GG Zipped case"
+          loading="lazy"
+        />
+
+
+        <div class="bonus-reward-card__body">
+
+          <img
+            class="bonus-reward-card__logo bonus-reward-card__logo--hypedrop"
+            src="https://eryc.gg/assets/rain.png"
+            alt="Rain.GG"
+            loading="lazy"
+          />
+
+
+          <ul class="bonus-reward-card__perks">
+
+            <li>
+              <span></span>
+              +5% Deposit Bonus
+            </li>
+
+            <li>
+              <span></span>
+              3 Free Cases
+            </li>
+
+          </ul>
+
+
+          <a
+            class="bonus-reward-card__button"
+            href="https://rain.gg/r/videopower"
+            target="_blank"
+            rel="noopener noreferrer"
+            draggable="false"
+          >
+            CLAIM BONUS
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="bonus-reward-card bonus-reward-card--skinclub"
+        data-bonus-id="skinclub"
+        data-bonus-name="SkinClub"
+        data-bonus-url="https://l.skin.club/826VIDEOPOWER1V"
+        style="--bonus-accent: #fa00ff; --bonus-button-text: #ffffff;"
+      >
+
+        <a
+          class="bonus-reward-card__surface-link"
+          href="https://l.skin.club/826VIDEOPOWER1V"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open SkinClub bonus"
+          draggable="true"
+        ></a>
+
+
+        <img
+          class="bonus-reward-card__item bonus-reward-card__item--skinclub"
+          src="assets/skinclubcase.png"
+          alt="SkinClub case"
+          loading="lazy"
+        />
+
+
+        <div class="bonus-reward-card__body">
+
+          <img
+            class="bonus-reward-card__logo bonus-reward-card__logo--skinclub"
+            src="https://angvil.com/images/sites/skinclub.png"
+            alt="SkinClub"
+            loading="lazy"
+          />
+
+
+          <ul class="bonus-reward-card__perks">
+
+            <li>
+              <span></span>
+              +7% Deposit Bonus
+            </li>
+
+          </ul>
+
+
+          <a
+            class="bonus-reward-card__button"
+            href="https://l.skin.club/826VIDEOPOWER1V"
+            target="_blank"
+            rel="noopener noreferrer"
+            draggable="false"
+          >
+            CLAIM BONUS
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       SOCIALS
+       ========================================================= -->
+
+  <section
+    id="news"
+    class="section dark-bg news-team-section"
+    aria-label="Stay connected section"
+  >
+
+    <div class="news-team-heading">
+
+      <h2>
+        Stay <span>Connected</span>
+      </h2>
+
+      <p>
+        Subscribe to our YouTube channels so you never miss an upload,
+        and follow us on Twitter to stay updated.
+      </p>
+
+    </div>
+
+
+    <div class="news-team-panel">
+
+
+      <article
+        class="news-team-member"
+        style="--member-image: url('assets/videopower2_profile.jpg');"
+      >
+
+        <span
+          class="news-team-member__glow"
+          aria-hidden="true"
+        ></span>
+
+
+        <img
+          class="news-team-member__avatar"
+          src="assets/videopower2_profile.jpg"
+          alt="VideoPower 2"
+          loading="lazy"
+        />
+
+
+        <h3>
+          VideoPower 2
+        </h3>
+
+
+        <div class="news-team-actions">
+
+          <a
+            class="news-team-action news-team-action--youtube"
+            href="https://www.youtube.com/@VideoPower_cs2"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="VideoPower 2 YouTube"
+            draggable="true"
+          >
+
+            <img
+              src="https://img.icons8.com/?size=512&id=85064&format=png"
+              alt=""
+              aria-hidden="true"
+            />
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="news-team-member"
+        style="--member-image: url('assets/videopower_profile.jpg');"
+      >
+
+        <span
+          class="news-team-member__glow"
+          aria-hidden="true"
+        ></span>
+
+
+        <img
+          class="news-team-member__avatar"
+          src="assets/videopower_profile.jpg"
+          alt="VideoPower"
+          loading="lazy"
+        />
+
+
+        <h3>
+          VideoPower
+        </h3>
+
+
+        <div class="news-team-actions">
+
+          <a
+            class="news-team-action news-team-action--youtube"
+            href="https://www.youtube.com/@VideoPower_cs"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="VideoPower YouTube"
+            draggable="true"
+          >
+
+            <img
+              src="https://img.icons8.com/?size=512&id=85064&format=png"
+              alt=""
+              aria-hidden="true"
+            />
+
+          </a>
+
+
+          <a
+            class="news-team-action news-team-action--x"
+            href="https://x.com/VideoPower_cs"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="VideoPower Twitter"
+            draggable="true"
+          >
+
+            <img
+              src="https://img.icons8.com/?size=512&id=de4vjQ6J061l&format=png"
+              alt=""
+              aria-hidden="true"
+            />
+
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       VIDEOS
+       ========================================================= -->
+
+  <section
+    id="videos"
+    class="section videos-modern-section"
+    aria-label="Videos section"
+  >
+
+    <div class="videos-heading-row">
+
+      <div class="videos-title">
+
+        <h2>
+          Latest <span>Videos</span>
+        </h2>
+
+      </div>
+
+
+      <p class="videos-subtitle">
+        Here you can see the five latest videos from the VideoPower 2 channel.
+      </p>
+
+    </div>
+
+
+    <div
+      class="videos-carousel-shell"
+      id="videos-carousel"
+    >
+
+      <button
+        class="videos-carousel-arrow videos-carousel-arrow--previous"
+        id="videos-previous"
+        type="button"
+        aria-label="Previous video"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          focusable="false"
+        >
+
+          <path d="m15 4-8 8 8 8"></path>
+
+        </svg>
+
+      </button>
+
+
+      <div
+        class="videos-grid"
+        id="videos-grid"
+      ></div>
+
+
+      <button
+        class="videos-carousel-arrow videos-carousel-arrow--next"
+        id="videos-next"
+        type="button"
+        aria-label="Next video"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          focusable="false"
+        >
+
+          <path d="m9 4 8 8-8 8"></path>
+
+        </svg>
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       GIVEAWAYS
+       ========================================================= -->
+
+  <section
+    id="giveaways"
+    class="section dark-bg"
+    aria-label="Giveaways section"
+  >
+
+    <div class="giveaways-heading-row">
+
+      <div class="giveaways-heading-title">
+
+        <h2>
+
+          Giveaways
+
+          <span class="vp-giveaways-heading-badge">
             NEW PRIZES!
+          </span>
+
+        </h2>
+
+      </div>
+
+
+      <p class="giveaways-heading-subtitle">
+        Regular giveaways for the community, where winners are selected fairly
+        and announced on Twitter.
+      </p>
+
+    </div>
+
+
+    <div class="giveaway-row">
+
+
+      <!-- =====================================================
+           GIVEAWAY 1 - ACTIVE
+           ===================================================== -->
+
+      <a
+        class="giveaway-card giveaway-item giveaway-card--shinobu giveaway-card--featured-carousel"
+        href="https://hellcase.com/giveaways/user/ad82cac5"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open Hellcase giveaways"
+      >
+
+        <!-- NEW PRIZES BADGE IS NOW DIRECTLY ON THE GIVEAWAY CARD -->
+
+        <div
+          class="vp-giveaways-new-prizes"
+          aria-label="New prizes"
+        >
+          NEW PRIZES!
+        </div>
+
+
+        <div class="giveaway-image-wrapper">
+
+
+          <div class="shinobu-winner-block giveaway-closed-message">
+
+            <span
+              class="giveaway-closed-message__mark"
+              aria-hidden="true"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                focusable="false"
+              >
+
+                <rect
+                  x="5"
+                  y="10"
+                  width="14"
+                  height="10"
+                  rx="2"
+                ></rect>
+
+                <path
+                  d="M8 10V7a4 4 0 0 1 8 0v3"
+                ></path>
+
+              </svg>
+
+            </span>
+
+
+            <span class="giveaway-closed-message__copy">
+
+              <strong>
+                The giveaway has started!
+              </strong>
+
+              <span>
+                There will be three winners in total.
+              </span>
+
+            </span>
+
+          </div>
+
+
+          <div class="giveaway-topbar">
+
+            <div class="giveaway-badges">
+
+              <div
+                class="price-tag inactive-price featured-item-condition"
+              >
+                FT
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <img
+            class="hellcase-giveaway-watermark hellcase-giveaway-watermark--carousel"
+            src="assets/hellcase-giveaway-mark.png"
+            alt=""
+            aria-hidden="true"
+          />
+
+
+          <div class="giveaway-img-carousel">
+
+            <div class="giveaway-img-track">
+
+
+              <img
+                src="https://community.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIGz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwlcK3wiFO0POlPPNSN_mdGmKC_v1mv_N9cCS2kRQyvnPdzdurInKSbwIoDMN4Ru8KtUW7l9axZuzmtFSPjY4WxHj63ywau3to_a9cBuQ0aznH"
+                alt="AK-47 Frontside Misty"
+                class="giveaway-img active"
+                data-winner="NekOverFed"
+                data-avatar="https://avatars.steamstatic.com/5b4e4450d1d12905a02a35445832882eda92a468_full.jpg"
+                data-weapon="AK-47"
+                data-finish="Frontside Misty"
+                data-condition="FT"
+                data-price="22.34"
+              />
+
+
+              <img
+                src="https://community.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIGz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwlcK3wiNQu6WRa7ZsLvWsCGuZxuZij-xsSyCmmFMk4GjVwouudX-VPQB2WZZ2E7EDt0a6kYfjNe2w41DXi9gQynioiH5J8G81tL5L-Rcg"
+                alt="AK-47 | Crane Flight"
+                class="giveaway-img"
+                data-winner="88翻斗花园不养闲人88..."
+                data-avatar="https://avatars.fastly.steamstatic.com/695fb250f2fa64814cc74e629ec174e71b324e64_full.jpg"
+                data-weapon="AK-47"
+                data-finish="Crane Flight"
+                data-condition="WW"
+                data-price="14.55"
+              />
+
+
+              <img
+                src="https://community.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIGz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwlcK3wipC6s2vY_A6H_6cG3GVwPtJveRtRjy-20905WnVn9z8dX6RaQAmA5p2QuAI5xnpw4HuZuzjtgzd2olEzHr6iiNXrnE8FSMYuTI"
+                alt="AK-47 | Nouveau Rouge"
+                class="giveaway-img"
+                data-winner="Umbrella Corp."
+                data-avatar="https://avatars.fastly.steamstatic.com/42b66930d9e44b801035c9c8ee6ae73293059c49_full.jpg"
+                data-weapon="AK-47"
+                data-finish="Nouveau Rouge"
+                data-condition="FT"
+                data-price="11.58"
+              />
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <img
+          class="hellcase-giveaway-watermark-mobile"
+          src="assets/hellcase-giveaway-mark.png"
+          alt=""
+          aria-hidden="true"
+          style="display: none;"
+        />
+
+
+        <div
+          class="shinobu-skin-name featured-skin-name"
+          aria-label="★ Broken Fang Gloves Yellow-banded"
+        >
+
+          <span class="shinobu-skin-weapon featured-skin-weapon">
+            AK-47
+          </span>
+
+          <span class="shinobu-skin-finish featured-skin-finish">
+            Frontside Misty
           </span>
 
         </div>
 
 
-        <div class="giveaways-heading-row">
+        <h3 class="giveaway-title giveaway-title--price">
 
-          <div class="giveaways-heading-title">
+          <span class="giveaway-price-currency">
+            $
+          </span>
 
-            <h2>
+          <span class="giveaway-price-value featured-item-price">
+            22.34
+          </span>
 
-              Giveaways
+        </h3>
 
-              <span class="vp-giveaways-heading-badge">
-                NEW PRIZES!
-              </span>
-
-            </h2>
-
-          </div>
+      </a>
 
 
-          <p class="giveaways-heading-subtitle">
-            Regular giveaways for the community, where winners are selected fairly
-            and announced on Twitter.
-          </p>
+      <!-- =====================================================
+           GIVEAWAY 2
+           ===================================================== -->
 
-        </div>
+      <a
+        class="giveaway-card giveaway-item giveaway-card--shinobu giveaway-card--midnight"
+        href="https://x.com/VideoPower_cs/status/2038346729842475294?s=20"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open the AK-47 Midnight Laminate giveaway post on X"
+      >
 
+        <div class="giveaway-image-wrapper">
 
-        <div class="giveaway-row">
+          <div class="shinobu-winner-block giveaway-closed-message">
 
-
-          <!-- =====================================================
-               GIVEAWAY 1 - ACTIVE
-               ===================================================== -->
-
-          <a
-            class="giveaway-card giveaway-item giveaway-card--shinobu giveaway-card--featured-carousel"
-            href="https://hellcase.com/giveaways/user/ad82cac5"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open Hellcase giveaways"
-          >
-
-            <div class="giveaway-image-wrapper">
-
-
-              <div class="shinobu-winner-block giveaway-closed-message">
-
-                <span
-                  class="giveaway-closed-message__mark"
-                  aria-hidden="true"
-                >
-
-                  <svg
-                    viewBox="0 0 24 24"
-                    focusable="false"
-                  >
-
-                    <rect
-                      x="5"
-                      y="10"
-                      width="14"
-                      height="10"
-                      rx="2"
-                    ></rect>
-
-                    <path
-                      d="M8 10V7a4 4 0 0 1 8 0v3"
-                    ></path>
-
-                  </svg>
-
-                </span>
-
-
-                <span class="giveaway-closed-message__copy">
-
-                  <strong>
-                    The giveaway has started!
-                  </strong>
-
-                  <span>
-                    There will be three winners in total.
-                  </span>
-
-                </span>
-
-              </div>
-
-
-              <div class="giveaway-topbar">
-
-                <div class="giveaway-badges">
-
-                  <div
-                    class="price-tag inactive-price featured-item-condition"
-                  >
-                    FT
-                  </div>
-
-                </div>
-
-              </div>
-
-
-              <img
-                class="hellcase-giveaway-watermark hellcase-giveaway-watermark--carousel"
-                src="assets/hellcase-giveaway-mark.png"
-                alt=""
-                aria-hidden="true"
-              />
-
-
-              <div class="giveaway-img-carousel">
-
-                <div class="giveaway-img-track">
-
-
-                  <img
-                    src="https://community.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIGz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwlcK3wiFO0POlPPNSN_mdGmKC_v1mv_N9cCS2kRQyvnPdzdurInKSbwIoDMN4Ru8KtUW7l9axZuzmtFSPjY4WxHj63ywau3to_a9cBuQ0aznH"
-                    alt="AK-47 Frontside Misty"
-                    class="giveaway-img active"
-                    data-winner="NekOverFed"
-                    data-avatar="https://avatars.steamstatic.com/5b4e4450d1d12905a02a35445832882eda92a468_full.jpg"
-                    data-weapon="AK-47"
-                    data-finish="Frontside Misty"
-                    data-condition="FT"
-                    data-price="22.34"
-                  />
-
-
-                  <img
-                    src="https://community.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIGz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwlcK3wiNQu6WRa7ZsLvWsCGuZxuZij-xsSyCmmFMk4GjVwouudX-VPQB2WZZ2E7EDt0a6kYfjNe2w41DXi9gQynioiH5J8G81tL5L-Rcg"
-                    alt="AK-47 | Crane Flight"
-                    class="giveaway-img"
-                    data-winner="88翻斗花园不养闲人88..."
-                    data-avatar="https://avatars.fastly.steamstatic.com/695fb250f2fa64814cc74e629ec174e71b324e64_full.jpg"
-                    data-weapon="AK-47"
-                    data-finish="Crane Flight"
-                    data-condition="WW"
-                    data-price="14.55"
-                  />
-
-
-                  <img
-                    src="https://community.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIGz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwlcK3wipC6s2vY_A6H_6cG3GVwPtJveRtRjy-20905WnVn9z8dX6RaQAmA5p2QuAI5xnpw4HuZuzjtgzd2olEzHr6iiNXrnE8FSMYuTI"
-                    alt="AK-47 | Nouveau Rouge"
-                    class="giveaway-img"
-                    data-winner="Umbrella Corp."
-                    data-avatar="https://avatars.fastly.steamstatic.com/42b66930d9e44b801035c9c8ee6ae73293059c49_full.jpg"
-                    data-weapon="AK-47"
-                    data-finish="Nouveau Rouge"
-                    data-condition="FT"
-                    data-price="11.58"
-                  />
-
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <img
-              class="hellcase-giveaway-watermark-mobile"
-              src="assets/hellcase-giveaway-mark.png"
-              alt=""
+            <span
+              class="giveaway-closed-message__mark"
               aria-hidden="true"
-              style="display: none;"
-            />
-
-
-            <div
-              class="shinobu-skin-name featured-skin-name"
-              aria-label="★ Broken Fang Gloves Yellow-banded"
             >
 
-              <span class="shinobu-skin-weapon featured-skin-weapon">
-                AK-47
+              <svg
+                viewBox="0 0 24 24"
+                focusable="false"
+              >
+
+                <rect
+                  x="5"
+                  y="10"
+                  width="14"
+                  height="10"
+                  rx="2"
+                ></rect>
+
+                <path
+                  d="M8 10V7a4 4 0 0 1 8 0v3"
+                ></path>
+
+              </svg>
+
+            </span>
+
+
+            <span class="giveaway-closed-message__copy">
+
+              <strong>
+                The giveaway has ended!
+              </strong>
+
+              <span>
+                Thanks for participating.
               </span>
 
-              <span class="shinobu-skin-finish featured-skin-finish">
-                Frontside Misty
-              </span>
-
-            </div>
-
-
-            <h3 class="giveaway-title giveaway-title--price">
-
-              <span class="giveaway-price-currency">
-                $
-              </span>
-
-              <span class="giveaway-price-value featured-item-price">
-                22.34
-              </span>
-
-            </h3>
-
-          </a>
-
-
-          <!-- =====================================================
-               GIVEAWAY 2
-               ===================================================== -->
-
-          <a
-            class="giveaway-card giveaway-item giveaway-card--shinobu giveaway-card--midnight"
-            href="https://x.com/VideoPower_cs/status/2038346729842475294?s=20"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open the AK-47 Midnight Laminate giveaway post on X"
-          >
-
-            <div class="giveaway-image-wrapper">
-
-              <div class="shinobu-winner-block giveaway-closed-message">
-
-                <span
-                  class="giveaway-closed-message__mark"
-                  aria-hidden="true"
-                >
-
-                  <svg
-                    viewBox="0 0 24 24"
-                    focusable="false"
-                  >
-
-                    <rect
-                      x="5"
-                      y="10"
-                      width="14"
-                      height="10"
-                      rx="2"
-                    ></rect>
-
-                    <path
-                      d="M8 10V7a4 4 0 0 1 8 0v3"
-                    ></path>
-
-                  </svg>
-
-                </span>
-
-
-                <span class="giveaway-closed-message__copy">
-
-                  <strong>
-                    The giveaway has ended!
-                  </strong>
-
-                  <span>
-                    Thanks for participating.
-                  </span>
-
-                </span>
-
-              </div>
-
-
-              <div class="giveaway-topbar">
-
-                <div class="giveaway-badges">
-
-                  <div class="price-tag inactive-price">
-                    FN
-                  </div>
-
-                </div>
-
-              </div>
-
-
-              <img
-                src="https://community.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIGz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwlcK3wjFU6s2neq1pJeOQC2mE_v5jovFlSha_nBovp3PRnt36d36UOlUmCcF2TOZfsRC_ldW1ML625AbZ2dhHyn_7jSgauCtp_a9cBpVVSdXG"
-                alt="AK-47 Midnight Laminate"
-                class="giveaway-img active"
-              />
-
-            </div>
-
-
-            <div
-              class="shinobu-skin-name"
-              aria-label="AK-47 Midnight Laminate"
-            >
-
-              <span class="shinobu-skin-weapon">
-                AK-47
-              </span>
-
-              <span class="shinobu-skin-finish">
-                Midnight Laminate
-              </span>
-
-            </div>
-
-
-            <h3 class="giveaway-title giveaway-title--price">
-
-              <span class="giveaway-price-currency">
-                $
-              </span>
-
-              <span class="giveaway-price-value">
-                21.00
-              </span>
-
-            </h3>
-
-          </a>
-
-
-          <!-- =====================================================
-               GIVEAWAY 3
-               ===================================================== -->
-
-          <a
-            class="giveaway-card giveaway-item giveaway-card--shinobu"
-            href="https://x.com/VideoPower_cs/status/2034368015286870402?s=20"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open the Glock-18 Shinobu giveaway post on X"
-          >
-
-            <div class="giveaway-image-wrapper">
-
-              <div class="shinobu-winner-block giveaway-closed-message">
-
-                <span
-                  class="giveaway-closed-message__mark"
-                  aria-hidden="true"
-                >
-
-                  <svg
-                    viewBox="0 0 24 24"
-                    focusable="false"
-                  >
-
-                    <rect
-                      x="5"
-                      y="10"
-                      width="14"
-                      height="10"
-                      rx="2"
-                    ></rect>
-
-                    <path
-                      d="M8 10V7a4 4 0 0 1 8 0v3"
-                    ></path>
-
-                  </svg>
-
-                </span>
-
-
-                <span class="giveaway-closed-message__copy">
-
-                  <strong>
-                    The giveaway has ended!
-                  </strong>
-
-                  <span>
-                    Thanks for participating.
-                  </span>
-
-                </span>
-
-              </div>
-
-
-              <div class="giveaway-topbar">
-
-                <div class="giveaway-badges">
-
-                  <div class="price-tag inactive-price">
-                    MW
-                  </div>
-
-                </div>
-
-              </div>
-
-
-              <img
-                src="https://community.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIGz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL2kpnj9h1c4_2tY5t-KPmdAWWF_uJ_t-l9AX6ylh5w4mTcwtahdS2VOgRzWJsjEOQL5EWxwNblZeK2tVPXitlDmyvgznQeC7fvQL8"
-                alt="Skin Image"
-                class="giveaway-img active"
-              />
-
-            </div>
-
-
-            <div
-              class="shinobu-skin-name"
-              aria-label="Glock-18 Shinobu"
-            >
-
-              <span class="shinobu-skin-weapon">
-                Glock-18
-              </span>
-
-              <span class="shinobu-skin-finish">
-                Shinobu
-              </span>
-
-            </div>
-
-
-            <h3 class="giveaway-title giveaway-title--price">
-
-              <span class="giveaway-price-currency">
-                $
-              </span>
-
-              <span class="giveaway-price-value">
-                15.00
-              </span>
-
-            </h3>
-
-          </a>
-
-        </div>
-
-      </section>
-
-    </main>
-
-
-    <script>
-
-      document.addEventListener(
-        "contextmenu",
-        (event) => event.preventDefault()
-      );
-
-
-      document.addEventListener(
-        "selectstart",
-        (event) => event.preventDefault()
-      );
-
-    </script>
-
-
-    <!-- =========================================================
-         FOOTER
-         ========================================================= -->
-
-    <footer
-      class="main-footer"
-      aria-label="Footer"
-    >
-
-      <div class="footer-shell">
-
-
-        <div class="footer-main-row">
-
-
-          <div class="footer-brand">
-
-            <div
-              class="footer-brand-lockup"
-              aria-label="VideoPowerCodes"
-            >
-
-              <img
-                src="assets/videopower_profile.jpg"
-                alt=""
-                class="footer-logo footer-vp-logo-mark"
-                loading="lazy"
-                aria-hidden="true"
-              />
-
-              <img
-                src="assets/videopowercodes-logo.png?v=20260529-wordmark-large"
-                alt="VideoPowerCodes"
-                class="footer-logo-wordmark"
-                loading="lazy"
-              />
-
-            </div>
-
-
-            <p class="footer-tagline">
-              Use code <strong>VIDEOPOWER</strong> on all partnered sites.
-            </p>
+            </span>
 
           </div>
 
 
-          <div class="footer-directory">
+          <div class="giveaway-topbar">
 
+            <div class="giveaway-badges">
 
-            <nav
-              class="footer-nav"
-              aria-label="Footer navigation"
-            >
-
-
-              <a
-                class="footer-nav-link"
-                href="/bonuses"
-                data-home-route-link
-                data-section-target="bonuses"
-                draggable="true"
-              >
-                Bonuses
-              </a>
-
-
-              <a
-                class="footer-nav-link"
-                href="/socials"
-                data-home-route-link
-                data-section-target="news"
-                draggable="true"
-              >
-                Socials
-              </a>
-
-
-              <a
-                class="footer-nav-link"
-                href="/videos"
-                data-home-route-link
-                data-section-target="videos"
-                draggable="true"
-              >
-                Videos
-              </a>
-
-
-              <!-- GIVEAWAYS + NEW PRIZES BADGE -->
-
-              <a
-                class="footer-nav-link"
-                href="/giveaways"
-                data-home-route-link
-                data-section-target="giveaways"
-                draggable="true"
-              >
-
-                Giveaways
-
-                <span
-                  class="vp-new-prize-badge vp-new-prize-badge--footer"
-                  aria-label="New prizes"
-                >
-                  NEW PRIZES!
-                </span>
-
-              </a>
-
-
-              <a
-                class="footer-nav-link"
-                href="https://videopower-shop.fourthwall.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                draggable="true"
-              >
-                Merch
-              </a>
-
-            </nav>
-
-
-            <div
-              class="footer-social-links"
-              id="social-links-footer"
-              aria-label="Social links"
-            >
-
-              <a
-                href="https://www.youtube.com/@VideoPower_cs2"
-                target="_blank"
-                rel="noopener noreferrer"
-                draggable="true"
-              >
-                YouTube
-              </a>
-
-
-              <a
-                href="https://x.com/VideoPower_cs"
-                target="_blank"
-                rel="noopener noreferrer"
-                draggable="true"
-              >
-                X
-              </a>
+              <div class="price-tag inactive-price">
+                FN
+              </div>
 
             </div>
 
           </div>
+
+
+          <img
+            src="https://community.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIGz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwlcK3wjFU6s2neq1pJeOQC2mE_v5jovFlSha_nBovp3PRnt36d36UOlUmCcF2TOZfsRC_ldW1ML625AbZ2dhHyn_7jSgauCtp_a9cBpVVSdXG"
+            alt="AK-47 Midnight Laminate"
+            class="giveaway-img active"
+          />
 
         </div>
 
 
         <div
-          class="footer-divider"
-          aria-hidden="true"
-        ></div>
+          class="shinobu-skin-name"
+          aria-label="AK-47 Midnight Laminate"
+        >
+
+          <span class="shinobu-skin-weapon">
+            AK-47
+          </span>
+
+          <span class="shinobu-skin-finish">
+            Midnight Laminate
+          </span>
+
+        </div>
 
 
-        <div class="footer-bottom-row">
+        <h3 class="giveaway-title giveaway-title--price">
+
+          <span class="giveaway-price-currency">
+            $
+          </span>
+
+          <span class="giveaway-price-value">
+            21.00
+          </span>
+
+        </h3>
+
+      </a>
 
 
-          <div class="footer-legal">
+      <!-- =====================================================
+           GIVEAWAY 3
+           ===================================================== -->
+
+      <a
+        class="giveaway-card giveaway-item giveaway-card--shinobu"
+        href="https://x.com/VideoPower_cs/status/2034368015286870402?s=20"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open the Glock-18 Shinobu giveaway post on X"
+      >
+
+        <div class="giveaway-image-wrapper">
+
+          <div class="shinobu-winner-block giveaway-closed-message">
+
+            <span
+              class="giveaway-closed-message__mark"
+              aria-hidden="true"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                focusable="false"
+              >
+
+                <rect
+                  x="5"
+                  y="10"
+                  width="14"
+                  height="10"
+                  rx="2"
+                ></rect>
+
+                <path
+                  d="M8 10V7a4 4 0 0 1 8 0v3"
+                ></path>
+
+              </svg>
+
+            </span>
 
 
-            <p class="footer-copyright">
-              &copy; 2026 VideoPowerCodes.com. All rights reserved.
-            </p>
+            <span class="giveaway-closed-message__copy">
 
+              <strong>
+                The giveaway has ended!
+              </strong>
 
-            <p class="footer-disclaimer">
-              We shall not be held liable for any losses, damages, liabilities,
-              or other consequences resulting from your use of, or participation
-              in, any casino, sportsbook, betting website, or other third-party
-              gambling service featured, advertised, promoted, or linked to
-              through our website(s). You are solely responsible for all gambling
-              decisions, wagers, deposits, and associated financial risks.
-            </p>
+              <span>
+                Thanks for participating.
+              </span>
+
+            </span>
 
           </div>
 
 
-          <p class="footer-responsible">
+          <div class="giveaway-topbar">
 
-            <span class="footer-age-badge">
-              18+
+            <div class="giveaway-badges">
+
+              <div class="price-tag inactive-price">
+                MW
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <img
+            src="https://community.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIGz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL2kpnj9h1c4_2tY5t-KPmdAWWF_uJ_t-l9AX6ylh5w4mTcwtahdS2VOgRzWJsjEOQL5EWxwNblZeK2tVPXitlDmyvgznQeC7fvQL8"
+            alt="Skin Image"
+            class="giveaway-img active"
+          />
+
+        </div>
+
+
+        <div
+          class="shinobu-skin-name"
+          aria-label="Glock-18 Shinobu"
+        >
+
+          <span class="shinobu-skin-weapon">
+            Glock-18
+          </span>
+
+          <span class="shinobu-skin-finish">
+            Shinobu
+          </span>
+
+        </div>
+
+
+        <h3 class="giveaway-title giveaway-title--price">
+
+          <span class="giveaway-price-currency">
+            $
+          </span>
+
+          <span class="giveaway-price-value">
+            15.00
+          </span>
+
+        </h3>
+
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<script>
+
+  document.addEventListener(
+    "contextmenu",
+    (event) => event.preventDefault()
+  );
+
+
+  document.addEventListener(
+    "selectstart",
+    (event) => event.preventDefault()
+  );
+
+</script>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer
+  class="main-footer"
+  aria-label="Footer"
+>
+
+  <div class="footer-shell">
+
+
+    <div class="footer-main-row">
+
+
+      <div class="footer-brand">
+
+        <div
+          class="footer-brand-lockup"
+          aria-label="VideoPowerCodes"
+        >
+
+          <img
+            src="assets/videopower_profile.jpg"
+            alt=""
+            class="footer-logo footer-vp-logo-mark"
+            loading="lazy"
+            aria-hidden="true"
+          />
+
+          <img
+            src="assets/videopowercodes-logo.png?v=20260529-wordmark-large"
+            alt="VideoPowerCodes"
+            class="footer-logo-wordmark"
+            loading="lazy"
+          />
+
+        </div>
+
+
+        <p class="footer-tagline">
+          Use code <strong>VIDEOPOWER</strong> on all partnered sites.
+        </p>
+
+      </div>
+
+
+      <div class="footer-directory">
+
+
+        <nav
+          class="footer-nav"
+          aria-label="Footer navigation"
+        >
+
+
+          <a
+            class="footer-nav-link"
+            href="/bonuses"
+            data-home-route-link
+            data-section-target="bonuses"
+            draggable="true"
+          >
+            Bonuses
+          </a>
+
+
+          <a
+            class="footer-nav-link"
+            href="/socials"
+            data-home-route-link
+            data-section-target="news"
+            draggable="true"
+          >
+            Socials
+          </a>
+
+
+          <a
+            class="footer-nav-link"
+            href="/videos"
+            data-home-route-link
+            data-section-target="videos"
+            draggable="true"
+          >
+            Videos
+          </a>
+
+
+          <!-- GIVEAWAYS + NEW PRIZES BADGE -->
+
+          <a
+            class="footer-nav-link"
+            href="/giveaways"
+            data-home-route-link
+            data-section-target="giveaways"
+            draggable="true"
+          >
+
+            Giveaways
+
+            <span
+              class="vp-new-prize-badge vp-new-prize-badge--footer"
+              aria-label="New prizes"
+            >
+              NEW PRIZES!
             </span>
 
-            <span>
-              Gamble responsibly.
-            </span>
+          </a>
 
-          </p>
+
+          <a
+            class="footer-nav-link"
+            href="https://videopower-shop.fourthwall.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            draggable="true"
+          >
+            Merch
+          </a>
+
+        </nav>
+
+
+        <div
+          class="footer-social-links"
+          id="social-links-footer"
+          aria-label="Social links"
+        >
+
+          <a
+            href="https://www.youtube.com/@VideoPower_cs2"
+            target="_blank"
+            rel="noopener noreferrer"
+            draggable="true"
+          >
+            YouTube
+          </a>
+
+
+          <a
+            href="https://x.com/VideoPower_cs"
+            target="_blank"
+            rel="noopener noreferrer"
+            draggable="true"
+          >
+            X
+          </a>
 
         </div>
 
       </div>
 
-    </footer>
+    </div>
+
+
+    <div
+      class="footer-divider"
+      aria-hidden="true"
+    ></div>
+
+
+    <div class="footer-bottom-row">
+
+
+      <div class="footer-legal">
+
+
+        <p class="footer-copyright">
+          &copy; 2026 VideoPowerCodes.com. All rights reserved.
+        </p>
+
+
+        <p class="footer-disclaimer">
+          We shall not be held liable for any losses, damages, liabilities,
+          or other consequences resulting from your use of, or participation
+          in, any casino, sportsbook, betting website, or other third-party
+          gambling service featured, advertised, promoted, or linked to
+          through our website(s). You are solely responsible for all gambling
+          decisions, wagers, deposits, and associated financial risks.
+        </p>
+
+      </div>
+
+
+      <p class="footer-responsible">
+
+        <span class="footer-age-badge">
+          18+
+        </span>
+
+        <span>
+          Gamble responsibly.
+        </span>
+
+      </p>
+
+    </div>
 
   </div>
 
+</footer>
+```
+
+  </div>
 
   <script src="script.js?v=20260825-mobile-menu-video-v50"></script>
-
 
   <!-- =========================================================
        INITIAL SECTION ROUTING
@@ -2583,7 +2470,6 @@
     })();
 
   </script>
-
 
 </body>
 </html>
