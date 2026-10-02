@@ -1179,6 +1179,54 @@ content="https://videopowercodes.com/assets/videopower_profile.jpg"
   }
 </style>
 
+
+<style id="vp-badge-final-font-position-v6">
+  /* FINAL: NEW! aligned with the left edge of the giveaway card */
+  html body .giveaway-card--featured-carousel .vp-giveaway-new-badge {
+    left: 0 !important;
+    font-family: inherit !important;
+  }
+
+  /* Use the same typography family as the site's Stay Connected heading/text.
+     The badges inherit the site's normal font instead of forcing Arial. */
+  html body .giveaway-card--featured-carousel .vp-giveaway-new-badge,
+  html body .main-nav > a[data-section-target="giveaways"] .vp-new-prize-badge,
+  html body .main-footer .footer-nav-link[data-section-target="giveaways"] .vp-new-prize-badge {
+    font-family: inherit !important;
+  }
+
+  @media (max-width: 700px) {
+    html body .giveaway-card--featured-carousel .vp-giveaway-new-badge {
+      left: 0 !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    html body .giveaway-card--featured-carousel .vp-giveaway-new-badge {
+      left: 0 !important;
+    }
+  }
+</style>
+
+
+<style id="vp-join-giveaways-heading-v7">
+  /* GIVEAWAYS HEADING: match the Stay Connected color split. */
+  html body #giveaways .giveaways-heading-title h2 .giveaways-heading-join {
+    color: #bdbdc2 !important;
+    -webkit-text-fill-color: #bdbdc2 !important;
+  }
+
+  html body #giveaways .giveaways-heading-title h2 .giveaways-heading-accent {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  html body #giveaways .giveaways-heading-title h2 .giveaways-heading-join,
+  html body #giveaways .giveaways-heading-title h2 .giveaways-heading-accent {
+    font-family: inherit !important;
+  }
+</style>
+
 </head>
 
 <body>
@@ -2088,7 +2136,8 @@ content="https://videopowercodes.com/assets/videopower_profile.jpg"
 
         <h2>
 
-          Giveaways
+          <span class="giveaways-heading-join">Join</span>
+          <span class="giveaways-heading-accent">Giveaways</span>
 
         </h2>
 
