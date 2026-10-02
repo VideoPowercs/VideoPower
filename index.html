@@ -740,6 +740,69 @@ content="https://videopowercodes.com/assets/videopower_profile.jpg"
     }
   }
 
+
+  /* =========================================================
+     NEW PRIZES BADGE — HEADER + FOOTER
+     Match the attached badge: compact pill, solid #ffa914,
+     white text, same inherited site typography as the
+     Stay Connected heading, with NO shine / glow / sparkle.
+     ========================================================= */
+
+  .main-nav > a[data-section-target="giveaways"] .vp-new-prize-badge,
+  .footer-nav-link[data-section-target="giveaways"] .vp-new-prize-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin-left: 7px !important;
+    padding: 4px 9px !important;
+    min-height: 0 !important;
+
+    background: #ffa914 !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    font-family: inherit !important;
+    font-size: 7px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0 !important;
+
+    white-space: nowrap !important;
+    vertical-align: middle !important;
+
+    text-shadow: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+
+    animation: none !important;
+    transition: none !important;
+
+    overflow: visible !important;
+    isolation: auto !important;
+  }
+
+  .main-nav > a[data-section-target="giveaways"] .vp-new-prize-badge::before,
+  .main-nav > a[data-section-target="giveaways"] .vp-new-prize-badge::after,
+  .footer-nav-link[data-section-target="giveaways"] .vp-new-prize-badge::before,
+  .footer-nav-link[data-section-target="giveaways"] .vp-new-prize-badge::after {
+    content: none !important;
+    display: none !important;
+    animation: none !important;
+  }
+
+  @media (max-width: 700px) {
+    .main-nav > a[data-section-target="giveaways"] .vp-new-prize-badge,
+    .footer-nav-link[data-section-target="giveaways"] .vp-new-prize-badge {
+      margin-left: 5px !important;
+      padding: 3px 7px !important;
+      font-size: 6px !important;
+    }
+  }
+
 </style>
 
 <link
@@ -776,6 +839,124 @@ content="https://videopowercodes.com/assets/videopower_profile.jpg"
 })();
 </script>
 
+
+<style id="vp-giveaway-new-badge-v2">
+  /* =========================================================
+     FEATURED HELLLCASE GIVEAWAY — NEW! SIDE BADGE
+     Same visual language as the header/footer NEW PRIZES badge:
+     #ffa914 + white text + inherited site font, no glow/shine.
+     Positioned vertically on the left edge like the reference.
+     ========================================================= */
+
+  .giveaway-card--featured-carousel {
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  .vp-giveaway-new-badge {
+    position: absolute !important;
+
+    left: -1px !important;
+    top: 50% !important;
+
+    width: 54px !important;
+    height: 23px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    z-index: 50 !important;
+
+    background: #ffa914 !important;
+    border: 0 !important;
+    border-radius: 5px !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    font-family: inherit !important;
+    font-size: 8px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+
+    white-space: nowrap !important;
+
+    text-shadow: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+
+    transform: translate(-50%, -50%) rotate(-90deg) !important;
+    transform-origin: center center !important;
+
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .vp-giveaway-new-badge::before,
+  .vp-giveaway-new-badge::after {
+    content: none !important;
+    display: none !important;
+    animation: none !important;
+  }
+
+  /* Keep the badge attached to the image area on smaller screens. */
+  @media (max-width: 700px) {
+    .vp-giveaway-new-badge {
+      width: 50px !important;
+      height: 22px !important;
+      font-size: 7px !important;
+      left: 0 !important;
+    }
+  }
+
+  /* =========================================================
+     HELLCASE ENTER MESSAGE — UNLOCKED ICON
+     ========================================================= */
+
+  .giveaway-closed-message__mark svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .giveaway-closed-message__mark svg rect,
+  .giveaway-closed-message__mark svg path,
+  .giveaway-closed-message__mark svg circle {
+    vector-effect: non-scaling-stroke;
+  }
+</style>
+
+
+<style id="vp-final-cleanup-v3">
+  /* No decorative quotation/marker shapes at the bottom of the footer. */
+  .main-footer::before,
+  .main-footer::after,
+  .main-footer .footer-shell::before,
+  .main-footer .footer-shell::after,
+  .main-footer .footer-bottom-row::before,
+  .main-footer .footer-bottom-row::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .main-footer .footer-divider {
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+
+  .giveaway-closed-message__mark svg {
+    fill: none !important;
+    stroke: currentColor !important;
+    stroke-width: 1.7 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+  }
+</style>
+
 </head>
 
 <body>
@@ -787,78 +968,6 @@ content="https://videopowercodes.com/assets/videopower_profile.jpg"
     <div class="vp-scrollbar__thumb"></div>
   </div>
 
-  <div
-    class="homepage-popup"
-    id="homepage-popup"
-    aria-hidden="true"
-  >
-
-```
-<div
-  class="homepage-popup__backdrop"
-  data-popup-close="true"
-></div>
-
-
-<div
-  class="homepage-popup__dialog"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="homepage-popup-title"
->
-
-  <button
-    class="homepage-popup__close"
-    id="homepage-popup-close"
-    type="button"
-    aria-label="Close popup"
-  >
-    <span></span>
-    <span></span>
-  </button>
-
-
-  <div class="homepage-popup__eyebrow">
-    START HERE
-  </div>
-
-
-  <h2
-    class="homepage-popup__title"
-    id="homepage-popup-title"
-  >
-    WELCOME TO VIDEOPOWER CODES
-  </h2>
-
-
-  <p class="homepage-popup__text">
-    DISCOVER BONUSES, SPECIAL OPPORTUNITIES, GIVEAWAYS, AND MORE IN ONE PLACE.
-  </p>
-
-
-  <div class="homepage-popup__code">
-    USE CODE: VIDEOPOWER
-  </div>
-
-
-  <div class="homepage-popup__actions">
-
-    <a
-      href="/bonuses"
-      class="homepage-popup__button homepage-popup__button--primary"
-      data-home-route-link
-      data-section-target="bonuses"
-      data-popup-close="true"
-    >
-      BONUSES
-    </a>
-
-  </div>
-
-</div>
-```
-
-  </div>
 
   <div id="home"></div>
 
@@ -866,7 +975,6 @@ content="https://videopowercodes.com/assets/videopower_profile.jpg"
 
   <div class="wrapper">
 
-```
 <!-- =========================================================
      HEADER
      ========================================================= -->
@@ -1788,6 +1896,14 @@ content="https://videopowercodes.com/assets/videopower_profile.jpg"
         aria-label="Open Hellcase giveaways"
       >
 
+        <span
+          class="vp-giveaway-new-badge"
+          aria-label="New giveaway"
+        >
+          NEW!
+        </span>
+
+
 
         <div class="giveaway-image-wrapper">
 
@@ -1802,20 +1918,13 @@ content="https://videopowercodes.com/assets/videopower_profile.jpg"
               <svg
                 viewBox="0 0 24 24"
                 focusable="false"
+                aria-hidden="true"
               >
-
-                <rect
-                  x="5"
-                  y="10"
-                  width="14"
-                  height="10"
-                  rx="2"
-                ></rect>
-
-                <path
-                  d="M8 10V7a4 4 0 0 1 8 0v3"
-                ></path>
-
+                <path d="M4 9h16v11H4z"></path>
+                <path d="M3 7h18v3H3z"></path>
+                <path d="M12 7v13"></path>
+                <path d="M12 7H8.2C6.9 7 6 6.1 6 5s.9-2 2.2-2c2.1 0 3.8 2.4 3.8 4z"></path>
+                <path d="M12 7h3.8c1.3 0 2.2-.9 2.2-2s-.9-2-2.2-2C13.7 3 12 5.4 12 7z"></path>
               </svg>
 
             </span>
@@ -1824,11 +1933,11 @@ content="https://videopowercodes.com/assets/videopower_profile.jpg"
             <span class="giveaway-closed-message__copy">
 
               <strong>
-                You can now enter the giveaway!
+                The giveaway is live!
               </strong>
 
               <span>
-                Three winners will be chosen on September 29.
+                Participate now and win one of the three AK-47 skins for your loadout.
               </span>
 
             </span>
@@ -1975,7 +2084,6 @@ content="https://videopowercodes.com/assets/videopower_profile.jpg"
                 viewBox="0 0 24 24"
                 focusable="false"
               >
-
                 <rect
                   x="5"
                   y="10"
@@ -1985,9 +2093,22 @@ content="https://videopowercodes.com/assets/videopower_profile.jpg"
                 ></rect>
 
                 <path
-                  d="M8 10V7a4 4 0 0 1 8 0v3"
+                  d="M8 10V7a4 4 0 0 1 7.2-2.4"
                 ></path>
 
+                <path
+                  d="M16 7V5.5"
+                ></path>
+
+                <circle
+                  cx="12"
+                  cy="15"
+                  r="1.35"
+                ></circle>
+
+                <path
+                  d="M12 16.35V18"
+                ></path>
               </svg>
 
             </span>
@@ -2086,7 +2207,6 @@ content="https://videopowercodes.com/assets/videopower_profile.jpg"
                 viewBox="0 0 24 24"
                 focusable="false"
               >
-
                 <rect
                   x="5"
                   y="10"
@@ -2096,9 +2216,22 @@ content="https://videopowercodes.com/assets/videopower_profile.jpg"
                 ></rect>
 
                 <path
-                  d="M8 10V7a4 4 0 0 1 8 0v3"
+                  d="M8 10V7a4 4 0 0 1 7.2-2.4"
                 ></path>
 
+                <path
+                  d="M16 7V5.5"
+                ></path>
+
+                <circle
+                  cx="12"
+                  cy="15"
+                  r="1.35"
+                ></circle>
+
+                <path
+                  d="M12 16.35V18"
+                ></path>
               </svg>
 
             </span>
@@ -2396,7 +2529,6 @@ content="https://videopowercodes.com/assets/videopower_profile.jpg"
   </div>
 
 </footer>
-```
 
   </div>
 
