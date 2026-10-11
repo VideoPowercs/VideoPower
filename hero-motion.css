@@ -1,0 +1,91 @@
+/* Hero atmosphere: retain the existing warm light, separate the quieter grid. */
+html body .hero {
+  background:
+    radial-gradient(ellipse at 50% 37%, rgba(255, 169, 20, 0.21) 0%, rgba(255, 169, 20, 0.1) 34%, transparent 62%),
+    linear-gradient(180deg, #0d0e12 0%, #08090d 100%) !important;
+  background-size: auto !important;
+}
+
+html body .hero .hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: center top;
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 8%, #000 45%, transparent 82%);
+  mask-image: radial-gradient(ellipse at center, transparent 8%, #000 45%, transparent 82%);
+}
+
+html body .hero .floating-images img {
+  --drift-x: 10px;
+  --drift-y: -14px;
+  --rest-angle: -2deg;
+  --tilt-angle: 2deg;
+  --motion-scale: 1;
+  --depth: 1;
+  animation: vpModernDrift 14s ease-in-out -2s infinite !important;
+  translate: calc(var(--hero-pointer-x, 0px) * var(--depth)) calc(var(--hero-pointer-y, 0px) * var(--depth)) !important;
+  transform-origin: center !important;
+  will-change: auto !important;
+}
+
+html body .hero .floating-images img:nth-child(1) { --depth: 0.8; animation-duration: 13s !important; }
+html body .hero .floating-images img:nth-child(2) { --drift-x: -9px; --drift-y: -11px; --rest-angle: 3deg; --tilt-angle: -1deg; --depth: 0.55; animation-duration: 16s !important; animation-delay: -7s !important; }
+html body .hero .floating-images img:nth-child(3) { --drift-x: -14px; --drift-y: -12px; --rest-angle: 1deg; --tilt-angle: -1deg; --depth: 1.1; animation-duration: 18s !important; animation-delay: -5s !important; }
+html body .hero .floating-images img:nth-child(4) { --drift-x: 13px; --drift-y: -10px; --rest-angle: -1deg; --tilt-angle: 1deg; --depth: 0.95; animation-duration: 17s !important; animation-delay: -10s !important; }
+html body .hero .floating-images img:nth-child(5) { --drift-x: 8px; --drift-y: -13px; --rest-angle: -3deg; --tilt-angle: 0deg; --depth: 0.65; animation-duration: 15s !important; animation-delay: -4s !important; }
+
+@keyframes vpModernDrift {
+  0%,
+100% { transform: translate3d(0, 0, 0) rotate(var(--rest-angle)); }
+  50% { transform: translate3d(calc(var(--drift-x) * var(--motion-scale)), calc(var(--drift-y) * var(--motion-scale)), 0) rotate(var(--tilt-angle)); }
+}
+
+html body .hero .floating-images img.floating-vp-coin {
+  --depth: 1.3;
+  --coin-rest: -7deg;
+  --coin-tilt: 3deg;
+  --drift-x: 8px;
+  --drift-y: -15px;
+  animation: vpModernCoin 12s ease-in-out -3s infinite !important;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 7px rgba(255, 185, 65, 0.18)) saturate(1.05) !important;
+}
+html body .hero .floating-images img.floating-vp-coin--two {
+  --depth: 0.7;
+  --coin-rest: 8deg;
+  --coin-tilt: -2deg;
+  --drift-x: -10px;
+  --drift-y: -12px;
+  animation-duration: 15s !important;
+  animation-delay: -8s !important;
+}
+@keyframes vpModernCoin {
+  0%,
+100% { transform: perspective(700px) translate3d(0, 0, 0) rotateY(-12deg) rotateZ(var(--coin-rest)); }
+  50% { transform: perspective(700px) translate3d(calc(var(--drift-x) * var(--motion-scale)), calc(var(--drift-y) * var(--motion-scale)), 0) rotateY(16deg) rotateZ(var(--coin-tilt)); }
+}
+
+/* Touch screens use a smaller drift, with no pointer parallax. */
+@media (max-width: 860px), (pointer: coarse) {
+  html body .hero .hero-grid { background-size: 52px 52px; opacity: 0.65; }
+  html body .hero .floating-images img:nth-child(n) {
+    --motion-scale: 0.4;
+    translate: none !important;
+    animation-duration: 20s !important;
+  }
+  html body .hero .floating-images img.floating-vp-coin { animation-duration: 18s !important; }
+  html body .hero .floating-images img.floating-vp-coin--two { animation-duration: 22s !important; }
+}
+
+html body .hero.hero-motion-paused .floating-images img { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) {
+  html body .hero .floating-images img:nth-child(n) {
+    animation: none !important;
+    translate: none !important;
+    transform: none !important;
+  }
+}

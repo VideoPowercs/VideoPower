@@ -1,0 +1,460 @@
+/* One consistent, larger grid across the public site. */
+@media (hover: hover) and (pointer: fine) {
+  html body #giveaways .giveaway-card--shinobu.is-return-resting .giveaway-img.active {
+    transform: translate3d(0,17px,18px) rotate(-1deg) scale(.95) !important;
+    filter: drop-shadow(0 14px 16px rgba(0,0,0,.34)) !important;
+  }
+  html body #giveaways .giveaway-card--shinobu.is-return-resting .hellcase-giveaway-watermark,
+html body #giveaways .giveaway-card--shinobu.is-return-resting .giveaway-image-wrapper::after {
+    transform: translate3d(-50%,-50%,0) scale(1) !important;
+  }
+}
+@media (max-width: 860px) {
+  html.mobile-touch-lock body #videos .videos-carousel-arrow,
+html.mobile-touch-lock body #videos .videos-carousel-arrow:is(:hover, :focus, :focus-visible, :active):not(:disabled) {
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,.07) !important;
+    outline: none !important;
+    background: #151d1f !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  html.mobile-touch-lock body #videos .videos-carousel-arrow svg {
+    color: #ffffff !important; stroke: #ffffff !important;
+  }
+}
+html body #videos .video-card .video-date .clock-icon,
+html body #videos .video-card:is(:hover, :focus-visible, :active, .is-touch-pressed) .video-date .clock-icon {
+  display: inline-block !important;
+  flex-shrink: 0;
+  width: 26px !important; height: 26px !important;
+  background: currentColor !important;
+  color: inherit !important;
+  filter: none !important;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+html body #giveaways .giveaway-card--featured-carousel .hellcase-new-badge {
+  position: absolute; left: 0; top: 50%; z-index: 16;
+  display: flex; align-items: center; justify-content: center;
+  width: 28px; height: 64px; padding: 0; transform: translateY(-50%);
+  border: 0; border-radius: 0 4px 4px 0;
+  color: #000000; background: #ff8200;
+  font-family: Arial, Helvetica, sans-serif; font-size: 13px;
+  font-weight: 400; letter-spacing: 0;
+  box-shadow: 3px 2px 10px rgba(0,0,0,.2); pointer-events: none;
+}
+html body #giveaways .hellcase-new-badge > span { display: block; transform: rotate(-90deg); white-space: nowrap; font: 600 16px/1 "Barlow Condensed", "Arial Narrow", Arial, sans-serif !important; letter-spacing: .05em !important; color: #000000 !important; -webkit-text-fill-color: #000000; text-shadow: none !important; }
+html body .external-link-url-preview { background: #17191f !important; }
+@media (max-width: 860px) {
+  html.mobile-touch-lock body:is(.menu-open, .vp-mobile-menu-open) .main-footer,
+html.mobile-touch-lock:is(.menu-open, .vp-mobile-menu-open) body .main-footer {
+    background: linear-gradient(180deg, #101116 0%, #0b0c10 52%, #090a0e 100%) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+html body.not-found-page {
+  background: #0b0c10 !important;
+  background-image: none !important;
+}
+html body.not-found-page::after {
+  background: none !important;
+  background-image: none !important;
+}
+html body::before {
+  background-image:
+    linear-gradient(rgba(255,255,255,.085) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.085) 1px, transparent 1px) !important;
+  background-size: 80px 80px !important;
+  opacity: .95 !important;
+}
+html body .hero .hero-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,.095) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.095) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 1;
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,.4) 8%, #000 45%, transparent 92%);
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,.4) 8%, #000 45%, transparent 92%);
+}
+html body #bonuses.bonuses-reward-section::before {
+  background:
+    linear-gradient(rgba(255,169,20,.065) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,169,20,.065) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 16%, rgba(255,169,20,.14), transparent 46%),
+    linear-gradient(180deg, #111216 0%, #0c0d11 56%, #090a0d 100%) !important;
+  background-size: 80px 80px, 80px 80px, 100% 100%, 100% 100% !important;
+}
+html body .main-footer {
+  background: linear-gradient(180deg, #101116 0%, #0b0c10 52%, #090a0e 100%) !important;
+  background-size: auto !important;
+}
+html body .main-header {
+  background-image: linear-gradient(180deg, #101116, #0b0c10) !important;
+  background-size: auto !important;
+}
+html body .main-header a:not(.nav-social-link),
+html body #main-nav a:not(.nav-social-link),
+html body .main-footer a:not(.footer-social-links a) {
+  -webkit-user-drag: none !important;
+  user-select: none !important;
+}
+html body .nav-social-link img { pointer-events: none !important; }
+html body .main-footer .footer-code-copy {
+  min-width: 10ch !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-drag: none !important;
+  touch-action: manipulation !important;
+}
+@media (max-width: 860px), (pointer: coarse) {
+  html body .main-footer .footer-code-copy:not(.is-copied) {
+    color: #ffa914 !important;
+    -webkit-text-fill-color: #ffa914 !important;
+    background-image: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+  }
+  html body .main-footer .footer-code-copy.is-copied {
+    color: #55f28b !important;
+    -webkit-text-fill-color: #55f28b !important;
+  }
+  html body .main-footer .footer-partnership-email {
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    touch-action: manipulation !important;
+  }
+  html body::before,
+html body .hero .hero-grid { background-size: 64px 64px !important; }
+  html body #bonuses.bonuses-reward-section::before { background-size: 64px 64px, 64px 64px, 100% 100%, 100% 100% !important; }
+  html body .main-footer .footer-code-copy,
+html body .main-footer .footer-code-copy:hover,
+html body .main-footer .footer-code-copy:focus,
+html body .main-footer .footer-code-copy:active,
+html body .main-footer .footer-code-copy.is-copied {
+    animation: none !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* The supplied 404 artwork lives in assets, with the existing site shell. */
+html body.not-found-page .wrapper { min-height: 100vh; }
+html body.not-found-page .not-found-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 20px !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  min-height: 100svh !important;
+  height: auto !important;
+  padding: 150px 20px 60px !important;
+  background: transparent !important;
+  overflow: visible !important;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.not-found-label { margin: 0; color: #d0d2da; font-size: 14px; font-weight: 800; letter-spacing: .28em; position: relative; z-index: 2; }
+.not-found-art-frame { position: relative; width: min(400px, 76vw); aspect-ratio: 466 / 300; overflow: hidden; flex: 0 0 auto; }
+.not-found-art-frame .not-found-art { position: absolute; width: 220%; max-width: none; height: auto; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; pointer-events: none; }
+html body.not-found-page .not-found-content > .not-found-label {
+  display: block !important;
+  visibility: visible !important;
+  color: #a0a2ad !important;
+  -webkit-text-fill-color: #a0a2ad !important;
+  font: 600 14px/1.6 Arial, Helvetica, sans-serif !important;
+  letter-spacing: .08em !important;
+  flex: 0 0 auto;
+  animation: vpErrorReveal 650ms cubic-bezier(.16,1,.3,1) both !important;
+  transform: none !important;
+  position: relative !important;
+  inset: auto !important;
+  margin: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+  order: -1 !important;
+}
+html body .hero .hero-explore { -webkit-user-drag: none !important; user-select: none !important; }
+.not-found-description { margin: 0; max-width: 650px; color: #a0a2ad; font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: 600; line-height: 1.6; }
+.not-found-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 16px; }
+.not-found-action-stage { width: min(100%, 480px); }
+.not-found-actions a:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+html body.not-found-page .not-found-actions { position: relative !important; inset: auto !important; margin-top: 16px !important; translate: none !important; transform: none !important; }
+html body.not-found-page .not-found-content > * {
+  animation: vpErrorReveal 650ms cubic-bezier(.16,1,.3,1) both !important;
+}
+html body.not-found-page .not-found-content > :nth-child(1) { animation-delay: 80ms !important; }
+html body.not-found-page .not-found-content > :nth-child(2) { animation-delay: 220ms !important; }
+html body.not-found-page .not-found-content > :nth-child(3) { animation-delay: 380ms !important; }
+html body.not-found-page .not-found-content > :nth-child(4) { animation-delay: 540ms !important; }
+@keyframes vpErrorReveal {
+  from { opacity: 0; translate: 0 18px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html body.not-found-page .not-found-content > * { animation: none !important; opacity: 1 !important; translate: none !important; }
+}
+/* Remove the card-wide dark hover layer without changing portraits or logos. */
+html body #giveaways .giveaway-card--shinobu::before,
+html body #giveaways .giveaway-card--shinobu:is(:hover, :focus-within, :active, .is-touch-pressed):not(.is-return-resting)::before {
+  display: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
+@media (max-width: 860px) {
+  html body.not-found-page .not-found-content { padding: 120px 20px 45px !important; gap: 18px !important; }
+}
+html body #news .news-team-action--youtube img,
+html body #news .news-team-action--youtube:is(:hover, :focus, :active, .is-touch-pressed) img {
+  width: 36px !important;
+  height: 30px !important;
+  object-fit: contain !important;
+}
+html body .nav-social-link img[src="/assets/youtube-logo.png"] { width: 32px !important; height: 26px !important; object-fit: contain !important; }
+
+/* Match the featured carousel artwork to the other giveaway cards. */
+@media (hover: hover) and (pointer: fine) {
+  html body #giveaways .giveaway-card--featured-carousel:is(:hover, :focus-within):not(.is-return-resting) .giveaway-img.active {
+    transform: translate3d(0, 12px, 92px) rotate(9deg) scale(1.08) !important;
+    filter: drop-shadow(0 20px 22px rgba(0,0,0,.46)) !important;
+  }
+  html body #giveaways .giveaway-card--featured-carousel:is(:hover, :focus-within):not(.is-return-resting) .hellcase-giveaway-watermark {
+    transform: translate3d(-50%, -50%, 34px) scale(1.12) !important;
+    filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(255,255,255,.28)) drop-shadow(0 19px 28px rgba(0,0,0,.4)) !important;
+  }
+}
+
+html body #giveaways .giveaway-closed-message__mark .giveaway-status-icon {
+  display: block !important; width: 28px !important; height: 28px !important;
+  object-fit: contain !important; margin: 0 !important; padding: 0 !important;
+  transform: none !important; filter: none !important; pointer-events: none;
+}
+
+html body .hero .hero-explore-arrow img {
+  display: block; width: 42px; height: 38px; object-fit: contain;
+  pointer-events: none; user-select: none; -webkit-user-drag: none;
+}
+html body .main-footer .footer-code-copy {
+  cursor: pointer !important; user-select: none !important;
+  -webkit-user-select: none !important; -webkit-touch-callout: none !important;
+}
+
+/* Keep the NEW ribbon beneath the visible card outline. */
+html body #giveaways .giveaway-card--featured-carousel::after {
+  content: "" !important; display: block !important; opacity: 1 !important;
+  position: absolute !important; inset: -1px !important; z-index: 30 !important;
+  border: inherit !important; border-radius: inherit !important;
+  background: none !important; transform: none !important; filter: none !important;
+  pointer-events: none !important;
+}
+
+html body .main-footer .footer-code-copy {
+  user-select: text !important; -webkit-user-select: text !important;
+  -webkit-touch-callout: default !important;
+}
+
+/* Use one page grid so adjoining sections share the same origin. */
+html body .hero .hero-grid { display: none !important; }
+html body .hero:not(.not-found-content) {
+  background: radial-gradient(ellipse at 50% 37%, rgba(255,169,20,.21), rgba(255,169,20,.1) 34%, transparent 62%) !important;
+}
+html body #bonuses.bonuses-reward-section::before {
+  background-image: none !important;
+}
+html body .hero .hero-explore-arrow .hero-explore-image {
+  display: block; width: 42px; height: 38px;
+  background: currentColor;
+  -webkit-mask: url('/assets/explore-logo.png') center / contain no-repeat;
+  mask: url('/assets/explore-logo.png') center / contain no-repeat;
+  transition: background-color .25s ease;
+  pointer-events: none;
+}
+/* Strip the old logo layer from the outline pseudo-element. */
+html body #giveaways a.giveaway-card--featured-carousel.giveaway-item:nth-of-type(1)::after,
+html body #giveaways a.giveaway-card--featured-carousel.giveaway-item:nth-of-type(1):is(:hover, :focus-within, :active)::after {
+  background: none !important; background-image: none !important;
+  width: auto !important; height: auto !important;
+  inset: -1px !important; transform: none !important;
+  filter: none !important; opacity: 1 !important;
+}
+
+html body .hero .hero-explore-arrow .hero-explore-image { position: relative; left: -4px; }
+html body #bonuses .bonus-reward-card--hellcase .bonus-reward-card__tag,
+html body #bonuses .bonus-reward-card--hellcase:is(:hover, :focus-within, :active, .is-card-clicked) .bonus-reward-card__tag {
+  background: #ff8200 !important; color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  font: 600 16px/1 "Barlow Condensed", "Arial Narrow", Arial, sans-serif !important;
+  letter-spacing: .05em !important; text-shadow: none !important;
+  border: 0 !important; border-radius: 4px !important;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 50%, 100% 100%, 0 100%) !important;
+  padding: 10px 19px 10px 12px !important;
+}
+@media (hover: hover) and (pointer: fine) {
+  html body #giveaways .giveaway-card--shinobu:is(:hover, :focus-within):not(.is-return-resting) img.giveaway-img.active {
+    transform: translate3d(0, -9px, 65px) rotate(-5deg) scale(1.07) !important;
+    filter: drop-shadow(0 23px 23px rgba(0,0,0,.46)) !important;
+    transition: transform .55s cubic-bezier(.16,1,.3,1), filter .55s ease, opacity .34s ease !important;
+  }
+}
+
+/* One native outline; remove the duplicate outline pseudo-layer. */
+html body #giveaways a.giveaway-card--featured-carousel.giveaway-item:nth-of-type(1)::after,
+html body #giveaways a.giveaway-card--featured-carousel.giveaway-item:nth-of-type(1):is(:hover, :focus-within, :active)::after {
+  content: none !important; display: none !important; border: 0 !important;
+  background: none !important; background-image: none !important;
+}
+
+html body #giveaways .giveaways-heading-plain { color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; }
+html body #giveaways .giveaways-heading-accent { color: #ffa914 !important; -webkit-text-fill-color: #ffa914 !important; }
+html body #giveaways .giveaway-card--featured-carousel .giveaway-carousel-dots {
+  position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%);
+  z-index: 20; display: flex; align-items: center; gap: 8px;
+  padding: 9px 12px; border-radius: 999px; background: rgba(8,9,12,.8);
+  border: 2px solid rgba(255,255,255,.18); backdrop-filter: blur(8px);
+}
+html body #giveaways .giveaway-carousel-dots .dot {
+  display: block !important; width: 8px !important; height: 8px !important;
+  border: 0 !important; border-radius: 999px !important;
+  background: #74757d !important; opacity: 1 !important;
+  cursor: pointer; transition: width .25s ease, background-color .25s ease;
+}
+html body #giveaways .giveaway-carousel-dots .dot.active { width: 24px !important; background: #ff8200 !important; }
+html body #giveaways .giveaway-carousel-dots .dot:focus-visible { outline: 2px solid white; outline-offset: 4px; }
+html body #videos .video-card .video-newest-badge {
+  position: absolute; top: 12px; left: 12px; z-index: 12;
+  display: inline-flex; align-items: center; justify-content: center;
+  box-sizing: border-box; min-height: 21px; padding: 4px 7px; border-radius: 6px; background: #ff0000; color: #ffffff;
+  -webkit-text-fill-color: #ffffff; font: 900 9px/1 Arial, Helvetica, sans-serif;
+  letter-spacing: 0; box-shadow: 0 3px 12px rgba(0,0,0,.3); pointer-events: none;
+}
+
+html body #giveaways .giveaway-card--featured-carousel .giveaway-img-carousel { overflow: visible !important; }
+
+/* Clean, one-shot section entrances with no blur. */
+html.section-scroll-reveals body :is(#bonuses, #news, #videos, #giveaways) .section-stage-reveal[data-section-stage] {
+  filter: none !important;
+  transition: opacity 600ms cubic-bezier(.16,1,.3,1) var(--section-stage-delay,0ms), transform 600ms cubic-bezier(.16,1,.3,1) var(--section-stage-delay,0ms) !important;
+}
+html.section-scroll-reveals body :is(#bonuses, #news, #videos, #giveaways) .section-stage-reveal[data-section-stage]:not(.is-stage-revealed) {
+  opacity: 0 !important;
+  transform: translate3d(0,24px,0) scale(.98) !important;
+}
+html.section-scroll-reveals body :is(#bonuses, #news, #videos, #giveaways) .section-stage-reveal[data-section-stage$="heading"]:not(.is-stage-revealed) {
+  transform: translate3d(0,16px,0) !important;
+}
+html.section-scroll-reveals body #videos .videos-carousel-shell.section-stage-reveal[data-section-stage]:not(.is-stage-revealed) {
+  transform: translate3d(0,24px,0) !important;
+}
+html.section-scroll-reveals body :is(#bonuses, #news, #videos, #giveaways) .section-stage-reveal[data-section-stage].stage-reveal-without-motion {
+  transition: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.section-scroll-reveals body :is(#bonuses, #news, #videos, #giveaways) .section-stage-reveal[data-section-stage] {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+}
+
+/* Reveal the EXPLORE label and arrow together with a quiet fade. */
+html.hero-intro-pending.hero-intro-running body .hero .hero-explore {
+  animation: vpExploreSoftFade 450ms ease-out 700ms both !important;
+  clip-path: none !important; scale: 1 !important;
+}
+@keyframes vpExploreSoftFade {
+  from { opacity: 0; visibility: visible; translate: 0 0; }
+  to { opacity: 1; visibility: visible; translate: 0 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.hero-intro-pending.hero-intro-running body .hero .hero-explore { animation: none !important; opacity: 1 !important; visibility: visible !important; }
+}
+
+/* Mobile cards start in the same compact geometry as their touch state. */
+@media (max-width: 860px) {
+  html.mobile-touch-lock body #videos .videos-grid > a.video-card,
+html.mobile-touch-lock body #videos .videos-grid > a.video-card:is(:hover, :focus, :focus-visible, :focus-within, :active, .is-touch-pressed, .is-video-pressing) {
+    box-sizing: border-box !important;
+    display: flex !important; flex-direction: column !important;
+    height: 300px !important; min-height: 300px !important; max-height: 300px !important;
+    padding: 0 !important; background: transparent !important;
+  }
+  html.mobile-touch-lock body #videos .videos-grid > a.video-card .video-info,
+html.mobile-touch-lock body #videos .videos-grid > a.video-card:is(:hover, :focus, :focus-visible, :focus-within, :active, .is-touch-pressed, .is-video-pressing) .video-info {
+    box-sizing: border-box !important; flex: 1 1 auto !important;
+    height: auto !important; min-height: 0 !important; max-height: none !important;
+    display: flex !important; flex-direction: column !important;
+    justify-content: flex-start !important; gap: 18px !important;
+    padding: 20px !important; margin: 0 !important;
+    background: linear-gradient(180deg, rgba(32,25,9,.78), rgba(5,6,8,.88)) !important;
+  }
+  html.mobile-touch-lock body #videos .videos-grid > a.video-card .video-info > h3,
+html.mobile-touch-lock body #videos .videos-grid > a.video-card .video-info > .video-date {
+    margin: 0 !important; flex-shrink: 0 !important;
+  }
+}
+@media (max-width: 620px) {
+  html.mobile-touch-lock body #videos .videos-grid > a.video-card,
+html.mobile-touch-lock body #videos .videos-grid > a.video-card:is(:hover, :focus, :focus-visible, :focus-within, :active, .is-touch-pressed, .is-video-pressing) {
+    height: 286px !important; min-height: 286px !important; max-height: 286px !important;
+  }
+}
+
+@media (max-width: 860px) {
+  html body .hero .hero-explore-arrow .hero-explore-image { width: 34px; height: 31px; }
+  html.mobile-touch-lock body #videos .videos-grid > a.video-card,
+html.mobile-touch-lock body #videos .videos-grid > a.video-card:is(:hover, :focus, :focus-visible, :focus-within, :active, .is-touch-pressed, .is-video-pressing, .is-link-dragging, .is-link-dragged) {
+    background: transparent !important; filter: none !important;
+    box-shadow: none !important; -webkit-tap-highlight-color: transparent !important;
+  }
+  html.mobile-touch-lock body #videos .videos-grid > a.video-card .video-media img,
+html.mobile-touch-lock body #videos .videos-grid > a.video-card:is(:hover, :focus, :focus-visible, :focus-within, :active, .is-touch-pressed, .is-video-pressing) .video-media img {
+    filter: saturate(1.06) contrast(1.03) brightness(1) !important;
+  }
+  html.mobile-touch-lock body #videos .videos-grid > a.video-card .video-info,
+html.mobile-touch-lock body #videos .videos-grid > a.video-card:is(:hover, :focus, :focus-visible, :focus-within, :active, .is-touch-pressed, .is-video-pressing) .video-info {
+    filter: none !important;
+    background: linear-gradient(180deg, rgba(32,25,9,.78), rgba(5,6,8,.88)) !important;
+  }
+  html body .main-footer .footer-partnership-email { -webkit-tap-highlight-color: transparent !important; }
+}
+
+@media (max-width: 860px) {
+  html body .main-footer .footer-partnership-email,
+html body .main-footer .footer-partnership-email:is(:hover, :focus, :focus-visible, :active) {
+    color: #ffa914 !important; -webkit-text-fill-color: #ffa914 !important;
+    filter: none !important; opacity: 1 !important;
+    background: none !important; box-shadow: none !important;
+    transition: none !important; -webkit-tap-highlight-color: transparent !important;
+  }
+  html.has-custom-scrollbar body .vp-scrollbar {
+    display: block !important; opacity: 1 !important; visibility: visible !important;
+    transform: none !important; transition: none !important;
+  }
+  html.has-custom-scrollbar:is(.menu-open, .vp-mobile-menu-open) body .vp-scrollbar,
+html.has-custom-scrollbar body:is(.menu-open, .vp-mobile-menu-open) .vp-scrollbar {
+    opacity: 0 !important; visibility: hidden !important; pointer-events: none !important;
+  }
+}
+
+@media (max-width: 860px) {
+  html.mobile-touch-lock.has-custom-scrollbar body .vp-scrollbar:is(.is-hidden, .is-scroll-active, :not(.is-hidden)) {
+    display: block !important; opacity: 1 !important; visibility: visible !important;
+    pointer-events: auto !important; transform: none !important; transition: none !important;
+  }
+  html.mobile-touch-lock.has-custom-scrollbar:is(.menu-open, .vp-mobile-menu-open) body .vp-scrollbar:is(.is-hidden, .is-scroll-active, :not(.is-hidden)),
+html.mobile-touch-lock.has-custom-scrollbar body:is(.menu-open, .vp-mobile-menu-open) .vp-scrollbar:is(.is-hidden, .is-scroll-active, :not(.is-hidden)) {
+    display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important;
+  }
+}

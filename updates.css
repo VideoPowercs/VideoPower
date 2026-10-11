@@ -49,8 +49,8 @@ html body .hero-buttons #partners-button.is-button-hovered {
 
 @media (hover: hover) and (pointer: fine) {
   html body .hero-buttons #partners-button:hover,
-  html body .hero-buttons #partners-button:focus-visible,
-  html body .hero-buttons #partners-button.is-button-hovered {
+html body .hero-buttons #partners-button:focus-visible,
+html body .hero-buttons #partners-button.is-button-hovered {
     background: rgba(55, 53, 53, 0.9) !important;
     color: #d8d6d6 !important;
     -webkit-text-fill-color: #d8d6d6 !important;
@@ -83,7 +83,8 @@ html body .hero .hero-explore__icon {
 }
 
 @keyframes heroExploreSingleArrowBounce {
-  0%, 100% {
+  0%,
+100% {
     transform: translateY(0) rotate(90deg);
   }
 
@@ -165,7 +166,7 @@ html body #news .news-team-action img {
 
 @media (hover: hover) and (pointer: fine) {
   html body #news .news-team-action:hover::after,
-  html body #news .news-team-action:focus-visible::after {
+html body #news .news-team-action:focus-visible::after {
     opacity: 1 !important;
   }
 }
@@ -289,7 +290,7 @@ html body .hero .hero-explore:active .hero-explore__icon {
 
 @keyframes heroExploreV10Loop {
   0%,
-  100% {
+100% {
     transform: translate3d(0, -2px, 0);
   }
 
@@ -452,7 +453,8 @@ html body .hero .hero-explore:active .hero-explore__icon {
 }
 
 @keyframes heroExploreMassiveLoop {
-  0%, 100% { translate: 0 0; }
+  0%,
+100% { translate: 0 0; }
   50% { translate: 0 18px; }
 }
 
@@ -520,7 +522,8 @@ html body .hero .hero-explore:focus-visible .hero-explore__icon {
 }
 
 @keyframes heroExploreVisibleBounce {
-  0%, 100% {
+  0%,
+100% {
     top: 0;
   }
 
@@ -548,7 +551,7 @@ html body #news .news-team-action.is-link-dragging {
 
 @media (max-width: 860px) {
   html body .hero-buttons #giveaways-button,
-  html body .hero-buttons #partners-button {
+html body .hero-buttons #partners-button {
     width: min(100%, 262px) !important;
     min-width: 0 !important;
   }
@@ -569,7 +572,7 @@ html body #news .news-team-action.is-link-dragging {
   }
 
   html body .hero-buttons #giveaways-button,
-  html body .hero-buttons #partners-button {
+html body .hero-buttons #partners-button {
     width: min(100%, 235px) !important;
     min-height: 50px !important;
     padding: 12px 18px !important;
@@ -596,7 +599,8 @@ html body .hero .hero-explore__icon {
 }
 
 @keyframes heroExploreLargeArrowBounce {
-  0%, 100% {
+  0%,
+100% {
     transform: translateY(0) rotate(90deg);
   }
 
@@ -633,7 +637,7 @@ html body #news .news-team-action.is-link-dragging::after {
 
 @media (hover: hover) and (pointer: fine) {
   html body #news .news-team-action:hover::after,
-  html body #news .news-team-action:focus-visible::after {
+html body #news .news-team-action:focus-visible::after {
     opacity: 1 !important;
   }
 }
@@ -719,7 +723,8 @@ html body .hero .hero-explore:active .hero-explore__icon {
 }
 
 @keyframes heroExploreV11Loop {
-  0%, 100% { transform: translate3d(0, -2px, 0); }
+  0%,
+100% { transform: translate3d(0, -2px, 0); }
   50% { transform: translate3d(0, 14px, 0); }
 }
 
@@ -885,7 +890,8 @@ html body .hero .hero-explore i::after {
 }
 
 @keyframes vpExploreArrowFloat {
-  0%, 100% { transform: translate3d(0, -4px, 0); }
+  0%,
+100% { transform: translate3d(0, -4px, 0); }
   50% { transform: translate3d(0, 7px, 0); }
 }
 
@@ -1105,9 +1111,9 @@ html body #bonuses .bonus-reward-card.is-card-mouse-held:focus-within .bonus-rew
 
 @media (max-width: 540px) {
   html body .hero .hero-explore,
-  html body .hero .hero-explore:hover,
-  html body .hero .hero-explore:focus-visible,
-  html body .hero .hero-explore:active { bottom: 10px !important; }
+html body .hero .hero-explore:hover,
+html body .hero .hero-explore:focus-visible,
+html body .hero .hero-explore:active { bottom: 10px !important; }
   html body #videos .videos-carousel-shell { padding-inline: 44px !important; }
   html body #videos .videos-grid { gap: 16px !important; }
   html body #videos .videos-grid > .video-card {
@@ -1115,14 +1121,14 @@ html body #bonuses .bonus-reward-card.is-card-mouse-held:focus-within .bonus-rew
     width: 100% !important;
   }
   html body #videos .videos-carousel-arrow,
-  html body #videos .videos-carousel-arrow:hover,
-  html body #videos .videos-carousel-arrow:focus-visible,
-  html body #videos .videos-carousel-arrow:active {
+html body #videos .videos-carousel-arrow:hover,
+html body #videos .videos-carousel-arrow:focus-visible,
+html body #videos .videos-carousel-arrow:active {
     width: 36px !important;
     height: 52px !important;
   }
   html body #news .news-team-member__avatar,
-  html body #news .news-team-member:first-child .news-team-member__avatar {
+html body #news .news-team-member:first-child .news-team-member__avatar {
     width: 112px !important;
     height: 112px !important;
   }
@@ -1271,9 +1277,9 @@ html body #news .news-team-member .news-team-member__avatar {
 
 @media (hover: hover) and (pointer: fine) {
   html body #news .news-team-member:hover .news-team-member__avatar,
-  html body #news .news-team-member:focus-within .news-team-member__avatar,
-  html body #news .news-team-member.is-news-action-pressing .news-team-member__avatar,
-  html body #news .news-team-member.is-news-action-resting:hover .news-team-member__avatar {
+html body #news .news-team-member:focus-within .news-team-member__avatar,
+html body #news .news-team-member.is-news-action-pressing .news-team-member__avatar,
+html body #news .news-team-member.is-news-action-resting:hover .news-team-member__avatar {
     transform: translate3d(0, -8px, 0) !important;
     box-shadow: 0 16px 26px rgba(0, 0, 0, 0.32) !important;
   }
@@ -1389,9 +1395,9 @@ html body .hero-buttons #partners-button.is-return-clean:hover {
 
 @media (hover: hover) and (pointer: fine) {
   html body .hero-buttons #giveaways-button:hover:not(.is-return-clean),
-  html body .hero-buttons #partners-button:hover:not(.is-return-clean),
-  html body .hero-buttons #giveaways-button.is-button-hovered:not(.is-return-clean),
-  html body .hero-buttons #partners-button.is-button-hovered:not(.is-return-clean) {
+html body .hero-buttons #partners-button:hover:not(.is-return-clean),
+html body .hero-buttons #giveaways-button.is-button-hovered:not(.is-return-clean),
+html body .hero-buttons #partners-button.is-button-hovered:not(.is-return-clean) {
     transform: translate3d(0, 4px, 0) scale(0.985) !important;
     filter: brightness(0.92) saturate(1.03) !important;
     box-shadow:
@@ -1430,7 +1436,7 @@ html body .hero .hero-explore:active i {
 
 @media (hover: hover) and (pointer: fine) {
   html body .hero .hero-explore:hover,
-  html body .hero .hero-explore:focus-visible {
+html body .hero .hero-explore:focus-visible {
     color: #ffa200 !important;
     text-shadow:
       0 7px 18px rgba(0, 0, 0, 0.46),
@@ -1438,7 +1444,7 @@ html body .hero .hero-explore:active i {
   }
 
   html body .hero .hero-explore:hover i,
-  html body .hero .hero-explore:focus-visible i {
+html body .hero .hero-explore:focus-visible i {
     color: currentColor !important;
     text-shadow:
       0 8px 14px rgba(0, 0, 0, 0.48),
@@ -1447,7 +1453,8 @@ html body .hero .hero-explore:active i {
 }
 
 @keyframes vpExploreArrowPulse {
-  0%, 100% {
+  0%,
+100% {
     transform: translate3d(0, -4px, 0) scale(1);
     opacity: 0.78;
   }
@@ -1542,10 +1549,10 @@ html body #videos .video-card.is-touch-pressed .video-date .clock-icon {
 
 @media (max-width: 540px) {
   html body #videos .videos-carousel-arrow,
-  html body #videos .videos-carousel-arrow:hover,
-  html body #videos .videos-carousel-arrow:focus-visible,
-  html body #videos .videos-carousel-arrow:active,
-  html body #videos .videos-carousel-arrow:disabled {
+html body #videos .videos-carousel-arrow:hover,
+html body #videos .videos-carousel-arrow:focus-visible,
+html body #videos .videos-carousel-arrow:active,
+html body #videos .videos-carousel-arrow:disabled {
     height: 52px !important;
     min-height: 52px !important;
     max-height: 52px !important;
@@ -1719,13 +1726,13 @@ html body .hero-buttons #partners-button:active * {
   }
 
   html body .hero-buttons #giveaways-button,
-  html body .hero-buttons #giveaways-button:hover,
-  html body .hero-buttons #giveaways-button:focus-visible,
-  html body .hero-buttons #giveaways-button:active,
-  html body .hero-buttons #partners-button,
-  html body .hero-buttons #partners-button:hover,
-  html body .hero-buttons #partners-button:focus-visible,
-  html body .hero-buttons #partners-button:active {
+html body .hero-buttons #giveaways-button:hover,
+html body .hero-buttons #giveaways-button:focus-visible,
+html body .hero-buttons #giveaways-button:active,
+html body .hero-buttons #partners-button,
+html body .hero-buttons #partners-button:hover,
+html body .hero-buttons #partners-button:focus-visible,
+html body .hero-buttons #partners-button:active {
     width: calc((100% - 10px) / 2) !important;
     min-width: 0 !important;
     min-height: 52px !important;
@@ -1751,11 +1758,11 @@ html body .hero-buttons #partners-button:active * {
 
 @media (hover: hover) and (pointer: fine) {
   html body #bonuses .bonus-reward-card:active,
-  html body #bonuses .bonus-reward-card.is-card-mouse-held,
-  html body #bonuses .bonus-reward-card.is-card-pressing,
-  html body #bonuses .bonus-reward-card.is-card-clicked,
-  html body #bonuses .bonus-reward-card.is-card-dragging,
-  html body #bonuses .bonus-reward-card.is-card-dragged {
+html body #bonuses .bonus-reward-card.is-card-mouse-held,
+html body #bonuses .bonus-reward-card.is-card-pressing,
+html body #bonuses .bonus-reward-card.is-card-clicked,
+html body #bonuses .bonus-reward-card.is-card-dragging,
+html body #bonuses .bonus-reward-card.is-card-dragged {
     z-index: 8 !important;
     transform: translate3d(0, 0, 0) scale(1.032) !important;
     filter: none !important;
@@ -1774,7 +1781,8 @@ html body .hero .hero-explore.is-link-dragging i {
 }
 
 @keyframes vpExploreAlwaysOn {
-  0%, 100% { transform: translate3d(0, -3px, 0); }
+  0%,
+100% { transform: translate3d(0, -3px, 0); }
   50% { transform: translate3d(0, 13px, 0); }
 }
 
@@ -1909,11 +1917,11 @@ html body .hero-buttons .hero-static-action__icon {
 
 @media (max-width: 600px) {
   html body .hero-buttons .hero-static-action,
-  html body .hero-buttons .hero-static-action:hover,
-  html body .hero-buttons .hero-static-action:focus,
-  html body .hero-buttons .hero-static-action:active,
-  html body .hero-buttons #giveaways-button.hero-static-action,
-  html body .hero-buttons #partners-button.hero-static-action {
+html body .hero-buttons .hero-static-action:hover,
+html body .hero-buttons .hero-static-action:focus,
+html body .hero-buttons .hero-static-action:active,
+html body .hero-buttons #giveaways-button.hero-static-action,
+html body .hero-buttons #partners-button.hero-static-action {
     width: calc((100% - 10px) / 2) !important;
     min-width: 0 !important;
     min-height: 52px !important;
@@ -1972,7 +1980,8 @@ html body .hero .hero-explore.is-link-dragging .hero-explore-arrow {
 }
 
 @keyframes vpExploreArrowIsolated {
-  0%, 100% { transform: translate3d(0, -3px, 0); }
+  0%,
+100% { transform: translate3d(0, -3px, 0); }
   50% { transform: translate3d(0, 13px, 0); }
 }
 
@@ -2087,7 +2096,7 @@ html body #giveaways .giveaway-card--featured-carousel .hellcase-giveaway-waterm
   html body #giveaways
     .giveaway-card--shinobu:not(.giveaway-card--featured-carousel):hover:not(.is-return-resting)
     .giveaway-image-wrapper::after,
-  html body #giveaways
+html body #giveaways
     .giveaway-card--shinobu:not(.giveaway-card--featured-carousel):focus-within:not(.is-return-resting)
     .giveaway-image-wrapper::after {
     transform: translate3d(-50%, -50%, 34px) scale(1.16) !important;
@@ -2100,7 +2109,7 @@ html body #giveaways .giveaway-card--featured-carousel .hellcase-giveaway-waterm
   html body #giveaways
     .giveaway-card--featured-carousel:hover:not(.is-return-resting)
     .hellcase-giveaway-watermark,
-  html body #giveaways
+html body #giveaways
     .giveaway-card--featured-carousel:focus-within:not(.is-return-resting)
     .hellcase-giveaway-watermark {
     transform: translate3d(-50%, -50%, 34px) scale(1.16) !important;
@@ -2150,7 +2159,7 @@ html body #videos .videos-carousel-arrow:not(:disabled) {
   }
 
   html body .hero-static-actions > .hero-static-action--giveaways:hover,
-  html body .hero-static-actions > .hero-static-action--giveaways:focus-visible {
+html body .hero-static-actions > .hero-static-action--giveaways:focus-visible {
     transform: translate3d(0, -3px, 0) scale(1.025) !important;
     box-shadow:
       0 17px 30px rgba(0, 0, 0, 0.24),
@@ -2158,7 +2167,7 @@ html body #videos .videos-carousel-arrow:not(:disabled) {
   }
 
   html body .hero-static-actions > .hero-static-action--giveaways:hover .hero-static-action__icon,
-  html body .hero-static-actions > .hero-static-action--giveaways:focus-visible .hero-static-action__icon {
+html body .hero-static-actions > .hero-static-action--giveaways:focus-visible .hero-static-action__icon {
     transform: translate3d(6px, 0, 0) !important;
   }
 
@@ -2169,7 +2178,7 @@ html body #videos .videos-carousel-arrow:not(:disabled) {
   }
 
   html body .hero-static-actions > .hero-static-action--socials:hover,
-  html body .hero-static-actions > .hero-static-action--socials:focus-visible {
+html body .hero-static-actions > .hero-static-action--socials:focus-visible {
     background: rgba(42, 41, 43, 0.9) !important;
     color: #d2d0d0 !important;
     -webkit-text-fill-color: #d2d0d0 !important;
@@ -2300,7 +2309,7 @@ html body #giveaways .giveaway-closed-message__copy > span {
 /* 2026-08-20 final request overrides. */
 @media (hover: hover) and (pointer: fine) {
   html body .hero-static-actions > .hero-static-action--giveaways:hover,
-  html body .hero-static-actions > .hero-static-action--giveaways:focus-visible {
+html body .hero-static-actions > .hero-static-action--giveaways:focus-visible {
     background: linear-gradient(180deg, #f0a00a 0%, #d88806 100%) !important;
     color: #090909 !important;
     -webkit-text-fill-color: #090909 !important;
@@ -2311,7 +2320,7 @@ html body #giveaways .giveaway-closed-message__copy > span {
   }
 
   html body .hero-static-actions > .hero-static-action--giveaways:hover .hero-static-action__icon,
-  html body .hero-static-actions > .hero-static-action--giveaways:focus-visible .hero-static-action__icon {
+html body .hero-static-actions > .hero-static-action--giveaways:focus-visible .hero-static-action__icon {
     transform: translate3d(4px, 0, 0) !important;
   }
 }
@@ -2514,11 +2523,11 @@ html body .hero-static-actions .hero-static-action__icon {
   }
 
   html body .hero-static-actions > .hero-static-action--giveaways,
-  html body .hero-static-actions > .hero-static-action--socials,
-  html body .hero-static-actions > .hero-static-action--giveaways:hover,
-  html body .hero-static-actions > .hero-static-action--socials:hover,
-  html body .hero-static-actions > .hero-static-action--giveaways:active,
-  html body .hero-static-actions > .hero-static-action--socials:active {
+html body .hero-static-actions > .hero-static-action--socials,
+html body .hero-static-actions > .hero-static-action--giveaways:hover,
+html body .hero-static-actions > .hero-static-action--socials:hover,
+html body .hero-static-actions > .hero-static-action--giveaways:active,
+html body .hero-static-actions > .hero-static-action--socials:active {
     width: calc((100% - 10px) / 2) !important;
     min-width: 0 !important;
     min-height: 52px !important;
@@ -2539,7 +2548,7 @@ html body .hero .hero-explore.is-link-dragging {
 
 @media (hover: hover) and (pointer: fine) {
   html body .hero .hero-explore:hover,
-  html body .hero .hero-explore:focus-visible {
+html body .hero .hero-explore:focus-visible {
     color: #ffa200 !important;
   }
 }
@@ -2661,7 +2670,7 @@ html body #giveaways .giveaway-card--featured-carousel .hellcase-giveaway-waterm
   html body #giveaways
     .giveaway-card--shinobu:not(.giveaway-card--featured-carousel):hover:not(.is-return-resting)
     .giveaway-image-wrapper::after,
-  html body #giveaways
+html body #giveaways
     .giveaway-card--shinobu:not(.giveaway-card--featured-carousel):focus-within:not(.is-return-resting)
     .giveaway-image-wrapper::after {
     opacity: 1 !important;
@@ -2674,7 +2683,7 @@ html body #giveaways .giveaway-card--featured-carousel .hellcase-giveaway-waterm
   html body #giveaways
     .giveaway-card--featured-carousel:hover:not(.is-return-resting)
     .hellcase-giveaway-watermark,
-  html body #giveaways
+html body #giveaways
     .giveaway-card--featured-carousel:focus-within:not(.is-return-resting)
     .hellcase-giveaway-watermark {
     opacity: 1 !important;
@@ -2781,7 +2790,7 @@ html body #giveaways .giveaway-closed-message__copy > span {
   }
 
   html body .hero-static-actions > .hero-static-action--giveaways:hover,
-  html body .hero-static-actions > .hero-static-action--giveaways:focus-visible {
+html body .hero-static-actions > .hero-static-action--giveaways:focus-visible {
     background: linear-gradient(180deg, #f0a00a 0%, #d88806 100%) !important;
     color: #090909 !important;
     -webkit-text-fill-color: #090909 !important;
@@ -2792,7 +2801,7 @@ html body #giveaways .giveaway-closed-message__copy > span {
   }
 
   html body .hero-static-actions > .hero-static-action--giveaways:hover .hero-static-action__icon,
-  html body .hero-static-actions > .hero-static-action--giveaways:focus-visible .hero-static-action__icon {
+html body .hero-static-actions > .hero-static-action--giveaways:focus-visible .hero-static-action__icon {
     transform: translate3d(4px, 0, 0) !important;
   }
 
@@ -2803,7 +2812,7 @@ html body #giveaways .giveaway-closed-message__copy > span {
   }
 
   html body .hero-static-actions > .hero-static-action--socials:hover,
-  html body .hero-static-actions > .hero-static-action--socials:focus-visible {
+html body .hero-static-actions > .hero-static-action--socials:focus-visible {
     background: rgba(42, 41, 43, 0.9) !important;
     color: #d2d0d0 !important;
     -webkit-text-fill-color: #d2d0d0 !important;

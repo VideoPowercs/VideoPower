@@ -7,6 +7,7 @@ const YOUTUBE_CHANNEL_IDS = [
 ];
 
 const YOUTUBE_CHANNEL_NAMES = ["VIDEOPOWER 2"];
+let allowProgrammaticCopy = false;
 
 const SHARED_EXTERNAL_DRAG_LINK_SELECTOR = [
   ".main-header .logo-link[href]",
@@ -26,6 +27,16 @@ const ALLOWED_EXTERNAL_DRAG_LINK_SELECTOR = [
 ].join(", ");
 
 document.addEventListener("DOMContentLoaded", () => {
+  if (document.body.classList.contains("not-found-page")) {
+    initMobileViewportInteractions();
+    initHeaderScrollState();
+    initCustomScrollbar();
+    initSharedExternalLinkDragging();
+    initHamburgerMenu();
+    initHeroCodeCopy();
+    window.requestAnimationFrame(initStars);
+    return;
+  }
   initMobileViewportInteractions();
   initReloadGuard();
   initPageLoader();
@@ -45,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initPromoCodeCopy();
   initNewsTeamButtonPress();
   initMobileStaticInteractions();
-  initMissionTelemetry();
   initScrollReveal();
   initSectionStageReveals();
 
@@ -64,26 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.requestAnimationFrame(runDeferredEnhancements);
 });
-
-function initMissionTelemetry() {
-  const send = (eventKey) => {
-    const eventDay = new Date().toISOString().slice(0, 10);
-    fetch("/api/missions/event", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      keepalive: true,
-      body: JSON.stringify({ eventKey, idempotencyKey: `site:${eventKey}:${eventDay}` })
-    }).catch(() => {});
-  };
-
-  document.addEventListener("click", (event) => {
-    const section = event.target.closest("#bonuses, #news, #videos, #giveaways");
-    if (section?.id === "bonuses") send("visit_bonuses");
-    else if (section?.id === "news") send("visit_socials");
-    else if (section) send("visit_section");
-    if (event.target.closest("#videos .video-card")) send("video_watch");
-  }, { passive: true });
-}
 
 function initMobileViewportInteractions() {
   const mobileQuery = window.matchMedia("(max-width: 860px)");
@@ -226,28 +216,6 @@ function initHomeNavigationState() {
   };
   const historyWindow = getHistoryWindow();
 
-  // Missions is a standalone application route, not a section inside this
-  // homepage iframe. Promote its navigation to the parent document so the
-  // visible browser URL always becomes /missions.
-  Array.from(document.querySelectorAll('a[href="/missions"]')).forEach((link) => {
-    link.addEventListener("click", (event) => {
-      if (
-        event.defaultPrevented
-        || event.button !== 0
-        || event.metaKey
-        || event.ctrlKey
-        || event.shiftKey
-        || event.altKey
-      ) return;
-      event.preventDefault();
-      try {
-        historyWindow.location.assign("/missions");
-      } catch {
-        window.location.assign("/missions");
-      }
-    });
-  });
-
   const header = document.querySelector(".main-header");
   const trackedSections = ["bonuses", "news", "videos", "giveaways"]
     .map((id) => document.getElementById(id))
@@ -365,7 +333,7 @@ function initHomeNavigationState() {
       news: { selector: ".news-team-heading", gap: 24 },
       // On phones, preserve the breathing room above Latest Videos shown in
       // the reference: the heading starts below the fixed header, not against it.
-      videos: { selector: ".videos-heading-row", gap: 240 },
+      videos: { selector: ".videos-heading-row", gap: 110 },
       giveaways: { selector: ".giveaways-heading-row", gap: 24 }
     }[targetId];
     const useDesktopReference = window.matchMedia("(min-width: 861px)").matches;
@@ -506,61 +474,88 @@ function initHomeNavigationState() {
 }
 
 function initHeroCodeCopy() {
-  const button = document.querySelector("[data-hero-copy-code]");
-  if (!(button instanceof HTMLButtonElement)) return;
+  const buttons = document.querySelectorAll("[data-copy-code]");
 
-  const code = String(button.dataset.heroCopyCode || "").trim();
-  if (!code) return;
+  buttons.forEach((button) => {
+    if (!(button instanceof HTMLElement)) return;
 
-  let resetTimer = 0;
+    const code = String(button.dataset.copyCode || "").trim();
+    if (!code) return;
 
-  const fallbackCopy = () => {
-    const helper = document.createElement("textarea");
-    helper.value = code;
-    helper.setAttribute("readonly", "");
-    helper.style.position = "fixed";
-    helper.style.top = "-9999px";
-    document.body.appendChild(helper);
-    helper.select();
+    let resetTimer = 0;
 
-    let copied = false;
-    try {
-      copied = document.execCommand("copy");
-    } catch (error) {
-      copied = false;
-    }
+    const fallbackCopy = () => {
+      const scrollX = window.scrollX;
+      const scrollY = window.scrollY;
+      const focused = document.activeElement;
+      const helper = document.createElement("textarea");
+      helper.value = code;
+      helper.setAttribute("readonly", "");
+      helper.style.position = "fixed";
+      helper.style.top = "0";
+      helper.style.left = "0";
+      helper.style.opacity = "0";
+      helper.style.pointerEvents = "none";
+      helper.style.fontSize = "16px";
+      document.body.appendChild(helper);
+      helper.focus({ preventScroll: true });
+      helper.select();
 
-    helper.remove();
-    return copied;
-  };
+      let copied = false;
+      try {
+        allowProgrammaticCopy = true;
+        copied = document.execCommand("copy");
+      } catch (error) {
+        copied = false;
+      } finally {
+        allowProgrammaticCopy = false;
+      }
 
-  const copyCode = async () => {
-    if (!navigator.clipboard?.writeText) return fallbackCopy();
+      helper.remove();
+      if (focused instanceof HTMLElement) focused.focus({ preventScroll: true });
+      window.scrollTo({ left: scrollX, top: scrollY, behavior: "instant" });
+      return copied;
+    };
 
-    try {
-      await navigator.clipboard.writeText(code);
-      return true;
-    } catch (error) {
-      return fallbackCopy();
-    }
-  };
+    const copyCode = async () => {
+      // Keep a synchronous copy attempt inside the original click gesture.
+      // This is the most reliable path when the homepage is rendered in an iframe.
+      if (fallbackCopy()) return true;
 
-  button.addEventListener("click", async () => {
-    if (button.classList.contains("is-copied")) return;
+      if (!navigator.clipboard?.writeText) return false;
 
-    await copyCode();
+      try {
+        await navigator.clipboard.writeText(code);
+        return true;
+      } catch (error) {
+        return fallbackCopy();
+      }
+    };
 
-    window.clearTimeout(resetTimer);
-    button.textContent = "Copied!";
-    button.classList.add("is-copied");
-    button.setAttribute("aria-label", "Code VIDEOPOWER copied");
+    const triggerCopy = async () => {
+      if (button.classList.contains("is-copied")) return;
 
-    resetTimer = window.setTimeout(() => {
-      button.textContent = code;
-      button.classList.remove("is-copied");
-      button.setAttribute("aria-label", "Copy code VIDEOPOWER");
-      button.blur();
-    }, 1500);
+      if (!(await copyCode())) return;
+
+      window.clearTimeout(resetTimer);
+      button.textContent = "Copied!";
+      button.classList.add("is-copied");
+      button.setAttribute("aria-label", `Code ${code} copied`);
+
+      resetTimer = window.setTimeout(() => {
+        button.textContent = code;
+        button.classList.remove("is-copied");
+        button.setAttribute("aria-label", `Copy code ${code}`);
+        button.blur();
+      }, 1500);
+    };
+
+    button.addEventListener("click", triggerCopy);
+    button.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      void triggerCopy();
+    });
   });
 }
 
@@ -847,7 +842,7 @@ function initCustomScrollbar() {
   const getMetrics = () => {
     const root = document.documentElement;
     const viewportHeight = window.innerHeight;
-    const scrollHeight = Math.max(root.scrollHeight, document.body.scrollHeight);
+    const scrollHeight = Math.max(viewportHeight, root.scrollHeight, document.body.scrollHeight);
     const maxScrollTop = Math.max(0, scrollHeight - viewportHeight);
     const trackHeight = track.clientHeight || viewportHeight;
     const trackInset = 0;
@@ -864,7 +859,7 @@ function initCustomScrollbar() {
   const update = () => {
     updateFrame = 0;
     const { maxScrollTop, thumbHeight, maxThumbTop, trackInset } = getMetrics();
-    const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+    const scrollTop = Math.min(maxScrollTop, Math.max(0, window.scrollY || document.documentElement.scrollTop || 0));
     const thumbTop = trackInset + (maxScrollTop > 0 ? (scrollTop / maxScrollTop) * maxThumbTop : 0);
 
     track.classList.toggle("is-hidden", maxScrollTop <= 0);
@@ -882,9 +877,7 @@ function initCustomScrollbar() {
     if (document.querySelector(".main-nav.show")) return;
     track.classList.add("is-scroll-active");
     window.clearTimeout(mobileHideTimer);
-    mobileHideTimer = window.setTimeout(() => {
-      if (!isDragging) track.classList.remove("is-scroll-active");
-    }, 900);
+    // Mobile rail remains visible; the menu state controls its visibility.
   };
 
   const setScrollTop = (top) => {
@@ -963,13 +956,16 @@ function initCustomScrollbar() {
   window.addEventListener("pointercancel", release);
   window.addEventListener("blur", () => release({}));
 
-  const setHovered = () => track.classList.add("is-hovered");
+  window.addEventListener("pagehide", () => { release({}); track.classList.remove("is-hovered"); });
+  window.addEventListener("pageshow", () => { track.classList.remove("is-hovered"); thumb.classList.remove("is-dragging"); scheduleUpdate(); });
+  const setHovered = (event) => { if(event.pointerType !== "touch") track.classList.add("is-hovered"); };
   track.addEventListener("pointerenter", setHovered);
   track.addEventListener("pointermove", setHovered);
   track.addEventListener("pointerleave", () => {
     if (!isDragging) track.classList.remove("is-hovered");
   });
   window.addEventListener("pointermove", (event) => {
+    if(event.pointerType === "touch") return;
     const rect = track.getBoundingClientRect();
     const isInsideTrack =
       event.clientX >= rect.left &&
@@ -1004,6 +1000,26 @@ function initCustomScrollbar() {
   }, { passive: true });
   window.addEventListener("resize", scheduleUpdate, { passive: true });
   window.addEventListener("load", scheduleUpdate, { once: true });
+  // Dynamic content can change the document height.
+  const sizeObserver = new ResizeObserver(scheduleUpdate);
+  sizeObserver.observe(document.documentElement);
+  sizeObserver.observe(document.body);
+  const contentObserver = new MutationObserver(scheduleUpdate);
+  contentObserver.observe(document.body, { childList: true, subtree: true });
+  window.visualViewport?.addEventListener("resize", scheduleUpdate, { passive: true });
+  document.fonts?.ready.then(scheduleUpdate);
+  window.addEventListener("pagehide", () => {
+    if (updateFrame) window.cancelAnimationFrame(updateFrame);
+    updateFrame = 0;
+    sizeObserver.disconnect();
+    contentObserver.disconnect();
+  });
+  window.addEventListener("pageshow", () => {
+    sizeObserver.observe(document.documentElement);
+    sizeObserver.observe(document.body);
+    contentObserver.observe(document.body, { childList: true, subtree: true });
+    scheduleUpdate();
+  });
   scheduleUpdate();
 }
 
@@ -1114,12 +1130,18 @@ function initHomepagePopup() {
 }
 
 function disableContextActions() {
+  // Let visitors select/copy text and use the normal browser context menu.
+  // Only images are protected from the common save/drag interaction.
   document.addEventListener("contextmenu", (event) => {
-    if (window.innerWidth > 860) return;
-    event.preventDefault();
+    if (event.target instanceof Element && event.target.closest("img")) {
+      event.preventDefault();
+    }
   }, { capture: true });
-  document.addEventListener("selectstart", (event) => event.preventDefault());
   document.addEventListener("dragstart", (event) => {
+    if (event.target instanceof Element && event.target.closest("img")) {
+      event.preventDefault();
+      return;
+    }
     const desktopAnchor = (
       window.innerWidth > 860
       && event.target instanceof Element
@@ -1136,6 +1158,16 @@ function disableContextActions() {
     }
     event.preventDefault();
   });
+  document.addEventListener("selectstart", (event) => {
+    if (event.target instanceof Element && event.target.closest(".footer-code-copy")) return;
+    event.preventDefault();
+  }, { capture: true });
+  document.addEventListener("copy", (event) => {
+    const selection = window.getSelection();
+    const anchor = selection?.anchorNode;
+    const element = anchor instanceof Element ? anchor : anchor?.parentElement;
+    if (!allowProgrammaticCopy && !element?.closest(".footer-code-copy")) event.preventDefault();
+  }, { capture: true });
   document.querySelectorAll("img").forEach((image) => {
     image.setAttribute("draggable", "false");
     if (!image.hasAttribute("decoding")) {
@@ -1171,7 +1203,7 @@ function getExternalLinkDragImage() {
 function setExternalLinkDragData(event, url, hidePreview = false) {
   if (!event.dataTransfer || !url) return;
 
-  event.dataTransfer.effectAllowed = "link";
+  event.dataTransfer.effectAllowed = "copyLink";
   event.dataTransfer.setData("text/uri-list", url);
   event.dataTransfer.setData("text/plain", url);
 
@@ -1203,8 +1235,8 @@ function setExternalLinkDragPreview(event, url, link = null) {
   if (!event.dataTransfer || !url || typeof event.dataTransfer.setDragImage !== "function") return;
 
   clearExternalLinkDragPreview();
-  const logicalHeight = 36;
-  const pixelRatio = Math.min(2, Math.max(1, window.devicePixelRatio || 1));
+  const logicalHeight = 52;
+  const pixelRatio = 1;
   const title = getExternalLinkPreviewTitle(link, url);
   const displayTitle = title.length > 36 ? `${title.slice(0, 33)}...` : title;
   const displayUrl = String(url).length > 54 ? `${String(url).slice(0, 51)}...` : String(url);
@@ -1215,8 +1247,8 @@ function setExternalLinkDragPreview(event, url, link = null) {
   canvas.style.left = "-10000px";
   canvas.style.top = "-10000px";
   canvas.style.opacity = "1";
-  canvas.style.background = "#8f8f91";
-  canvas.style.borderRadius = "6px";
+  canvas.style.background = "#17191f";
+  canvas.style.borderRadius = "9px";
   document.body.appendChild(canvas);
   externalLinkUrlPreview = canvas;
 
@@ -1229,7 +1261,7 @@ function setExternalLinkDragPreview(event, url, link = null) {
   const titleWidth = measure.measureText(displayTitle).width;
   measure.font = "400 12px Arial, sans-serif";
   const urlWidth = measure.measureText(displayUrl).width;
-  const logicalWidth = Math.round(Math.min(340, Math.max(156, Math.max(titleWidth, urlWidth) + 14)));
+  const logicalWidth = Math.round(Math.min(340, Math.max(156, Math.max(titleWidth, urlWidth) + 24)));
 
   canvas.width = Math.round(logicalWidth * pixelRatio);
   canvas.height = Math.round(logicalHeight * pixelRatio);
@@ -1244,16 +1276,19 @@ function setExternalLinkDragPreview(event, url, link = null) {
   draw.scale(pixelRatio, pixelRatio);
   draw.globalAlpha = 1;
   draw.globalCompositeOperation = "copy";
-  draw.fillStyle = "#8f8f91";
+  draw.fillStyle = "#17191f";
   draw.beginPath();
-  draw.roundRect(0, 0, logicalWidth, logicalHeight, 6);
+  draw.roundRect(0, 0, logicalWidth, logicalHeight, 9);
   draw.fill();
-  draw.fillStyle = "#0c0c0d";
+  // Draw text over the solid card instead of replacing its background pixels.
+  draw.globalCompositeOperation = "source-over";
+  draw.fillStyle = "#f3f4f7";
   draw.textBaseline = "alphabetic";
   draw.font = "700 12px Arial, sans-serif";
-  draw.fillText(displayTitle, 7, 14, logicalWidth - 14);
+  draw.fillText(displayTitle, 12, 21, logicalWidth - 24);
   draw.font = "400 12px Arial, sans-serif";
-  draw.fillText(displayUrl, 7, 28, logicalWidth - 14);
+  draw.fillStyle = "#b0b4c0";
+  draw.fillText(displayUrl, 12, 39, logicalWidth - 24);
   void canvas.offsetWidth;
   event.dataTransfer.setDragImage(canvas, 10, logicalHeight / 2);
 }
@@ -1275,7 +1310,6 @@ function enableExternalLinkDragging(link) {
   link.addEventListener("dragstart", (event) => {
     link.dataset.wasDragged = "true";
     setExternalLinkDragData(event, link.href);
-    setExternalLinkDragPreview(event, link.href, link);
     link.classList.add("is-link-dragging");
   });
   link.addEventListener("dragend", () => {
@@ -1300,14 +1334,16 @@ function initSharedExternalLinkDragging() {
     .querySelectorAll("a[href]")
     .forEach(enableExternalLinkDragging);
   document.addEventListener("dragstart", (event) => {
-    if (window.innerWidth <= 860 || !(event.target instanceof Element)) return;
+    if (event.defaultPrevented || !(event.target instanceof Element)) return;
     const link = event.target.closest("a[href]");
-    if (!(link instanceof HTMLAnchorElement)) return;
-    setExternalLinkDragData(event, link.href);
-    setExternalLinkDragPreview(event, link.href, link);
-  }, true);
+    if (!(link instanceof HTMLAnchorElement) || !link.draggable) return;
+    const destination = event.dataTransfer?.getData("text/uri-list") || link.href;
+    setExternalLinkDragData(event, destination);
+    setExternalLinkDragPreview(event, destination, link);
+  });
   document.addEventListener("dragend", clearExternalLinkDragPreview, true);
   document.addEventListener("drop", clearExternalLinkDragPreview, true);
+  document.addEventListener("pointercancel", clearExternalLinkDragPreview, true);
   window.addEventListener("pagehide", clearExternalLinkDragPreview);
   window.addEventListener("blur", clearExternalLinkDragPreview);
 }
@@ -1367,8 +1403,19 @@ function initShinobuGiveawayReturnState() {
 
     card.addEventListener("pointerleave", () => {
       delete card.dataset.awaitingReturn;
+      holdAtRest();
+    });
+    card.addEventListener("pointerenter", () => {
       card.classList.remove("is-return-resting");
     });
+    window.addEventListener("pointermove", (event) => {
+      if (mobileQuery.matches || event.pointerType === "touch") return;
+      const bounds = card.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right
+        || event.clientY < bounds.top || event.clientY > bounds.bottom) {
+        holdAtRest();
+      }
+    }, { passive: true });
 
     const resetAfterReturn = () => {
       if (isStaticMobileFeaturedCard()) {
@@ -1613,9 +1660,9 @@ function initStars() {
   const STAR_SOFT_COLOR = "#ffa914";
 
   const layers = [
-    { count: 42, size: [0.7, 1.25], speed: [0.54, 0.92], alpha: [0.22, 0.46] },
-    { count: 24, size: [1.25, 1.9], speed: [0.72, 1.12], alpha: [0.3, 0.6] },
-    { count: 8, size: [1.9, 2.65], speed: [0.86, 1.28], alpha: [0.38, 0.7] }
+    { count: 62, size: [0.7, 1.25], speed: [0.54, 0.92], alpha: [0.22, 0.46] },
+    { count: 36, size: [1.25, 1.9], speed: [0.72, 1.12], alpha: [0.3, 0.6] },
+    { count: 13, size: [1.9, 2.65], speed: [0.86, 1.28], alpha: [0.38, 0.7] }
   ];
 
   let width = 0;
@@ -2141,6 +2188,7 @@ function initGiveawayCarousel() {
     function updateDotsAndTitle() {
       dots.forEach((dot, dotIndex) => {
         dot.classList.toggle("active", dotIndex === index);
+        dot.setAttribute("aria-pressed", String(dotIndex === index));
       });
 
       const activeSlide = slides[index];
@@ -2309,6 +2357,19 @@ function initGiveawayCarousel() {
       });
     }
 
+    dots.forEach((dot, dotIndex) => {
+      const activate = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        if (dotIndex !== index) goTo(dotIndex);
+      };
+      dot.addEventListener("click", activate);
+      dot.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") activate(event);
+      });
+      dot.addEventListener("dragstart", (event) => event.preventDefault());
+    });
+
     carousel.addEventListener("touchstart", (event) => {
       if (event.target.closest(".giveaway-arrow")) return;
       touchStartX = event.changedTouches[0].clientX;
@@ -2407,7 +2468,6 @@ function initBonusClaimButtonCleanup() {
     const card = link.closest(".bonus-reward-card");
     const partnerUrl = card?.dataset.bonusUrl?.trim() || link.href;
     setExternalLinkDragData(event, partnerUrl);
-    setExternalLinkDragPreview(event, partnerUrl, link);
   };
 
   const transientCardClasses = [
@@ -2706,7 +2766,7 @@ function initScrollReveal() {
     window.clearTimeout(revealTimers.get(element));
     syncScrollDirection();
     element.dataset.revealDirection = scrollDirection;
-    element.style.willChange = "opacity, transform, filter";
+    element.style.willChange = "opacity, transform";
     if (scrollDirection === "up") {
       element.classList.add("reveal-without-motion");
     }
@@ -2801,7 +2861,7 @@ function initSectionStageReveals() {
       name: "bonuses-heading",
       trigger: bonusHeading,
       elements: [bonusHeading, bonusSubtitle],
-      delays: [0, 90]
+      delays: [0, 80]
     },
     {
       name: "bonuses-primary-cards",
@@ -2825,7 +2885,7 @@ function initSectionStageReveals() {
       name: "connected-cards",
       trigger: connectedMembers[0],
       elements: connectedMembers,
-      delays: [0, 120]
+      delays: [0, 100]
     },
     {
       name: "videos-heading",
@@ -2867,7 +2927,7 @@ function initSectionStageReveals() {
       ) || 0;
       window.setTimeout(() => {
         element.style.willChange = "auto";
-      }, 1120 + revealDelay);
+      }, 620 + revealDelay);
     });
   };
 
@@ -2876,7 +2936,7 @@ function initSectionStageReveals() {
       element.classList.add("section-stage-reveal");
       element.dataset.sectionStage = group.name;
       element.style.setProperty("--section-stage-delay", `${group.delays[index] ?? 0}ms`);
-      element.style.willChange = "opacity, transform, filter";
+      element.style.willChange = "opacity, transform";
     });
 
     if (prefersReducedMotion || !("IntersectionObserver" in window)) {
@@ -2936,29 +2996,11 @@ function initSmartAiAssistant() {
       twitter: "TWITTER",
       merch: "OPEN MERCH",
       copy: "COPY CODE",
-      copied: "COPIED!",
+      copied: "Copied!",
       hellcase: "HELLCASE",
       askBonuses: "ASK BONUSES",
       askVideos: "ASK VIDEOS",
       askGiveaways: "ASK GIVEAWAYS"
-    },
-    lv: {
-      bonuses: "ATVERT BONUSUS",
-      videos: "ATVERT VIDEO",
-      specials: "ATVERT SPECIALS",
-      giveaways: "ATVERT GIVEAWAYS",
-      faq: "ATVERT FAQ",
-      youtube: "YOUTUBE",
-      shorts: "SHORTS",
-      community: "COMMUNITY",
-      twitter: "TWITTER",
-      merch: "ATVERT MERCH",
-      copy: "KOPET KODU",
-      copied: "NOKOPETS!",
-      hellcase: "HELLCASE",
-      askBonuses: "JAUTAT BONUSUS",
-      askVideos: "JAUTAT VIDEO",
-      askGiveaways: "JAUTAT GIVEAWAYS"
     }
   };
 
@@ -2980,29 +3022,7 @@ function initSmartAiAssistant() {
   const getLabel = (language, key) => labels[language]?.[key] || labels.en[key] || key;
   const makeAction = (language, labelKey, data) => ({ label: getLabel(language, labelKey), ...data });
 
-  const detectLanguage = (rawValue, normalizedValue) => {
-    const raw = String(rawValue || "");
-    const text = normalizedValue || normalize(raw);
-
-    if (hasAny(text, ["english", "angliski", "answer in english"])) return "en";
-    if (hasAny(text, ["latviski", "latviesu", "latvian", "atbildi latviski"])) return "lv";
-    if (/[\u0400-\u04ff]/.test(raw)) return "en";
-
-    const words = new Set(text.split(" ").filter(Boolean));
-    const lvWords = [
-      "ka", "kur", "kapec", "kas", "vai", "man", "vajag", "ludzu", "palidz",
-      "bonusi", "bonusu", "kods", "kodu", "majaslapa", "izloze", "izlozes",
-      "veikals", "preces", "poga", "aizslegts", "nepieejams", "skatities"
-    ];
-    const enWords = [
-      "how", "where", "what", "why", "can", "help", "bonus", "code",
-      "website", "video", "giveaway", "shop", "merch", "locked"
-    ];
-
-    const lvScore = lvWords.reduce((score, word) => score + (words.has(word) ? 1 : 0), 0);
-    const enScore = enWords.reduce((score, word) => score + (words.has(word) ? 1 : 0), 0);
-    return lvScore > enScore ? "lv" : "en";
-  };
+  const detectLanguage = () => "en";
 
   const scrollMessagesToBottom = () => {
     messages.scrollTop = messages.scrollHeight;
@@ -3200,9 +3220,7 @@ function initSmartAiAssistant() {
         "odds", "$0.70", "5%", "7%", "10%"
       ],
       build: (language) => ({
-        text: language === "lv"
-          ? `Atraka atbilde: izmanto kodu VIDEOPOWER.\nAtver BONUSES, izvelies saitu un spied CLAIM BONUS, lai atvertu oficialo VideoPower bonus linku.\nAktualie bonusi lapa:\n${getBonusSummary()}`
-          : `Fast answer: use code VIDEOPOWER.\nOpen BONUSES, choose the site, then press CLAIM BONUS to use the official VideoPower bonus link.\nCurrent bonus cards detected on the page:\n${getBonusSummary()}`,
+        text: `Fast answer: use code VIDEOPOWER.\nOpen BONUSES, choose the site, then press CLAIM BONUS to use the official VideoPower bonus link.\nCurrent bonus cards detected on the page:\n${getBonusSummary()}`,
         actions: [
           makeAction(language, "bonuses", { href: links.bonuses }),
           makeAction(language, "copy", { copy: "VIDEOPOWER" }),
@@ -3217,9 +3235,7 @@ function initSmartAiAssistant() {
         "latest", "newest", "pedej", "skatities", "watch", "kills", "playlist", "community"
       ],
       build: (language) => ({
-        text: language === "lv"
-          ? `VideoPower video un shorts ir VIDEOS sekcija. Ja bloki vel ladejas, vari atvert YouTube pogas zemak.\nPedejie atrastie ieraksti lapa:\n${getLatestVideoSummary()}`
-          : `VideoPower videos and shorts are shown in the VIDEOS section. If the cards are still loading, use the YouTube buttons below.\nLatest detected items:\n${getLatestVideoSummary()}`,
+        text: `VideoPower videos and shorts are shown in the VIDEOS section. If the cards are still loading, use the YouTube buttons below.\nLatest detected items:\n${getLatestVideoSummary()}`,
         actions: [
           makeAction(language, "videos", { href: links.videos }),
           makeAction(language, "youtube", { href: links.youtube }),
@@ -3235,9 +3251,7 @@ function initSmartAiAssistant() {
         "enter", "join", "twitter", "tweet", "x.com", "requirements", "rules", "noteikumi"
       ],
       build: (language) => ({
-        text: language === "lv"
-          ? `Lai piedalitos giveaway: atver GIVEAWAYS, izvelies karti un spied ENTER GIVEAWAY. Tas aizved uz Twitter postu, kur redzami nosacijumi.\nAktualas kartes lapa:\n${getGiveawaySummary()}`
-          : `To enter a giveaway: open GIVEAWAYS, choose a card, then press ENTER GIVEAWAY. It opens the Twitter post with exact requirements.\nCurrent cards detected on the page:\n${getGiveawaySummary()}`,
+        text: `To enter a giveaway: open GIVEAWAYS, choose a card, then press ENTER GIVEAWAY. It opens the Twitter post with exact requirements.\nCurrent cards detected on the page:\n${getGiveawaySummary()}`,
         actions: [
           makeAction(language, "giveaways", { href: links.giveaways }),
           makeAction(language, "twitter", { href: links.twitter })
@@ -3252,9 +3266,7 @@ function initSmartAiAssistant() {
         "nepieejams", "limited", "countdown"
       ],
       build: (language) => ({
-        text: language === "lv"
-          ? `SPECIALS sekcija rada ierobezota laika bonus iespejas un eventus. Ja bloks ir LOCKED, piedavajums sobrid nav pieejams vai tiek atjaunots.\nAktualie specials:\n${getSpecialsSummary()}`
-          : `SPECIALS shows limited-time bonus opportunities and events. If a block is LOCKED, the offer is unavailable or being renewed.\nCurrent specials detected on the page:\n${getSpecialsSummary()}`,
+        text: `SPECIALS shows limited-time bonus opportunities and events. If a block is LOCKED, the offer is unavailable or being renewed.\nCurrent specials detected on the page:\n${getSpecialsSummary()}`,
         actions: [
           makeAction(language, "specials", { href: links.specials }),
           makeAction(language, "hellcase", { href: links.hellcase })
@@ -3268,9 +3280,7 @@ function initSmartAiAssistant() {
         "drip", "sale", "buy", "pirkt", "apparel"
       ],
       build: (language) => ({
-        text: language === "lv"
-          ? "VideoPower merch ir oficialaja veikala. Atver MERCH, lai apskatitu pieejamas preces un sale piedavajumus."
-          : "VideoPower merch is in the official shop. Open MERCH to check available products and sale offers.",
+        text: "VideoPower merch is in the official shop. Open MERCH to check available products and sale offers.",
         actions: [
           makeAction(language, "merch", { href: links.merch })
         ]
@@ -3283,9 +3293,7 @@ function initSmartAiAssistant() {
         "how", "where", "why", "ka", "kur", "kapec", "explain", "rules"
       ],
       build: (language) => ({
-        text: language === "lv"
-          ? `FAQ dod atras atbildes par kodu, bonusiem, locked blokiem un giveaways.\nNo lapas FAQ:\n${getFaqSummary()}`
-          : `FAQ gives quick answers about the code, bonuses, locked blocks, and giveaways.\nDetected FAQ content:\n${getFaqSummary()}`,
+        text: `FAQ gives quick answers about the code, bonuses, locked blocks, and giveaways.\nDetected FAQ content:\n${getFaqSummary()}`,
         actions: [
           makeAction(language, "faq", { href: links.faq }),
           makeAction(language, "askGiveaways", { prompt: "How do giveaways work on Twitter?" })
@@ -3299,9 +3307,7 @@ function initSmartAiAssistant() {
         "safe", "droshi", "casino", "betting"
       ],
       build: (language) => ({
-        text: language === "lv"
-          ? "Svarigi: piedalities drikst tikai 18+ lietotaji. Gamble responsibly. Visi lemumi par spelem, depozitiem un riskiem ir tava atbildiba."
-          : "Important: only users aged 18+ should participate. Gamble responsibly. Any casino, deposit, or betting decision is your own responsibility.",
+        text: "Important: only users aged 18+ should participate. Gamble responsibly. Any casino, deposit, or betting decision is your own responsibility.",
         actions: [
           makeAction(language, "faq", { href: links.faq })
         ]
@@ -3314,9 +3320,7 @@ function initSmartAiAssistant() {
         "about", "par ko", "navigate", "navigation", "sections"
       ],
       build: (language) => ({
-        text: language === "lv"
-          ? "VideoPower Codes ir centralais hubs bonusiem, special opportunities, giveaways, YouTube video/shorts, Twitter jaunumiem un merch. Vari jautat konkretu lietu, piemeram: kur ir kods, kas ir locked, vai kur skatities shorts."
-          : "VideoPower Codes is the hub for bonuses, special opportunities, giveaways, YouTube videos/shorts, Twitter updates, and merch. Ask something specific like where the code is, what locked means, or where to watch shorts.",
+        text: "VideoPower Codes is the hub for bonuses, special opportunities, giveaways, YouTube videos/shorts, Twitter updates, and merch. Ask something specific like where the code is, what locked means, or where to watch shorts.",
         actions: [
           makeAction(language, "bonuses", { href: links.bonuses }),
           makeAction(language, "videos", { href: links.videos }),
@@ -3338,9 +3342,7 @@ function initSmartAiAssistant() {
     }, 0);
 
   const buildGreetingResponse = (language) => ({
-    text: language === "lv"
-      ? "Sveiks! Esmu VideoPower Smart Assistant. Vari jautat latviski vai angliski par bonusiem, kodu VIDEOPOWER, YouTube video/shorts, Twitter giveaways, specials, merch un FAQ."
-      : "Welcome! I am the VideoPower Smart Assistant. You can ask in Latvian or English about bonuses, code VIDEOPOWER, YouTube videos/shorts, Twitter giveaways, specials, merch, and FAQ.",
+    text: "Welcome! I am the VideoPower Smart Assistant. Ask me about bonuses, code VIDEOPOWER, YouTube videos/shorts, Twitter giveaways, specials, merch, and FAQ.",
     actions: [
       makeAction(language, "copy", { copy: "VIDEOPOWER" }),
       makeAction(language, "askBonuses", { prompt: "How do I claim bonuses and use the code?" }),
@@ -3358,9 +3360,7 @@ function initSmartAiAssistant() {
       .join(", ");
 
     return {
-      text: language === "lv"
-        ? `Es neatradu 100% precizu atbilstibu, bet varu palidzet ar VideoPower lapas temam: bonusi, kods, videos, shorts, Twitter giveaways, specials, merch un FAQ.${suggestions ? `\nIespejami tuvakie temati: ${suggestions}.` : ""}\nUzraksti, piemeram: "ka sanemt bonusu?", "kur ir shorts?", "kas ir locked?"`
-        : `I did not find a perfect match, but I can help with VideoPower website topics: bonuses, code, videos, shorts, Twitter giveaways, specials, merch, and FAQ.${suggestions ? `\nClosest detected topics: ${suggestions}.` : ""}\nTry: "how do I claim a bonus?", "where are the shorts?", or "what does locked mean?"`,
+      text: `I did not find a perfect match, but I can help with VideoPower website topics: bonuses, code, videos, shorts, Twitter giveaways, specials, merch, and FAQ.${suggestions ? `\nClosest detected topics: ${suggestions}.` : ""}\nTry: "how do I claim a bonus?", "where are the shorts?", or "what does locked mean?"`,
       actions: [
         makeAction(language, "askBonuses", { prompt: "How do I claim bonuses and use the code?" }),
         makeAction(language, "askVideos", { prompt: "Show me the latest VideoPower videos and shorts." }),
@@ -3382,9 +3382,7 @@ function initSmartAiAssistant() {
 
     if (isThanks && normalized.split(" ").length <= 4) {
       return {
-        text: language === "lv"
-          ? "Nav par ko! Ja vajag, varu uzreiz atrast bonusu, kodu, video, giveaway vai merch sadalu."
-          : "No problem! If you need more, I can quickly point you to bonuses, the code, videos, giveaways, or merch.",
+        text: "No problem! If you need more, I can quickly point you to bonuses, the code, videos, giveaways, or merch.",
         actions: [
           makeAction(language, "copy", { copy: "VIDEOPOWER" }),
           makeAction(language, "faq", { href: links.faq })
@@ -3551,7 +3549,7 @@ function initAiAssistant() {
     if (action.copy) {
       element.addEventListener("click", () => {
         copyText(action.copy);
-        element.textContent = "COPIED!";
+        element.textContent = "Copied!";
         window.setTimeout(() => {
           element.textContent = action.label;
         }, 1200);
@@ -3936,7 +3934,7 @@ function initPromoCodeCopy() {
       if (status) status.textContent = `Copying code ${codeToCopy}`;
       const copied = await copyCode();
       if (copied) {
-        setButtonState("COPIED!", "is-copied");
+        setButtonState("Copied!", "is-copied");
         releaseButtonState();
         return;
       }
@@ -4163,10 +4161,16 @@ function initYoutubeVideos() {
     const meta = document.createElement("span");
     meta.className = className;
 
-    const icon = document.createElement("img");
+    const icon = document.createElement(className === "video-date" ? "span" : "img");
     icon.className = className === "video-date" ? "clock-icon" : "duration-icon";
-    icon.src = iconSrc;
-    icon.alt = className === "video-date" ? "Clock" : "Duration";
+    if (className === "video-date") {
+      icon.setAttribute("aria-hidden", "true");
+      icon.style.maskImage = `url("${iconSrc}")`;
+      icon.style.webkitMaskImage = `url("${iconSrc}")`;
+    } else {
+      icon.src = iconSrc;
+      icon.alt = "Duration";
+    }
 
     meta.append(icon, document.createTextNode(text));
     return meta;
@@ -4275,7 +4279,7 @@ function initYoutubeVideos() {
     if (hasDate) {
       const date = createMeta(
         "video-date",
-        "https://cdn-icons-png.magnific.com/512/10945/10945388.png?ga=GA1.1.2084952846.1778171337",
+        "/assets/video-date-clock.png",
         video.date
       );
       info.append(date);
@@ -4295,6 +4299,12 @@ function initYoutubeVideos() {
     const fragment = document.createDocumentFragment();
     videos.forEach((video, index) => {
       const card = createCard(video, shouldAnimateCards);
+      if (index === 0) {
+        const newest = document.createElement("span");
+        newest.className = "video-newest-badge";
+        newest.textContent = "Newest";
+        card.appendChild(newest);
+      }
       card.style.setProperty("--video-enter-delay", `${Math.min(index * 70, 280)}ms`);
       fragment.appendChild(card);
     });
@@ -4921,6 +4931,25 @@ function initHamburgerMenu() {
   const isMobile = () => window.innerWidth <= 860;
   const desktopNavParent = nav.parentNode;
   const desktopNavNextSibling = nav.nextSibling;
+  let lockedScrollY = 0;
+  let pageScrollLocked = false;
+
+  const lockPageScroll = () => {
+    if (!isMobile()) return;
+    document.documentElement.classList.add("menu-open");
+    document.body.classList.add("menu-open");
+  };
+
+  const unlockPageScroll = () => {
+    pageScrollLocked = false;
+    document.documentElement.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.right = "";
+    document.body.style.left = "";
+    document.body.style.width = "";
+    document.body.style.overflow = "";
+  };
   const syncMobileNavLayer = () => {
     if (isMobile()) {
       nav.classList.add("mobile-nav-layer");
@@ -4957,6 +4986,7 @@ function initHamburgerMenu() {
     nav.classList.add("show");
     document.documentElement.classList.add("vp-mobile-menu-open");
     document.body.classList.add("vp-mobile-menu-open");
+    lockPageScroll();
     hamburger.setAttribute("aria-expanded", "true");
     hamburger.setAttribute("aria-label", "Close navigation");
     nav.scrollTop = 0;
@@ -4970,6 +5000,7 @@ function initHamburgerMenu() {
     document.body.classList.remove("menu-open");
     document.documentElement.classList.remove("vp-mobile-menu-open");
     document.body.classList.remove("vp-mobile-menu-open");
+    unlockPageScroll();
     hamburger.setAttribute("aria-expanded", "false");
     hamburger.setAttribute("aria-label", "Open navigation");
     releaseFocus(hamburger);

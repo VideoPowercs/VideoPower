@@ -1,4 +1,4 @@
-﻿html,
+html,
 body {
   margin: 0;
   padding: 0;
@@ -572,11 +572,11 @@ canvas#stars,
 }
 
 .giveaways-icon {
-  background-image: url("https://cdn-icons-png.freepik.com/512/9075/9075357.png?ga=GA1.1.292190565.1765117586");
+  background-image: url("/assets/external-f50a1bc4a282.png");
 }
 
 .partners-icon {
-  background-image: url("https://cdn-icons-png.magnific.com/512/4294/4294425.png?ga=GA1.1.2084952846.1778171337");
+  background-image: url("/assets/external-f44862047957.png");
 }
 
 .btn:hover .btn-icon,
@@ -2185,7 +2185,7 @@ canvas#stars,
 }
 
 .giveaway-item:nth-of-type(1)::after {
-  background-image: url("https://bonkku.com/wp-content/uploads/2024/02/hellcase.png");
+  background-image: url("/assets/external-267f9fd1331b.png");
   width: 54%;
   height: 54%;
   background-size: 96%;
@@ -2639,7 +2639,8 @@ body.menu-open {
 }
 
 @keyframes heroGlow {
-  0%, 100% {
+  0%,
+100% {
     filter: drop-shadow(0 0 12px #ff9100) drop-shadow(0 0 24px rgba(255, 145, 0, 0.45));
   }
   50% {
@@ -2648,38 +2649,44 @@ body.menu-open {
 }
 
 @keyframes heroFloat {
-  0%, 100% { transform: translateY(0) scale(1); }
+  0%,
+100% { transform: translateY(0) scale(1); }
   50% { transform: translateY(-14px) scale(1.03); }
 }
 
 @keyframes floatCrazy1 {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(-9deg) scale(1); }
+  0%,
+100% { transform: translate3d(0, 0, 0) rotate(-9deg) scale(1); }
   25% { transform: translate3d(14px, -18px, 0) rotate(-1deg) scale(1.04); }
   50% { transform: translate3d(4px, -34px, 0) rotate(6deg) scale(1.08); }
   75% { transform: translate3d(-10px, -16px, 0) rotate(-3deg) scale(1.03); }
 }
 
 @keyframes floatCrazy2 {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(10deg) scale(1); }
+  0%,
+100% { transform: translate3d(0, 0, 0) rotate(10deg) scale(1); }
   20% { transform: translate3d(-10px, -12px, 0) rotate(4deg) scale(1.02); }
   50% { transform: translate3d(-18px, -30px, 0) rotate(-6deg) scale(1.07); }
   80% { transform: translate3d(8px, -14px, 0) rotate(2deg) scale(1.03); }
 }
 
 @keyframes floatCrazy3 {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(-4deg) scale(1); }
+  0%,
+100% { transform: translate3d(0, 0, 0) rotate(-4deg) scale(1); }
   30% { transform: translate3d(12px, -14px, 0) rotate(4deg) scale(1.03); }
   60% { transform: translate3d(-8px, -28px, 0) rotate(-10deg) scale(1.08); }
   85% { transform: translate3d(10px, -10px, 0) rotate(2deg) scale(1.02); }
 }
 
 @keyframes goldGlow {
-  0%, 100% { background-position: 0% 50%; }
+  0%,
+100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
 }
 
 @keyframes bonusBadgeShine {
-  0%, 18% {
+  0%,
+18% {
     transform: translateX(0) rotate(16deg);
     opacity: 0;
   }
@@ -2697,7 +2704,8 @@ body.menu-open {
 }
 
 @keyframes loaderFloat {
-  0%, 100% { transform: translateY(0); }
+  0%,
+100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
 
@@ -2854,15 +2862,15 @@ body.menu-open {
   .floating-images img:nth-child(5) { left: 14%; top: -38%; }
 
   .section,
-  #specials,
-  .main-footer {
+#specials,
+.main-footer {
     padding: 56px 16px;
   }
 
   .partners-title,
-  .videos-title,
-  .giveaways-title,
-  .specials-title {
+.videos-title,
+.giveaways-title,
+.specials-title {
     gap: 12px;
     margin: 0 auto 34px;
     justify-content: center;
@@ -2870,16 +2878,16 @@ body.menu-open {
   }
 
   .partners-title h2,
-  .videos-title h2,
-  .giveaways-title h2,
-  .specials-title h2 {
+.videos-title h2,
+.giveaways-title h2,
+.specials-title h2 {
     font-size: 2.05rem;
     line-height: 1.25;
     text-align: center;
   }
 
   .partners-title-line,
-  .title-line {
+.title-line {
     max-width: 78px;
   }
 
@@ -3007,7 +3015,7 @@ body.menu-open {
   }
 
   .btn,
-  .hero-btn {
+.hero-btn {
     width: 100%;
     font-size: 8px;
     min-width: 0;
@@ -3035,59 +3043,59 @@ body.menu-open {
   .floating-images img:nth-child(5) { left: 12%; top: -22%; display: block; }
 
   .partners-title h2,
-  .videos-title h2,
-  .giveaways-title h2,
-  .specials-title h2 {
+.videos-title h2,
+.giveaways-title h2,
+.specials-title h2 {
     font-size: 1.55rem;
     line-height: 1.2;
     text-align: center;
   }
 
   .partners-title-line,
-  .title-line {
+.title-line {
     max-width: 46px;
   }
 
   .partners-subtitle,
-  .videos-subtitle,
-  .giveaways-subtitle,
-  .partner-description,
-  .specials-subtitle,
-  .banner-content p,
-  .age-warning,
-  .disclaimer-text {
+.videos-subtitle,
+.giveaways-subtitle,
+.partner-description,
+.specials-subtitle,
+.banner-content p,
+.age-warning,
+.disclaimer-text {
     font-size: 7px;
   }
 
   .partner-card h3,
-  .giveaway-title,
-  .video-info h3,
-  .glass-header h3 {
+.giveaway-title,
+.video-info h3,
+.glass-header h3 {
     font-size: 8px;
   }
 
   .code-block a,
-  .cta-button,
-  .event-ribbon,
-  .countdown-chip,
-  .banner-corner-ribbon,
-  .video-date,
-  .video-length,
-  .active-tag,
-  .inactive-tag,
-  .price-tag,
-  .social-title {
+.cta-button,
+.event-ribbon,
+.countdown-chip,
+.banner-corner-ribbon,
+.video-date,
+.video-length,
+.active-tag,
+.inactive-tag,
+.price-tag,
+.social-title {
     font-size: 9px;
   }
 
   .active-tag,
-  .inactive-tag {
+.inactive-tag {
     top: 10px;
     right: 12px;
   }
 
   .price-tag,
-  .price-tag.active-price {
+.price-tag.active-price {
     top: 10px;
     right: 96px;
   }
@@ -3529,7 +3537,7 @@ body:not(.is-loading) .wrapper {
   }
 
   #bonuses .hellcase-effect .partner-logo,
-  #bonuses .clash-effect .partner-logo {
+#bonuses .clash-effect .partner-logo {
     width: 202px;
     height: 86px;
   }
@@ -3608,8 +3616,8 @@ body:not(.is-loading) .wrapper {
   }
 
   *,
-  *::before,
-  *::after {
+*::before,
+*::after {
     animation: none !important;
     transition: none !important;
   }
@@ -3916,7 +3924,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .footer-brand,
-  .footer-side {
+.footer-side {
     padding: 18px;
   }
 
@@ -3944,7 +3952,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .disclaimer-text,
-  .age-warning {
+.age-warning {
     text-align: center;
   }
 
@@ -4200,7 +4208,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .main-nav a,
-  .main-nav .nav-soon {
+.main-nav .nav-soon {
     width: 100%;
     min-height: 62px;
     padding: 16px 18px;
@@ -4230,7 +4238,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .main-nav a.with-divider + a.with-divider::before,
-  .main-nav .nav-soon.with-divider::before {
+.main-nav .nav-soon.with-divider::before {
     display: none;
   }
 
@@ -4346,7 +4354,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .event-ribbon,
-  .countdown-chip {
+.countdown-chip {
     min-height: 24px;
     padding: 5px 10px;
     font-size: 6px;
@@ -4388,8 +4396,8 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .active-tag,
-  .inactive-tag,
-  .price-tag {
+.inactive-tag,
+.price-tag {
     font-size: 7px;
   }
 }
@@ -4415,7 +4423,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .main-nav a,
-  .main-nav .nav-soon {
+.main-nav .nav-soon {
     min-height: 56px;
     padding: 14px 16px;
     font-size: 9px;
@@ -4490,7 +4498,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .event-ribbon,
-  .countdown-chip {
+.countdown-chip {
     width: 100%;
     justify-content: center;
   }
@@ -4515,20 +4523,20 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .active-tag,
-  .inactive-tag,
-  .price-tag {
+.inactive-tag,
+.price-tag {
     font-size: 6px;
     padding: 5px 8px;
   }
 
   .active-tag,
-  .inactive-tag {
+.inactive-tag {
     top: 10px;
     right: 12px;
   }
 
   .price-tag,
-  .price-tag.active-price {
+.price-tag.active-price {
     top: 10px;
     right: 74px;
   }
@@ -4683,47 +4691,67 @@ a.footer-nav-link:focus-visible::after {
 }
 
 @keyframes floatOrbitA {
-  0%, 14%, 100% { transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(-10deg) scale(1); }
+  0%,
+14%,
+100% { transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(-10deg) scale(1); }
   22% { transform: translate3d(10px, -14px, 28px) rotateX(6deg) rotateY(34deg) rotateZ(-2deg) scale(1.04); }
-  30%, 48% { transform: translate3d(4px, -6px, 10px) rotateX(2deg) rotateY(12deg) rotateZ(-6deg) scale(1.01); }
+  30%,
+48% { transform: translate3d(4px, -6px, 10px) rotateX(2deg) rotateY(12deg) rotateZ(-6deg) scale(1.01); }
   58% { transform: translate3d(-8px, -12px, 22px) rotateX(-5deg) rotateY(-28deg) rotateZ(-14deg) scale(1.05); }
-  68%, 82% { transform: translate3d(-2px, 4px, 6px) rotateX(1deg) rotateY(-10deg) rotateZ(-10deg) scale(1.01); }
+  68%,
+82% { transform: translate3d(-2px, 4px, 6px) rotateX(1deg) rotateY(-10deg) rotateZ(-10deg) scale(1.01); }
   90% { transform: translate3d(6px, 18px, -8px) rotateX(-4deg) rotateY(8deg) rotateZ(-12deg) scale(0.98); }
 }
 
 @keyframes floatOrbitB {
-  0%, 12%, 100% { transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(9deg) scale(1); }
+  0%,
+12%,
+100% { transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(9deg) scale(1); }
   20% { transform: translate3d(-12px, -10px, 24px) rotateX(-7deg) rotateY(-30deg) rotateZ(2deg) scale(1.04); }
-  28%, 44% { transform: translate3d(-4px, -4px, 8px) rotateX(-2deg) rotateY(-8deg) rotateZ(7deg) scale(1.01); }
+  28%,
+44% { transform: translate3d(-4px, -4px, 8px) rotateX(-2deg) rotateY(-8deg) rotateZ(7deg) scale(1.01); }
   56% { transform: translate3d(8px, -16px, 20px) rotateX(5deg) rotateY(24deg) rotateZ(12deg) scale(1.05); }
-  66%, 80% { transform: translate3d(2px, 2px, 6px) rotateX(1deg) rotateY(8deg) rotateZ(10deg) scale(1.01); }
+  66%,
+80% { transform: translate3d(2px, 2px, 6px) rotateX(1deg) rotateY(8deg) rotateZ(10deg) scale(1.01); }
   90% { transform: translate3d(-8px, 16px, -10px) rotateX(4deg) rotateY(-6deg) rotateZ(14deg) scale(0.98); }
 }
 
 @keyframes floatOrbitC {
-  0%, 16%, 100% { transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(-4deg) scale(1); }
+  0%,
+16%,
+100% { transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(-4deg) scale(1); }
   24% { transform: translate3d(14px, -12px, 24px) rotateX(7deg) rotateY(32deg) rotateZ(4deg) scale(1.03); }
-  32%, 50% { transform: translate3d(4px, -3px, 8px) rotateX(2deg) rotateY(10deg) rotateZ(-2deg) scale(1.01); }
+  32%,
+50% { transform: translate3d(4px, -3px, 8px) rotateX(2deg) rotateY(10deg) rotateZ(-2deg) scale(1.01); }
   60% { transform: translate3d(-10px, -18px, 26px) rotateX(-6deg) rotateY(-34deg) rotateZ(-12deg) scale(1.06); }
-  70%, 84% { transform: translate3d(-3px, 4px, 8px) rotateX(-1deg) rotateY(-10deg) rotateZ(-5deg) scale(1.01); }
+  70%,
+84% { transform: translate3d(-3px, 4px, 8px) rotateX(-1deg) rotateY(-10deg) rotateZ(-5deg) scale(1.01); }
   92% { transform: translate3d(8px, 20px, -10px) rotateX(4deg) rotateY(6deg) rotateZ(2deg) scale(0.98); }
 }
 
 @keyframes floatOrbitD {
-  0%, 18%, 100% { transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(10deg) scale(1); }
+  0%,
+18%,
+100% { transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(10deg) scale(1); }
   26% { transform: translate3d(-10px, -14px, 22px) rotateX(7deg) rotateY(-30deg) rotateZ(14deg) scale(1.03); }
-  34%, 52% { transform: translate3d(-3px, -4px, 8px) rotateX(2deg) rotateY(-9deg) rotateZ(10deg) scale(1.01); }
+  34%,
+52% { transform: translate3d(-3px, -4px, 8px) rotateX(2deg) rotateY(-9deg) rotateZ(10deg) scale(1.01); }
   62% { transform: translate3d(12px, -12px, 18px) rotateX(-4deg) rotateY(24deg) rotateZ(4deg) scale(1.05); }
-  72%, 86% { transform: translate3d(2px, 5px, 6px) rotateX(1deg) rotateY(8deg) rotateZ(8deg) scale(1.01); }
+  72%,
+86% { transform: translate3d(2px, 5px, 6px) rotateX(1deg) rotateY(8deg) rotateZ(8deg) scale(1.01); }
   94% { transform: translate3d(-6px, 18px, -8px) rotateX(-4deg) rotateY(-6deg) rotateZ(12deg) scale(0.98); }
 }
 
 @keyframes floatOrbitE {
-  0%, 13%, 100% { transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(-8deg) scale(1); }
+  0%,
+13%,
+100% { transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(-8deg) scale(1); }
   21% { transform: translate3d(11px, -12px, 20px) rotateX(-6deg) rotateY(28deg) rotateZ(-12deg) scale(1.04); }
-  29%, 46% { transform: translate3d(4px, -4px, 8px) rotateX(-2deg) rotateY(8deg) rotateZ(-8deg) scale(1.01); }
+  29%,
+46% { transform: translate3d(4px, -4px, 8px) rotateX(-2deg) rotateY(8deg) rotateZ(-8deg) scale(1.01); }
   58% { transform: translate3d(-9px, -16px, 24px) rotateX(6deg) rotateY(-26deg) rotateZ(-3deg) scale(1.05); }
-  68%, 82% { transform: translate3d(-2px, 3px, 6px) rotateX(1deg) rotateY(-8deg) rotateZ(-6deg) scale(1.01); }
+  68%,
+82% { transform: translate3d(-2px, 3px, 6px) rotateX(1deg) rotateY(-8deg) rotateZ(-6deg) scale(1.01); }
   90% { transform: translate3d(10px, 18px, -10px) rotateX(-4deg) rotateY(6deg) rotateZ(-10deg) scale(0.98); }
 }
 
@@ -4733,7 +4761,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .nav-sale-tag,
-  .footer-sale-tag {
+.footer-sale-tag {
     font-size: 6px;
   }
 
@@ -4753,7 +4781,7 @@ a.footer-nav-link:focus-visible::after {
 
 @media (max-width: 600px) {
   .nav-sale-tag,
-  .footer-sale-tag {
+.footer-sale-tag {
     min-height: 16px;
     padding: 4px 7px;
     font-size: 5px;
@@ -4798,7 +4826,8 @@ a.footer-nav-link:focus-visible::after {
 }
 
 @keyframes desktopLogoDrift {
-  0%, 100% {
+  0%,
+100% {
     transform: translateY(0) rotate(-1.2deg) scale(1);
   }
   35% {
@@ -5044,7 +5073,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .main-nav > a,
-  .main-nav > .nav-soon {
+.main-nav > .nav-soon {
     width: 100%;
     min-height: 62px;
     padding: 16px 18px;
@@ -5092,8 +5121,8 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .main-nav > a:hover,
-  .main-nav > a:focus-visible,
-  .main-nav > a:active {
+.main-nav > a:focus-visible,
+.main-nav > a:active {
     color: #fff2c9;
     border-color: rgba(255, 201, 97, 0.28);
     background:
@@ -5107,8 +5136,8 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .main-nav > a:hover::after,
-  .main-nav > a:focus-visible::after,
-  .main-nav > a:active::after {
+.main-nav > a:focus-visible::after,
+.main-nav > a:active::after {
     opacity: 1;
     transform: scaleX(1);
   }
@@ -5129,7 +5158,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .main-nav a.with-divider + a.with-divider::before,
-  .main-nav .nav-soon.with-divider::before {
+.main-nav .nav-soon.with-divider::before {
     display: none;
   }
 
@@ -5181,7 +5210,7 @@ a.footer-nav-link:focus-visible::after {
 }
 
   .main-nav .nav-social-link:hover,
-  .main-nav .nav-social-link:focus-visible,
+.main-nav .nav-social-link:focus-visible,
 .main-nav .nav-social-link:active {
   border-color: rgba(255, 214, 122, 0.24);
   background:
@@ -5248,7 +5277,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .main-nav > a,
-  .main-nav > .nav-soon {
+.main-nav > .nav-soon {
     min-height: 56px;
     padding: 14px 16px;
     border-radius: 18px;
@@ -5304,7 +5333,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   a.footer-nav-link,
-  .footer-nav-soon {
+.footer-nav-soon {
     width: 100%;
     min-height: 38px;
     padding: 8px 12px;
@@ -5346,7 +5375,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   a.footer-nav-link,
-  .footer-nav-soon {
+.footer-nav-soon {
     min-height: 34px;
     padding: 7px 10px;
     border-radius: 14px;
@@ -5362,13 +5391,13 @@ a.footer-nav-link:focus-visible::after {
 
 @media (hover: none), (pointer: coarse) {
   .hero .btn,
-  a.footer-nav-link,
-  #bonuses .code-block a,
-  .main-nav > a,
-  .main-nav .nav-social-link,
-  .social-icon,
-  .hamburger,
-  .giveaway-card .enter-btn {
+a.footer-nav-link,
+#bonuses .code-block a,
+.main-nav > a,
+.main-nav .nav-social-link,
+.social-icon,
+.hamburger,
+.giveaway-card .enter-btn {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     user-select: none;
@@ -5377,14 +5406,14 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .hamburger:focus-visible,
-  a.footer-nav-link:focus-visible,
-  .main-nav > a:focus-visible {
+a.footer-nav-link:focus-visible,
+.main-nav > a:focus-visible {
     outline: none;
   }
 
   .hero .btn:hover,
-  .hero .btn:focus-visible,
-  .hero .btn:active {
+.hero .btn:focus-visible,
+.hero .btn:active {
     background: linear-gradient(135deg, #ffffff, #ececec);
     color: #1b1b1b;
     box-shadow: 0 12px 22px rgba(0, 0, 0, 0.18);
@@ -5392,8 +5421,8 @@ a.footer-nav-link:focus-visible::after {
   }
 
   #giveaways-button:hover,
-  #giveaways-button:focus-visible,
-  #giveaways-button:active {
+#giveaways-button:focus-visible,
+#giveaways-button:active {
     color: #121212;
     background: linear-gradient(135deg, #ffe07a, #ffbf26, #ff9f1a);
     box-shadow:
@@ -5402,25 +5431,25 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .hero .btn:hover .btn-icon,
-  .hero .btn:focus-visible .btn-icon,
-  .hero .btn:active .btn-icon,
-  #giveaways-button:hover .btn-icon,
-  #giveaways-button:focus-visible .btn-icon,
-  #giveaways-button:active .btn-icon {
+.hero .btn:focus-visible .btn-icon,
+.hero .btn:active .btn-icon,
+#giveaways-button:hover .btn-icon,
+#giveaways-button:focus-visible .btn-icon,
+#giveaways-button:active .btn-icon {
     filter: brightness(0);
   }
 
   #bonuses .code-block a:hover,
-  #bonuses .code-block a:focus-visible,
-  #bonuses .code-block a:active {
+#bonuses .code-block a:focus-visible,
+#bonuses .code-block a:active {
     filter: none;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
     transform: none;
   }
 
   a.footer-nav-link:hover,
-  a.footer-nav-link:focus-visible,
-  a.footer-nav-link:active {
+a.footer-nav-link:focus-visible,
+a.footer-nav-link:active {
     color: #fff5de;
     border-color: rgba(255, 255, 255, 0.05);
     background:
@@ -5433,15 +5462,15 @@ a.footer-nav-link:focus-visible::after {
   }
 
   a.footer-nav-link:hover::after,
-  a.footer-nav-link:focus-visible::after,
-  a.footer-nav-link:active::after {
+a.footer-nav-link:focus-visible::after,
+a.footer-nav-link:active::after {
     opacity: 0;
     transform: scaleX(0.35);
   }
 
   .main-nav > a:hover,
-  .main-nav > a:focus-visible,
-  .main-nav > a:active {
+.main-nav > a:focus-visible,
+.main-nav > a:active {
     color: #fff4dc;
     border-color: rgba(255, 255, 255, 0.08);
     background:
@@ -5454,24 +5483,24 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .main-nav > a:hover::after,
-  .main-nav > a:focus-visible::after,
-  .main-nav > a:active::after {
+.main-nav > a:focus-visible::after,
+.main-nav > a:active::after {
     opacity: 0;
     transform: scaleX(0.42);
   }
 
   .hamburger:hover,
-  .hamburger:focus-visible,
-  .hamburger:active {
+.hamburger:focus-visible,
+.hamburger:active {
     transform: none;
   }
 
   .main-nav .nav-social-link:hover,
-  .main-nav .nav-social-link:focus-visible,
-  .main-nav .nav-social-link:active,
-  .social-icon:hover,
-  .social-icon:focus-visible,
-  .social-icon:active {
+.main-nav .nav-social-link:focus-visible,
+.main-nav .nav-social-link:active,
+.social-icon:hover,
+.social-icon:focus-visible,
+.social-icon:active {
     transform: none;
   }
 }
@@ -5483,7 +5512,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   a.footer-nav-link:hover::after,
-  a.footer-nav-link:focus-visible::after {
+a.footer-nav-link:focus-visible::after {
     opacity: 1;
     transform: none;
   }
@@ -6406,7 +6435,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .faq-subtitle,
-  .faq-item p {
+.faq-item p {
     font-size: 7px;
   }
 
@@ -6556,7 +6585,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .video-card--featured > img,
-  .video-card--featured .video-skeleton-media {
+.video-card--featured .video-skeleton-media {
     aspect-ratio: 16 / 9;
   }
 
@@ -6711,7 +6740,7 @@ a.footer-nav-link:focus-visible::after {
 
 @media (hover: none), (pointer: coarse) {
   .video-card:hover,
-  .video-card:focus-visible {
+.video-card:focus-visible {
     transform: none;
     border-color: rgba(255, 202, 94, 0.22);
     background:
@@ -6724,7 +6753,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .video-card:hover > img,
-  .video-card:focus-visible > img {
+.video-card:focus-visible > img {
     transform: none;
     filter: none;
   }
@@ -6735,7 +6764,7 @@ a.footer-nav-link:focus-visible::after {
   }
 
   .video-card:hover .video-info h3,
-  .video-card:focus-visible .video-info h3 {
+.video-card:focus-visible .video-info h3 {
     transform: none;
     color: #fff4d5;
     text-shadow:
@@ -6922,7 +6951,7 @@ html body #videos .videos-grid::-webkit-scrollbar-thumb {
 
 @media (max-width: 860px) {
   html body .hero-buttons #giveaways-button,
-  html body .hero-buttons #partners-button {
+html body .hero-buttons #partners-button {
     width: min(100%, 262px) !important;
     min-width: 0 !important;
   }
@@ -6943,7 +6972,7 @@ html body #videos .videos-grid::-webkit-scrollbar-thumb {
   }
 
   html body .hero-buttons #giveaways-button,
-  html body .hero-buttons #partners-button {
+html body .hero-buttons #partners-button {
     width: min(100%, 235px) !important;
     min-height: 50px !important;
     padding: 12px 18px !important;
@@ -7014,8 +7043,8 @@ html body #videos .videos-grid::-webkit-scrollbar-thumb {
 
 @media (max-width: 860px) {
   #videos,
-  #specials,
-  #giveaways {
+#specials,
+#giveaways {
     margin-top: 24px;
   }
 
@@ -7036,8 +7065,8 @@ html body #videos .videos-grid::-webkit-scrollbar-thumb {
 
 @media (max-width: 600px) {
   #videos,
-  #specials,
-  #giveaways {
+#specials,
+#giveaways {
     margin-top: 18px;
   }
 
@@ -7055,7 +7084,8 @@ html body #videos .videos-grid::-webkit-scrollbar-thumb {
 }
 
 @keyframes loaderLogoGlow {
-  0%, 100% {
+  0%,
+100% {
     filter:
       drop-shadow(0 0 8px rgba(0, 0, 0, 0.14))
       drop-shadow(0 0 16px rgba(0, 0, 0, 0.1))
@@ -7145,7 +7175,8 @@ html body #videos .videos-grid::-webkit-scrollbar-thumb {
 }
 
 @keyframes loaderPanelPulse {
-  0%, 100% {
+  0%,
+100% {
     transform: translateY(0);
     opacity: 1;
   }
@@ -7156,7 +7187,8 @@ html body #videos .videos-grid::-webkit-scrollbar-thumb {
 }
 
 @keyframes loaderTextPulse {
-  0%, 100% {
+  0%,
+100% {
     opacity: 0.92;
     letter-spacing: 0.04em;
   }
@@ -7367,7 +7399,7 @@ html.loader-ready .page-loader__panel {
   transform: translateY(-50%);
   background:
     center / contain no-repeat
-    url("https://cdn-icons-png.freepik.com/512/8637/8637501.png?ga=GA1.1.292190565.1765117586");
+    url("/assets/external-08f2869e58bd.png");
   filter: brightness(0) invert(1);
 }
 
@@ -7388,7 +7420,7 @@ html.loader-ready .page-loader__panel {
   content: "";
   background:
     center / contain no-repeat
-    url("https://cdn-icons-png.freepik.com/512/7263/7263344.png?ga=GA1.1.292190565.1765117586");
+    url("/assets/external-6ee030635fa9.png");
   filter: brightness(0) invert(1);
   transform: translateY(-50%);
 }
@@ -7494,7 +7526,7 @@ html.loader-ready .page-loader__panel {
 
 @media (max-width: 860px) {
   .nav-social-title,
-  .social-title {
+.social-title {
     font-size: 8px;
     line-height: 1.7;
   }
@@ -8299,7 +8331,8 @@ body.popup-open {
 }
 
 @keyframes aiTyping {
-  0%, 100% {
+  0%,
+100% {
     opacity: 0.35;
     transform: translateY(0);
   }
@@ -8533,7 +8566,7 @@ a[href="#faq"] {
   }
 
   .main-nav a,
-  .main-nav .nav-soon {
+.main-nav .nav-soon {
     min-height: 54px;
     padding: 14px 16px;
     border-radius: 16px;
@@ -8569,32 +8602,32 @@ a[href="#faq"] {
 
 @media (hover: none) and (pointer: coarse) {
   .promo-copy-btn,
-  .promo-banner,
-  .promo-banner .cta-button,
-  .main-nav a,
-  .main-nav .nav-social-link,
-  .hamburger {
+.promo-banner,
+.promo-banner .cta-button,
+.main-nav a,
+.main-nav .nav-social-link,
+.hamburger {
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
   }
 
   .promo-copy-btn:hover,
-  .promo-copy-btn:focus-visible,
-  .promo-copy-btn:active {
+.promo-copy-btn:focus-visible,
+.promo-copy-btn:active {
     transform: none;
   }
 
   body.touch-device .main-nav a:hover,
-  body.touch-device .main-nav a:focus-visible,
-  body.touch-device .main-nav .nav-social-link:hover,
-  body.touch-device .main-nav .nav-social-link:focus-visible {
+body.touch-device .main-nav a:focus-visible,
+body.touch-device .main-nav .nav-social-link:hover,
+body.touch-device .main-nav .nav-social-link:focus-visible {
     color: inherit;
     filter: none;
   }
 
   body.touch-device #specials .promo-banner:hover,
-  body.touch-device #specials .promo-banner:focus-visible,
-  body.touch-device #specials .promo-banner:active {
+body.touch-device #specials .promo-banner:focus-visible,
+body.touch-device #specials .promo-banner:active {
     box-shadow:
       0 22px 42px rgba(0, 0, 0, 0.28),
       0 0 0 1px rgba(var(--special-accent-rgb), 0.18),
@@ -8602,28 +8635,28 @@ a[href="#faq"] {
   }
 
   body.touch-device #specials .promo-banner:hover .banner-bg img,
-  body.touch-device #specials .promo-banner:focus-visible .banner-bg img,
-  body.touch-device #specials .promo-banner:active .banner-bg img,
-  body.touch-device #specials .promo-banner.is-button-hovered .banner-bg img {
+body.touch-device #specials .promo-banner:focus-visible .banner-bg img,
+body.touch-device #specials .promo-banner:active .banner-bg img,
+body.touch-device #specials .promo-banner.is-button-hovered .banner-bg img {
     transform: none !important;
   }
 
   body.touch-device #specials .promo-banner--hellcase:hover .banner-bg img,
-  body.touch-device #specials .promo-banner--hellcase:focus-visible .banner-bg img,
-  body.touch-device #specials .promo-banner--hellcase:active .banner-bg img {
+body.touch-device #specials .promo-banner--hellcase:focus-visible .banner-bg img,
+body.touch-device #specials .promo-banner--hellcase:active .banner-bg img {
     filter: saturate(1.08) contrast(1.05) brightness(1.02) !important;
   }
 
   body.touch-device #specials .promo-banner--skinclub:hover .banner-bg img,
-  body.touch-device #specials .promo-banner--skinclub:focus-visible .banner-bg img,
-  body.touch-device #specials .promo-banner--skinclub:active .banner-bg img {
+body.touch-device #specials .promo-banner--skinclub:focus-visible .banner-bg img,
+body.touch-device #specials .promo-banner--skinclub:active .banner-bg img {
     filter: saturate(1.08) contrast(1.05) brightness(0.98) !important;
   }
 
   body.touch-device #specials .promo-banner:hover .banner-overlay,
-  body.touch-device #specials .promo-banner:focus-visible .banner-overlay,
-  body.touch-device #specials .promo-banner:active .banner-overlay,
-  body.touch-device #specials .promo-banner.is-button-hovered .banner-overlay {
+body.touch-device #specials .promo-banner:focus-visible .banner-overlay,
+body.touch-device #specials .promo-banner:active .banner-overlay,
+body.touch-device #specials .promo-banner.is-button-hovered .banner-overlay {
     background:
       radial-gradient(circle at top right, rgba(var(--special-accent-rgb), 0.12), transparent 38%),
       linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.72));
@@ -8832,7 +8865,8 @@ html.loader-ready .page-loader__panel {
 }
 
 @keyframes loaderBackgroundPulse {
-  0%, 100% {
+  0%,
+100% {
     transform: scale(1);
     opacity: 0.8;
   }
@@ -9128,7 +9162,8 @@ html.loader-ready .page-loader__panel {
 }
 
 @keyframes loaderShellTrail {
-  0%, 8% {
+  0%,
+8% {
     opacity: 0;
     transform: translate(-50%, -50%) scaleX(0.54);
   }
@@ -9491,7 +9526,7 @@ html.loader-ready .page-loader__panel {
 
 @media (max-width: 860px) {
   .social-title,
-  .nav-social-title {
+.nav-social-title {
     font-size: 12px !important;
     text-align: left !important;
   }
@@ -9576,8 +9611,8 @@ html.loader-ready .page-loader__panel {
   }
 
   .hamburger:hover,
-  .hamburger:focus-visible,
-  .hamburger:active {
+.hamburger:focus-visible,
+.hamburger:active {
     background: transparent !important;
     border: 0 !important;
     box-shadow: none !important;
@@ -9607,8 +9642,8 @@ html.loader-ready .page-loader__panel {
   }
 
   .main-nav .nav-social-link:hover,
-  .main-nav .nav-social-link:focus-visible,
-  .main-nav .nav-social-link:active {
+.main-nav .nav-social-link:focus-visible,
+.main-nav .nav-social-link:active {
     background:
       linear-gradient(180deg, #fff08e 0%, #ffd347 48%, #eba000 100%) !important;
     border-color: rgba(255, 246, 198, 0.5) !important;
@@ -9629,7 +9664,7 @@ html.loader-ready .page-loader__panel {
   }
 
   .age-warning.footer-glass-copy,
-  .footer-copyright.footer-glass-copy {
+.footer-copyright.footer-glass-copy {
     border-radius: 16px;
     font-size: 7px;
   }
@@ -9702,9 +9737,9 @@ html.loader-ready .page-loader__panel {
 
 @media (max-width: 860px) {
   .disclaimer-text.footer-glass-copy,
-  .disclaimer-text.footer-glass-copy span,
-  .age-warning.footer-glass-copy,
-  .age-warning.footer-glass-copy span {
+.disclaimer-text.footer-glass-copy span,
+.age-warning.footer-glass-copy,
+.age-warning.footer-glass-copy span {
     font-size: 6.5px !important;
   }
 
@@ -9725,8 +9760,8 @@ html.loader-ready .page-loader__panel {
   }
 
   body.menu-open .logo-container,
-  body.menu-open .logo-link,
-  body.menu-open .logo {
+body.menu-open .logo-link,
+body.menu-open .logo {
     position: relative;
     z-index: 1210 !important;
     opacity: 1 !important;
@@ -9739,7 +9774,7 @@ html.loader-ready .page-loader__panel {
   }
 
   .main-nav,
-  .main-nav.show {
+.main-nav.show {
     z-index: 1200 !important;
     background:
       radial-gradient(circle at top right, rgba(255, 178, 44, 0.16), transparent 28%),
@@ -9815,8 +9850,8 @@ html.loader-ready .page-loader__panel {
   }
 
   .hamburger:hover,
-  .hamburger:focus-visible,
-  .hamburger:active {
+.hamburger:focus-visible,
+.hamburger:active {
     background:
       linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
       linear-gradient(180deg, rgba(18, 18, 22, 0.96), rgba(10, 10, 12, 0.96)) !important;
@@ -9828,8 +9863,8 @@ html.loader-ready .page-loader__panel {
   }
 
   .main-nav,
-  .main-nav.show,
-  .main-nav.show::after {
+.main-nav.show,
+.main-nav.show::after {
     background:
       radial-gradient(circle at top right, rgba(255, 178, 44, 0.14), transparent 28%),
       linear-gradient(180deg, #050507 0%, #0b0b0f 58%, #060607 100%) !important;
@@ -9926,10 +9961,10 @@ body.is-loading::-webkit-scrollbar {
 
 @media (max-width: 860px) {
   .hamburger,
-  .hamburger:hover,
-  .hamburger:focus-visible,
-  .hamburger:active,
-  body.menu-open .hamburger {
+.hamburger:hover,
+.hamburger:focus-visible,
+.hamburger:active,
+body.menu-open .hamburger {
     width: 42px !important;
     height: 30px !important;
     padding: 2px 0 !important;
@@ -9955,8 +9990,8 @@ body.is-loading::-webkit-scrollbar {
   }
 
   .main-nav,
-  .main-nav.show,
-  .main-nav.show::after {
+.main-nav.show,
+.main-nav.show::after {
     background:
       radial-gradient(circle at 82% 10%, rgba(255, 178, 44, 0.16), transparent 30%),
       radial-gradient(circle at 14% 84%, rgba(255, 207, 115, 0.08), transparent 28%),
@@ -10000,7 +10035,7 @@ body.is-loading::-webkit-scrollbar {
   }
 
   .main-nav > a,
-  .main-nav > .nav-soon {
+.main-nav > .nav-soon {
     width: auto !important;
     min-height: auto !important;
     padding: 6px 0 !important;
@@ -10018,8 +10053,8 @@ body.is-loading::-webkit-scrollbar {
   }
 
   .main-nav > a:hover,
-  .main-nav > a:focus-visible,
-  .main-nav > a:active {
+.main-nav > a:focus-visible,
+.main-nav > a:active {
     color: #ffffff !important;
     filter: brightness(1.12);
     transform: translateX(10px) scale(1.05) !important;
@@ -10151,10 +10186,10 @@ body.is-loading::-webkit-scrollbar {
   }
 
   .hamburger,
-  .hamburger:hover,
-  .hamburger:focus-visible,
-  .hamburger:active,
-  body.menu-open .hamburger {
+.hamburger:hover,
+.hamburger:focus-visible,
+.hamburger:active,
+body.menu-open .hamburger {
     background: transparent !important;
     border: 0 !important;
     box-shadow: none !important;
@@ -10162,8 +10197,8 @@ body.is-loading::-webkit-scrollbar {
   }
 
   .hamburger:active:not(.active),
-  body.touch-device .hamburger:hover:not(.active),
-  body.touch-device .hamburger:focus-visible:not(.active) {
+body.touch-device .hamburger:hover:not(.active),
+body.touch-device .hamburger:focus-visible:not(.active) {
     transform: none !important;
   }
 
@@ -10172,15 +10207,15 @@ body.is-loading::-webkit-scrollbar {
   }
 
   .main-nav > a,
-  .main-nav > .nav-soon {
+.main-nav > .nav-soon {
     font-size: clamp(12px, 4vw, 16px) !important;
     padding: 5px 0 !important;
     line-height: 1.55 !important;
   }
 
   .main-nav > a:hover,
-  .main-nav > a:focus-visible,
-  .main-nav > a:active {
+.main-nav > a:focus-visible,
+.main-nav > a:active {
     transform: translateX(7px) scale(1.035) !important;
   }
 
@@ -10199,7 +10234,7 @@ body.is-loading::-webkit-scrollbar {
   }
 
   .main-footer a.footer-nav-link,
-  .main-footer .footer-nav-soon {
+.main-footer .footer-nav-soon {
     font-size: 7px !important;
   }
 }
@@ -10342,10 +10377,10 @@ body.is-loading::-webkit-scrollbar {
 
 @media (max-width: 860px) {
   .hamburger,
-  .hamburger:hover,
-  .hamburger:focus-visible,
-  .hamburger:active,
-  body.menu-open .hamburger {
+.hamburger:hover,
+.hamburger:focus-visible,
+.hamburger:active,
+body.menu-open .hamburger {
     transform: none !important;
   }
 
@@ -10379,21 +10414,21 @@ body.is-loading::-webkit-scrollbar {
   }
 
   .main-nav > a:active,
-  .main-nav > a.is-touch-pressed,
-  .main-footer a.footer-nav-link:active,
-  .main-footer a.footer-nav-link.is-touch-pressed {
+.main-nav > a.is-touch-pressed,
+.main-footer a.footer-nav-link:active,
+.main-footer a.footer-nav-link.is-touch-pressed {
     color: #ffffff !important;
     filter: brightness(1.12);
     transform: translateX(7px) scale(1.035) !important;
   }
 
   .video-card:active,
-  .video-card.is-touch-pressed {
+.video-card.is-touch-pressed {
     transform: translateY(-6px) scale(1.02) !important;
   }
 
   .partner-card:active,
-  .partner-card.is-touch-pressed {
+.partner-card.is-touch-pressed {
     transform: translateY(-6px) scale(1.012) !important;
   }
 }
@@ -10516,7 +10551,7 @@ body.is-loading::-webkit-scrollbar {
 
 @media (prefers-reduced-motion: reduce) {
   .reveal-on-scroll,
-  .reveal-on-scroll.is-revealed {
+.reveal-on-scroll.is-revealed {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;
@@ -10545,7 +10580,7 @@ html body #giveaways
   html body #giveaways
     .giveaway-card--shinobu:not(.giveaway-card--featured-carousel):hover:not(.is-return-resting)
     .giveaway-image-wrapper::after,
-  html body #giveaways
+html body #giveaways
     .giveaway-card--shinobu:not(.giveaway-card--featured-carousel):focus-within:not(.is-return-resting)
     .giveaway-image-wrapper::after {
     filter:
@@ -10713,7 +10748,7 @@ html body #videos .videos-grid::-webkit-scrollbar-thumb {
 
 @media (max-width: 860px) {
   html body .hero-buttons #giveaways-button,
-  html body .hero-buttons #partners-button {
+html body .hero-buttons #partners-button {
     width: min(100%, 262px) !important;
     min-width: 0 !important;
   }
@@ -10734,7 +10769,7 @@ html body #videos .videos-grid::-webkit-scrollbar-thumb {
   }
 
   html body .hero-buttons #giveaways-button,
-  html body .hero-buttons #partners-button {
+html body .hero-buttons #partners-button {
     width: min(100%, 235px) !important;
     min-height: 50px !important;
     padding: 12px 18px !important;
@@ -11134,9 +11169,9 @@ html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged .bonus-rewa
 
 @media (max-width: 600px) {
   html body .hero-buttons .hero-btn,
-  html body .hero-buttons .hero-btn:hover,
-  html body .hero-buttons .hero-btn:focus-visible,
-  html body .hero-buttons .hero-btn:active {
+html body .hero-buttons .hero-btn:hover,
+html body .hero-buttons .hero-btn:focus-visible,
+html body .hero-buttons .hero-btn:active {
     min-width: 124px !important;
     min-height: 42px !important;
     padding: 9px 13px !important;
@@ -11195,7 +11230,7 @@ html body #news .news-team-action.is-touch-pressed::after {
 
 @media (hover: hover) and (pointer: fine) {
   html body #news .news-team-action:hover:not(:active):not(.is-link-dragging)::after,
-  html body #news .news-team-action:focus-visible:not(:active):not(.is-link-dragging)::after {
+html body #news .news-team-action:focus-visible:not(:active):not(.is-link-dragging)::after {
     opacity: 1 !important;
   }
 }
@@ -11314,7 +11349,7 @@ html body #giveaways
   html body #giveaways
     .giveaway-card--shinobu:not(.giveaway-card--featured-carousel):hover:not(.is-return-resting)
     .giveaway-image-wrapper::after,
-  html body #giveaways
+html body #giveaways
     .giveaway-card--shinobu:not(.giveaway-card--featured-carousel):focus-within:not(.is-return-resting)
     .giveaway-image-wrapper::after {
     -webkit-filter:
@@ -11733,18 +11768,18 @@ html body #bonuses .bonus-reward-card[data-bonus-id].is-card-hovered .bonus-rewa
 
 @media (hover: none), (pointer: coarse) {
   #bonuses .bonus-reward-card:hover,
-  #bonuses .bonus-reward-card:focus-within {
+#bonuses .bonus-reward-card:focus-within {
     z-index: auto !important;
     transform: none !important;
   }
 
   #bonuses .bonus-reward-card:hover .bonus-reward-card__body,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__body {
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__body {
     transform: none !important;
   }
 
   #bonuses .bonus-reward-card:hover .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__item {
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__item {
     transform: translate3d(-50%, 0, 0) scale(1) rotate(0deg) !important;
   }
 }
@@ -11775,9 +11810,9 @@ html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__item-la
 
 @media (min-width: 861px) {
   html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__body,
-  html body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__body,
-  html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__body,
-  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-hovered .bonus-reward-card__body {
+html body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__body,
+html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__body,
+html body #bonuses .bonus-reward-card[data-bonus-id].is-card-hovered .bonus-reward-card__body {
     border: 0 !important;
     outline: 0 !important;
     box-shadow: none !important;
@@ -11902,17 +11937,17 @@ html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged .bonus-rewa
 
 @media (prefers-reduced-motion: reduce) {
   html body #bonuses .bonus-reward-card[data-bonus-id],
-  html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__body,
-  html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__item,
-  html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__item-layer,
-  html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__button {
+html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__body,
+html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__item,
+html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__item-layer,
+html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__button {
     transition-duration: 0.001ms !important;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   #bonuses .bonus-reward-card:hover,
-  #bonuses .bonus-reward-card:hover .bonus-reward-card__body {
+#bonuses .bonus-reward-card:hover .bonus-reward-card__body {
     transform: none !important;
   }
 }
@@ -12421,18 +12456,18 @@ html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged .bonus-rewa
 
 @supports (content-visibility: auto) {
   #bonuses,
-  #videos,
-  #specials,
-  #giveaways,
-  #news,
-  .main-footer {
+#videos,
+#specials,
+#giveaways,
+#news,
+.main-footer {
     content-visibility: auto;
     contain-intrinsic-size: 1px 720px;
   }
 
   #specials,
-  #giveaways,
-  #news {
+#giveaways,
+#news {
     contain-intrinsic-size: 1px 640px;
   }
 }
@@ -12450,9 +12485,9 @@ html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged .bonus-rewa
   }
 
   .main-nav > a:hover,
-  .main-nav > a:focus-visible,
-  .main-nav > a:active,
-  .main-nav > a.is-touch-pressed {
+.main-nav > a:focus-visible,
+.main-nav > a:active,
+.main-nav > a.is-touch-pressed {
     transform: translate3d(0, -2px, 0) scale(1.045) !important;
     filter: none !important;
     box-shadow: none !important;
@@ -12482,14 +12517,14 @@ html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged .bonus-rewa
   }
 
   .main-footer a.footer-nav-link:active,
-  .main-footer a.footer-nav-link.is-touch-pressed {
+.main-footer a.footer-nav-link.is-touch-pressed {
     transform: translateY(-2px) scale(1.035) !important;
   }
 
   .main-nav > a:hover,
-  .main-nav > a:focus-visible,
-  .main-nav > a:active,
-  .main-nav > a.is-touch-pressed {
+.main-nav > a:focus-visible,
+.main-nav > a:active,
+.main-nav > a.is-touch-pressed {
     transform: translateY(-2px) scale(1.035) !important;
   }
 
@@ -12537,8 +12572,8 @@ html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged .bonus-rewa
   }
 
   .news-showcase__arrow:hover,
-  .news-showcase__arrow:focus-visible,
-  .news-showcase__arrow:active {
+.news-showcase__arrow:focus-visible,
+.news-showcase__arrow:active {
     transform: scale(1.04);
   }
 
@@ -12584,7 +12619,7 @@ html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged .bonus-rewa
   }
 
   .news-slide__kicker,
-  .news-slide__cta {
+.news-slide__cta {
     font-size: 6px;
   }
 
@@ -12788,9 +12823,9 @@ body:not(.is-loading) .wrapper {
   }
 
   .main-nav > a:hover,
-  .main-nav > a:focus-visible,
-  .main-nav > a:active,
-  .main-nav > a.is-touch-pressed {
+.main-nav > a:focus-visible,
+.main-nav > a:active,
+.main-nav > a.is-touch-pressed {
     transform: translate3d(5px, 0, 0) !important;
   }
 
@@ -12917,9 +12952,9 @@ body:not(.is-loading) .wrapper {
   }
 
   .hamburger span,
-  .hamburger span:nth-child(1),
-  .hamburger span:nth-child(2),
-  .hamburger span:nth-child(3) {
+.hamburger span:nth-child(1),
+.hamburger span:nth-child(2),
+.hamburger span:nth-child(3) {
     width: 28px !important;
     min-width: 28px !important;
     max-width: 28px !important;
@@ -12932,9 +12967,9 @@ body:not(.is-loading) .wrapper {
   }
 
   .main-nav > a:hover,
-  .main-nav > a:focus-visible,
-  .main-nav > a:active,
-  .main-nav > a.is-touch-pressed {
+.main-nav > a:focus-visible,
+.main-nav > a:active,
+.main-nav > a.is-touch-pressed {
     transform: none !important;
   }
 
@@ -12953,9 +12988,9 @@ body:not(.is-loading) .wrapper {
 
 @media (max-width: 600px) {
   .hamburger span,
-  .hamburger span:nth-child(1),
-  .hamburger span:nth-child(2),
-  .hamburger span:nth-child(3) {
+.hamburger span:nth-child(1),
+.hamburger span:nth-child(2),
+.hamburger span:nth-child(3) {
     width: 25px !important;
     min-width: 25px !important;
     max-width: 25px !important;
@@ -13108,10 +13143,10 @@ body:not(.is-loading) .wrapper {
   }
 
   .hamburger,
-  .hamburger:hover,
-  .hamburger:focus-visible,
-  .hamburger:active,
-  body.menu-open .hamburger {
+.hamburger:hover,
+.hamburger:focus-visible,
+.hamburger:active,
+body.menu-open .hamburger {
     width: 50px !important;
     height: 36px !important;
     padding: 4px 6px !important;
@@ -13120,13 +13155,13 @@ body:not(.is-loading) .wrapper {
   }
 
   .hamburger span,
-  .hamburger span:nth-child(1),
-  .hamburger span:nth-child(2),
-  .hamburger span:nth-child(3),
-  .hamburger.active span,
-  .hamburger.active span:nth-child(1),
-  .hamburger.active span:nth-child(2),
-  .hamburger.active span:nth-child(3) {
+.hamburger span:nth-child(1),
+.hamburger span:nth-child(2),
+.hamburger span:nth-child(3),
+.hamburger.active span,
+.hamburger.active span:nth-child(1),
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
     width: 34px !important;
     min-width: 34px !important;
     max-width: 34px !important;
@@ -13172,22 +13207,22 @@ body:not(.is-loading) .wrapper {
 
 @media (max-width: 600px) {
   .hamburger,
-  .hamburger:hover,
-  .hamburger:focus-visible,
-  .hamburger:active,
-  body.menu-open .hamburger {
+.hamburger:hover,
+.hamburger:focus-visible,
+.hamburger:active,
+body.menu-open .hamburger {
     width: 46px !important;
     height: 34px !important;
   }
 
   .hamburger span,
-  .hamburger span:nth-child(1),
-  .hamburger span:nth-child(2),
-  .hamburger span:nth-child(3),
-  .hamburger.active span,
-  .hamburger.active span:nth-child(1),
-  .hamburger.active span:nth-child(2),
-  .hamburger.active span:nth-child(3) {
+.hamburger span:nth-child(1),
+.hamburger span:nth-child(2),
+.hamburger span:nth-child(3),
+.hamburger.active span,
+.hamburger.active span:nth-child(1),
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
     width: 31px !important;
     min-width: 31px !important;
     max-width: 31px !important;
@@ -13260,10 +13295,10 @@ body:not(.is-loading) .wrapper {
 
 @media (max-width: 860px) {
   #bonuses .partner-trophy,
-  #bonuses .partner-card:hover .partner-trophy,
-  #bonuses .partner-card:focus-within .partner-trophy,
-  #bonuses .partner-card:active .partner-trophy,
-  #bonuses .partner-card.is-touch-pressed .partner-trophy {
+#bonuses .partner-card:hover .partner-trophy,
+#bonuses .partner-card:focus-within .partner-trophy,
+#bonuses .partner-card:active .partner-trophy,
+#bonuses .partner-card.is-touch-pressed .partner-trophy {
     width: 26px !important;
     height: 26px !important;
   }
@@ -13735,7 +13770,7 @@ body.is-entering::-webkit-scrollbar {
   }
 
   .giveaway-arrow,
-  .giveaway-arrow:disabled {
+.giveaway-arrow:disabled {
     width: 40px !important;
     height: 40px !important;
     border-radius: 13px !important;
@@ -14339,14 +14374,14 @@ body.is-entering::-webkit-scrollbar {
 
 @media (max-width: 860px) {
   #bonuses .bonuses-reveal-title h2,
-  #news .news-team-heading h2,
-  #videos .videos-title h2 {
+#news .news-team-heading h2,
+#videos .videos-title h2 {
     font-size: clamp(28px, 8.5vw, 42px);
   }
 
   #bonuses .bonuses-reveal-subtitle,
-  #news .news-team-heading p,
-  #videos .videos-subtitle {
+#news .news-team-heading p,
+#videos .videos-subtitle {
     font-size: 13px !important;
     line-height: 1.6 !important;
   }
@@ -14448,10 +14483,10 @@ body.menu-open {
 
 @media (max-width: 860px) {
   .news-showcase__arrow,
-  .news-showcase__arrow:hover,
-  .news-showcase__arrow:focus-visible,
-  .news-showcase__arrow:active,
-  .news-showcase__arrow.is-touch-pressed {
+.news-showcase__arrow:hover,
+.news-showcase__arrow:focus-visible,
+.news-showcase__arrow:active,
+.news-showcase__arrow.is-touch-pressed {
     width: 48px !important;
     height: 48px !important;
     border-radius: 15px !important;
@@ -14609,7 +14644,8 @@ body.menu-open {
 }
 
 @keyframes vpFloatingSkin3d {
-  0%, 100% {
+  0%,
+100% {
     transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
   }
 
@@ -14690,19 +14726,19 @@ body.menu-open {
   }
 
   .news-showcase__arrow,
-  .news-showcase__arrow:hover,
-  .news-showcase__arrow:focus-visible,
-  .news-showcase__arrow:active,
-  .news-showcase__arrow.is-touch-pressed {
+.news-showcase__arrow:hover,
+.news-showcase__arrow:focus-visible,
+.news-showcase__arrow:active,
+.news-showcase__arrow.is-touch-pressed {
     width: 42px !important;
     height: 42px !important;
     border-radius: 14px !important;
   }
 
   .news-showcase__arrow:hover,
-  .news-showcase__arrow:focus-visible,
-  .news-showcase__arrow:active,
-  .news-showcase__arrow.is-touch-pressed {
+.news-showcase__arrow:focus-visible,
+.news-showcase__arrow:active,
+.news-showcase__arrow.is-touch-pressed {
     transform: scale(1.04) !important;
   }
 }
@@ -14770,7 +14806,8 @@ body.menu-open {
 .floating-images img:nth-child(6) { display: none !important; }
 
 @keyframes vpSkinBob {
-  0%, 100% {
+  0%,
+100% {
     transform: translateY(0) scale(1);
   }
 
@@ -14794,9 +14831,9 @@ body.menu-open {
   .floating-images img:nth-child(5) { --bob-distance: -20px; }
 
   .news-showcase__arrow:hover,
-  .news-showcase__arrow:focus-visible,
-  .news-showcase__arrow:active,
-  .news-showcase__arrow.is-touch-pressed {
+.news-showcase__arrow:focus-visible,
+.news-showcase__arrow:active,
+.news-showcase__arrow.is-touch-pressed {
     transform: none !important;
   }
 }
@@ -15796,7 +15833,7 @@ body.menu-open {
 }
 
 #giveaways .giveaway-item:nth-of-type(1)::after {
-  background-image: url("https://bonkku.com/wp-content/uploads/2024/02/hellcase.png") !important;
+  background-image: url("/assets/external-267f9fd1331b.png") !important;
   width: 54% !important;
   height: 54% !important;
   background-size: 96% !important;
@@ -15880,12 +15917,12 @@ body.menu-open {
 
 @media (max-width: 860px) {
   #videos .video-card,
-  #videos .video-card.video-card--type-video,
-  #videos .video-card.video-card--type-short,
-  #videos .video-card.video-card--type-community,
-  #videos .video-card.video-card--type-playlist,
-  #videos .video-card--fallback,
-  #videos .video-card.skeleton {
+#videos .video-card.video-card--type-video,
+#videos .video-card.video-card--type-short,
+#videos .video-card.video-card--type-community,
+#videos .video-card.video-card--type-playlist,
+#videos .video-card--fallback,
+#videos .video-card.skeleton {
     height: 336px !important;
     min-height: 336px !important;
     max-height: 336px !important;
@@ -15894,12 +15931,12 @@ body.menu-open {
 
 @media (max-width: 600px) {
   #videos .video-card,
-  #videos .video-card.video-card--type-video,
-  #videos .video-card.video-card--type-short,
-  #videos .video-card.video-card--type-community,
-  #videos .video-card.video-card--type-playlist,
-  #videos .video-card--fallback,
-  #videos .video-card.skeleton {
+#videos .video-card.video-card--type-video,
+#videos .video-card.video-card--type-short,
+#videos .video-card.video-card--type-community,
+#videos .video-card.video-card--type-playlist,
+#videos .video-card--fallback,
+#videos .video-card.skeleton {
     height: 318px !important;
     min-height: 318px !important;
     max-height: 318px !important;
@@ -15947,8 +15984,8 @@ body.menu-open {
 
 @media (max-width: 860px) {
   .news-showcase__arrow:disabled:hover,
-  .news-showcase__arrow:disabled:focus-visible,
-  .news-showcase__arrow:disabled:active {
+.news-showcase__arrow:disabled:focus-visible,
+.news-showcase__arrow:disabled:active {
     transform: none !important;
   }
 }
@@ -15983,7 +16020,8 @@ body.menu-open {
 }
 
 @keyframes bonusCardWhitePulse {
-  0%, 100% {
+  0%,
+100% {
     outline-color: rgba(255, 255, 255, 0.52);
     box-shadow:
       0 20px 42px rgba(0, 0, 0, 0.34),
@@ -16067,14 +16105,16 @@ body.menu-open {
 }
 
 @keyframes bonusCardWhiteBlink {
-  0%, 100% {
+  0%,
+100% {
     border-color: rgba(255, 255, 255, 0.34);
     box-shadow:
       0 0 0 1px rgba(255, 255, 255, 0.1),
       0 0 8px rgba(255, 255, 255, 0.05);
   }
 
-  45%, 55% {
+  45%,
+55% {
     border-color: rgba(255, 255, 255, 1);
     box-shadow:
       0 0 0 2px rgba(255, 255, 255, 0.34),
@@ -16193,7 +16233,8 @@ body.menu-open {
 }
 
 @keyframes bonusCardSingleWhiteBlink {
-  0%, 100% {
+  0%,
+100% {
     border-color: rgba(255, 255, 255, 0.36);
   }
 
@@ -16204,10 +16245,10 @@ body.menu-open {
 
 @media (max-width: 860px) {
   #bonuses .partner-trophy,
-  #bonuses .partner-card:hover .partner-trophy,
-  #bonuses .partner-card:focus-within .partner-trophy,
-  #bonuses .partner-card:active .partner-trophy,
-  #bonuses .partner-card.is-touch-pressed .partner-trophy {
+#bonuses .partner-card:hover .partner-trophy,
+#bonuses .partner-card:focus-within .partner-trophy,
+#bonuses .partner-card:active .partner-trophy,
+#bonuses .partner-card.is-touch-pressed .partner-trophy {
     width: 22px !important;
     height: 22px !important;
   }
@@ -16232,8 +16273,8 @@ body.menu-open {
 
 @media (min-width: 861px) {
   #giveaways .giveaway-card:has(.enter-btn:hover),
-  #giveaways .giveaway-card:has(.enter-btn:active),
-  #giveaways .giveaway-card.is-cta-hovered {
+#giveaways .giveaway-card:has(.enter-btn:active),
+#giveaways .giveaway-card.is-cta-hovered {
     background:
       linear-gradient(160deg, rgba(255, 196, 74, 0.1), transparent 30%),
       linear-gradient(180deg, #1a1a1d 0%, #101012 100%) !important;
@@ -16245,8 +16286,8 @@ body.menu-open {
   }
 
   #giveaways .giveaway-card.is-cta-hovered .giveaway-image-wrapper,
-  #giveaways .giveaway-card:has(.enter-btn:hover) .giveaway-image-wrapper,
-  #giveaways .giveaway-card:has(.enter-btn:active) .giveaway-image-wrapper {
+#giveaways .giveaway-card:has(.enter-btn:hover) .giveaway-image-wrapper,
+#giveaways .giveaway-card:has(.enter-btn:active) .giveaway-image-wrapper {
     transform: none !important;
     filter: none !important;
     border-color: rgba(255, 178, 44, 0.36) !important;
@@ -16254,8 +16295,8 @@ body.menu-open {
   }
 
   #giveaways .giveaway-card.is-cta-hovered .giveaway-img.active,
-  #giveaways .giveaway-card:has(.enter-btn:hover) .giveaway-img.active,
-  #giveaways .giveaway-card:has(.enter-btn:active) .giveaway-img.active {
+#giveaways .giveaway-card:has(.enter-btn:hover) .giveaway-img.active,
+#giveaways .giveaway-card:has(.enter-btn:active) .giveaway-img.active {
     transform: none !important;
     filter: none !important;
   }
@@ -16388,7 +16429,8 @@ body.menu-open {
 }
 
 @keyframes bonusCardBrandBlink {
-  0%, 100% {
+  0%,
+100% {
     border-color: var(--bonus-border-color, rgba(255, 255, 255, 0.42));
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04);
   }
@@ -16485,7 +16527,8 @@ body.menu-open {
 }
 
 @keyframes bonusCardWhiteBlinkFinal {
-  0%, 100% {
+  0%,
+100% {
     border-color: rgba(255, 255, 255, 0.38);
     box-shadow: none;
   }
@@ -16645,7 +16688,8 @@ body.menu-open {
 }
 
 @keyframes bonusCardOwnColorBlink {
-  0%, 100% {
+  0%,
+100% {
     border-color: var(--bonus-hover-border, rgba(255, 255, 255, 0.58));
     box-shadow: none;
   }
@@ -16710,7 +16754,7 @@ body.menu-open {
 
 @media (max-width: 860px) {
   #bonuses .partner-card,
-  #bonuses .partner-card--locked {
+#bonuses .partner-card--locked {
     height: 364px !important;
     min-height: 364px !important;
     max-height: 364px !important;
@@ -16719,7 +16763,7 @@ body.menu-open {
 
 @media (max-width: 600px) {
   #bonuses .partner-card,
-  #bonuses .partner-card--locked {
+#bonuses .partner-card--locked {
     height: 352px !important;
     min-height: 352px !important;
     max-height: 352px !important;
@@ -17232,9 +17276,9 @@ body.menu-open {
 
 @media (max-width: 860px) {
   .main-nav > a:hover,
-  .main-nav > a:focus-visible,
-  .main-nav > a:active,
-  .main-nav > a.is-touch-pressed {
+.main-nav > a:focus-visible,
+.main-nav > a:active,
+.main-nav > a.is-touch-pressed {
     transform: translate3d(0, 0, 24px) scale(1.045) !important;
   }
 }
@@ -17257,16 +17301,16 @@ body.menu-open {
   }
 
   .plekis-1,
-  .plekis-2,
-  .plekis-3,
-  .plekis-4 {
+.plekis-2,
+.plekis-3,
+.plekis-4 {
     opacity: 0.24 !important;
   }
 
   .main-nav,
-  .main-nav.show,
-  .main-nav.show::after,
-  body.menu-open .main-header {
+.main-nav.show,
+.main-nav.show::after,
+body.menu-open .main-header {
     background:
       radial-gradient(circle at 82% 10%, rgba(255, 178, 44, 0.085), transparent 30%),
       radial-gradient(circle at 14% 84%, rgba(255, 207, 115, 0.055), transparent 28%),
@@ -17309,16 +17353,16 @@ body.menu-open {
   }
 
   .plekis-1,
-  .plekis-2,
-  .plekis-3,
-  .plekis-4 {
+.plekis-2,
+.plekis-3,
+.plekis-4 {
     opacity: 0.3 !important;
   }
 
   .main-nav,
-  .main-nav.show,
-  .main-nav.show::after,
-  body.menu-open .main-header {
+.main-nav.show,
+.main-nav.show::after,
+body.menu-open .main-header {
     background:
       radial-gradient(circle at 82% 10%, rgba(255, 178, 44, 0.12), transparent 30%),
       radial-gradient(circle at 14% 84%, rgba(255, 207, 115, 0.078), transparent 28%),
@@ -17401,7 +17445,7 @@ body.menu-open {
 
 @media (max-width: 860px) {
   .giveaway-arrow,
-  .giveaway-arrow:disabled {
+.giveaway-arrow:disabled {
     width: 42px !important;
     height: 42px !important;
     border-radius: 14px !important;
@@ -17422,11 +17466,11 @@ body.menu-open {
 
 @media (max-width: 860px) {
   .news-showcase__arrow,
-  .news-showcase__arrow:hover,
-  .news-showcase__arrow:focus-visible,
-  .news-showcase__arrow:active,
-  .news-showcase__arrow.is-touch-pressed,
-  .news-showcase__arrow:disabled {
+.news-showcase__arrow:hover,
+.news-showcase__arrow:focus-visible,
+.news-showcase__arrow:active,
+.news-showcase__arrow.is-touch-pressed,
+.news-showcase__arrow:disabled {
     font-size: 18px !important;
   }
 }
@@ -17564,11 +17608,11 @@ body.menu-open {
 
 @media (max-width: 860px) {
   .news-showcase__arrow,
-  .news-showcase__arrow:hover,
-  .news-showcase__arrow:focus-visible,
-  .news-showcase__arrow:active,
-  .news-showcase__arrow.is-touch-pressed,
-  .news-showcase__arrow:disabled {
+.news-showcase__arrow:hover,
+.news-showcase__arrow:focus-visible,
+.news-showcase__arrow:active,
+.news-showcase__arrow.is-touch-pressed,
+.news-showcase__arrow:disabled {
     top: auto !important;
     bottom: 8px !important;
     width: 38px !important;
@@ -17581,11 +17625,11 @@ body.menu-open {
 
 @media (max-width: 600px) {
   .news-showcase__arrow,
-  .news-showcase__arrow:hover,
-  .news-showcase__arrow:focus-visible,
-  .news-showcase__arrow:active,
-  .news-showcase__arrow.is-touch-pressed,
-  .news-showcase__arrow:disabled {
+.news-showcase__arrow:hover,
+.news-showcase__arrow:focus-visible,
+.news-showcase__arrow:active,
+.news-showcase__arrow.is-touch-pressed,
+.news-showcase__arrow:disabled {
     bottom: 7px !important;
     width: 36px !important;
     height: 36px !important;
@@ -17639,7 +17683,8 @@ body.menu-open {
 }
 
 @keyframes bonusFullFramePulse {
-  0%, 100% {
+  0%,
+100% {
     box-shadow:
       inset 0 0 0 2px var(--bonus-hover-border, rgba(255, 255, 255, 0.64)),
       inset 0 0 0 1px var(--bonus-hover-border, rgba(255, 255, 255, 0.22)),
@@ -17671,7 +17716,8 @@ body.menu-open {
 }
 
 @keyframes bonusFullFramePulseThick {
-  0%, 100% {
+  0%,
+100% {
     box-shadow:
       inset 0 0 0 3px var(--bonus-hover-border, rgba(255, 255, 255, 0.64)),
       inset 0 0 0 1px var(--bonus-hover-border, rgba(255, 255, 255, 0.22)),
@@ -17756,9 +17802,9 @@ body.menu-open {
 
 @media (max-width: 860px) {
   .main-nav > a:hover,
-  .main-nav > a:focus-visible,
-  .main-nav > a:active,
-  .main-nav > a.is-touch-pressed {
+.main-nav > a:focus-visible,
+.main-nav > a:active,
+.main-nav > a.is-touch-pressed {
     transform: translate3d(0, 0, 10px) scale(1.025) !important;
   }
 }
@@ -17982,7 +18028,8 @@ canvas#stars,
 }
 
 @keyframes bonusFrameOpacityOnly {
-  0%, 100% { opacity: 0.72; }
+  0%,
+100% { opacity: 0.72; }
   50% { opacity: 1; }
 }
 
@@ -18218,7 +18265,7 @@ canvas#stars,
 }
 
 .promo-copy-btn.is-copied .promo-copy-btn__label::before {
-  content: "COPIED!";
+  content: "Copied!";
 }
 
 .promo-copy-btn.is-error {
@@ -18241,13 +18288,13 @@ canvas#stars,
   }
 
   .promo-copy-btn:hover,
-  .promo-copy-btn:focus-visible {
+.promo-copy-btn:focus-visible {
     width: 92px !important;
     min-width: 92px !important;
   }
 
   .promo-copy-btn.is-copied,
-  .promo-copy-btn.is-error {
+.promo-copy-btn.is-error {
     width: 86px !important;
     min-width: 86px !important;
   }
@@ -18266,13 +18313,13 @@ canvas#stars,
   }
 
   .promo-copy-btn:hover,
-  .promo-copy-btn:focus-visible {
+.promo-copy-btn:focus-visible {
     width: 84px !important;
     min-width: 84px !important;
   }
 
   .promo-copy-btn.is-copied,
-  .promo-copy-btn.is-error {
+.promo-copy-btn.is-error {
     width: 78px !important;
     min-width: 78px !important;
   }
@@ -18406,14 +18453,14 @@ canvas#stars,
 
 @media (max-width: 860px) {
   .main-nav > a.nav-link--sale,
-  .main-footer a.footer-nav-link--sale {
+.main-footer a.footer-nav-link--sale {
     gap: 5px !important;
   }
 
   .main-nav > a[href="#news"] .nav-sale-tag,
-  .main-footer a.footer-nav-link[href="#news"] .footer-sale-tag,
-  .main-nav > a.nav-link--sale[href^="https://videopower-shop"] .nav-sale-tag,
-  .main-footer a.footer-nav-link--sale[href^="https://videopower-shop"] .footer-sale-tag {
+.main-footer a.footer-nav-link[href="#news"] .footer-sale-tag,
+.main-nav > a.nav-link--sale[href^="https://videopower-shop"] .nav-sale-tag,
+.main-footer a.footer-nav-link--sale[href^="https://videopower-shop"] .footer-sale-tag {
     min-height: 16px !important;
     padding: 3px 7px 3px 9px !important;
     font-size: 4.7px !important;
@@ -18491,8 +18538,8 @@ html.is-loading .page-loader__logo,
 
 @media (max-width: 860px) {
   body.is-loading .page-loader__logo,
-  html.is-loading .page-loader__logo,
-  .page-loader__logo {
+html.is-loading .page-loader__logo,
+.page-loader__logo {
     width: clamp(134px, 38vw, 178px) !important;
     height: clamp(134px, 38vw, 178px) !important;
   }
@@ -18516,9 +18563,9 @@ html.is-loading .page-loader__logo,
 
 @media (max-width: 860px) {
   body.is-loading .page-loader__logo,
-  html.is-loading .page-loader__logo,
-  .page-loader:not(.is-hidden) .page-loader__logo,
-  .page-loader.is-finishing .page-loader__logo {
+html.is-loading .page-loader__logo,
+.page-loader:not(.is-hidden) .page-loader__logo,
+.page-loader.is-finishing .page-loader__logo {
     width: 178px !important;
     min-width: 178px !important;
     max-width: 178px !important;
@@ -18700,9 +18747,9 @@ html.is-loading .page-loader__logo,
 
 @media (max-width: 860px) {
   body.is-loading .page-loader__logo,
-  html.is-loading .page-loader__logo,
-  .page-loader:not(.is-hidden) .page-loader__logo,
-  .page-loader.is-finishing .page-loader__logo {
+html.is-loading .page-loader__logo,
+.page-loader:not(.is-hidden) .page-loader__logo,
+.page-loader.is-finishing .page-loader__logo {
     width: 178px !important;
     min-width: 178px !important;
     max-width: 178px !important;
@@ -18973,7 +19020,7 @@ html.is-loading .page-loader__logo,
   }
 
   .merch-latest__stage,
-  .merch-latest__panel {
+.merch-latest__panel {
     min-height: 360px;
   }
 
@@ -20344,14 +20391,14 @@ body.is-loading .page-loader {
   }
 
   #bonuses .bonuses-reveal-title h2,
-  #news .news-team-heading h2,
-  #videos .videos-title h2 {
+#news .news-team-heading h2,
+#videos .videos-title h2 {
     font-size: clamp(28px, 8.5vw, 42px) !important;
   }
 
   #bonuses .bonuses-reveal-subtitle,
-  #news .news-team-heading p,
-  #videos .videos-subtitle {
+#news .news-team-heading p,
+#videos .videos-subtitle {
     font-size: 13px !important;
     line-height: 1.6 !important;
   }
@@ -20380,10 +20427,10 @@ body.is-loading .page-loader {
   }
 
   #videos .video-card,
-  #videos .video-card:hover,
-  #videos .video-card:focus-visible,
-  #videos .video-card:active,
-  #videos .video-card.is-touch-pressed {
+#videos .video-card:hover,
+#videos .video-card:focus-visible,
+#videos .video-card:active,
+#videos .video-card.is-touch-pressed {
     width: min(100%, 390px) !important;
     flex-basis: 390px !important;
     height: 326px !important;
@@ -20407,10 +20454,10 @@ body.is-loading .page-loader {
 
 @media (max-width: 600px) {
   #videos .video-card,
-  #videos .video-card:hover,
-  #videos .video-card:focus-visible,
-  #videos .video-card:active,
-  #videos .video-card.is-touch-pressed {
+#videos .video-card:hover,
+#videos .video-card:focus-visible,
+#videos .video-card:active,
+#videos .video-card.is-touch-pressed {
     height: 310px !important;
     min-height: 310px !important;
     max-height: 310px !important;
@@ -20460,8 +20507,8 @@ body.is-loading .page-loader {
 
 @media (min-width: 861px) {
   #bonuses .bonuses-reveal-title,
-  #bonuses .news-team-heading,
-  #bonuses .videos-heading-row {
+#bonuses .news-team-heading,
+#bonuses .videos-heading-row {
     margin-bottom: 8px !important;
   }
 
@@ -20640,10 +20687,10 @@ body.is-loading .page-loader {
   }
 
   #bonuses .bonus-reward-card,
-  #bonuses .bonus-reward-card:hover,
-  #bonuses .bonus-reward-card:focus-within,
-  #bonuses .bonus-reward-card:active,
-  #bonuses .bonus-reward-card.is-touch-pressed {
+#bonuses .bonus-reward-card:hover,
+#bonuses .bonus-reward-card:focus-within,
+#bonuses .bonus-reward-card:active,
+#bonuses .bonus-reward-card.is-touch-pressed {
     min-height: 286px !important;
     padding-top: 42px !important;
   }
@@ -20664,7 +20711,7 @@ body.is-loading .page-loader {
   }
 
   #bonuses .bonus-reward-card:hover .bonus-reward-card__body::before,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__body::before {
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__body::before {
     opacity: 0.9 !important;
   }
 
@@ -20684,7 +20731,7 @@ body.is-loading .page-loader {
   }
 
   #bonuses .bonus-reward-card__item--hypedrop,
-  #bonuses .bonus-reward-card__item--skinclub {
+#bonuses .bonus-reward-card__item--skinclub {
     width: min(80%, 228px) !important;
     max-height: 150px !important;
   }
@@ -20716,10 +20763,10 @@ body.is-loading .page-loader {
   }
 
   #bonuses .bonus-reward-card__button,
-  #bonuses .bonus-reward-card__button:hover,
-  #bonuses .bonus-reward-card__button:focus-visible,
-  #bonuses .bonus-reward-card__button:active,
-  #bonuses .bonus-reward-card__button.is-touch-pressed {
+#bonuses .bonus-reward-card__button:hover,
+#bonuses .bonus-reward-card__button:focus-visible,
+#bonuses .bonus-reward-card__button:active,
+#bonuses .bonus-reward-card__button.is-touch-pressed {
     min-height: 36px !important;
     padding: 9px 16px !important;
   }
@@ -20958,10 +21005,10 @@ body.is-loading .page-loader {
   }
 
   #bonuses .bonus-reward-card,
-  #bonuses .bonus-reward-card:hover,
-  #bonuses .bonus-reward-card:focus-within,
-  #bonuses .bonus-reward-card:active,
-  #bonuses .bonus-reward-card.is-touch-pressed {
+#bonuses .bonus-reward-card:hover,
+#bonuses .bonus-reward-card:focus-within,
+#bonuses .bonus-reward-card:active,
+#bonuses .bonus-reward-card.is-touch-pressed {
     min-height: 352px !important;
     padding-top: 76px !important;
   }
@@ -20983,10 +21030,10 @@ body.is-loading .page-loader {
   }
 
   #bonuses .bonus-reward-card__button,
-  #bonuses .bonus-reward-card__button:hover,
-  #bonuses .bonus-reward-card__button:focus-visible,
-  #bonuses .bonus-reward-card__button:active,
-  #bonuses .bonus-reward-card__button.is-touch-pressed {
+#bonuses .bonus-reward-card__button:hover,
+#bonuses .bonus-reward-card__button:focus-visible,
+#bonuses .bonus-reward-card__button:active,
+#bonuses .bonus-reward-card__button.is-touch-pressed {
     min-height: 36px !important;
     padding: 9px 14px !important;
   }
@@ -21247,12 +21294,12 @@ html.loader-ready .page-loader__panel {
   }
 
   #videos .video-date,
-  #videos .video-length {
+#videos .video-length {
     font-size: 11px !important;
   }
 
   #videos .video-date .clock-icon,
-  #videos .video-length .duration-icon {
+#videos .video-length .duration-icon {
     width: 16px !important;
     height: 16px !important;
   }
@@ -21283,10 +21330,10 @@ html.loader-ready .page-loader__panel {
   }
 
   #bonuses .bonus-reward-card,
-  #bonuses .bonus-reward-card:hover,
-  #bonuses .bonus-reward-card:focus-within,
-  #bonuses .bonus-reward-card:active,
-  #bonuses .bonus-reward-card.is-touch-pressed {
+#bonuses .bonus-reward-card:hover,
+#bonuses .bonus-reward-card:focus-within,
+#bonuses .bonus-reward-card:active,
+#bonuses .bonus-reward-card.is-touch-pressed {
     min-height: 326px !important;
     padding-top: 66px !important;
   }
@@ -21512,12 +21559,12 @@ html.loader-ready .page-loader__panel {
 
 @media (prefers-reduced-motion: reduce) {
   #videos .videos-heading-row.reveal-on-scroll,
-  #videos .videos-title.reveal-on-scroll,
-  #videos .videos-subtitle.reveal-on-scroll,
-  #videos .video-card.reveal-on-scroll,
-  #news .news-team-heading.reveal-on-scroll,
-  #news .news-team-panel.reveal-on-scroll,
-  #news .news-team-member.reveal-on-scroll {
+#videos .videos-title.reveal-on-scroll,
+#videos .videos-subtitle.reveal-on-scroll,
+#videos .video-card.reveal-on-scroll,
+#news .news-team-heading.reveal-on-scroll,
+#news .news-team-panel.reveal-on-scroll,
+#news .news-team-member.reveal-on-scroll {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;
@@ -21655,12 +21702,12 @@ html.loader-ready .page-loader__panel {
 
 @media (max-width: 860px) {
   #bonuses .bonuses-reveal-title h2,
-  #videos .videos-title h2 {
+#videos .videos-title h2 {
     font-size: clamp(27px, 8.4vw, 38px) !important;
   }
 
   #bonuses .bonuses-reveal-subtitle,
-  #videos .videos-subtitle {
+#videos .videos-subtitle {
     font-size: clamp(13px, 3.7vw, 15px) !important;
     line-height: 1.62 !important;
   }
@@ -21825,18 +21872,18 @@ html.loader-ready .page-loader__panel {
 
 @media (max-width: 860px) {
   #bonuses .bonus-reward-card,
-  #bonuses .bonus-reward-card:hover,
-  #bonuses .bonus-reward-card:focus-within,
-  #bonuses .bonus-reward-card:active,
-  #bonuses .bonus-reward-card.is-touch-pressed {
+#bonuses .bonus-reward-card:hover,
+#bonuses .bonus-reward-card:focus-within,
+#bonuses .bonus-reward-card:active,
+#bonuses .bonus-reward-card.is-touch-pressed {
     min-height: 340px !important;
   }
 
   #bonuses .bonus-reward-card__body,
-  #bonuses .bonus-reward-card:hover .bonus-reward-card__body,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__body,
-  #bonuses .bonus-reward-card:active .bonus-reward-card__body,
-  #bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__body {
+#bonuses .bonus-reward-card:hover .bonus-reward-card__body,
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__body,
+#bonuses .bonus-reward-card:active .bonus-reward-card__body,
+#bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__body {
     min-height: 286px !important;
   }
 }
@@ -22251,11 +22298,11 @@ body :where(input, textarea, input *, textarea *) {
   }
 
   .main-nav > a:hover,
-  .main-nav > a:focus-visible,
-  .main-nav > a:active,
-  .main-nav > a.is-active,
-  .main-nav > a[aria-current="page"],
-  .main-nav > a.is-touch-pressed {
+.main-nav > a:focus-visible,
+.main-nav > a:active,
+.main-nav > a.is-active,
+.main-nav > a[aria-current="page"],
+.main-nav > a.is-touch-pressed {
     color: #ffa914 !important;
     -webkit-text-fill-color: #ffa914 !important;
     transform: none !important;
@@ -22804,9 +22851,9 @@ body .main-header .main-nav > a[href="https://videopowercodes.com/"][aria-curren
   }
 
   #bonuses .bonus-bookmark,
-  #bonuses .bonus-bookmark:hover,
-  #bonuses .bonus-bookmark:focus-visible,
-  #bonuses .bonus-bookmark.is-saved {
+#bonuses .bonus-bookmark:hover,
+#bonuses .bonus-bookmark:focus-visible,
+#bonuses .bonus-bookmark.is-saved {
     top: calc(var(--bonus-body-top, 68px) + 10px) !important;
     right: 16px !important;
   }
@@ -22824,9 +22871,9 @@ body .main-header .main-nav > a[href="https://videopowercodes.com/"][aria-curren
 
 @media (max-width: 860px) {
   #bonuses .bonus-reward-card__body .bonus-bookmark,
-  #bonuses .bonus-reward-card__body .bonus-bookmark:hover,
-  #bonuses .bonus-reward-card__body .bonus-bookmark:focus-visible,
-  #bonuses .bonus-reward-card__body .bonus-bookmark.is-saved {
+#bonuses .bonus-reward-card__body .bonus-bookmark:hover,
+#bonuses .bonus-reward-card__body .bonus-bookmark:focus-visible,
+#bonuses .bonus-reward-card__body .bonus-bookmark.is-saved {
     top: 12px !important;
     right: 12px !important;
   }
@@ -23418,35 +23465,35 @@ body .main-header .main-nav > a[href="https://videopowercodes.com/"][aria-curren
   }
 
   #bonuses .bonuses-heading__plain,
-  #bonuses .bonuses-heading__code {
+#bonuses .bonuses-heading__code {
     display: inline-block !important;
     line-height: inherit !important;
   }
 
   #bonuses .bonus-reward-card,
-  #bonuses .bonus-reward-card:hover,
-  #bonuses .bonus-reward-card:focus-within,
-  #bonuses .bonus-reward-card:active,
-  #bonuses .bonus-reward-card.is-touch-pressed {
+#bonuses .bonus-reward-card:hover,
+#bonuses .bonus-reward-card:focus-within,
+#bonuses .bonus-reward-card:active,
+#bonuses .bonus-reward-card.is-touch-pressed {
     height: 340px !important;
     min-height: 340px !important;
     max-height: 340px !important;
   }
 
   #bonuses .bonus-reward-card__body,
-  #bonuses .bonus-reward-card:hover .bonus-reward-card__body,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__body,
-  #bonuses .bonus-reward-card:active .bonus-reward-card__body,
-  #bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__body {
+#bonuses .bonus-reward-card:hover .bonus-reward-card__body,
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__body,
+#bonuses .bonus-reward-card:active .bonus-reward-card__body,
+#bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__body {
     height: 286px !important;
     min-height: 286px !important;
     max-height: 286px !important;
   }
 
   .main-nav,
-  .main-nav.show,
-  .main-nav.show::after,
-  body.menu-open .main-header {
+.main-nav.show,
+.main-nav.show::after,
+body.menu-open .main-header {
     background:
       linear-gradient(180deg, #0d0d10 0%, #09090b 100%) !important;
   }
@@ -23577,9 +23624,9 @@ body.menu-open .saved-bonuses__panel {
 /* ===== 2026-05-30 mobile header/menu reset and stable bonus hover ===== */
 @media (max-width: 860px) {
   .main-nav,
-  .main-nav.show,
-  .main-nav.show::after,
-  body.menu-open .main-header {
+.main-nav.show,
+.main-nav.show::after,
+body.menu-open .main-header {
     background:
       linear-gradient(180deg, #0d0d10 0%, #09090b 100%) !important;
   }
@@ -23600,34 +23647,34 @@ body.menu-open .saved-bonuses__panel {
   }
 
   #bonuses .bonus-reward-card:hover,
-  #bonuses .bonus-reward-card:focus-within,
-  #bonuses .bonus-reward-card:active,
-  #bonuses .bonus-reward-card.is-touch-pressed {
+#bonuses .bonus-reward-card:focus-within,
+#bonuses .bonus-reward-card:active,
+#bonuses .bonus-reward-card.is-touch-pressed {
     transform: none !important;
   }
 
   #bonuses .bonus-reward-card:hover .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__item,
-  #bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__item {
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__item,
+#bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__item {
     transform: translate3d(-50%, -10px, 0) !important;
   }
 
   #bonuses .bonus-reward-card:active .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-reward-card__button:hover) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-reward-card__button:focus-visible) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-reward-card__button:active) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-reward-card__button.is-touch-pressed) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card.is-claiming .bonus-reward-card__item {
+#bonuses .bonus-reward-card:has(.bonus-reward-card__button:hover) .bonus-reward-card__item,
+#bonuses .bonus-reward-card:has(.bonus-reward-card__button:focus-visible) .bonus-reward-card__item,
+#bonuses .bonus-reward-card:has(.bonus-reward-card__button:active) .bonus-reward-card__item,
+#bonuses .bonus-reward-card:has(.bonus-reward-card__button.is-touch-pressed) .bonus-reward-card__item,
+#bonuses .bonus-reward-card.is-claiming .bonus-reward-card__item {
     transform: translate3d(-50%, 0, 0) !important;
   }
 
   #bonuses .bonuses-reveal-title h2,
-  #news .news-team-heading h2 {
+#news .news-team-heading h2 {
     font-size: clamp(25px, 7.7vw, 36px) !important;
   }
 
   #bonuses .bonuses-reveal-subtitle,
-  #news .news-team-heading p {
+#news .news-team-heading p {
     font-size: clamp(13px, 3.7vw, 15px) !important;
     line-height: 1.62 !important;
   }
@@ -23636,9 +23683,9 @@ body.menu-open .saved-bonuses__panel {
 /* ===== 2026-05-31 mobile hamburger and compact bonus card layout ===== */
 @media (max-width: 860px) {
   .hamburger,
-  .hamburger:hover,
-  .hamburger:focus-visible,
-  .hamburger:active {
+.hamburger:hover,
+.hamburger:focus-visible,
+.hamburger:active {
     width: 48px !important;
     height: 36px !important;
     padding: 5px 6px !important;
@@ -23653,9 +23700,9 @@ body.menu-open .saved-bonuses__panel {
   }
 
   .hamburger span,
-  .hamburger span:nth-child(1),
-  .hamburger span:nth-child(2),
-  .hamburger span:nth-child(3) {
+.hamburger span:nth-child(1),
+.hamburger span:nth-child(2),
+.hamburger span:nth-child(3) {
     width: 32px !important;
     min-width: 32px !important;
     max-width: 32px !important;
@@ -23667,10 +23714,10 @@ body.menu-open .saved-bonuses__panel {
   }
 
   .hamburger.active,
-  .hamburger.active:hover,
-  .hamburger.active:focus-visible,
-  .hamburger.active:active,
-  body.menu-open .hamburger {
+.hamburger.active:hover,
+.hamburger.active:focus-visible,
+.hamburger.active:active,
+body.menu-open .hamburger {
     border-color: rgba(255, 169, 20, 0.62) !important;
     background:
       linear-gradient(180deg, rgba(255, 169, 20, 0.18), rgba(255, 169, 20, 0.055)) !important;
@@ -23680,7 +23727,7 @@ body.menu-open .saved-bonuses__panel {
   }
 
   .hamburger.active span,
-  body.menu-open .hamburger span {
+body.menu-open .hamburger span {
     background-color: #ffa914 !important;
   }
 
@@ -23690,23 +23737,23 @@ body.menu-open .saved-bonuses__panel {
   }
 
   #bonuses .bonus-reward-card,
-  #bonuses .bonus-reward-card:hover,
-  #bonuses .bonus-reward-card:focus-within,
-  #bonuses .bonus-reward-card:active,
-  #bonuses .bonus-reward-card.is-touch-pressed,
-  #bonuses .bonus-reward-card__body,
-  #bonuses .bonus-reward-card:hover .bonus-reward-card__body,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__body,
-  #bonuses .bonus-reward-card:active .bonus-reward-card__body,
-  #bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__body {
+#bonuses .bonus-reward-card:hover,
+#bonuses .bonus-reward-card:focus-within,
+#bonuses .bonus-reward-card:active,
+#bonuses .bonus-reward-card.is-touch-pressed,
+#bonuses .bonus-reward-card__body,
+#bonuses .bonus-reward-card:hover .bonus-reward-card__body,
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__body,
+#bonuses .bonus-reward-card:active .bonus-reward-card__body,
+#bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__body {
     transform: none !important;
   }
 
   #bonuses .bonus-reward-card,
-  #bonuses .bonus-reward-card:hover,
-  #bonuses .bonus-reward-card:focus-within,
-  #bonuses .bonus-reward-card:active,
-  #bonuses .bonus-reward-card.is-touch-pressed {
+#bonuses .bonus-reward-card:hover,
+#bonuses .bonus-reward-card:focus-within,
+#bonuses .bonus-reward-card:active,
+#bonuses .bonus-reward-card.is-touch-pressed {
     height: 336px !important;
     min-height: 336px !important;
     max-height: 336px !important;
@@ -23714,10 +23761,10 @@ body.menu-open .saved-bonuses__panel {
   }
 
   #bonuses .bonus-reward-card__body,
-  #bonuses .bonus-reward-card:hover .bonus-reward-card__body,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__body,
-  #bonuses .bonus-reward-card:active .bonus-reward-card__body,
-  #bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__body {
+#bonuses .bonus-reward-card:hover .bonus-reward-card__body,
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__body,
+#bonuses .bonus-reward-card:active .bonus-reward-card__body,
+#bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__body {
     height: 286px !important;
     min-height: 286px !important;
     max-height: 286px !important;
@@ -23750,17 +23797,17 @@ body.menu-open .saved-bonuses__panel {
   }
 
   #bonuses .bonus-reward-card:hover .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__item,
-  #bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-reward-card__button:hover) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-reward-card__button:focus-visible) .bonus-reward-card__item {
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__item,
+#bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__item,
+#bonuses .bonus-reward-card:has(.bonus-reward-card__button:hover) .bonus-reward-card__item,
+#bonuses .bonus-reward-card:has(.bonus-reward-card__button:focus-visible) .bonus-reward-card__item {
     transform: translate3d(-50%, -9px, 0) !important;
   }
 
   #bonuses .bonus-reward-card:active .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-reward-card__button:active) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-reward-card__button.is-touch-pressed) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card.is-claiming .bonus-reward-card__item {
+#bonuses .bonus-reward-card:has(.bonus-reward-card__button:active) .bonus-reward-card__item,
+#bonuses .bonus-reward-card:has(.bonus-reward-card__button.is-touch-pressed) .bonus-reward-card__item,
+#bonuses .bonus-reward-card.is-claiming .bonus-reward-card__item {
     transform: translate3d(-50%, 0, 0) !important;
   }
 
@@ -23788,10 +23835,10 @@ body.menu-open .saved-bonuses__panel {
   }
 
   #bonuses .bonus-reward-card__button,
-  #bonuses .bonus-reward-card__button:hover,
-  #bonuses .bonus-reward-card__button:focus-visible,
-  #bonuses .bonus-reward-card__button:active,
-  #bonuses .bonus-reward-card__button.is-touch-pressed {
+#bonuses .bonus-reward-card__button:hover,
+#bonuses .bonus-reward-card__button:focus-visible,
+#bonuses .bonus-reward-card__button:active,
+#bonuses .bonus-reward-card__button.is-touch-pressed {
     min-height: 40px !important;
     padding: 10px 14px !important;
   }
@@ -23800,17 +23847,17 @@ body.menu-open .saved-bonuses__panel {
 /* ===== 2026-05-31 mobile bookmark panel and precise bonus hover ===== */
 @media (max-width: 860px) {
   .hamburger.active,
-  .hamburger.active:hover,
-  .hamburger.active:focus-visible,
-  .hamburger.active:active,
-  body.menu-open .hamburger {
+.hamburger.active:hover,
+.hamburger.active:focus-visible,
+.hamburger.active:active,
+body.menu-open .hamburger {
     border-color: transparent !important;
     background: transparent !important;
     box-shadow: none !important;
   }
 
   .hamburger.active span,
-  body.menu-open .hamburger span {
+body.menu-open .hamburger span {
     background-color: #ffa914 !important;
   }
 
@@ -23836,9 +23883,9 @@ body.menu-open .saved-bonuses__panel {
   }
 
   body.menu-open .saved-bonuses__clear,
-  body.menu-open .saved-bonuses__clear:hover,
-  body.menu-open .saved-bonuses__clear:focus-visible,
-  body.menu-open .saved-bonuses__clear:active {
+body.menu-open .saved-bonuses__clear:hover,
+body.menu-open .saved-bonuses__clear:focus-visible,
+body.menu-open .saved-bonuses__clear:active {
     width: 90px !important;
     min-width: 90px !important;
     max-width: 90px !important;
@@ -23851,9 +23898,9 @@ body.menu-open .saved-bonuses__panel {
   }
 
   body.menu-open .saved-bonuses__close,
-  body.menu-open .saved-bonuses__close:hover,
-  body.menu-open .saved-bonuses__close:focus-visible,
-  body.menu-open .saved-bonuses__close:active {
+body.menu-open .saved-bonuses__close:hover,
+body.menu-open .saved-bonuses__close:focus-visible,
+body.menu-open .saved-bonuses__close:active {
     width: 68px !important;
     min-width: 68px !important;
     max-width: 68px !important;
@@ -23878,9 +23925,9 @@ body.menu-open .saved-bonuses__panel {
   }
 
   body.menu-open .saved-bonuses__item-open,
-  body.menu-open .saved-bonuses__item-open:hover,
-  body.menu-open .saved-bonuses__item-open:focus-visible,
-  body.menu-open .saved-bonuses__item-open:active {
+body.menu-open .saved-bonuses__item-open:hover,
+body.menu-open .saved-bonuses__item-open:focus-visible,
+body.menu-open .saved-bonuses__item-open:active {
     width: 52px !important;
     min-width: 52px !important;
     max-width: 52px !important;
@@ -23892,9 +23939,9 @@ body.menu-open .saved-bonuses__panel {
   }
 
   body.menu-open .saved-bonuses__item-remove,
-  body.menu-open .saved-bonuses__item-remove:hover,
-  body.menu-open .saved-bonuses__item-remove:focus-visible,
-  body.menu-open .saved-bonuses__item-remove:active {
+body.menu-open .saved-bonuses__item-remove:hover,
+body.menu-open .saved-bonuses__item-remove:focus-visible,
+body.menu-open .saved-bonuses__item-remove:active {
     width: 66px !important;
     min-width: 66px !important;
     max-width: 66px !important;
@@ -23906,8 +23953,8 @@ body.menu-open .saved-bonuses__panel {
   }
 
   #bonuses .bonus-reward-card:hover .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__item,
-  #bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__item {
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__item,
+#bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__item {
     transform: translate3d(-50%, 0, 0) !important;
   }
 
@@ -23916,10 +23963,10 @@ body.menu-open .saved-bonuses__panel {
   }
 
   #bonuses .bonus-reward-card:has(.bonus-bookmark:hover) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-bookmark:focus-visible) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-bookmark:active) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-reward-card__button:active) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card.is-claiming .bonus-reward-card__item {
+#bonuses .bonus-reward-card:has(.bonus-bookmark:focus-visible) .bonus-reward-card__item,
+#bonuses .bonus-reward-card:has(.bonus-bookmark:active) .bonus-reward-card__item,
+#bonuses .bonus-reward-card:has(.bonus-reward-card__button:active) .bonus-reward-card__item,
+#bonuses .bonus-reward-card.is-claiming .bonus-reward-card__item {
     transform: translate3d(-50%, 0, 0) !important;
   }
 }
@@ -23979,10 +24026,10 @@ body.menu-open .saved-bonuses__panel {
   }
 
   body.menu-open .saved-bonuses__toggle,
-  body.menu-open .saved-bonuses__toggle:hover,
-  body.menu-open .saved-bonuses__toggle:focus-visible,
-  body.menu-open .saved-bonuses__toggle:active,
-  body.menu-open .saved-bonuses.is-open .saved-bonuses__toggle {
+body.menu-open .saved-bonuses__toggle:hover,
+body.menu-open .saved-bonuses__toggle:focus-visible,
+body.menu-open .saved-bonuses__toggle:active,
+body.menu-open .saved-bonuses.is-open .saved-bonuses__toggle {
     width: min(100%, 312px) !important;
     min-height: 64px !important;
     padding: 12px 14px !important;
@@ -24006,9 +24053,9 @@ body.menu-open .saved-bonuses__panel {
   }
 
   body.menu-open .saved-bonuses__label,
-  body.menu-open .saved-bonuses__toggle:hover .saved-bonuses__label,
-  body.menu-open .saved-bonuses__toggle:focus-visible .saved-bonuses__label,
-  body.menu-open .saved-bonuses__toggle:active .saved-bonuses__label {
+body.menu-open .saved-bonuses__toggle:hover .saved-bonuses__label,
+body.menu-open .saved-bonuses__toggle:focus-visible .saved-bonuses__label,
+body.menu-open .saved-bonuses__toggle:active .saved-bonuses__label {
     flex: 1 1 auto !important;
     min-width: 0 !important;
     color: #ffffff !important;
@@ -24069,18 +24116,18 @@ body.menu-open .saved-bonuses__panel {
   }
 
   body.menu-open .saved-bonuses__clear,
-  body.menu-open .saved-bonuses__clear:hover,
-  body.menu-open .saved-bonuses__clear:focus-visible,
-  body.menu-open .saved-bonuses__clear:active {
+body.menu-open .saved-bonuses__clear:hover,
+body.menu-open .saved-bonuses__clear:focus-visible,
+body.menu-open .saved-bonuses__clear:active {
     width: 88px !important;
     min-width: 88px !important;
     max-width: 88px !important;
   }
 
   body.menu-open .saved-bonuses__close,
-  body.menu-open .saved-bonuses__close:hover,
-  body.menu-open .saved-bonuses__close:focus-visible,
-  body.menu-open .saved-bonuses__close:active {
+body.menu-open .saved-bonuses__close:hover,
+body.menu-open .saved-bonuses__close:focus-visible,
+body.menu-open .saved-bonuses__close:active {
     width: 66px !important;
     min-width: 66px !important;
     max-width: 66px !important;
@@ -24095,9 +24142,9 @@ body.menu-open .saved-bonuses__panel {
   }
 
   body.menu-open .saved-bonuses__clear,
-  body.menu-open .saved-bonuses__clear:hover,
-  body.menu-open .saved-bonuses__clear:focus-visible,
-  body.menu-open .saved-bonuses__clear:active {
+body.menu-open .saved-bonuses__clear:hover,
+body.menu-open .saved-bonuses__clear:focus-visible,
+body.menu-open .saved-bonuses__clear:active {
     width: 82px !important;
     min-width: 82px !important;
     max-width: 82px !important;
@@ -24105,9 +24152,9 @@ body.menu-open .saved-bonuses__panel {
   }
 
   body.menu-open .saved-bonuses__close,
-  body.menu-open .saved-bonuses__close:hover,
-  body.menu-open .saved-bonuses__close:focus-visible,
-  body.menu-open .saved-bonuses__close:active {
+body.menu-open .saved-bonuses__close:hover,
+body.menu-open .saved-bonuses__close:focus-visible,
+body.menu-open .saved-bonuses__close:active {
     width: 62px !important;
     min-width: 62px !important;
     max-width: 62px !important;
@@ -24149,10 +24196,10 @@ body.menu-open .saved-bonuses__panel {
 
 @media (max-width: 860px) {
   #bonuses .bonus-reward-card:has(.bonus-bookmark:hover) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-bookmark:focus-visible) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-bookmark:active) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-bookmark.is-touch-pressed) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-bookmark.is-saved:focus) .bonus-reward-card__item {
+#bonuses .bonus-reward-card:has(.bonus-bookmark:focus-visible) .bonus-reward-card__item,
+#bonuses .bonus-reward-card:has(.bonus-bookmark:active) .bonus-reward-card__item,
+#bonuses .bonus-reward-card:has(.bonus-bookmark.is-touch-pressed) .bonus-reward-card__item,
+#bonuses .bonus-reward-card:has(.bonus-bookmark.is-saved:focus) .bonus-reward-card__item {
     transform: translate3d(-50%, 0, 0) !important;
   }
 }
@@ -24230,13 +24277,13 @@ html {
 
 @media (min-width: 861px) {
   html,
-  body {
+body {
     scrollbar-width: none !important;
     -ms-overflow-style: none !important;
   }
 
   html::-webkit-scrollbar,
-  body::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: 0 !important;
     height: 0 !important;
     display: none !important;
@@ -24256,9 +24303,9 @@ html {
   }
 
   .vp-scrollbar.is-hidden,
-  body.menu-open .vp-scrollbar,
-  body.is-loading .vp-scrollbar,
-  body.is-entering .vp-scrollbar {
+body.menu-open .vp-scrollbar,
+body.is-loading .vp-scrollbar,
+body.is-entering .vp-scrollbar {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -24277,7 +24324,7 @@ html {
   }
 
   .vp-scrollbar__thumb:hover,
-  .vp-scrollbar__thumb.is-dragging {
+.vp-scrollbar__thumb.is-dragging {
     background: #ffa914;
   }
 }
@@ -24365,9 +24412,9 @@ html {
 
 @media (max-width: 600px) {
   .hero-wordmark,
-  .hero-wordmark:hover,
-  .hero-wordmark:focus,
-  .hero-wordmark:active {
+.hero-wordmark:hover,
+.hero-wordmark:focus,
+.hero-wordmark:active {
     font-size: clamp(34px, 11vw, 48px) !important;
   }
 
@@ -24479,9 +24526,9 @@ html {
 
 @media (max-width: 600px) {
   .hero-wordmark,
-  .hero-wordmark:hover,
-  .hero-wordmark:focus,
-  .hero-wordmark:active {
+.hero-wordmark:hover,
+.hero-wordmark:focus,
+.hero-wordmark:active {
     font-size: clamp(30px, 9vw, 40px) !important;
   }
 
@@ -24766,7 +24813,7 @@ html {
 
 @keyframes heroExploreArrowLoop {
   0%,
-  100% {
+100% {
     top: -3px;
     opacity: 0.58;
   }
@@ -24901,7 +24948,7 @@ html {
 
 @keyframes heroExploreReliableBob {
   0%,
-  100% {
+100% {
     margin-top: -3px;
     opacity: 0.58;
   }
@@ -25036,7 +25083,7 @@ html {
 
 @keyframes heroExploreAlwaysMoving {
   0%,
-  100% {
+100% {
     transform: translate3d(0, -3px, 0);
     opacity: 0.58;
   }
@@ -25307,7 +25354,8 @@ html {
 }
 
 @keyframes heroExploreNudge {
-  0%, 100% {
+  0%,
+100% {
     translate: 0 0;
   }
 
@@ -25383,9 +25431,9 @@ html {
   }
 
   .hero-content .hero-wordmark,
-  .hero-content .hero-wordmark:hover,
-  .hero-content .hero-wordmark:focus,
-  .hero-content .hero-wordmark:active {
+.hero-content .hero-wordmark:hover,
+.hero-content .hero-wordmark:focus,
+.hero-content .hero-wordmark:active {
     font-size: clamp(52px, 12vw, 100px) !important;
   }
 
@@ -25450,9 +25498,9 @@ html {
   }
 
   .hero-content .hero-wordmark,
-  .hero-content .hero-wordmark:hover,
-  .hero-content .hero-wordmark:focus,
-  .hero-content .hero-wordmark:active {
+.hero-content .hero-wordmark:hover,
+.hero-content .hero-wordmark:focus,
+.hero-content .hero-wordmark:active {
     max-width: 100% !important;
     font-size: clamp(38px, 12vw, 48px) !important;
   }
@@ -25540,7 +25588,8 @@ html {
 }
 
 @keyframes heroExploreArrow {
-  0%, 100% {
+  0%,
+100% {
     transform: translate3d(0, 0, 0);
     opacity: 0.58;
   }
@@ -25598,7 +25647,8 @@ html {
 }
 
 @keyframes heroSkinDriftKnife {
-  0%, 100% {
+  0%,
+100% {
     transform: translate3d(0, 0, 0) rotate(-4deg);
   }
 
@@ -25612,7 +25662,8 @@ html {
 }
 
 @keyframes heroSkinDriftGloves {
-  0%, 100% {
+  0%,
+100% {
     transform: translate3d(0, 0, 0) rotate(4deg);
   }
 
@@ -25626,7 +25677,8 @@ html {
 }
 
 @keyframes heroSkinDriftAwp {
-  0%, 100% {
+  0%,
+100% {
     transform: translate3d(0, 0, 0) rotate(1deg);
   }
 
@@ -25640,7 +25692,8 @@ html {
 }
 
 @keyframes heroSkinDriftM4 {
-  0%, 100% {
+  0%,
+100% {
     transform: translate3d(0, 0, 0) rotate(-1deg);
   }
 
@@ -25654,7 +25707,8 @@ html {
 }
 
 @keyframes heroSkinDriftAk {
-  0%, 100% {
+  0%,
+100% {
     transform: translate3d(0, 0, 0) rotate(-3deg);
   }
 
@@ -25669,9 +25723,9 @@ html {
 
 @media (max-width: 860px) {
   .hero-content .hero-wordmark,
-  .hero-content .hero-wordmark:hover,
-  .hero-content .hero-wordmark:focus,
-  .hero-content .hero-wordmark:active {
+.hero-content .hero-wordmark:hover,
+.hero-content .hero-wordmark:focus,
+.hero-content .hero-wordmark:active {
     font-size: clamp(48px, 11vw, 86px) !important;
   }
 
@@ -25708,9 +25762,9 @@ html {
 
 @media (max-width: 600px) {
   .hero-content .hero-wordmark,
-  .hero-content .hero-wordmark:hover,
-  .hero-content .hero-wordmark:focus,
-  .hero-content .hero-wordmark:active {
+.hero-content .hero-wordmark:hover,
+.hero-content .hero-wordmark:focus,
+.hero-content .hero-wordmark:active {
     font-size: clamp(35px, 10vw, 42px) !important;
   }
 
@@ -25733,7 +25787,7 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
   .hero .floating-images img,
-  .hero-explore i {
+.hero-explore i {
     animation: none !important;
   }
 }
@@ -25756,7 +25810,7 @@ html {
   }
 
   .vp-scrollbar__thumb:hover,
-  .vp-scrollbar__thumb.is-dragging {
+.vp-scrollbar__thumb.is-dragging {
     background: #ffa914 !important;
   }
 }
@@ -25828,18 +25882,18 @@ html {
 
 @media (max-width: 860px) {
   .hero-content .hero-wordmark,
-  .hero-content .hero-wordmark:hover,
-  .hero-content .hero-wordmark:focus,
-  .hero-content .hero-wordmark:active {
+.hero-content .hero-wordmark:hover,
+.hero-content .hero-wordmark:focus,
+.hero-content .hero-wordmark:active {
     font-size: clamp(43px, 10vw, 76px) !important;
   }
 }
 
 @media (max-width: 600px) {
   .hero-content .hero-wordmark,
-  .hero-content .hero-wordmark:hover,
-  .hero-content .hero-wordmark:focus,
-  .hero-content .hero-wordmark:active {
+.hero-content .hero-wordmark:hover,
+.hero-content .hero-wordmark:focus,
+.hero-content .hero-wordmark:active {
     font-size: clamp(32px, 9vw, 38px) !important;
   }
 }
@@ -25932,18 +25986,18 @@ html {
 
 @media (max-width: 860px) {
   .hero-content .hero-wordmark,
-  .hero-content .hero-wordmark:hover,
-  .hero-content .hero-wordmark:focus,
-  .hero-content .hero-wordmark:active {
+.hero-content .hero-wordmark:hover,
+.hero-content .hero-wordmark:focus,
+.hero-content .hero-wordmark:active {
     font-size: clamp(40px, 9.4vw, 70px) !important;
   }
 }
 
 @media (max-width: 600px) {
   .hero-content .hero-wordmark,
-  .hero-content .hero-wordmark:hover,
-  .hero-content .hero-wordmark:focus,
-  .hero-content .hero-wordmark:active {
+.hero-content .hero-wordmark:hover,
+.hero-content .hero-wordmark:focus,
+.hero-content .hero-wordmark:active {
     font-size: clamp(30px, 8.5vw, 36px) !important;
   }
 
@@ -25996,13 +26050,13 @@ body::-webkit-scrollbar-thumb:hover,
 /* ===== 2026-06-01 direct desktop scrollbar with reliable hover ===== */
 @media (min-width: 861px) {
   html,
-  body {
+body {
     scrollbar-width: none !important;
     -ms-overflow-style: none !important;
   }
 
   html::-webkit-scrollbar,
-  body::-webkit-scrollbar {
+body::-webkit-scrollbar {
     display: none !important;
     width: 0 !important;
     height: 0 !important;
@@ -26022,9 +26076,9 @@ body::-webkit-scrollbar-thumb:hover,
   }
 
   .vp-scrollbar.is-hidden,
-  body.menu-open .vp-scrollbar,
-  body.is-loading .vp-scrollbar,
-  body.is-entering .vp-scrollbar {
+body.menu-open .vp-scrollbar,
+body.is-loading .vp-scrollbar,
+body.is-entering .vp-scrollbar {
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
@@ -26043,9 +26097,9 @@ body::-webkit-scrollbar-thumb:hover,
   }
 
   .vp-scrollbar:hover .vp-scrollbar__thumb,
-  .vp-scrollbar.is-hovered .vp-scrollbar__thumb,
-  .vp-scrollbar__thumb:hover,
-  .vp-scrollbar__thumb.is-dragging {
+.vp-scrollbar.is-hovered .vp-scrollbar__thumb,
+.vp-scrollbar__thumb:hover,
+.vp-scrollbar__thumb.is-dragging {
     background: #ffa914 !important;
   }
 }
@@ -26143,7 +26197,7 @@ body::before {
 
 @media (min-width: 861px) {
   .vp-scrollbar,
-  .vp-scrollbar__thumb {
+.vp-scrollbar__thumb {
     cursor: default !important;
   }
 
@@ -26197,7 +26251,7 @@ body::before {
 
 @keyframes heroExploreContinuousBounce {
   0%,
-  100% {
+100% {
     transform: translate3d(0, -2px, 0);
     opacity: 0.62;
   }
@@ -26352,7 +26406,7 @@ body::before {
 
 @keyframes heroExploreArrowPseudoFloat {
   0%,
-  100% {
+100% {
     top: -2px;
     opacity: 0.62;
   }
@@ -26504,9 +26558,9 @@ canvas#stars,
   }
 
   .vp-scrollbar:hover .vp-scrollbar__thumb,
-  .vp-scrollbar.is-hovered .vp-scrollbar__thumb,
-  .vp-scrollbar__thumb:hover,
-  .vp-scrollbar__thumb.is-dragging {
+.vp-scrollbar.is-hovered .vp-scrollbar__thumb,
+.vp-scrollbar__thumb:hover,
+.vp-scrollbar__thumb.is-dragging {
     filter: brightness(1.12) saturate(1.06) !important;
   }
 }
@@ -26713,7 +26767,7 @@ canvas#stars,
   }
 
   .vp-scrollbar::before,
-  .vp-scrollbar::after {
+.vp-scrollbar::after {
     content: "";
     position: absolute;
     right: 4px;
@@ -26949,9 +27003,9 @@ body.is-scrollbar-dragging {
   }
 
   #videos .video-card.skeleton,
-  #videos .video-card.skeleton:hover,
-  #videos .video-card.skeleton:focus-visible,
-  #videos .video-card.skeleton:active {
+#videos .video-card.skeleton:hover,
+#videos .video-card.skeleton:focus-visible,
+#videos .video-card.skeleton:active {
     height: 326px !important;
     min-height: 326px !important;
     max-height: 326px !important;
@@ -26960,9 +27014,9 @@ body.is-scrollbar-dragging {
 
 @media (max-width: 600px) {
   #videos .video-card.skeleton,
-  #videos .video-card.skeleton:hover,
-  #videos .video-card.skeleton:focus-visible,
-  #videos .video-card.skeleton:active {
+#videos .video-card.skeleton:hover,
+#videos .video-card.skeleton:focus-visible,
+#videos .video-card.skeleton:active {
     height: 310px !important;
     min-height: 310px !important;
     max-height: 310px !important;
@@ -27185,8 +27239,8 @@ body.is-scrollbar-dragging {
   }
 
   .main-header .main-nav::before,
-  .main-header .main-nav::after,
-  .main-header .main-nav .nav-social-block {
+.main-header .main-nav::after,
+.main-header .main-nav .nav-social-block {
     display: none !important;
     content: none !important;
   }
@@ -27220,11 +27274,11 @@ body.is-scrollbar-dragging {
   }
 
   .main-header .main-nav > a:hover,
-  .main-header .main-nav > a:focus-visible,
-  .main-header .main-nav > a:active,
-  .main-header .main-nav > a.is-active,
-  .main-header .main-nav > a[aria-current="page"],
-  .main-header .main-nav > a.is-touch-pressed {
+.main-header .main-nav > a:focus-visible,
+.main-header .main-nav > a:active,
+.main-header .main-nav > a.is-active,
+.main-header .main-nav > a[aria-current="page"],
+.main-header .main-nav > a.is-touch-pressed {
     color: #ffa914 !important;
     -webkit-text-fill-color: #ffa914 !important;
     transform: none !important;
@@ -27320,16 +27374,16 @@ body::-webkit-scrollbar-corner,
   }
 
   .vp-scrollbar.is-hidden,
-  body.menu-open .vp-scrollbar,
-  body.is-loading .vp-scrollbar,
-  body.is-entering .vp-scrollbar {
+body.menu-open .vp-scrollbar,
+body.is-loading .vp-scrollbar,
+body.is-entering .vp-scrollbar {
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
   }
 
   .vp-scrollbar::before,
-  .vp-scrollbar::after {
+.vp-scrollbar::after {
     content: "" !important;
     position: absolute !important;
     left: 50% !important;
@@ -27367,9 +27421,9 @@ body::-webkit-scrollbar-corner,
   }
 
   .vp-scrollbar:hover .vp-scrollbar__thumb,
-  .vp-scrollbar.is-hovered .vp-scrollbar__thumb,
-  .vp-scrollbar__thumb:hover,
-  .vp-scrollbar__thumb.is-dragging {
+.vp-scrollbar.is-hovered .vp-scrollbar__thumb,
+.vp-scrollbar__thumb:hover,
+.vp-scrollbar__thumb.is-dragging {
     filter: brightness(1.1) saturate(1.08) !important;
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.4),
@@ -27658,17 +27712,17 @@ body::-webkit-scrollbar-corner,
 
 @media (max-width: 860px) {
   html::-webkit-scrollbar,
-  body::-webkit-scrollbar,
-  ::-webkit-scrollbar {
+body::-webkit-scrollbar,
+::-webkit-scrollbar {
     width: 7px !important;
     height: 7px !important;
   }
 
   .hero-content button.hero-intro-code,
-  .hero-content button.hero-intro-code:hover,
-  .hero-content button.hero-intro-code:focus,
-  .hero-content button.hero-intro-code:focus-visible,
-  .hero-content button.hero-intro-code:active {
+.hero-content button.hero-intro-code:hover,
+.hero-content button.hero-intro-code:focus,
+.hero-content button.hero-intro-code:focus-visible,
+.hero-content button.hero-intro-code:active {
     min-height: 26px !important;
     padding: 3px 8px !important;
     border-radius: 8px !important;
@@ -27721,7 +27775,7 @@ body::-webkit-scrollbar-corner,
 
 @keyframes heroWordmarkBreathingGlow {
   0%,
-  100% {
+100% {
     --hero-word-glow: 0.08;
     --hero-aura-glow: 0.08;
   }
@@ -27834,10 +27888,10 @@ body::-webkit-scrollbar-corner,
 
 @media (max-width: 860px) {
   .hero-content button.hero-intro-code,
-  .hero-content button.hero-intro-code:hover,
-  .hero-content button.hero-intro-code:focus,
-  .hero-content button.hero-intro-code:focus-visible,
-  .hero-content button.hero-intro-code:active {
+.hero-content button.hero-intro-code:hover,
+.hero-content button.hero-intro-code:focus,
+.hero-content button.hero-intro-code:focus-visible,
+.hero-content button.hero-intro-code:active {
     padding: 0 1px 2px !important;
   }
 }
@@ -27926,9 +27980,9 @@ body::-webkit-scrollbar-corner,
 
 @media (hover: none), (pointer: coarse) {
   #bonuses .bonus-reward-card:has(.bonus-reward-card__button:hover) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-reward-card__button:focus-visible) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-reward-card__button.is-touch-pressed) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card.is-claiming .bonus-reward-card__item {
+#bonuses .bonus-reward-card:has(.bonus-reward-card__button:focus-visible) .bonus-reward-card__item,
+#bonuses .bonus-reward-card:has(.bonus-reward-card__button.is-touch-pressed) .bonus-reward-card__item,
+#bonuses .bonus-reward-card.is-claiming .bonus-reward-card__item {
     transform: translate3d(-50%, 0, 0) !important;
   }
 }
@@ -28045,7 +28099,7 @@ body::-webkit-scrollbar-corner,
 
 @keyframes heroWordmarkSoftPulse {
   0%,
-  100% {
+100% {
     text-shadow:
       0 16px 34px rgba(0, 0, 0, 0.46),
       0 0 8px rgba(255, 169, 20, 0.08),
@@ -28129,10 +28183,10 @@ body::-webkit-scrollbar-corner,
 
 @media (max-width: 860px) {
   .main-header,
-  .main-footer,
-  body.menu-open .main-header,
-  body.menu-open .main-nav,
-  body.menu-open .main-nav.show {
+.main-footer,
+body.menu-open .main-header,
+body.menu-open .main-nav,
+body.menu-open .main-nav.show {
     background:
       linear-gradient(180deg, rgba(26, 20, 9, 0.92), rgba(8, 8, 10, 0.9)),
       radial-gradient(circle at 76% 0%, rgba(255, 169, 20, 0.13), transparent 42%) !important;
@@ -28167,10 +28221,10 @@ body::-webkit-scrollbar-corner,
 
 @media (max-width: 860px) {
   .main-header,
-  .main-footer,
-  body.menu-open .main-header,
-  body.menu-open .main-nav,
-  body.menu-open .main-nav.show {
+.main-footer,
+body.menu-open .main-header,
+body.menu-open .main-nav,
+body.menu-open .main-nav.show {
     backdrop-filter: blur(32px) saturate(1.22) brightness(0.94) !important;
     -webkit-backdrop-filter: blur(32px) saturate(1.22) brightness(0.94) !important;
   }
@@ -28246,10 +28300,10 @@ body::-webkit-scrollbar-corner,
 
 @media (max-width: 860px) {
   .main-header,
-  .main-footer,
-  body.menu-open .main-header,
-  body.menu-open .main-nav,
-  body.menu-open .main-nav.show {
+.main-footer,
+body.menu-open .main-header,
+body.menu-open .main-nav,
+body.menu-open .main-nav.show {
     background:
       linear-gradient(180deg, rgba(26, 20, 9, 0.68), rgba(8, 8, 10, 0.66)),
       radial-gradient(circle at 76% 0%, rgba(255, 169, 20, 0.14), transparent 44%) !important;
@@ -28283,11 +28337,11 @@ html .main-footer {
 
 @media (max-width: 860px) {
   html .main-header,
-  html .main-footer,
-  html body.menu-open .main-header,
-  html body.menu-open .main-footer,
-  html body.menu-open .main-nav,
-  html body.menu-open .main-nav.show {
+html .main-footer,
+html body.menu-open .main-header,
+html body.menu-open .main-footer,
+html body.menu-open .main-nav,
+html body.menu-open .main-nav.show {
     backdrop-filter: blur(52px) saturate(1.3) contrast(1.02) !important;
     -webkit-backdrop-filter: blur(52px) saturate(1.3) contrast(1.02) !important;
   }
@@ -28381,10 +28435,10 @@ html .main-footer {
 
 @media (max-width: 860px) {
   #bonuses .bonus-reward-card__button,
-  #bonuses .bonus-reward-card__button:hover,
-  #bonuses .bonus-reward-card__button:focus-visible,
-  #bonuses .bonus-reward-card__button:active,
-  #bonuses .bonus-reward-card__button.is-touch-pressed {
+#bonuses .bonus-reward-card__button:hover,
+#bonuses .bonus-reward-card__button:focus-visible,
+#bonuses .bonus-reward-card__button:active,
+#bonuses .bonus-reward-card__button.is-touch-pressed {
     min-height: 46px !important;
     padding: 13px 16px !important;
     font-size: 11px !important;
@@ -28749,7 +28803,7 @@ html .main-footer {
   }
 
   #bonuses .bonus-reward-card:hover .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__item {
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__item {
     transform: translate3d(-50%, 0, 0) !important;
   }
 
@@ -29362,13 +29416,13 @@ html .main-footer {
 
 @media (hover: hover) and (pointer: fine) {
   #bonuses .bonus-reward-card:hover,
-  #bonuses .bonus-reward-card:focus-within {
+#bonuses .bonus-reward-card:focus-within {
     z-index: 8 !important;
     transform: translate3d(0, 0, 0) scale(1.032) !important;
   }
 
   #bonuses .bonus-reward-card:hover .bonus-reward-card__body,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__body {
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__body {
     background:
       radial-gradient(circle at 50% -8%, rgba(255, 255, 255, 0.11), transparent 50%),
       linear-gradient(180deg, rgba(31, 31, 34, 0.98), rgba(15, 15, 17, 0.98)) !important;
@@ -29381,14 +29435,14 @@ html .main-footer {
   }
 
   #bonuses .bonus-reward-card:hover .bonus-reward-card__body::before,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__body::before {
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__body::before {
     opacity: 0.64 !important;
   }
 
   #bonuses .bonus-reward-card:hover .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-reward-card__button:hover) .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:has(.bonus-reward-card__button:focus-visible) .bonus-reward-card__item {
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__item,
+#bonuses .bonus-reward-card:has(.bonus-reward-card__button:hover) .bonus-reward-card__item,
+#bonuses .bonus-reward-card:has(.bonus-reward-card__button:focus-visible) .bonus-reward-card__item {
     transform: translate3d(-50%, -18px, 0) scale(1.045) rotate(-0.6deg) !important;
     filter:
       brightness(1.14)
@@ -29398,22 +29452,22 @@ html .main-footer {
   }
 
   #bonuses .bonus-reward-card[data-bonus-id="skinbaron"]:hover .bonus-reward-card__item,
-  #bonuses .bonus-reward-card[data-bonus-id="skinbaron"]:focus-within .bonus-reward-card__item {
+#bonuses .bonus-reward-card[data-bonus-id="skinbaron"]:focus-within .bonus-reward-card__item {
     transform: translate3d(-50%, -20px, 0) scale(1.055) rotate(1deg) !important;
   }
 
   #bonuses .bonus-reward-card[data-bonus-id="raingg"]:hover .bonus-reward-card__item,
-  #bonuses .bonus-reward-card[data-bonus-id="raingg"]:focus-within .bonus-reward-card__item {
+#bonuses .bonus-reward-card[data-bonus-id="raingg"]:focus-within .bonus-reward-card__item {
     transform: translate3d(-50%, -17px, 0) scale(1.05) rotate(-1.2deg) !important;
   }
 
   #bonuses .bonus-reward-card[data-bonus-id="skinclub"]:hover .bonus-reward-card__item,
-  #bonuses .bonus-reward-card[data-bonus-id="skinclub"]:focus-within .bonus-reward-card__item {
+#bonuses .bonus-reward-card[data-bonus-id="skinclub"]:focus-within .bonus-reward-card__item {
     transform: translate3d(-50%, -19px, 0) scale(1.045) rotate(0.8deg) !important;
   }
 
   #bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__item-layer--case,
-  #bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-layer--case {
+#bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-layer--case {
     transform: translateX(-50%) translateY(-7px) scale(1.04) !important;
     filter:
       brightness(1.1)
@@ -29421,7 +29475,7 @@ html .main-footer {
   }
 
   #bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__item-layer--weapon,
-  #bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-layer--weapon {
+#bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-layer--weapon {
     transform: translateX(-50%) translateY(-13px) rotate(-6deg) scale(1.035) !important;
     filter:
       brightness(1.12)
@@ -29441,8 +29495,8 @@ html .main-footer {
 
 @media (max-width: 860px) {
   #bonuses .bonus-reward-card--hellcase .bonus-reward-card__tag,
-  #bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__tag,
-  #bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__tag {
+#bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__tag,
+#bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__tag {
     top: 14px !important;
     left: 14px !important;
     min-height: 27px !important;
@@ -29453,7 +29507,7 @@ html .main-footer {
 
 @media (hover: none), (pointer: coarse) {
   #bonuses .bonus-reward-card,
-  #bonuses .bonus-reward-card:focus-within {
+#bonuses .bonus-reward-card:focus-within {
     transform: translate3d(0, 0, 0) !important;
   }
 
@@ -29503,7 +29557,7 @@ html body #bonuses .bonus-reward-card[data-bonus-id].is-card-clicked {
 
 @media (hover: hover) and (pointer: fine) {
   html body #bonuses .bonus-reward-card[data-bonus-id].is-card-clicked:hover,
-  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-clicked:focus-within {
+html body #bonuses .bonus-reward-card[data-bonus-id].is-card-clicked:focus-within {
     transform: translate3d(0, 0, 0) scale(1.032) !important;
   }
 }
@@ -29667,7 +29721,7 @@ html body #bonuses .bonuses-heading__code::after {
 
 @keyframes bonusCodePremiumWave {
   0%,
-  12% {
+12% {
     --bonus-code-wave-x: 145%;
   }
 
@@ -29706,9 +29760,9 @@ html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__item-la
 
 @media (min-width: 861px) {
   html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__body,
-  html body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__body,
-  html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__body,
-  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-hovered .bonus-reward-card__body {
+html body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__body,
+html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__body,
+html body #bonuses .bonus-reward-card[data-bonus-id].is-card-hovered .bonus-reward-card__body {
     border: 0 !important;
     outline: 0 !important;
     box-shadow: none !important;
@@ -29869,24 +29923,24 @@ html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged .bonus-rewa
   }
 
   #bonuses .bonus-reward-card,
-  #bonuses .bonus-reward-card__body,
-  #bonuses .bonus-reward-card__body::before,
-  #bonuses .bonus-reward-card__item,
-  #bonuses .bonus-reward-card__item-layer,
-  #bonuses .bonus-reward-card__button,
-  #bonuses .bonus-reward-card__button::after {
+#bonuses .bonus-reward-card__body,
+#bonuses .bonus-reward-card__body::before,
+#bonuses .bonus-reward-card__item,
+#bonuses .bonus-reward-card__item-layer,
+#bonuses .bonus-reward-card__button,
+#bonuses .bonus-reward-card__button::after {
     transition-duration: 0.001ms !important;
   }
 
   #bonuses .bonus-reward-card:hover,
-  #bonuses .bonus-reward-card:focus-within,
-  #bonuses .bonus-reward-card:hover .bonus-reward-card__body,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__body {
+#bonuses .bonus-reward-card:focus-within,
+#bonuses .bonus-reward-card:hover .bonus-reward-card__body,
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__body {
     transform: none !important;
   }
 
   #bonuses .bonus-reward-card:hover .bonus-reward-card__item,
-  #bonuses .bonus-reward-card:focus-within .bonus-reward-card__item {
+#bonuses .bonus-reward-card:focus-within .bonus-reward-card__item {
     transform: translate3d(-50%, 0, 0) scale(1) rotate(0deg) !important;
   }
 }
@@ -29901,9 +29955,9 @@ html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__button 
 
 @media (hover: hover) and (pointer: fine) {
   html body #bonuses .bonus-reward-card[data-bonus-id="skinbaron"]:hover:not(.is-card-dragging):not(.is-card-dragged) .bonus-reward-card__button,
-  html body #bonuses .bonus-reward-card[data-bonus-id="skinbaron"].is-card-hovered:not(.is-card-dragging):not(.is-card-dragged) .bonus-reward-card__button,
-  html body #bonuses .bonus-reward-card[data-bonus-id="skinclub"]:hover:not(.is-card-dragging):not(.is-card-dragged) .bonus-reward-card__button,
-  html body #bonuses .bonus-reward-card[data-bonus-id="skinclub"].is-card-hovered:not(.is-card-dragging):not(.is-card-dragged) .bonus-reward-card__button {
+html body #bonuses .bonus-reward-card[data-bonus-id="skinbaron"].is-card-hovered:not(.is-card-dragging):not(.is-card-dragged) .bonus-reward-card__button,
+html body #bonuses .bonus-reward-card[data-bonus-id="skinclub"]:hover:not(.is-card-dragging):not(.is-card-dragged) .bonus-reward-card__button,
+html body #bonuses .bonus-reward-card[data-bonus-id="skinclub"].is-card-hovered:not(.is-card-dragging):not(.is-card-dragged) .bonus-reward-card__button {
     filter: brightness(0.72) saturate(0.96) !important;
     box-shadow: 0 10px 18px rgba(0, 0, 0, 0.18) !important;
   }
@@ -30159,7 +30213,7 @@ html body .hero-explore:focus-visible i::before {
 
 @keyframes heroExploreArrowGlide {
   0%,
-  100% {
+100% {
     translate: 0 0;
   }
 
@@ -30246,7 +30300,7 @@ html body .hero .floating-images img:nth-child(5) {
 
 @keyframes heroArtifactKnife {
   0%,
-  100% {
+100% {
     transform: translate3d(0, 0, 0) rotate(-7deg);
   }
 
@@ -30257,7 +30311,7 @@ html body .hero .floating-images img:nth-child(5) {
 
 @keyframes heroArtifactGloves {
   0%,
-  100% {
+100% {
     transform: translate3d(0, 0, 0) rotate(5deg);
   }
 
@@ -30268,7 +30322,7 @@ html body .hero .floating-images img:nth-child(5) {
 
 @keyframes heroArtifactAwp {
   0%,
-  100% {
+100% {
     transform: translate3d(0, 0, 0) rotate(1deg);
   }
 
@@ -30279,7 +30333,7 @@ html body .hero .floating-images img:nth-child(5) {
 
 @keyframes heroArtifactM4 {
   0%,
-  100% {
+100% {
     transform: translate3d(0, 0, 0) rotate(-2deg);
   }
 
@@ -30290,7 +30344,7 @@ html body .hero .floating-images img:nth-child(5) {
 
 @keyframes heroArtifactAk {
   0%,
-  100% {
+100% {
     transform: translate3d(0, 0, 0) rotate(-3deg);
   }
 
@@ -30328,9 +30382,9 @@ html body .hero .floating-images img:nth-child(5) {
 
 @media (max-width: 860px) {
   html body .hero .floating-images img,
-  html body .hero .floating-images img:hover,
-  html body .hero .floating-images img:focus-visible,
-  html body .hero .floating-images img.is-touch-pressed {
+html body .hero .floating-images img:hover,
+html body .hero .floating-images img:focus-visible,
+html body .hero .floating-images img.is-touch-pressed {
     opacity: 0.57 !important;
     filter:
       drop-shadow(0 22px 28px rgba(0, 0, 0, 0.56))
@@ -30373,9 +30427,9 @@ html body .hero .floating-images img:nth-child(5) {
 
 @media (max-width: 600px) {
   html body .hero .floating-images img,
-  html body .hero .floating-images img:hover,
-  html body .hero .floating-images img:focus-visible,
-  html body .hero .floating-images img.is-touch-pressed {
+html body .hero .floating-images img:hover,
+html body .hero .floating-images img:focus-visible,
+html body .hero .floating-images img.is-touch-pressed {
     opacity: 0.45 !important;
   }
 
@@ -30420,7 +30474,7 @@ body {
 /* Chromium's standard scrollbar colors otherwise suppress its WebKit parts. */
 @supports selector(::-webkit-scrollbar) {
   html,
-  body {
+body {
     scrollbar-width: auto !important;
     scrollbar-color: auto !important;
   }
@@ -30495,9 +30549,9 @@ body::-webkit-scrollbar-button:horizontal:end:increment {
 
 @media (prefers-reduced-motion: reduce) {
   html body .hero-content .hero-wordmark,
-  html body .hero-content .hero-wordmark:hover,
-  html body .hero-content .hero-wordmark:focus,
-  html body .hero-content .hero-wordmark:active {
+html body .hero-content .hero-wordmark:hover,
+html body .hero-content .hero-wordmark:focus,
+html body .hero-content .hero-wordmark:active {
     color: #ffa200 !important;
     -webkit-text-fill-color: #ffa200 !important;
     animation: none !important;
@@ -30510,11 +30564,11 @@ body::-webkit-scrollbar-button:horizontal:end:increment {
   }
 
   html body .hero-explore i::before,
-  html body .hero .floating-images img:nth-child(1),
-  html body .hero .floating-images img:nth-child(2),
-  html body .hero .floating-images img:nth-child(3),
-  html body .hero .floating-images img:nth-child(4),
-  html body .hero .floating-images img:nth-child(5) {
+html body .hero .floating-images img:nth-child(1),
+html body .hero .floating-images img:nth-child(2),
+html body .hero .floating-images img:nth-child(3),
+html body .hero .floating-images img:nth-child(4),
+html body .hero .floating-images img:nth-child(5) {
     animation: none !important;
     translate: 0 0 !important;
   }
@@ -30573,7 +30627,7 @@ html body .main-header .logo-wordmark {
 
 @media (max-width: 860px) {
   html body.menu-open .main-nav,
-  html body.menu-open .main-nav.show {
+html body.menu-open .main-nav.show {
     background: #0b0c10 !important;
     border-color: rgba(255, 255, 255, 0.07) !important;
     box-shadow: none !important;
@@ -30676,7 +30730,7 @@ html body .hero-explore:focus-visible i::after {
 
 @keyframes heroExploreChevronGlide {
   0%,
-  100% {
+100% {
     translate: 0 0;
   }
 
@@ -30750,10 +30804,10 @@ html body .hero .floating-images img:nth-child(5) {
 
 @media (max-width: 860px) {
   html body .hero .floating-images img,
-  html body .hero .floating-images img:hover,
-  html body .hero .floating-images img:focus-visible,
-  html body .hero .floating-images img.is-touch-pressed,
-  html body .hero:hover .floating-images img {
+html body .hero .floating-images img:hover,
+html body .hero .floating-images img:focus-visible,
+html body .hero .floating-images img.is-touch-pressed,
+html body .hero:hover .floating-images img {
     opacity: 0.4 !important;
   }
 
@@ -30790,10 +30844,10 @@ html body .hero .floating-images img:nth-child(5) {
 
 @media (max-width: 600px) {
   html body .hero .floating-images img,
-  html body .hero .floating-images img:hover,
-  html body .hero .floating-images img:focus-visible,
-  html body .hero .floating-images img.is-touch-pressed,
-  html body .hero:hover .floating-images img {
+html body .hero .floating-images img:hover,
+html body .hero .floating-images img:focus-visible,
+html body .hero .floating-images img.is-touch-pressed,
+html body .hero:hover .floating-images img {
     opacity: 0.34 !important;
   }
 
@@ -30864,10 +30918,10 @@ html body #bonuses .bonus-reward-card--hellcase.is-card-dragged
   html body #bonuses
     .bonus-reward-card[data-bonus-id]:hover:not(.is-card-dragging):not(.is-card-dragged)
     > .bonus-reward-card__item,
-  html body #bonuses
+html body #bonuses
     .bonus-reward-card[data-bonus-id]:focus-within:not(.is-card-dragging):not(.is-card-dragged)
     > .bonus-reward-card__item,
-  html body #bonuses
+html body #bonuses
     .bonus-reward-card[data-bonus-id].is-card-hovered:not(.is-card-dragging):not(.is-card-dragged)
     > .bonus-reward-card__item {
     filter:
@@ -30900,8 +30954,8 @@ html body .hero-buttons #giveaways-button {
 
 @media (hover: hover) and (pointer: fine) {
   html body .hero-buttons #giveaways-button:hover,
-  html body .hero-buttons #giveaways-button:focus-visible,
-  html body .hero-buttons #giveaways-button.is-button-hovered {
+html body .hero-buttons #giveaways-button:focus-visible,
+html body .hero-buttons #giveaways-button.is-button-hovered {
     background: linear-gradient(135deg, #ffe477 0%, #ffc52d 52%, #ffad16 100%) !important;
     border-color: rgba(255, 225, 118, 0.72) !important;
     transform: translate3d(0, -5px, 0) scale(1.055) !important;
@@ -30937,7 +30991,7 @@ body::-webkit-scrollbar-thumb {
 
 @media (max-width: 860px) {
   html:not(.is-loading):not(.is-entering)::-webkit-scrollbar,
-  html:not(.is-loading):not(.is-entering) body:not(.is-loading):not(.is-entering)::-webkit-scrollbar {
+html:not(.is-loading):not(.is-entering) body:not(.is-loading):not(.is-entering)::-webkit-scrollbar {
     width: 7px !important;
     height: 7px !important;
   }
@@ -30945,14 +30999,14 @@ body::-webkit-scrollbar-thumb {
 
 @media (prefers-reduced-motion: reduce) {
   html body .hero-explore i::before,
-  html body .hero-explore i::after {
+html body .hero-explore i::after {
     animation: none !important;
     translate: 0 0 !important;
   }
 
   html body .hero-buttons #giveaways-button,
-  html body .hero-buttons #giveaways-button:hover,
-  html body .hero-buttons #giveaways-button:focus-visible {
+html body .hero-buttons #giveaways-button:hover,
+html body .hero-buttons #giveaways-button:focus-visible {
     transition-duration: 0.001ms !important;
   }
 }
@@ -31009,12 +31063,12 @@ html body .hero-content .hero-wordmark::after {
 
 @keyframes heroWordmarkStableSweep {
   0%,
-  12% {
+12% {
     --hero-wordmark-wave-x: 0%;
   }
 
   62%,
-  100% {
+100% {
     --hero-wordmark-wave-x: 100%;
   }
 }
@@ -31088,8 +31142,8 @@ html body .hero-buttons #giveaways-button.is-touch-pressed {
 
 @media (hover: hover) and (pointer: fine) {
   html body .hero-buttons #giveaways-button:hover,
-  html body .hero-buttons #giveaways-button:focus-visible,
-  html body .hero-buttons #giveaways-button.is-button-hovered {
+html body .hero-buttons #giveaways-button:focus-visible,
+html body .hero-buttons #giveaways-button.is-button-hovered {
     transform: translate3d(0, -5px, 0) scale(1.055) !important;
     box-shadow: 0 20px 36px rgba(0, 0, 0, 0.32) !important;
   }
@@ -31258,9 +31312,9 @@ body::-webkit-scrollbar-thumb:active {
 
 @media (prefers-reduced-motion: reduce) {
   html body .hero-content .hero-wordmark,
-  html body .hero-content .hero-wordmark:hover,
-  html body .hero-content .hero-wordmark:focus,
-  html body .hero-content .hero-wordmark:active {
+html body .hero-content .hero-wordmark:hover,
+html body .hero-content .hero-wordmark:focus,
+html body .hero-content .hero-wordmark:active {
     color: #ffa200 !important;
     -webkit-text-fill-color: #ffa200 !important;
     background-image: none !important;
@@ -31268,7 +31322,7 @@ body::-webkit-scrollbar-thumb:active {
   }
 
   html body .hero-explore i::before,
-  html body #bonuses.bonuses-reward-section::after {
+html body #bonuses.bonuses-reward-section::after {
     translate: 0 0 !important;
     animation: none !important;
   }
@@ -31309,14 +31363,14 @@ body::-webkit-scrollbar-thumb:active {
 /* Desktop uses the reliable custom thumb so the hover colour works everywhere. */
 @media (min-width: 861px) {
   html.has-custom-scrollbar,
-  html.has-custom-scrollbar body {
+html.has-custom-scrollbar body {
     scrollbar-width: none !important;
     scrollbar-gutter: auto !important;
     -ms-overflow-style: none !important;
   }
 
   html.has-custom-scrollbar::-webkit-scrollbar,
-  html.has-custom-scrollbar body::-webkit-scrollbar {
+html.has-custom-scrollbar body::-webkit-scrollbar {
     display: none !important;
     width: 0 !important;
     height: 0 !important;
@@ -31364,26 +31418,26 @@ body::-webkit-scrollbar-thumb:active {
   }
 
   html.has-custom-scrollbar body .vp-scrollbar:hover .vp-scrollbar__thumb,
-  html.has-custom-scrollbar body .vp-scrollbar.is-hovered .vp-scrollbar__thumb,
-  html.has-custom-scrollbar body .vp-scrollbar__thumb:hover,
-  html.has-custom-scrollbar body .vp-scrollbar__thumb.is-dragging {
+html.has-custom-scrollbar body .vp-scrollbar.is-hovered .vp-scrollbar__thumb,
+html.has-custom-scrollbar body .vp-scrollbar__thumb:hover,
+html.has-custom-scrollbar body .vp-scrollbar__thumb.is-dragging {
     background: #ffa914 !important;
     box-shadow: none !important;
     filter: none !important;
   }
 
   html.is-scrollbar-dragging body .vp-scrollbar,
-  html.is-scrollbar-dragging body .vp-scrollbar__thumb,
-  html.has-custom-scrollbar body .vp-scrollbar__thumb.is-dragging {
+html.is-scrollbar-dragging body .vp-scrollbar__thumb,
+html.has-custom-scrollbar body .vp-scrollbar__thumb.is-dragging {
     cursor: grabbing !important;
   }
 
   html.has-custom-scrollbar body .vp-scrollbar.is-hidden,
-  html.has-custom-scrollbar.is-loading body .vp-scrollbar,
-  html.has-custom-scrollbar.is-entering body .vp-scrollbar,
-  html.has-custom-scrollbar body.menu-open .vp-scrollbar,
-  html.has-custom-scrollbar body.is-loading .vp-scrollbar,
-  html.has-custom-scrollbar body.is-entering .vp-scrollbar {
+html.has-custom-scrollbar.is-loading body .vp-scrollbar,
+html.has-custom-scrollbar.is-entering body .vp-scrollbar,
+html.has-custom-scrollbar body.menu-open .vp-scrollbar,
+html.has-custom-scrollbar body.is-loading .vp-scrollbar,
+html.has-custom-scrollbar body.is-entering .vp-scrollbar {
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
@@ -31392,7 +31446,7 @@ body::-webkit-scrollbar-thumb:active {
 
 @media (max-width: 860px) {
   html.has-custom-scrollbar body .vp-scrollbar,
-  html.has-custom-scrollbar body .vp-scrollbar__thumb {
+html.has-custom-scrollbar body .vp-scrollbar__thumb {
     display: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
@@ -31501,15 +31555,15 @@ html body .hero-buttons #giveaways-button:focus-visible {
 
 @media (hover: hover) and (pointer: fine) {
   html body .hero-buttons #giveaways-button:hover,
-  html body .hero-buttons #giveaways-button:focus-visible,
-  html body .hero-buttons #giveaways-button.is-button-hovered {
+html body .hero-buttons #giveaways-button:focus-visible,
+html body .hero-buttons #giveaways-button.is-button-hovered {
     transform: translate3d(0, -1px, 0) scale(1.01) !important;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.29) !important;
   }
 
   html body .hero-buttons #giveaways-button:hover .hero-btn__icon,
-  html body .hero-buttons #giveaways-button:focus-visible .hero-btn__icon,
-  html body .hero-buttons #giveaways-button.is-button-hovered .hero-btn__icon {
+html body .hero-buttons #giveaways-button:focus-visible .hero-btn__icon,
+html body .hero-buttons #giveaways-button.is-button-hovered .hero-btn__icon {
     transform: translate3d(2px, 0, 0) !important;
   }
 
@@ -31557,8 +31611,8 @@ html body .hero-buttons #partners-button.is-touch-pressed {
 
 @media (hover: hover) and (pointer: fine) {
   html body .hero-buttons #partners-button:hover,
-  html body .hero-buttons #partners-button:focus-visible,
-  html body .hero-buttons #partners-button.is-button-hovered {
+html body .hero-buttons #partners-button:focus-visible,
+html body .hero-buttons #partners-button.is-button-hovered {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
     background: linear-gradient(
@@ -31687,11 +31741,11 @@ html body .main-header .main-nav > a:focus-visible {
   }
 
   html body .main-header .main-nav > a.is-active::after,
-  html body .main-header .main-nav > a[aria-current="page"]::after,
-  html body .main-header .main-nav > a:hover::after,
-  html body .main-header .main-nav > a:focus-visible::after,
-  html body .main-header .main-nav > a:active::after,
-  html body .main-header .main-nav > a.is-touch-pressed::after {
+html body .main-header .main-nav > a[aria-current="page"]::after,
+html body .main-header .main-nav > a:hover::after,
+html body .main-header .main-nav > a:focus-visible::after,
+html body .main-header .main-nav > a:active::after,
+html body .main-header .main-nav > a.is-touch-pressed::after {
     width: 100% !important;
   }
 
@@ -31715,18 +31769,18 @@ html body .main-header .main-nav > a:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   html body .hero-buttons #giveaways-button,
-  html body .hero-buttons #giveaways-button.is-click-confirmed,
-  html body .hero-buttons #partners-button,
-  html body .hero-buttons #partners-button.is-click-confirmed,
-  html body .hero-buttons #giveaways-button::after,
-  html body .hero-buttons #giveaways-button .hero-btn__icon,
-  html body .main-header .main-nav > a,
-  html body .main-header .main-nav > a::after {
+html body .hero-buttons #giveaways-button.is-click-confirmed,
+html body .hero-buttons #partners-button,
+html body .hero-buttons #partners-button.is-click-confirmed,
+html body .hero-buttons #giveaways-button::after,
+html body .hero-buttons #giveaways-button .hero-btn__icon,
+html body .main-header .main-nav > a,
+html body .main-header .main-nav > a::after {
     transition-duration: 0.001ms !important;
   }
 
   html body .hero-buttons #giveaways-button.is-click-confirmed,
-  html body .hero-buttons #partners-button.is-click-confirmed {
+html body .hero-buttons #partners-button.is-click-confirmed {
     transform: translate3d(0, 0, 0) scale(1) !important;
   }
 }
@@ -31915,7 +31969,7 @@ html body #news .news-team-action.is-link-dragging::after {
 
 @media (hover: hover) and (pointer: fine) {
   html body #news .news-team-action:hover:not(:active):not(.is-link-dragging)::after,
-  html body #news .news-team-action:focus-visible:not(:active):not(.is-link-dragging)::after {
+html body #news .news-team-action:focus-visible:not(:active):not(.is-link-dragging)::after {
     opacity: 1 !important;
   }
 }
@@ -31933,12 +31987,12 @@ html body #news .news-team-action.is-link-dragging::after {
 
 @media (max-width: 600px) {
   html body #news .news-team-action,
-  html body #news .news-team-action:hover,
-  html body #news .news-team-action:focus-visible,
-  html body #news .news-team-action:active,
-  html body #news .news-team-action.is-touch-pressed,
-  html body #news .news-team-action.is-link-drag-ready,
-  html body #news .news-team-action.is-link-dragging {
+html body #news .news-team-action:hover,
+html body #news .news-team-action:focus-visible,
+html body #news .news-team-action:active,
+html body #news .news-team-action.is-touch-pressed,
+html body #news .news-team-action.is-link-drag-ready,
+html body #news .news-team-action.is-link-dragging {
     width: 50px !important;
     height: 46px !important;
     flex-basis: 50px !important;
@@ -32062,10 +32116,10 @@ html body #videos .videos-grid.is-channel-entering {
 
 @media (prefers-reduced-motion: reduce) {
   html body .main-header,
-  html body.menu-open .main-header,
-  html body #videos .videos-grid,
-  html body #videos .videos-grid.is-channel-leaving,
-  html body #videos .videos-grid.is-channel-entering {
+html body.menu-open .main-header,
+html body #videos .videos-grid,
+html body #videos .videos-grid.is-channel-leaving,
+html body #videos .videos-grid.is-channel-entering {
     transition-duration: 0.001ms !important;
     animation-duration: 0.001ms !important;
   }
@@ -32284,8 +32338,8 @@ html body #bonuses .bonus-copy-code > .bonus-copy-code__status::after {
 
 @media (prefers-reduced-motion: reduce) {
   html body #bonuses .bonus-copy-code,
-  html body #bonuses .bonus-copy-code::after,
-  html body #bonuses .bonus-copy-code > .bonus-copy-code__icon {
+html body #bonuses .bonus-copy-code::after,
+html body #bonuses .bonus-copy-code > .bonus-copy-code__icon {
     animation: none !important;
     transition-duration: 0.001ms !important;
   }
@@ -32793,7 +32847,7 @@ html body #giveaways .giveaway-card--shinobu .giveaway-price-value {
 
 @media (hover: hover) and (pointer: fine) {
   html body #giveaways .giveaway-card--shinobu:hover::after,
-  html body #giveaways .giveaway-card--shinobu:focus-within::after {
+html body #giveaways .giveaway-card--shinobu:focus-within::after {
     z-index: 1 !important;
     opacity: 1 !important;
     transform: translate3d(-50%, -50%, 36px) rotate(5deg) scale(1.2) !important;
@@ -32804,7 +32858,7 @@ html body #giveaways .giveaway-card--shinobu .giveaway-price-value {
   }
 
   html body #giveaways .giveaway-card--shinobu:hover:not(.is-return-resting) .giveaway-img,
-  html body #giveaways .giveaway-card--shinobu:focus-within:not(.is-return-resting) .giveaway-img {
+html body #giveaways .giveaway-card--shinobu:focus-within:not(.is-return-resting) .giveaway-img {
     transform: translate3d(0, 12px, 92px) rotate(9deg) scale(1.08) !important;
     filter: drop-shadow(0 20px 22px rgba(0, 0, 0, 0.46)) !important;
   }
@@ -32822,7 +32876,7 @@ html body #giveaways .giveaway-card--shinobu .giveaway-price-value {
 
 @media (prefers-reduced-motion: reduce) {
   html body #giveaways .giveaway-card--shinobu::after,
-  html body #giveaways .giveaway-card--shinobu .giveaway-img {
+html body #giveaways .giveaway-card--shinobu .giveaway-img {
     transition-duration: 0.01ms !important;
   }
 }
@@ -32968,7 +33022,7 @@ html body #giveaways .giveaway-card--shinobu .giveaway-image-wrapper::after {
 
 @media (hover: hover) and (pointer: fine) {
   html body #giveaways .giveaway-card--shinobu:hover:not(.is-return-resting) .giveaway-image-wrapper::after,
-  html body #giveaways .giveaway-card--shinobu:focus-within:not(.is-return-resting) .giveaway-image-wrapper::after {
+html body #giveaways .giveaway-card--shinobu:focus-within:not(.is-return-resting) .giveaway-image-wrapper::after {
     transform: translate3d(-50%, -50%, 36px) rotate(5deg) scale(1.2) !important;
     filter:
       brightness(0) saturate(100%) invert(14%) sepia(13%) saturate(1764%)
@@ -33037,7 +33091,7 @@ html body #giveaways .giveaway-card--featured-carousel .featured-winner-name {
 
 @media (max-width: 600px) {
   html body #giveaways .giveaway-card--featured-carousel .giveaway-image-wrapper,
-  html body #giveaways .giveaway-card--featured-carousel .giveaway-img-carousel {
+html body #giveaways .giveaway-card--featured-carousel .giveaway-img-carousel {
     min-height: 260px !important;
     height: 260px !important;
   }
@@ -33045,7 +33099,7 @@ html body #giveaways .giveaway-card--featured-carousel .featured-winner-name {
 
 @media (hover: hover) and (pointer: fine) {
   html body #giveaways .giveaway-card--shinobu:hover:not(.is-return-resting) .giveaway-image-wrapper::after,
-  html body #giveaways .giveaway-card--shinobu:focus-within:not(.is-return-resting) .giveaway-image-wrapper::after {
+html body #giveaways .giveaway-card--shinobu:focus-within:not(.is-return-resting) .giveaway-image-wrapper::after {
     filter: none !important;
   }
 }
@@ -33117,8 +33171,8 @@ html body #giveaways .giveaway-card--featured-carousel .hellcase-giveaway-waterm
   }
 
   html body #giveaways .giveaway-card--shinobu .giveaway-image-wrapper,
-  html body #giveaways .giveaway-card--featured-carousel .giveaway-image-wrapper,
-  html body #giveaways .giveaway-card--featured-carousel .giveaway-img-carousel {
+html body #giveaways .giveaway-card--featured-carousel .giveaway-image-wrapper,
+html body #giveaways .giveaway-card--featured-carousel .giveaway-img-carousel {
     min-height: 300px !important;
     height: 300px !important;
   }
@@ -33156,7 +33210,7 @@ html body #giveaways
   html body #giveaways
     .giveaway-card--featured-carousel:hover:not(.is-return-resting)
     .hellcase-giveaway-watermark,
-  html body #giveaways
+html body #giveaways
     .giveaway-card--featured-carousel:focus-within:not(.is-return-resting)
     .hellcase-giveaway-watermark {
     transform: translate3d(-50%, -50%, 36px) rotate(5deg) scale(1.2) !important;
@@ -33169,7 +33223,7 @@ html body #giveaways
   html body #giveaways
     .giveaway-card--shinobu:not(.giveaway-card--featured-carousel):hover:not(.is-return-resting)
     .giveaway-image-wrapper::after,
-  html body #giveaways
+html body #giveaways
     .giveaway-card--shinobu:not(.giveaway-card--featured-carousel):focus-within:not(.is-return-resting)
     .giveaway-image-wrapper::after {
     transform: translate3d(-50%, -50%, 36px) rotate(5deg) scale(1.2) !important;
@@ -33196,9 +33250,9 @@ html body .hero .floating-images {
 
 @media (prefers-reduced-motion: reduce) {
   html body #giveaways .hellcase-giveaway-watermark,
-  html body #giveaways .giveaway-image-wrapper::after,
-  html body #bonuses .bonus-reward-card,
-  html body #bonuses .bonus-reward-card .bonus-reward-card__body {
+html body #giveaways .giveaway-image-wrapper::after,
+html body #bonuses .bonus-reward-card,
+html body #bonuses .bonus-reward-card .bonus-reward-card__body {
     transition-duration: 0.001ms !important;
   }
 }
@@ -33229,7 +33283,7 @@ html body #news .news-team-action.is-touch-pressed::after {
 
 @media (hover: hover) and (pointer: fine) {
   html body #news .news-team-action:hover:not(:active):not(.is-link-dragging)::after,
-  html body #news .news-team-action:focus-visible:not(:active):not(.is-link-dragging)::after {
+html body #news .news-team-action:focus-visible:not(:active):not(.is-link-dragging)::after {
     opacity: 1 !important;
   }
 }
@@ -33329,7 +33383,7 @@ html body #giveaways
   html body #giveaways
     .giveaway-card--shinobu:not(.giveaway-card--featured-carousel):hover:not(.is-return-resting)
     .giveaway-image-wrapper::after,
-  html body #giveaways
+html body #giveaways
     .giveaway-card--shinobu:not(.giveaway-card--featured-carousel):focus-within:not(.is-return-resting)
     .giveaway-image-wrapper::after {
     filter:
@@ -33466,7 +33520,7 @@ html body .hero .hero-explore:active i::after {
 
 @keyframes vpExploreVertical {
   0%,
-  100% {
+100% {
     transform: translate3d(0, -2px, 0);
   }
 
@@ -33579,11 +33633,11 @@ html body #videos .videos-grid::-webkit-scrollbar-button {
 
 @media (max-width: 900px) {
   html body #videos .video-card,
-  html body #videos .video-card:hover,
-  html body #videos .video-card:focus-visible,
-  html body #videos .video-card:active,
-  html body #videos .video-card.is-touch-pressed,
-  html body #videos .video-card.reveal-on-scroll.is-revealed {
+html body #videos .video-card:hover,
+html body #videos .video-card:focus-visible,
+html body #videos .video-card:active,
+html body #videos .video-card.is-touch-pressed,
+html body #videos .video-card.reveal-on-scroll.is-revealed {
     width: calc((100% - 22px) / 2) !important;
     min-width: calc((100% - 22px) / 2) !important;
     flex-basis: calc((100% - 22px) / 2) !important;
@@ -33596,11 +33650,11 @@ html body #videos .videos-grid::-webkit-scrollbar-button {
 
 @media (max-width: 620px) {
   html body #videos .video-card,
-  html body #videos .video-card:hover,
-  html body #videos .video-card:focus-visible,
-  html body #videos .video-card:active,
-  html body #videos .video-card.is-touch-pressed,
-  html body #videos .video-card.reveal-on-scroll.is-revealed {
+html body #videos .video-card:hover,
+html body #videos .video-card:focus-visible,
+html body #videos .video-card:active,
+html body #videos .video-card.is-touch-pressed,
+html body #videos .video-card.reveal-on-scroll.is-revealed {
     width: calc(100% - 18px) !important;
     min-width: calc(100% - 18px) !important;
     flex-basis: calc(100% - 18px) !important;
