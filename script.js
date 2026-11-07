@@ -5752,3 +5752,35 @@ function initMobileStaticInteractions() {
   });
   syncMode();
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("termsModal");
+  const openBtn = document.getElementById("openTerms");
+  const closeBtn = document.getElementById("closeTerms");
+  const overlay = document.getElementById("closeTermsOverlay");
+
+  if (!modal || !openBtn || !closeBtn || !overlay) return;
+
+  function openTerms() {
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("terms-open");
+    closeBtn.focus();
+  }
+
+  function closeTerms() {
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("terms-open");
+    openBtn.focus();
+  }
+
+  openBtn.addEventListener("click", openTerms);
+  closeBtn.addEventListener("click", closeTerms);
+  overlay.addEventListener("click", closeTerms);
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.classList.contains("active")) {
+      closeTerms();
+    }
+    
