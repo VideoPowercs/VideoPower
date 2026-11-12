@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileStaticInteractions();
   initScrollReveal();
   initSectionStageReveals();
+  initHomeNews();
 
   let enhancementsStarted = false;
   const runDeferredEnhancements = () => {
@@ -156,7 +157,22 @@ function initHeroEntranceSequence() {
 }
 
 function initFloatingSkinAnimations() {
+  const hero = document.querySelector(".hero");
   const images = Array.from(document.querySelectorAll(".hero .floating-images img"));
+  if (hero) {
+    hero.addEventListener("pointermove", (event) => {
+      if (event.pointerType !== "mouse") return;
+      const bounds = hero.getBoundingClientRect();
+      const x = ((event.clientX - bounds.left) / bounds.width) * 2 - 1;
+      const y = ((event.clientY - bounds.top) / bounds.height) * 2 - 1;
+      hero.style.setProperty("--floating-x", Math.max(-1, Math.min(1, x)).toFixed(3));
+      hero.style.setProperty("--floating-y", Math.max(-1, Math.min(1, y)).toFixed(3));
+    });
+    hero.addEventListener("pointerleave", () => {
+      hero.style.removeProperty("--floating-x");
+      hero.style.removeProperty("--floating-y");
+    });
+  }
   images.forEach((image) => {
     const startAnimation = () => {
       window.requestAnimationFrame(() => {
@@ -386,6 +402,7 @@ function initHomeNavigationState() {
         window.setTimeout(() => layoutObserver.disconnect(), 5000);
       }
     }
+
   };
 
   const syncActiveState = () => {
@@ -483,6 +500,8 @@ function initHeroCodeCopy() {
     if (!code) return;
 
     let resetTimer = 0;
+    const newsCopy = button.hasAttribute("data-news-copy");
+    const copyStatus = newsCopy ? button.parentElement.querySelector("[data-news-copy-status]") : null;
 
     const fallbackCopy = () => {
       const scrollX = window.scrollX;
@@ -535,18 +554,23 @@ function initHeroCodeCopy() {
     const triggerCopy = async () => {
       if (button.classList.contains("is-copied")) return;
 
-      if (!(await copyCode())) return;
+      if (!(await copyCode())) {
+        if (copyStatus) copyStatus.textContent = "Could not copy the code.";
+        return;
+      }
 
       window.clearTimeout(resetTimer);
-      button.textContent = "Copied!";
+      if (!newsCopy) button.textContent = "Copied!";
+      if (copyStatus) copyStatus.textContent = `Code ${code} copied`;
       button.classList.add("is-copied");
       button.setAttribute("aria-label", `Code ${code} copied`);
 
       resetTimer = window.setTimeout(() => {
-        button.textContent = code;
+        if (!newsCopy) button.textContent = code;
+        if (copyStatus) copyStatus.textContent = "";
         button.classList.remove("is-copied");
         button.setAttribute("aria-label", `Copy code ${code}`);
-        button.blur();
+        if (!newsCopy) button.blur();
       }, 1500);
     };
 
@@ -1000,7 +1024,7 @@ function initCustomScrollbar() {
   }, { passive: true });
   window.addEventListener("resize", scheduleUpdate, { passive: true });
   window.addEventListener("load", scheduleUpdate, { once: true });
-  // Dynamic content can change the document height.
+  // Account content arrives after the document loads and can change its height.
   const sizeObserver = new ResizeObserver(scheduleUpdate);
   sizeObserver.observe(document.documentElement);
   sizeObserver.observe(document.body);
@@ -1672,6 +1696,13 @@ function initStars() {
   let lastFrameTime = 0;
   let resizeTimer = 0;
   const spriteCache = new Map();
+  const spriteImages = ["/assets/floating-videopower-x.png", "/assets/floating-videopower-plus.png"].map((src) => {
+    const image = new Image();
+    image.decoding = "async";
+    image.src = src;
+    image.addEventListener("load", drawStars, { once: true });
+    return image;
+  });
 
   const randomBetween = (min, max) => min + Math.random() * (max - min);
   const randomDiagonalVelocity = () => (
@@ -1680,7 +1711,8 @@ function initStars() {
 
   function getStarSprite(color, radius) {
     const roundedRadius = Math.round(radius * 4) / 4;
-    const key = `${color}-${roundedRadius}`;
+    const spriteIndex = Math.round(radius * 10) % spriteImages.length;
+    const key = `${color}-${roundedRadius}-${spriteIndex}`;
     if (spriteCache.has(key)) {
       return spriteCache.get(key);
     }
@@ -1715,7 +1747,7 @@ function initStars() {
     spriteContext.arc(size / 2, size / 2, roundedRadius, 0, Math.PI * 2);
     spriteContext.fill();
 
-    const cachedSprite = { canvas: sprite, size };
+    const cachedSprite = { canvas: sprite, image: spriteImages[spriteIndex], size };
     spriteCache.set(key, cachedSprite);
     return cachedSprite;
   }
@@ -1798,9 +1830,9 @@ function initStars() {
 
     stars.forEach((star) => {
       context.globalAlpha = star.alpha;
-      if (star.sprite) {
+      if (star.sprite?.image?.complete) {
         context.drawImage(
-          star.sprite.canvas,
+          star.sprite.image,
           star.x - (star.sprite.size / 2),
           star.y - (star.sprite.size / 2),
           star.sprite.size,
@@ -2131,7 +2163,7 @@ function initGiveawayCarousel() {
   const carousels = document.querySelectorAll(".giveaway-img-carousel");
   if (!carousels.length) return;
 
-  const AUTO_INTERVAL = 3600;
+  const AUTO_INTERVAL = 3000;
   const CONTENT_EXIT_DURATION = 140;
   const SLIDE_TRANSITION_DURATION = 460;
 
@@ -2157,6 +2189,7 @@ function initGiveawayCarousel() {
     let intervalId = 0;
     let swapTimer = 0;
     let unlockTimer = 0;
+    let progressFrame = 0;
     let touchStartX = 0;
     let isAnimating = false;
 
@@ -2176,6 +2209,24 @@ function initGiveawayCarousel() {
       carousel.classList.remove("is-progress-running", "is-progress-paused");
       void carousel.offsetWidth;
       carousel.classList.add("is-progress-running");
+      window.cancelAnimationFrame(progressFrame);
+      const startedAt = performance.now();
+      const updateProgress = (now) => {
+        const progress = Math.min(1, (now - startedAt) / autoDelay());
+        dots.forEach((dot, dotIndex) => {
+          let fill = dot.querySelector(".giveaway-dot-progress");
+          if (!fill) {
+            fill = document.createElement("span");
+            fill.className = "giveaway-dot-progress";
+            fill.setAttribute("aria-hidden", "true");
+            dot.appendChild(fill);
+          }
+          dot.style.setProperty("--giveaway-fill", dotIndex === index ? String(progress) : "0");
+          fill.style.width = `${(dotIndex === index ? progress : 0) * 100}%`;
+        });
+        if (progress < 1) progressFrame = window.requestAnimationFrame(updateProgress);
+      };
+      progressFrame = window.requestAnimationFrame(updateProgress);
     }
 
     function pauseAutoPlay() {
@@ -2357,16 +2408,8 @@ function initGiveawayCarousel() {
       });
     }
 
-    dots.forEach((dot, dotIndex) => {
-      const activate = (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        if (dotIndex !== index) goTo(dotIndex);
-      };
-      dot.addEventListener("click", activate);
-      dot.addEventListener("keydown", (event) => {
-        if (event.key === "Enter" || event.key === " ") activate(event);
-      });
+    dots.forEach((dot) => {
+      dot.setAttribute("aria-hidden", "true");
       dot.addEventListener("dragstart", (event) => event.preventDefault());
     });
 
@@ -2604,6 +2647,7 @@ function initBonusClaimButtonCleanup() {
         surfaceLink.dataset.wasDragged = "true";
         clearClickAnimation();
         clearCardMotion();
+        card.classList.add("is-card-hovered", "is-card-dragging");
         setPartnerDragData(event, surfaceLink);
       });
       surfaceLink.addEventListener("click", (event) => {
@@ -4063,6 +4107,94 @@ function initSpecialsCountdown() {
   window.setInterval(renderCountdowns, 1000);
 }
 
+function getHomeNewsMonth(date = new Date()) {
+  return new Intl.DateTimeFormat("en", { month: "long", timeZone: "Europe/Riga" }).format(date).toUpperCase();
+}
+
+function initHomeNews() {
+  const root = document.querySelector(".home-news");
+  if (!root) return;
+  const slides = [...root.querySelectorAll("[data-news-slide]")];
+  const dots = [...root.querySelectorAll(".home-news__dot")];
+  const parallaxSlides = [...root.querySelectorAll("[data-news-parallax]")];
+  const mobileNews = window.matchMedia("(max-width: 860px)");
+  const motion = window.matchMedia("(min-width: 861px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)");
+  const resetParallax = (slide) => {
+    slide.style.removeProperty("--news-x");
+    slide.style.removeProperty("--news-y");
+  };
+  for (const slide of parallaxSlides) {
+    slide.addEventListener("pointermove", (event) => {
+      if (!motion.matches || event.pointerType !== "mouse") return;
+      const bounds = slide.getBoundingClientRect();
+      if (!bounds.width || !bounds.height) return;
+      const x = (event.clientX - bounds.left) / bounds.width * 2 - 1;
+      const y = (event.clientY - bounds.top) / bounds.height * 2 - 1;
+      slide.style.setProperty("--news-x", x.toFixed(3));
+      slide.style.setProperty("--news-y", y.toFixed(3));
+    }, { passive: true });
+    slide.addEventListener("pointerleave", () => resetParallax(slide));
+    slide.addEventListener("click", (event) => {
+      if (!mobileNews.matches || event.target.closest("a, button")) return;
+      const target = slide.querySelector(".home-news__partner-cta[href]");
+      if (target instanceof HTMLAnchorElement) target.click();
+    });
+  }
+  motion.addEventListener("change", () => parallaxSlides.forEach(resetParallax));
+  let current = 0;
+  let touchStart;
+  const month = root.querySelector("[data-news-month]");
+  const updateMonth = () => {
+    const text = ` IN ${getHomeNewsMonth()}`;
+    if (month.textContent !== text) month.textContent = text;
+    month.hidden = false;
+  };
+  updateMonth();
+  window.setInterval(updateMonth, 15000);
+  document.addEventListener("visibilitychange", updateMonth);
+
+  const show = (index, direction = "next") => {
+    parallaxSlides.forEach(resetParallax);
+    root.dataset ??= {};
+    root.dataset.newsDirection = direction;
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => { slide.hidden = i !== current; });
+    dots.forEach((dot, i) => dot.setAttribute("aria-current", String(i === current)));
+  };
+  root.addEventListener("animationend", (event) => {
+    if (event.animationName === "home-news-fill" && event.target === dots[current]) show(current + 1);
+  });
+  const syncPageVisibility = () => root.classList.toggle("is-page-hidden", document.hidden);
+  document.addEventListener("visibilitychange", syncPageVisibility);
+  syncPageVisibility();
+  root.classList.add("is-autoplay-ready");
+  root.addEventListener("click", (event) => {
+    const control = event.target.closest("button");
+    if (!control) return;
+    if (control.hasAttribute("data-news-step")) {
+      const step = Number(control.dataset.newsStep);
+      show(current + step, step < 0 ? "previous" : "next");
+    }
+  });
+  root.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    show(current + (event.key === "ArrowRight" ? 1 : -1));
+    root.querySelector(`[data-news-step="${event.key === "ArrowRight" ? 1 : -1}"]`)?.focus();
+  });
+  root.addEventListener("touchstart", (event) => {
+    touchStart = event.touches.length === 1 ? event.touches[0] : undefined;
+  }, { passive: true });
+  root.addEventListener("touchend", (event) => {
+    if (!touchStart) return;
+    const { clientX, clientY } = event.changedTouches[0];
+    const dx = clientX - touchStart.clientX;
+    const dy = clientY - touchStart.clientY;
+    touchStart = undefined;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) show(current + (dx < 0 ? 1 : -1));
+  }, { passive: true });
+}
+
 function initYoutubeVideos() {
   const container = document.getElementById("videos-grid");
   if (!container) return;
@@ -4302,7 +4434,7 @@ function initYoutubeVideos() {
       if (index === 0) {
         const newest = document.createElement("span");
         newest.className = "video-newest-badge";
-        newest.textContent = "Newest";
+        newest.textContent = "Latest";
         card.appendChild(newest);
       }
       card.style.setProperty("--video-enter-delay", `${Math.min(index * 70, 280)}ms`);
@@ -4881,14 +5013,17 @@ function initYoutubeVideos() {
 
     fetchVideos()
       .then(({ channelVideos, hasMissingChannel }) => {
-        const primaryWasAvailable = Boolean(loadedVideosByChannel[0]?.length);
+        const previousPrimary = loadedVideosByChannel[0] ?? [];
 
         loadedVideosByChannel = channelVideos.map((videos, index) => (
           videos.length ? videos : loadedVideosByChannel[index]
         ));
 
         const availableChannelIndexes = getAvailableChannelIndexes();
-        const primaryBecameAvailable = !primaryWasAvailable && Boolean(loadedVideosByChannel[0]?.length);
+        const primary = loadedVideosByChannel[0] ?? [];
+        const primaryBecameAvailable = !previousPrimary.length && Boolean(primary.length);
+        const visibleVideos = (videos) => JSON.stringify(videos.slice(0, MAX_RESULTS));
+        const primaryChanged = visibleVideos(primary) !== visibleVideos(previousPrimary);
 
         if (!hasRenderedVideos || primaryBecameAvailable) {
           activeChannelIndex = availableChannelIndexes.includes(0)
@@ -4896,7 +5031,7 @@ function initYoutubeVideos() {
             : availableChannelIndexes[0];
         }
 
-        const shouldRenderVideos = !hasRenderedVideos || primaryBecameAvailable;
+        const shouldRenderVideos = !hasRenderedVideos || primaryChanged;
         hasRenderedVideos = true;
 
         if (shouldRenderVideos) {

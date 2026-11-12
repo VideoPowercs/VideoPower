@@ -40,8 +40,7 @@ html body .hero .floating-images img:nth-child(4) { --drift-x: 13px; --drift-y: 
 html body .hero .floating-images img:nth-child(5) { --drift-x: 8px; --drift-y: -13px; --rest-angle: -3deg; --tilt-angle: 0deg; --depth: 0.65; animation-duration: 15s !important; animation-delay: -4s !important; }
 
 @keyframes vpModernDrift {
-  0%,
-100% { transform: translate3d(0, 0, 0) rotate(var(--rest-angle)); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(var(--rest-angle)); }
   50% { transform: translate3d(calc(var(--drift-x) * var(--motion-scale)), calc(var(--drift-y) * var(--motion-scale)), 0) rotate(var(--tilt-angle)); }
 }
 
@@ -64,8 +63,7 @@ html body .hero .floating-images img.floating-vp-coin--two {
   animation-delay: -8s !important;
 }
 @keyframes vpModernCoin {
-  0%,
-100% { transform: perspective(700px) translate3d(0, 0, 0) rotateY(-12deg) rotateZ(var(--coin-rest)); }
+  0%, 100% { transform: perspective(700px) translate3d(0, 0, 0) rotateY(-12deg) rotateZ(var(--coin-rest)); }
   50% { transform: perspective(700px) translate3d(calc(var(--drift-x) * var(--motion-scale)), calc(var(--drift-y) * var(--motion-scale)), 0) rotateY(16deg) rotateZ(var(--coin-tilt)); }
 }
 

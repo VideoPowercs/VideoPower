@@ -138,9 +138,9 @@ html body #videos .video-card:not(.skeleton):focus-visible::after {
   }
 
   html body #videos .video-card:not(.skeleton),
-html body #videos .video-card:not(.skeleton):hover,
-html body #videos .video-card:not(.skeleton):focus-visible,
-html body #videos .video-card:not(.skeleton):active {
+  html body #videos .video-card:not(.skeleton):hover,
+  html body #videos .video-card:not(.skeleton):focus-visible,
+  html body #videos .video-card:not(.skeleton):active {
     height: 300px !important;
     min-height: 300px !important;
     max-height: 300px !important;
@@ -164,9 +164,9 @@ html body #videos .video-card:not(.skeleton):active {
 
 @media (min-width: 861px) {
   html body #videos .video-card.skeleton,
-html body #videos .video-card.skeleton:hover,
-html body #videos .video-card.skeleton:focus-visible,
-html body #videos .video-card.skeleton:active {
+  html body #videos .video-card.skeleton:hover,
+  html body #videos .video-card.skeleton:focus-visible,
+  html body #videos .video-card.skeleton:active {
     height: 300px !important;
     min-height: 300px !important;
     max-height: 300px !important;
@@ -195,9 +195,9 @@ html body #videos .video-card.skeleton:active {
   }
 
   html body #videos .video-card.skeleton,
-html body #videos .video-card.skeleton:hover,
-html body #videos .video-card.skeleton:focus-visible,
-html body #videos .video-card.skeleton:active {
+  html body #videos .video-card.skeleton:hover,
+  html body #videos .video-card.skeleton:focus-visible,
+  html body #videos .video-card.skeleton:active {
     height: 300px !important;
     min-height: 300px !important;
     max-height: 300px !important;
@@ -276,7 +276,7 @@ html body #videos .video-card:not(.skeleton):focus-visible::after {
   }
 
   html body #videos .video-card:hover .video-media img,
-html body #videos .video-card.reveal-on-scroll.is-revealed:hover .video-media img {
+  html body #videos .video-card.reveal-on-scroll.is-revealed:hover .video-media img {
     animation: vp-video-hover-hop 0.42s cubic-bezier(0.16, 1, 0.3, 1) both !important;
   }
 }
@@ -302,7 +302,7 @@ html body #videos .video-card.reveal-on-scroll.is-revealed:hover .video-media im
 /* Desktop Latest Videos cards keep their lower content at its resting height on hover. */
 @media (min-width: 861px) {
   html body #videos .video-card:hover .video-info,
-html body #videos .video-card.reveal-on-scroll.is-revealed:hover .video-info {
+  html body #videos .video-card.reveal-on-scroll.is-revealed:hover .video-info {
     translate: 0 0 !important;
     scale: 1 !important;
     transform: none !important;
@@ -465,37 +465,32 @@ html body .hero .floating-images img.is-floating-animated:nth-child(5) {
 }
 
 @keyframes vpFloatingM9Drift {
-  0%,
-100% { transform: translate3d(0, 0, 0) rotate(-7deg) scale(1); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-7deg) scale(1); }
   36% { transform: translate3d(13px, -17px, 0) rotate(-2deg) scale(1.025); }
   72% { transform: translate3d(-7px, -8px, 0) rotate(-10deg) scale(1.01); }
 }
 
 @keyframes vpFloatingGlovesOrbit {
-  0%,
-100% { transform: translate3d(0, 0, 0) rotate(5deg) scale(1); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(5deg) scale(1); }
   28% { transform: translate3d(-12px, -13px, 0) rotate(10deg) scale(1.035); }
   56% { transform: translate3d(5px, -24px, 0) rotate(2deg) scale(1.015); }
   82% { transform: translate3d(12px, -7px, 0) rotate(7deg) scale(1.025); }
 }
 
 @keyframes vpFloatingAwpGlide {
-  0%,
-100% { transform: translate3d(0, 0, 0) rotate(1deg) scale(1); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(1deg) scale(1); }
   30% { transform: translate3d(18px, -10px, 0) rotate(4deg) scale(1.018); }
   64% { transform: translate3d(-11px, -21px, 0) rotate(-2deg) scale(1.032); }
 }
 
 @keyframes vpFloatingHowlPulse {
-  0%,
-100% { transform: translate3d(0, 0, 0) rotate(-2deg) scale(1); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-2deg) scale(1); }
   46% { transform: translate3d(-9px, -20px, 0) rotate(-6deg) scale(1.04); }
   72% { transform: translate3d(7px, -11px, 0) rotate(1deg) scale(1.018); }
 }
 
 @keyframes vpFloatingAkFigureEight {
-  0%,
-100% { transform: translate3d(0, 0, 0) rotate(-3deg) scale(1); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-3deg) scale(1); }
   24% { transform: translate3d(15px, -11px, 0) rotate(1deg) scale(1.02); }
   50% { transform: translate3d(0, -23px, 0) rotate(-5deg) scale(1.035); }
   76% { transform: translate3d(-15px, -10px, 0) rotate(-8deg) scale(1.018); }
@@ -511,12 +506,12 @@ html body .hero .floating-images img.is-floating-animated:nth-child(5) {
 /* Keep the desktop scrollbar visible from the first rendered frame onward. */
 @media (min-width: 861px) {
   html.has-custom-scrollbar body .vp-scrollbar,
-html.has-custom-scrollbar body .vp-scrollbar.is-hidden,
-html.has-custom-scrollbar.is-loading body .vp-scrollbar,
-html.has-custom-scrollbar.is-entering body .vp-scrollbar,
-html.has-custom-scrollbar body.menu-open .vp-scrollbar,
-html.has-custom-scrollbar body.is-loading .vp-scrollbar,
-html.has-custom-scrollbar body.is-entering .vp-scrollbar {
+  html.has-custom-scrollbar body .vp-scrollbar.is-hidden,
+  html.has-custom-scrollbar.is-loading body .vp-scrollbar,
+  html.has-custom-scrollbar.is-entering body .vp-scrollbar,
+  html.has-custom-scrollbar body.menu-open .vp-scrollbar,
+  html.has-custom-scrollbar body.is-loading .vp-scrollbar,
+  html.has-custom-scrollbar body.is-entering .vp-scrollbar {
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
@@ -622,14 +617,14 @@ html.section-scroll-reveals body #giveaways .giveaway-card.section-stage-reveal.
 
 @media (prefers-reduced-motion: reduce) {
   html.section-scroll-reveals body #bonuses .bonuses-reveal-title,
-html.section-scroll-reveals body #bonuses .bonuses-reveal-subtitle,
-html.section-scroll-reveals body #bonuses .bonus-reward-card,
-html.section-scroll-reveals body #news .news-team-heading,
-html.section-scroll-reveals body #news .news-team-member,
-html.section-scroll-reveals body #videos .videos-heading-row,
-html.section-scroll-reveals body #videos .videos-carousel-shell,
-html.section-scroll-reveals body #giveaways .giveaways-heading-row,
-html.section-scroll-reveals body #giveaways .giveaway-card {
+  html.section-scroll-reveals body #bonuses .bonuses-reveal-subtitle,
+  html.section-scroll-reveals body #bonuses .bonus-reward-card,
+  html.section-scroll-reveals body #news .news-team-heading,
+  html.section-scroll-reveals body #news .news-team-member,
+  html.section-scroll-reveals body #videos .videos-heading-row,
+  html.section-scroll-reveals body #videos .videos-carousel-shell,
+  html.section-scroll-reveals body #giveaways .giveaways-heading-row,
+  html.section-scroll-reveals body #giveaways .giveaway-card {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;
@@ -678,13 +673,13 @@ html body .section-stage-reveal.stage-reveal-without-motion {
   }
 
   html body #videos .videos-grid > .video-card,
-html body #videos .videos-grid > .video-card:hover,
-html body #videos .videos-grid > .video-card:focus-visible,
-html body #videos .videos-grid > .video-card:active,
-html body #videos .videos-grid > .video-card.is-touch-pressed,
-html body #videos .videos-grid > .video-card.reveal-on-scroll.is-revealed,
-html body #videos .videos-grid > .video-card.reveal-on-scroll.is-revealed:hover,
-html body #videos .videos-grid > .video-card.reveal-on-scroll.is-revealed:focus-visible {
+  html body #videos .videos-grid > .video-card:hover,
+  html body #videos .videos-grid > .video-card:focus-visible,
+  html body #videos .videos-grid > .video-card:active,
+  html body #videos .videos-grid > .video-card.is-touch-pressed,
+  html body #videos .videos-grid > .video-card.reveal-on-scroll.is-revealed,
+  html body #videos .videos-grid > .video-card.reveal-on-scroll.is-revealed:hover,
+  html body #videos .videos-grid > .video-card.reveal-on-scroll.is-revealed:focus-visible {
     flex: 0 0 calc((100% - 56px) / 3) !important;
     width: calc((100% - 56px) / 3) !important;
     min-width: calc((100% - 56px) / 3) !important;
@@ -779,9 +774,9 @@ html body #videos .videos-grid > .video-card.reveal-on-scroll.is-revealed:focus-
 
 @media (prefers-reduced-motion: reduce) {
   html.hero-intro-pending.hero-intro-running body .hero-content .hero-wordmark,
-html.hero-intro-pending.hero-intro-running body .hero-content .hero-intro-copy,
-html.hero-intro-pending.hero-intro-running body .hero .hero-static-actions,
-html.hero-intro-pending.hero-intro-running body .hero .hero-explore {
+  html.hero-intro-pending.hero-intro-running body .hero-content .hero-intro-copy,
+  html.hero-intro-pending.hero-intro-running body .hero .hero-static-actions,
+  html.hero-intro-pending.hero-intro-running body .hero .hero-explore {
     animation-duration: 0.001ms !important;
     animation-delay: 0s !important;
   }
@@ -995,9 +990,9 @@ html body #giveaways .giveaway-card--featured-carousel.is-giveaway-content-exiti
 
 @media (prefers-reduced-motion: reduce) {
   html body #giveaways .giveaway-card--featured-carousel .giveaway-img,
-html body #giveaways .giveaway-card--featured-carousel .featured-skin-name,
-html body #giveaways .giveaway-card--featured-carousel .giveaway-title--price,
-html body #giveaways .giveaway-card--featured-carousel .featured-item-condition {
+  html body #giveaways .giveaway-card--featured-carousel .featured-skin-name,
+  html body #giveaways .giveaway-card--featured-carousel .giveaway-title--price,
+  html body #giveaways .giveaway-card--featured-carousel .featured-item-condition {
     transition-duration: 0.01ms !important;
   }
 }
@@ -1010,10 +1005,10 @@ html body #giveaways .giveaway-card--featured-carousel .featured-item-condition 
   }
 
   html body #videos .videos-carousel-arrow,
-html body #videos .videos-carousel-arrow:hover,
-html body #videos .videos-carousel-arrow:focus-visible,
-html body #videos .videos-carousel-arrow:active,
-html body #videos .videos-carousel-arrow:disabled {
+  html body #videos .videos-carousel-arrow:hover,
+  html body #videos .videos-carousel-arrow:focus-visible,
+  html body #videos .videos-carousel-arrow:active,
+  html body #videos .videos-carousel-arrow:disabled {
     height: 52px !important;
     min-height: 52px !important;
     max-height: 52px !important;
@@ -1356,13 +1351,13 @@ html body .main-footer .footer-disclaimer {
   }
 
   html body .main-footer .footer-brand,
-html body .main-footer .footer-directory {
+  html body .main-footer .footer-directory {
     align-items: flex-start !important;
     text-align: left !important;
   }
 
   html body .main-footer .footer-nav,
-html body .main-footer #social-links-footer.footer-social-links {
+  html body .main-footer #social-links-footer.footer-social-links {
     justify-content: flex-start !important;
   }
 
@@ -1414,7 +1409,7 @@ html body .main-footer #social-links-footer.footer-social-links {
   }
 
   html body .main-footer .footer-tagline,
-html body .main-footer .footer-nav-link {
+  html body .main-footer .footer-nav-link {
     font-size: 12px !important;
   }
 }
@@ -1422,14 +1417,14 @@ html body .main-footer .footer-nav-link {
 /* Mobile navigation is a compact header dropdown, never a full-screen layer. */
 @media (max-width: 860px) {
   html body .main-header,
-html body.menu-open .main-header {
+  html body.menu-open .main-header {
     overflow: visible !important;
   }
 
   html body .main-header .main-nav,
-html body .main-header .main-nav.show,
-html body.menu-open .main-header .main-nav,
-html body.menu-open .main-header .main-nav.show {
+  html body .main-header .main-nav.show,
+  html body.menu-open .main-header .main-nav,
+  html body.menu-open .main-header .main-nav.show {
     position: absolute !important;
     top: calc(100% + 8px) !important;
     right: 12px !important;
@@ -1467,7 +1462,7 @@ html body.menu-open .main-header .main-nav.show {
   }
 
   html body .main-header .main-nav.show,
-html body.menu-open .main-header .main-nav.show {
+  html body.menu-open .main-header .main-nav.show {
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
@@ -1475,9 +1470,9 @@ html body.menu-open .main-header .main-nav.show {
   }
 
   html body .main-header .main-nav::before,
-html body .main-header .main-nav::after,
-html body .main-header .main-nav.show::before,
-html body .main-header .main-nav.show::after {
+  html body .main-header .main-nav::after,
+  html body .main-header .main-nav.show::before,
+  html body .main-header .main-nav.show::after {
     content: none !important;
     position: static !important;
     inset: auto !important;
@@ -1488,10 +1483,10 @@ html body .main-header .main-nav.show::after {
   }
 
   html body .main-header .main-nav > a,
-html body .main-header .main-nav > a:hover,
-html body .main-header .main-nav > a:focus-visible,
-html body .main-header .main-nav > a:active,
-html body .main-header .main-nav > a.is-touch-pressed {
+  html body .main-header .main-nav > a:hover,
+  html body .main-header .main-nav > a:focus-visible,
+  html body .main-header .main-nav > a:active,
+  html body .main-header .main-nav > a.is-touch-pressed {
     width: 100% !important;
     min-height: 42px !important;
     padding: 10px 12px !important;
@@ -1506,10 +1501,10 @@ html body .main-header .main-nav > a.is-touch-pressed {
   }
 
   html body .main-header .main-nav > a:hover,
-html body .main-header .main-nav > a:focus-visible,
-html body .main-header .main-nav > a:active,
-html body .main-header .main-nav > a.is-active,
-html body .main-header .main-nav > a[aria-current="page"] {
+  html body .main-header .main-nav > a:focus-visible,
+  html body .main-header .main-nav > a:active,
+  html body .main-header .main-nav > a.is-active,
+  html body .main-header .main-nav > a[aria-current="page"] {
     background: rgba(255, 169, 20, 0.08) !important;
   }
 
@@ -1522,9 +1517,9 @@ html body .main-header .main-nav > a[aria-current="page"] {
 @media (max-width: 860px) {
   /* Keep the header identity visible while the compact menu is open. */
   html body .main-header .logo-container,
-html body.menu-open .main-header .logo-container,
-html body .main-header .logo-link,
-html body.menu-open .main-header .logo-link {
+  html body.menu-open .main-header .logo-container,
+  html body .main-header .logo-link,
+  html body.menu-open .main-header .logo-link {
     position: relative !important;
     z-index: 2502 !important;
     display: flex !important;
@@ -1535,9 +1530,9 @@ html body.menu-open .main-header .logo-link {
   }
 
   html body .main-header .vp-logo-mark,
-html body .main-header .logo-wordmark,
-html body.menu-open .main-header .vp-logo-mark,
-html body.menu-open .main-header .logo-wordmark {
+  html body .main-header .logo-wordmark,
+  html body.menu-open .main-header .vp-logo-mark,
+  html body.menu-open .main-header .logo-wordmark {
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
@@ -1547,12 +1542,12 @@ html body.menu-open .main-header .logo-wordmark {
 
   /* Smaller neutral hamburger; its open state is a real X, not a cross icon. */
   html body .main-header .hamburger,
-html body .main-header .hamburger:hover,
-html body .main-header .hamburger:focus,
-html body .main-header .hamburger:focus-visible,
-html body .main-header .hamburger:active,
-html body .main-header .hamburger.active,
-html body.menu-open .main-header .hamburger {
+  html body .main-header .hamburger:hover,
+  html body .main-header .hamburger:focus,
+  html body .main-header .hamburger:focus-visible,
+  html body .main-header .hamburger:active,
+  html body .main-header .hamburger.active,
+  html body.menu-open .main-header .hamburger {
     position: relative !important;
     z-index: 2503 !important;
     display: flex !important;
@@ -1584,10 +1579,10 @@ html body.menu-open .main-header .hamburger {
   }
 
   html body .main-header .hamburger span,
-html body .main-header .hamburger span:nth-child(1),
-html body .main-header .hamburger span:nth-child(2),
-html body .main-header .hamburger span:nth-child(3),
-html body.menu-open .main-header .hamburger span {
+  html body .main-header .hamburger span:nth-child(1),
+  html body .main-header .hamburger span:nth-child(2),
+  html body .main-header .hamburger span:nth-child(3),
+  html body.menu-open .main-header .hamburger span {
     position: static !important;
     display: block !important;
     width: 23px !important;
@@ -1610,26 +1605,26 @@ html body.menu-open .main-header .hamburger span {
   }
 
   html body .main-header .hamburger.active span:nth-child(1),
-html body.menu-open .main-header .hamburger span:nth-child(1) {
+  html body.menu-open .main-header .hamburger span:nth-child(1) {
     transform: translate3d(0, 6px, 0) rotate(45deg) !important;
   }
 
   html body .main-header .hamburger.active span:nth-child(2),
-html body.menu-open .main-header .hamburger span:nth-child(2) {
+  html body.menu-open .main-header .hamburger span:nth-child(2) {
     opacity: 0 !important;
     transform: none !important;
   }
 
   html body .main-header .hamburger.active span:nth-child(3),
-html body.menu-open .main-header .hamburger span:nth-child(3) {
+  html body.menu-open .main-header .hamburger span:nth-child(3) {
     transform: translate3d(0, -6px, 0) rotate(-45deg) !important;
   }
 
   /* Phone-width, taller compact navigation panel. */
   html body .main-header .main-nav,
-html body .main-header .main-nav.show,
-html body.menu-open .main-header .main-nav,
-html body.menu-open .main-header .main-nav.show {
+  html body .main-header .main-nav.show,
+  html body.menu-open .main-header .main-nav,
+  html body.menu-open .main-header .main-nav.show {
     top: calc(100% + 8px) !important;
     right: 8px !important;
     bottom: auto !important;
@@ -1651,13 +1646,13 @@ html body.menu-open .main-header .main-nav.show {
   }
 
   html body .main-header .main-nav > a,
-html body .main-header .main-nav > a:hover,
-html body .main-header .main-nav > a:focus,
-html body .main-header .main-nav > a:focus-visible,
-html body .main-header .main-nav > a:active,
-html body .main-header .main-nav > a.is-touch-pressed,
-html body .main-header .main-nav > a.is-active,
-html body .main-header .main-nav > a[aria-current="page"] {
+  html body .main-header .main-nav > a:hover,
+  html body .main-header .main-nav > a:focus,
+  html body .main-header .main-nav > a:focus-visible,
+  html body .main-header .main-nav > a:active,
+  html body .main-header .main-nav > a.is-touch-pressed,
+  html body .main-header .main-nav > a.is-active,
+  html body .main-header .main-nav > a[aria-current="page"] {
     position: relative !important;
     display: inline-flex !important;
     width: fit-content !important;
@@ -1691,13 +1686,13 @@ html body .main-header .main-nav > a[aria-current="page"] {
   }
 
   html body .main-header .main-nav > a .merch-label,
-html body .main-header .main-nav > a:hover .merch-label,
-html body .main-header .main-nav > a:focus .merch-label,
-html body .main-header .main-nav > a:focus-visible .merch-label,
-html body .main-header .main-nav > a:active .merch-label,
-html body .main-header .main-nav > a.is-touch-pressed .merch-label,
-html body .main-header .main-nav > a.is-active .merch-label,
-html body .main-header .main-nav > a[aria-current="page"] .merch-label {
+  html body .main-header .main-nav > a:hover .merch-label,
+  html body .main-header .main-nav > a:focus .merch-label,
+  html body .main-header .main-nav > a:focus-visible .merch-label,
+  html body .main-header .main-nav > a:active .merch-label,
+  html body .main-header .main-nav > a.is-touch-pressed .merch-label,
+  html body .main-header .main-nav > a.is-active .merch-label,
+  html body .main-header .main-nav > a[aria-current="page"] .merch-label {
     color: #bdbdc2 !important;
     -webkit-text-fill-color: #bdbdc2 !important;
     text-shadow: none !important;
@@ -1706,11 +1701,11 @@ html body .main-header .main-nav > a[aria-current="page"] .merch-label {
   }
 
   html body .main-header .main-nav > a::after,
-html body .main-header .main-nav > a:hover::after,
-html body .main-header .main-nav > a:focus::after,
-html body .main-header .main-nav > a:focus-visible::after,
-html body .main-header .main-nav > a:active::after,
-html body .main-header .main-nav > a.is-touch-pressed::after {
+  html body .main-header .main-nav > a:hover::after,
+  html body .main-header .main-nav > a:focus::after,
+  html body .main-header .main-nav > a:focus-visible::after,
+  html body .main-header .main-nav > a:active::after,
+  html body .main-header .main-nav > a.is-touch-pressed::after {
     content: "" !important;
     position: absolute !important;
     top: auto !important;
@@ -1730,11 +1725,11 @@ html body .main-header .main-nav > a.is-touch-pressed::after {
   }
 
   html body .main-header .main-nav > a.is-active::after,
-html body .main-header .main-nav > a[aria-current="page"]::after,
-html body .main-header .main-nav > a.is-active:hover::after,
-html body .main-header .main-nav > a[aria-current="page"]:hover::after,
-html body .main-header .main-nav > a.is-active:active::after,
-html body .main-header .main-nav > a[aria-current="page"]:active::after {
+  html body .main-header .main-nav > a[aria-current="page"]::after,
+  html body .main-header .main-nav > a.is-active:hover::after,
+  html body .main-header .main-nav > a[aria-current="page"]:hover::after,
+  html body .main-header .main-nav > a.is-active:active::after,
+  html body .main-header .main-nav > a[aria-current="page"]:active::after {
     width: 100% !important;
     opacity: 1 !important;
   }
@@ -1752,16 +1747,16 @@ html body .main-header .main-nav > a[aria-current="page"]:active::after {
   }
 
   html body .hero .hero-static-actions > .hero-static-action,
-html body .hero .hero-static-actions > .hero-static-action:link,
-html body .hero .hero-static-actions > .hero-static-action:visited,
-html body .hero .hero-static-actions > .hero-static-action:hover,
-html body .hero .hero-static-actions > .hero-static-action:focus,
-html body .hero .hero-static-actions > .hero-static-action:focus-visible,
-html body .hero .hero-static-actions > .hero-static-action:active,
-html body .hero .hero-static-actions > .hero-static-action.is-touch-pressed,
-html body .hero .hero-static-actions > .hero-static-action.is-button-hovered,
-html body .hero .hero-static-actions > .hero-static-action.is-click-confirmed,
-html body .hero .hero-static-actions > .hero-static-action.is-return-clean {
+  html body .hero .hero-static-actions > .hero-static-action:link,
+  html body .hero .hero-static-actions > .hero-static-action:visited,
+  html body .hero .hero-static-actions > .hero-static-action:hover,
+  html body .hero .hero-static-actions > .hero-static-action:focus,
+  html body .hero .hero-static-actions > .hero-static-action:focus-visible,
+  html body .hero .hero-static-actions > .hero-static-action:active,
+  html body .hero .hero-static-actions > .hero-static-action.is-touch-pressed,
+  html body .hero .hero-static-actions > .hero-static-action.is-button-hovered,
+  html body .hero .hero-static-actions > .hero-static-action.is-click-confirmed,
+  html body .hero .hero-static-actions > .hero-static-action.is-return-clean {
     width: calc((100% - 8px) / 2) !important;
     min-width: 0 !important;
     max-width: none !important;
@@ -1781,11 +1776,11 @@ html body .hero .hero-static-actions > .hero-static-action.is-return-clean {
   }
 
   html body .hero .hero-static-actions > .hero-static-action--giveaways,
-html body .hero .hero-static-actions > .hero-static-action--giveaways:hover,
-html body .hero .hero-static-actions > .hero-static-action--giveaways:focus-visible,
-html body .hero .hero-static-actions > .hero-static-action--giveaways:active,
-html body .hero .hero-static-actions > .hero-static-action--giveaways.is-touch-pressed,
-html body .hero .hero-static-actions > .hero-static-action--giveaways.is-click-confirmed {
+  html body .hero .hero-static-actions > .hero-static-action--giveaways:hover,
+  html body .hero .hero-static-actions > .hero-static-action--giveaways:focus-visible,
+  html body .hero .hero-static-actions > .hero-static-action--giveaways:active,
+  html body .hero .hero-static-actions > .hero-static-action--giveaways.is-touch-pressed,
+  html body .hero .hero-static-actions > .hero-static-action--giveaways.is-click-confirmed {
     background: linear-gradient(180deg, #f0a00a 0%, #d88806 100%) !important;
     color: #090909 !important;
     -webkit-text-fill-color: #090909 !important;
@@ -1795,11 +1790,11 @@ html body .hero .hero-static-actions > .hero-static-action--giveaways.is-click-c
   }
 
   html body .hero .hero-static-actions > .hero-static-action--socials,
-html body .hero .hero-static-actions > .hero-static-action--socials:hover,
-html body .hero .hero-static-actions > .hero-static-action--socials:focus-visible,
-html body .hero .hero-static-actions > .hero-static-action--socials:active,
-html body .hero .hero-static-actions > .hero-static-action--socials.is-touch-pressed,
-html body .hero .hero-static-actions > .hero-static-action--socials.is-click-confirmed {
+  html body .hero .hero-static-actions > .hero-static-action--socials:hover,
+  html body .hero .hero-static-actions > .hero-static-action--socials:focus-visible,
+  html body .hero .hero-static-actions > .hero-static-action--socials:active,
+  html body .hero .hero-static-actions > .hero-static-action--socials.is-touch-pressed,
+  html body .hero .hero-static-actions > .hero-static-action--socials.is-click-confirmed {
     background: rgba(23, 22, 22, 0.78) !important;
     color: #a9a7a7 !important;
     -webkit-text-fill-color: #a9a7a7 !important;
@@ -1848,7 +1843,7 @@ html body .hero .hero-static-actions > .hero-static-action--socials.is-click-con
   }
 
   html body #bonuses .bonus-reward-card[data-bonus-id="raingg"] > .bonus-reward-card__item,
-html body #bonuses .bonus-reward-card__item--hypedrop {
+  html body #bonuses .bonus-reward-card__item--hypedrop {
     width: min(58%, 205px) !important;
     max-height: 140px !important;
   }
@@ -1859,13 +1854,13 @@ html body #bonuses .bonus-reward-card__item--hypedrop {
   }
 
   html body #bonuses .bonus-reward-card:hover,
-html body #bonuses .bonus-reward-card:focus,
-html body #bonuses .bonus-reward-card:focus-within,
-html body #bonuses .bonus-reward-card:active,
-html body #bonuses .bonus-reward-card.is-touch-pressed,
-html body #bonuses .bonus-reward-card.is-card-pressed,
-html body #bonuses .bonus-reward-card.is-card-holding,
-html body #bonuses .bonus-reward-card.is-return-resting {
+  html body #bonuses .bonus-reward-card:focus,
+  html body #bonuses .bonus-reward-card:focus-within,
+  html body #bonuses .bonus-reward-card:active,
+  html body #bonuses .bonus-reward-card.is-touch-pressed,
+  html body #bonuses .bonus-reward-card.is-card-pressed,
+  html body #bonuses .bonus-reward-card.is-card-holding,
+  html body #bonuses .bonus-reward-card.is-return-resting {
     translate: 0 0 !important;
     rotate: 0deg !important;
     scale: 1 !important;
@@ -1876,10 +1871,10 @@ html body #bonuses .bonus-reward-card.is-return-resting {
   }
 
   html body #bonuses .bonus-reward-card:hover .bonus-reward-card__body,
-html body #bonuses .bonus-reward-card:focus-within .bonus-reward-card__body,
-html body #bonuses .bonus-reward-card:active .bonus-reward-card__body,
-html body #bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__body,
-html body #bonuses .bonus-reward-card.is-card-pressed .bonus-reward-card__body {
+  html body #bonuses .bonus-reward-card:focus-within .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card:active .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card.is-touch-pressed .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card.is-card-pressed .bonus-reward-card__body {
     translate: 0 0 !important;
     scale: 1 !important;
     transform: none !important;
@@ -1890,12 +1885,12 @@ html body #bonuses .bonus-reward-card.is-card-pressed .bonus-reward-card__body {
 
   /* Video card and its lower information area stay fixed when tapped. */
   html body #videos .videos-grid > .video-card,
-html body #videos .videos-grid > .video-card:hover,
-html body #videos .videos-grid > .video-card:focus,
-html body #videos .videos-grid > .video-card:focus-visible,
-html body #videos .videos-grid > .video-card:active,
-html body #videos .videos-grid > .video-card.is-touch-pressed,
-html body #videos .videos-grid > .video-card.is-video-pressing {
+  html body #videos .videos-grid > .video-card:hover,
+  html body #videos .videos-grid > .video-card:focus,
+  html body #videos .videos-grid > .video-card:focus-visible,
+  html body #videos .videos-grid > .video-card:active,
+  html body #videos .videos-grid > .video-card.is-touch-pressed,
+  html body #videos .videos-grid > .video-card.is-video-pressing {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     translate: 0 0 !important;
@@ -1907,10 +1902,10 @@ html body #videos .videos-grid > .video-card.is-video-pressing {
   }
 
   html body #videos .video-card .video-info,
-html body #videos .video-card:hover .video-info,
-html body #videos .video-card:focus-visible .video-info,
-html body #videos .video-card:active .video-info,
-html body #videos .video-card.is-touch-pressed .video-info {
+  html body #videos .video-card:hover .video-info,
+  html body #videos .video-card:focus-visible .video-info,
+  html body #videos .video-card:active .video-info,
+  html body #videos .video-card.is-touch-pressed .video-info {
     translate: 0 0 !important;
     scale: 1 !important;
     transform: none !important;
@@ -1919,12 +1914,12 @@ html body #videos .video-card.is-touch-pressed .video-info {
 
   /* Stay Connected art and buttons are entirely static on mobile. */
   html body #news .news-team-member__avatar,
-html body #news .news-team-member:hover .news-team-member__avatar,
-html body #news .news-team-member:focus-within .news-team-member__avatar,
-html body #news .news-team-member:active .news-team-member__avatar,
-html body #news .news-team-member.is-news-action-pressing .news-team-member__avatar,
-html body #news .news-team-member.is-news-action-resting .news-team-member__avatar,
-html body #news .news-team-member:has(.news-team-action:active) .news-team-member__avatar {
+  html body #news .news-team-member:hover .news-team-member__avatar,
+  html body #news .news-team-member:focus-within .news-team-member__avatar,
+  html body #news .news-team-member:active .news-team-member__avatar,
+  html body #news .news-team-member.is-news-action-pressing .news-team-member__avatar,
+  html body #news .news-team-member.is-news-action-resting .news-team-member__avatar,
+  html body #news .news-team-member:has(.news-team-action:active) .news-team-member__avatar {
     translate: 0 0 !important;
     rotate: 0deg !important;
     scale: 1 !important;
@@ -1936,14 +1931,14 @@ html body #news .news-team-member:has(.news-team-action:active) .news-team-membe
   }
 
   html body #news .news-team-action,
-html body #news .news-team-action:hover,
-html body #news .news-team-action:focus,
-html body #news .news-team-action:focus-visible,
-html body #news .news-team-action:active,
-html body #news .news-team-action.is-touch-pressed,
-html body #news .news-team-action.is-link-drag-ready,
-html body #news .news-team-action.is-link-dragging,
-html body #news .news-team-action.is-return-resting {
+  html body #news .news-team-action:hover,
+  html body #news .news-team-action:focus,
+  html body #news .news-team-action:focus-visible,
+  html body #news .news-team-action:active,
+  html body #news .news-team-action.is-touch-pressed,
+  html body #news .news-team-action.is-link-drag-ready,
+  html body #news .news-team-action.is-link-dragging,
+  html body #news .news-team-action.is-return-resting {
     translate: 0 0 !important;
     rotate: 0deg !important;
     scale: 1 !important;
@@ -1955,13 +1950,13 @@ html body #news .news-team-action.is-return-resting {
   }
 
   html body #news .news-team-action::after,
-html body #news .news-team-action:hover::after,
-html body #news .news-team-action:focus-visible::after,
-html body #news .news-team-action:active::after,
-html body #news .news-team-action.is-touch-pressed::after,
-html body #news .news-team-action.is-link-drag-ready::after,
-html body #news .news-team-action.is-link-dragging::after,
-html body #news .news-team-action.is-return-resting::after {
+  html body #news .news-team-action:hover::after,
+  html body #news .news-team-action:focus-visible::after,
+  html body #news .news-team-action:active::after,
+  html body #news .news-team-action.is-touch-pressed::after,
+  html body #news .news-team-action.is-link-drag-ready::after,
+  html body #news .news-team-action.is-link-dragging::after,
+  html body #news .news-team-action.is-return-resting::after {
     opacity: 0 !important;
     transform: none !important;
     animation: none !important;
@@ -1969,10 +1964,10 @@ html body #news .news-team-action.is-return-resting::after {
   }
 
   html body #news .news-team-action img,
-html body #news .news-team-action:hover img,
-html body #news .news-team-action:focus-visible img,
-html body #news .news-team-action:active img,
-html body #news .news-team-action.is-touch-pressed img {
+  html body #news .news-team-action:hover img,
+  html body #news .news-team-action:focus-visible img,
+  html body #news .news-team-action:active img,
+  html body #news .news-team-action.is-touch-pressed img {
     translate: 0 0 !important;
     scale: 1 !important;
     transform: none !important;
@@ -1982,11 +1977,11 @@ html body #news .news-team-action.is-touch-pressed img {
 
   /* Only the Hellcase watermark is frozen; giveaway skins and copy keep rotating. */
   html body #giveaways .giveaway-card--featured-carousel .hellcase-giveaway-watermark,
-html body #giveaways .giveaway-card--featured-carousel:hover .hellcase-giveaway-watermark,
-html body #giveaways .giveaway-card--featured-carousel:focus-within .hellcase-giveaway-watermark,
-html body #giveaways .giveaway-card--featured-carousel:active .hellcase-giveaway-watermark,
-html body #giveaways .giveaway-card--featured-carousel.is-touch-pressed .hellcase-giveaway-watermark,
-html body #giveaways .giveaway-card--featured-carousel.is-return-resting .hellcase-giveaway-watermark {
+  html body #giveaways .giveaway-card--featured-carousel:hover .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel:focus-within .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel:active .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel.is-touch-pressed .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel.is-return-resting .hellcase-giveaway-watermark {
     translate: 0 0 !important;
     rotate: 0deg !important;
     scale: 1 !important;
@@ -1999,17 +1994,17 @@ html body #giveaways .giveaway-card--featured-carousel.is-return-resting .hellca
 
   /* Footer links remain the same colour and position through every touch state. */
   html body .main-footer .footer-nav-link,
-html body .main-footer .footer-nav-link:hover,
-html body .main-footer .footer-nav-link:focus,
-html body .main-footer .footer-nav-link:focus-visible,
-html body .main-footer .footer-nav-link:active,
-html body .main-footer .footer-nav-link.is-touch-pressed,
-html body .main-footer .footer-social-links a,
-html body .main-footer .footer-social-links a:hover,
-html body .main-footer .footer-social-links a:focus,
-html body .main-footer .footer-social-links a:focus-visible,
-html body .main-footer .footer-social-links a:active,
-html body .main-footer .footer-social-links a.is-touch-pressed {
+  html body .main-footer .footer-nav-link:hover,
+  html body .main-footer .footer-nav-link:focus,
+  html body .main-footer .footer-nav-link:focus-visible,
+  html body .main-footer .footer-nav-link:active,
+  html body .main-footer .footer-nav-link.is-touch-pressed,
+  html body .main-footer .footer-social-links a,
+  html body .main-footer .footer-social-links a:hover,
+  html body .main-footer .footer-social-links a:focus,
+  html body .main-footer .footer-social-links a:focus-visible,
+  html body .main-footer .footer-social-links a:active,
+  html body .main-footer .footer-social-links a.is-touch-pressed {
     color: #bdbdc2 !important;
     -webkit-text-fill-color: #bdbdc2 !important;
     text-shadow: none !important;
@@ -2027,19 +2022,19 @@ html body .main-footer .footer-social-links a.is-touch-pressed {
 @media (max-width: 860px) {
   /* Bonus cards retain one visual state through tap, hold, focus and drag. */
   html body #bonuses .bonus-reward-card[data-bonus-id],
-html body #bonuses .bonus-reward-card[data-bonus-id]:hover,
-html body #bonuses .bonus-reward-card[data-bonus-id]:focus,
-html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within,
-html body #bonuses .bonus-reward-card[data-bonus-id]:active,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-card-hovered,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-card-pressing,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-card-clicked,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-card-mouse-held,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-card-drag-locked,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragging,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-return-resting {
+  html body #bonuses .bonus-reward-card[data-bonus-id]:hover,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:focus,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:active,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-hovered,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-pressing,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-clicked,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-mouse-held,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-drag-locked,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragging,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-return-resting {
     z-index: auto !important;
     translate: 0 0 !important;
     rotate: 0deg !important;
@@ -2051,17 +2046,17 @@ html body #bonuses .bonus-reward-card[data-bonus-id].is-return-resting {
   }
 
   html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__body,
-html body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__body,
-html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__body,
-html body #bonuses .bonus-reward-card[data-bonus-id]:active .bonus-reward-card__body,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed .bonus-reward-card__body,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-card-hovered .bonus-reward-card__body,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-card-pressing .bonus-reward-card__body,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-card-clicked .bonus-reward-card__body,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-card-mouse-held .bonus-reward-card__body,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-card-drag-locked .bonus-reward-card__body,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragging .bonus-reward-card__body,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged .bonus-reward-card__body {
+  html body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:active .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-hovered .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-pressing .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-clicked .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-mouse-held .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-drag-locked .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragging .bonus-reward-card__body,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged .bonus-reward-card__body {
     background:
       radial-gradient(circle at 50% -12%, rgba(255, 255, 255, 0.055), transparent 44%),
       linear-gradient(180deg, rgba(27, 27, 30, 0.96), rgba(13, 13, 15, 0.97)) !important;
@@ -2079,11 +2074,11 @@ html body #bonuses .bonus-reward-card[data-bonus-id].is-card-dragged .bonus-rewa
   }
 
   html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__body::before,
-html body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__body::before,
-html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__body::before,
-html body #bonuses .bonus-reward-card[data-bonus-id]:active .bonus-reward-card__body::before,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed .bonus-reward-card__body::before,
-html body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] .bonus-reward-card__body::before {
+  html body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__body::before,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__body::before,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:active .bonus-reward-card__body::before,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed .bonus-reward-card__body::before,
+  html body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] .bonus-reward-card__body::before {
     opacity: 0 !important;
     transform: none !important;
     animation: none !important;
@@ -2091,11 +2086,11 @@ html body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] .bonus-r
   }
 
   html body #bonuses .bonus-reward-card[data-bonus-id] > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
-html body #bonuses .bonus-reward-card[data-bonus-id]:hover > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
-html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
-html body #bonuses .bonus-reward-card[data-bonus-id]:active > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
-html body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
-html body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] > .bonus-reward-card__item:not(.bonus-reward-card__item-stack) {
+  html body #bonuses .bonus-reward-card[data-bonus-id]:hover > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
+  html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
+  html body #bonuses .bonus-reward-card[data-bonus-id]:active > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed > .bonus-reward-card__item:not(.bonus-reward-card__item-stack),
+  html body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] > .bonus-reward-card__item:not(.bonus-reward-card__item-stack) {
     translate: 0 0 !important;
     rotate: 0deg !important;
     scale: 1 !important;
@@ -2110,10 +2105,10 @@ html body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] > .bonus
   }
 
   html body #bonuses .bonus-reward-card--hellcase .bonus-reward-card__item-stack,
-html body #bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__item-stack,
-html body #bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-stack,
-html body #bonuses .bonus-reward-card--hellcase:active .bonus-reward-card__item-stack,
-html body #bonuses .bonus-reward-card--hellcase[class*="is-card-"] .bonus-reward-card__item-stack {
+  html body #bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__item-stack,
+  html body #bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-stack,
+  html body #bonuses .bonus-reward-card--hellcase:active .bonus-reward-card__item-stack,
+  html body #bonuses .bonus-reward-card--hellcase[class*="is-card-"] .bonus-reward-card__item-stack {
     transform: translate3d(-50%, 0, 0) !important;
     filter: none !important;
     animation: none !important;
@@ -2121,10 +2116,10 @@ html body #bonuses .bonus-reward-card--hellcase[class*="is-card-"] .bonus-reward
   }
 
   html body #bonuses .bonus-reward-card--hellcase .bonus-reward-card__item-layer--case,
-html body #bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__item-layer--case,
-html body #bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-layer--case,
-html body #bonuses .bonus-reward-card--hellcase:active .bonus-reward-card__item-layer--case,
-html body #bonuses .bonus-reward-card--hellcase[class*="is-card-"] .bonus-reward-card__item-layer--case {
+  html body #bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__item-layer--case,
+  html body #bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-layer--case,
+  html body #bonuses .bonus-reward-card--hellcase:active .bonus-reward-card__item-layer--case,
+  html body #bonuses .bonus-reward-card--hellcase[class*="is-card-"] .bonus-reward-card__item-layer--case {
     transform: translateX(-50%) !important;
     filter: none !important;
     animation: none !important;
@@ -2132,10 +2127,10 @@ html body #bonuses .bonus-reward-card--hellcase[class*="is-card-"] .bonus-reward
   }
 
   html body #bonuses .bonus-reward-card--hellcase .bonus-reward-card__item-layer--weapon,
-html body #bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__item-layer--weapon,
-html body #bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-layer--weapon,
-html body #bonuses .bonus-reward-card--hellcase:active .bonus-reward-card__item-layer--weapon,
-html body #bonuses .bonus-reward-card--hellcase[class*="is-card-"] .bonus-reward-card__item-layer--weapon {
+  html body #bonuses .bonus-reward-card--hellcase:hover .bonus-reward-card__item-layer--weapon,
+  html body #bonuses .bonus-reward-card--hellcase:focus-within .bonus-reward-card__item-layer--weapon,
+  html body #bonuses .bonus-reward-card--hellcase:active .bonus-reward-card__item-layer--weapon,
+  html body #bonuses .bonus-reward-card--hellcase[class*="is-card-"] .bonus-reward-card__item-layer--weapon {
     transform: translateX(-50%) translateY(0) rotate(-4deg) !important;
     filter: none !important;
     animation: none !important;
@@ -2143,11 +2138,11 @@ html body #bonuses .bonus-reward-card--hellcase[class*="is-card-"] .bonus-reward
   }
 
   html body #bonuses .bonus-reward-card[data-bonus-id] .bonus-reward-card__button,
-html body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__button,
-html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__button,
-html body #bonuses .bonus-reward-card[data-bonus-id]:active .bonus-reward-card__button,
-html body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed .bonus-reward-card__button,
-html body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] .bonus-reward-card__button {
+  html body #bonuses .bonus-reward-card[data-bonus-id]:hover .bonus-reward-card__button,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:focus-within .bonus-reward-card__button,
+  html body #bonuses .bonus-reward-card[data-bonus-id]:active .bonus-reward-card__button,
+  html body #bonuses .bonus-reward-card[data-bonus-id].is-touch-pressed .bonus-reward-card__button,
+  html body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] .bonus-reward-card__button {
     filter: none !important;
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.16),
@@ -2170,13 +2165,13 @@ html body #bonuses .bonus-reward-card[data-bonus-id][class*="is-card-"] .bonus-r
 
   /* Long-holding a social button cannot lift its card art or the button. */
   html body #news .news-team-member,
-html body #news .news-team-member:hover,
-html body #news .news-team-member:focus-within,
-html body #news .news-team-member:active,
-html body #news .news-team-member.is-news-action-pressing,
-html body #news .news-team-member.is-news-action-dragging,
-html body #news .news-team-member.is-news-link-dragging,
-html body #news .news-team-member.is-news-action-resting {
+  html body #news .news-team-member:hover,
+  html body #news .news-team-member:focus-within,
+  html body #news .news-team-member:active,
+  html body #news .news-team-member.is-news-action-pressing,
+  html body #news .news-team-member.is-news-action-dragging,
+  html body #news .news-team-member.is-news-link-dragging,
+  html body #news .news-team-member.is-news-action-resting {
     translate: 0 0 !important;
     rotate: 0deg !important;
     scale: 1 !important;
@@ -2185,14 +2180,14 @@ html body #news .news-team-member.is-news-action-resting {
   }
 
   html body #news .news-team-member .news-team-member__avatar,
-html body #news .news-team-member:hover .news-team-member__avatar,
-html body #news .news-team-member:focus-within .news-team-member__avatar,
-html body #news .news-team-member:active .news-team-member__avatar,
-html body #news .news-team-member.is-news-action-pressing .news-team-member__avatar,
-html body #news .news-team-member.is-news-action-dragging .news-team-member__avatar,
-html body #news .news-team-member.is-news-link-dragging .news-team-member__avatar,
-html body #news .news-team-member.is-news-action-resting .news-team-member__avatar,
-html body #news .news-team-member:has(.news-team-action:active) .news-team-member__avatar {
+  html body #news .news-team-member:hover .news-team-member__avatar,
+  html body #news .news-team-member:focus-within .news-team-member__avatar,
+  html body #news .news-team-member:active .news-team-member__avatar,
+  html body #news .news-team-member.is-news-action-pressing .news-team-member__avatar,
+  html body #news .news-team-member.is-news-action-dragging .news-team-member__avatar,
+  html body #news .news-team-member.is-news-link-dragging .news-team-member__avatar,
+  html body #news .news-team-member.is-news-action-resting .news-team-member__avatar,
+  html body #news .news-team-member:has(.news-team-action:active) .news-team-member__avatar {
     top: auto !important;
     translate: 0 0 !important;
     rotate: 0deg !important;
@@ -2205,14 +2200,14 @@ html body #news .news-team-member:has(.news-team-action:active) .news-team-membe
   }
 
   html body #news .news-team-member .news-team-action,
-html body #news .news-team-member .news-team-action:hover,
-html body #news .news-team-member .news-team-action:focus,
-html body #news .news-team-member .news-team-action:focus-visible,
-html body #news .news-team-member .news-team-action:active,
-html body #news .news-team-member .news-team-action.is-touch-pressed,
-html body #news .news-team-member .news-team-action.is-link-drag-ready,
-html body #news .news-team-member .news-team-action.is-link-dragging,
-html body #news .news-team-member .news-team-action.is-return-resting {
+  html body #news .news-team-member .news-team-action:hover,
+  html body #news .news-team-member .news-team-action:focus,
+  html body #news .news-team-member .news-team-action:focus-visible,
+  html body #news .news-team-member .news-team-action:active,
+  html body #news .news-team-member .news-team-action.is-touch-pressed,
+  html body #news .news-team-member .news-team-action.is-link-drag-ready,
+  html body #news .news-team-member .news-team-action.is-link-dragging,
+  html body #news .news-team-member .news-team-action.is-return-resting {
     translate: 0 0 !important;
     rotate: 0deg !important;
     scale: 1 !important;
@@ -2225,17 +2220,17 @@ html body #news .news-team-member .news-team-action.is-return-resting {
 
   /* Video cards remain fixed; only a light darkening of the media is retained. */
   html body #videos .video-card,
-html body #videos .video-card:hover,
-html body #videos .video-card:focus,
-html body #videos .video-card:focus-visible,
-html body #videos .video-card:focus-within,
-html body #videos .video-card:active,
-html body #videos .video-card.is-touch-pressed,
-html body #videos .video-card.is-link-dragging,
-html body #videos .video-card.is-link-dragged,
-html body #videos .video-card.is-video-pressing,
-html body #videos .video-card.reveal-on-scroll.is-revealed:hover,
-html body #videos .video-card.reveal-on-scroll.is-revealed:focus-visible {
+  html body #videos .video-card:hover,
+  html body #videos .video-card:focus,
+  html body #videos .video-card:focus-visible,
+  html body #videos .video-card:focus-within,
+  html body #videos .video-card:active,
+  html body #videos .video-card.is-touch-pressed,
+  html body #videos .video-card.is-link-dragging,
+  html body #videos .video-card.is-link-dragged,
+  html body #videos .video-card.is-video-pressing,
+  html body #videos .video-card.reveal-on-scroll.is-revealed:hover,
+  html body #videos .video-card.reveal-on-scroll.is-revealed:focus-visible {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     translate: 0 0 !important;
@@ -2248,13 +2243,13 @@ html body #videos .video-card.reveal-on-scroll.is-revealed:focus-visible {
   }
 
   html body #videos .video-card .video-info,
-html body #videos .video-card:hover .video-info,
-html body #videos .video-card:focus-within .video-info,
-html body #videos .video-card:active .video-info,
-html body #videos .video-card.is-touch-pressed .video-info,
-html body #videos .video-card.is-link-dragging .video-info,
-html body #videos .video-card.is-link-dragged .video-info,
-html body #videos .video-card .video-date {
+  html body #videos .video-card:hover .video-info,
+  html body #videos .video-card:focus-within .video-info,
+  html body #videos .video-card:active .video-info,
+  html body #videos .video-card.is-touch-pressed .video-info,
+  html body #videos .video-card.is-link-dragging .video-info,
+  html body #videos .video-card.is-link-dragged .video-info,
+  html body #videos .video-card .video-date {
     translate: 0 0 !important;
     rotate: 0deg !important;
     scale: 1 !important;
@@ -2270,22 +2265,22 @@ html body #videos .video-card .video-date {
   }
 
   html body #videos .video-card:hover .video-media::after,
-html body #videos .video-card:focus-within .video-media::after,
-html body #videos .video-card:active .video-media::after,
-html body #videos .video-card.is-touch-pressed .video-media::after,
-html body #videos .video-card.is-link-dragging .video-media::after {
+  html body #videos .video-card:focus-within .video-media::after,
+  html body #videos .video-card:active .video-media::after,
+  html body #videos .video-card.is-touch-pressed .video-media::after,
+  html body #videos .video-card.is-link-dragging .video-media::after {
     background: rgba(0, 0, 0, 0.14) !important;
   }
 
   /* The Hellcase giveaway watermark never reacts; its carousel content still does. */
   html body #giveaways .giveaway-card--featured-carousel .hellcase-giveaway-watermark,
-html body #giveaways .giveaway-card--featured-carousel:hover .hellcase-giveaway-watermark,
-html body #giveaways .giveaway-card--featured-carousel:focus .hellcase-giveaway-watermark,
-html body #giveaways .giveaway-card--featured-carousel:focus-within .hellcase-giveaway-watermark,
-html body #giveaways .giveaway-card--featured-carousel:active .hellcase-giveaway-watermark,
-html body #giveaways .giveaway-card--featured-carousel.is-touch-pressed .hellcase-giveaway-watermark,
-html body #giveaways .giveaway-card--featured-carousel.is-return-resting .hellcase-giveaway-watermark,
-html body #giveaways .giveaway-card--featured-carousel.is-giveaway-content-exiting .hellcase-giveaway-watermark {
+  html body #giveaways .giveaway-card--featured-carousel:hover .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel:focus .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel:focus-within .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel:active .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel.is-touch-pressed .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel.is-return-resting .hellcase-giveaway-watermark,
+  html body #giveaways .giveaway-card--featured-carousel.is-giveaway-content-exiting .hellcase-giveaway-watermark {
     translate: 0 0 !important;
     rotate: 0deg !important;
     scale: 1 !important;
@@ -2301,22 +2296,22 @@ html body #giveaways .giveaway-card--featured-carousel.is-giveaway-content-exiti
 
   /* Footer copy never changes colour or position on touch/hold. */
   html body .main-footer .footer-nav-link,
-html body .main-footer .footer-nav-link:hover,
-html body .main-footer .footer-nav-link:focus,
-html body .main-footer .footer-nav-link:focus-visible,
-html body .main-footer .footer-nav-link:active,
-html body .main-footer .footer-nav-link.is-touch-pressed,
-html body .main-footer .footer-nav-link.is-link-dragging,
-html body .main-footer .footer-nav-link *,
-html body .main-footer .footer-nav-link:hover *,
-html body .main-footer .footer-nav-link:active *,
-html body .main-footer .footer-social-links a,
-html body .main-footer .footer-social-links a:hover,
-html body .main-footer .footer-social-links a:focus,
-html body .main-footer .footer-social-links a:focus-visible,
-html body .main-footer .footer-social-links a:active,
-html body .main-footer .footer-social-links a.is-touch-pressed,
-html body .main-footer .footer-social-links a.is-link-dragging {
+  html body .main-footer .footer-nav-link:hover,
+  html body .main-footer .footer-nav-link:focus,
+  html body .main-footer .footer-nav-link:focus-visible,
+  html body .main-footer .footer-nav-link:active,
+  html body .main-footer .footer-nav-link.is-touch-pressed,
+  html body .main-footer .footer-nav-link.is-link-dragging,
+  html body .main-footer .footer-nav-link *,
+  html body .main-footer .footer-nav-link:hover *,
+  html body .main-footer .footer-nav-link:active *,
+  html body .main-footer .footer-social-links a,
+  html body .main-footer .footer-social-links a:hover,
+  html body .main-footer .footer-social-links a:focus,
+  html body .main-footer .footer-social-links a:focus-visible,
+  html body .main-footer .footer-social-links a:active,
+  html body .main-footer .footer-social-links a.is-touch-pressed,
+  html body .main-footer .footer-social-links a.is-link-dragging {
     color: #bdbdc2 !important;
     -webkit-text-fill-color: #bdbdc2 !important;
     text-shadow: none !important;
@@ -2330,11 +2325,11 @@ html body .main-footer .footer-social-links a.is-link-dragging {
   }
 
   html body .main-footer .footer-nav-link::before,
-html body .main-footer .footer-nav-link::after,
-html body .main-footer .footer-nav-link:hover::before,
-html body .main-footer .footer-nav-link:hover::after,
-html body .main-footer .footer-nav-link:active::before,
-html body .main-footer .footer-nav-link:active::after {
+  html body .main-footer .footer-nav-link::after,
+  html body .main-footer .footer-nav-link:hover::before,
+  html body .main-footer .footer-nav-link:hover::after,
+  html body .main-footer .footer-nav-link:active::before,
+  html body .main-footer .footer-nav-link:active::after {
     opacity: 0 !important;
     transform: none !important;
     animation: none !important;
@@ -2343,10 +2338,10 @@ html body .main-footer .footer-nav-link:active::after {
 
   /* Opaque floating skins are pulled inward without changing their motion loops. */
   html body .hero .floating-images img,
-html body .hero .floating-images img:hover,
-html body .hero .floating-images img:focus-visible,
-html body .hero .floating-images img.is-touch-pressed,
-html body .hero:hover .floating-images img {
+  html body .hero .floating-images img:hover,
+  html body .hero .floating-images img:focus-visible,
+  html body .hero .floating-images img.is-touch-pressed,
+  html body .hero:hover .floating-images img {
     opacity: 1 !important;
     filter:
       drop-shadow(0 20px 26px rgba(0, 0, 0, 0.52))
@@ -2388,26 +2383,26 @@ html body .hero:hover .floating-images img {
 
   /* Use the same fixed custom page scrollbar styling as desktop. */
   html.has-custom-scrollbar,
-html.has-custom-scrollbar body {
+  html.has-custom-scrollbar body {
     scrollbar-width: none !important;
     scrollbar-gutter: auto !important;
     -ms-overflow-style: none !important;
   }
 
   html.has-custom-scrollbar::-webkit-scrollbar,
-html.has-custom-scrollbar body::-webkit-scrollbar {
+  html.has-custom-scrollbar body::-webkit-scrollbar {
     display: none !important;
     width: 0 !important;
     height: 0 !important;
   }
 
   html.has-custom-scrollbar body .vp-scrollbar,
-html.has-custom-scrollbar body .vp-scrollbar.is-hidden,
-html.has-custom-scrollbar.is-loading body .vp-scrollbar,
-html.has-custom-scrollbar.is-entering body .vp-scrollbar,
-html.has-custom-scrollbar body.menu-open .vp-scrollbar,
-html.has-custom-scrollbar body.is-loading .vp-scrollbar,
-html.has-custom-scrollbar body.is-entering .vp-scrollbar {
+  html.has-custom-scrollbar body .vp-scrollbar.is-hidden,
+  html.has-custom-scrollbar.is-loading body .vp-scrollbar,
+  html.has-custom-scrollbar.is-entering body .vp-scrollbar,
+  html.has-custom-scrollbar body.menu-open .vp-scrollbar,
+  html.has-custom-scrollbar body.is-loading .vp-scrollbar,
+  html.has-custom-scrollbar body.is-entering .vp-scrollbar {
     position: fixed !important;
     top: 0 !important;
     right: 0 !important;
@@ -2433,8 +2428,8 @@ html.has-custom-scrollbar body.is-entering .vp-scrollbar {
   }
 
   html.has-custom-scrollbar body .vp-scrollbar__thumb,
-html.has-custom-scrollbar body .vp-scrollbar__thumb:hover,
-html.has-custom-scrollbar body .vp-scrollbar__thumb.is-dragging {
+  html.has-custom-scrollbar body .vp-scrollbar__thumb:hover,
+  html.has-custom-scrollbar body .vp-scrollbar__thumb.is-dragging {
     box-sizing: border-box !important;
     display: block !important;
     width: 4px !important;
@@ -2456,17 +2451,17 @@ html.has-custom-scrollbar body .vp-scrollbar__thumb.is-dragging {
   }
 
   html.has-custom-scrollbar body .vp-scrollbar:hover .vp-scrollbar__thumb,
-html.has-custom-scrollbar body .vp-scrollbar.is-hovered .vp-scrollbar__thumb,
-html.has-custom-scrollbar body .vp-scrollbar__thumb:hover,
-html.has-custom-scrollbar body .vp-scrollbar__thumb.is-dragging {
+  html.has-custom-scrollbar body .vp-scrollbar.is-hovered .vp-scrollbar__thumb,
+  html.has-custom-scrollbar body .vp-scrollbar__thumb:hover,
+  html.has-custom-scrollbar body .vp-scrollbar__thumb.is-dragging {
     background: #ffa914 !important;
   }
 
   /* Full viewport width, higher and shorter mobile navigation panel. */
   html body .main-header .main-nav,
-html body .main-header .main-nav.show,
-html body.menu-open .main-header .main-nav,
-html body.menu-open .main-header .main-nav.show {
+  html body .main-header .main-nav.show,
+  html body.menu-open .main-header .main-nav,
+  html body.menu-open .main-header .main-nav.show {
     position: absolute !important;
     top: calc(100% + 1px) !important;
     right: auto !important;
@@ -2490,18 +2485,18 @@ html body.menu-open .main-header .main-nav.show {
   }
 
   html body .main-header .main-nav.show,
-html body.menu-open .main-header .main-nav.show {
+  html body.menu-open .main-header .main-nav.show {
     transform: translate3d(-50%, 0, 0) scale(1) !important;
   }
 
   html body .main-header .main-nav > a,
-html body .main-header .main-nav > a:hover,
-html body .main-header .main-nav > a:focus,
-html body .main-header .main-nav > a:focus-visible,
-html body .main-header .main-nav > a:active,
-html body .main-header .main-nav > a.is-touch-pressed,
-html body .main-header .main-nav > a.is-active,
-html body .main-header .main-nav > a[aria-current="page"] {
+  html body .main-header .main-nav > a:hover,
+  html body .main-header .main-nav > a:focus,
+  html body .main-header .main-nav > a:focus-visible,
+  html body .main-header .main-nav > a:active,
+  html body .main-header .main-nav > a.is-touch-pressed,
+  html body .main-header .main-nav > a.is-active,
+  html body .main-header .main-nav > a[aria-current="page"] {
     min-height: 43px !important;
     padding-top: 10px !important;
     padding-bottom: 9px !important;
@@ -2512,12 +2507,12 @@ html body .main-header .main-nav > a[aria-current="page"] {
    Any playful movement stays inside the artwork area above it. */
 @media (min-width: 861px) {
   html body #videos .video-card,
-html body #videos .video-card:hover,
-html body #videos .video-card:focus,
-html body #videos .video-card:focus-visible,
-html body #videos .video-card:focus-within,
-html body #videos .video-card:active,
-html body #videos .video-card.reveal-on-scroll.is-revealed:hover {
+  html body #videos .video-card:hover,
+  html body #videos .video-card:focus,
+  html body #videos .video-card:focus-visible,
+  html body #videos .video-card:focus-within,
+  html body #videos .video-card:active,
+  html body #videos .video-card.reveal-on-scroll.is-revealed:hover {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     translate: 0 0 !important;
@@ -2528,10 +2523,10 @@ html body #videos .video-card.reveal-on-scroll.is-revealed:hover {
   }
 
   html body #videos .video-card .video-info,
-html body #videos .video-card:hover .video-info,
-html body #videos .video-card:focus-visible .video-info,
-html body #videos .video-card:focus-within .video-info,
-html body #videos .video-card:active .video-info {
+  html body #videos .video-card:hover .video-info,
+  html body #videos .video-card:focus-visible .video-info,
+  html body #videos .video-card:focus-within .video-info,
+  html body #videos .video-card:active .video-info {
     top: auto !important;
     bottom: auto !important;
     translate: 0 0 !important;
@@ -2543,11 +2538,11 @@ html body #videos .video-card:active .video-info {
   }
 
   html body #videos .video-card .video-date,
-html body #videos .video-card:hover .video-date,
-html body #videos .video-card:focus-visible .video-date,
-html body #videos .video-card:focus-within .video-date,
-html body #videos .video-card:active .video-date,
-html body #videos .video-card .video-length {
+  html body #videos .video-card:hover .video-date,
+  html body #videos .video-card:focus-visible .video-date,
+  html body #videos .video-card:focus-within .video-date,
+  html body #videos .video-card:active .video-date,
+  html body #videos .video-card .video-length {
     margin-top: auto !important;
     margin-bottom: 0 !important;
     translate: 0 0 !important;
@@ -2689,10 +2684,10 @@ html body .main-footer .footer-tagline strong[data-copy-code].is-copied {
 /* Fix the whole Latest Videos lower panel in place, including the clock and date. */
 @media (min-width: 861px) {
   html body #videos .video-card .video-info,
-html body #videos .video-card:hover .video-info,
-html body #videos .video-card:focus-visible .video-info,
-html body #videos .video-card:focus-within .video-info,
-html body #videos .video-card:active .video-info {
+  html body #videos .video-card:hover .video-info,
+  html body #videos .video-card:focus-visible .video-info,
+  html body #videos .video-card:focus-within .video-info,
+  html body #videos .video-card:active .video-info {
     flex: 0 0 122px !important;
     height: 122px !important;
     min-height: 122px !important;
@@ -2702,9 +2697,9 @@ html body #videos .video-card:active .video-info {
   }
 
   html body #videos .video-card .video-date,
-html body #videos .video-card:hover .video-date,
-html body #videos .video-card .video-date .clock-icon,
-html body #videos .video-card:hover .video-date .clock-icon {
+  html body #videos .video-card:hover .video-date,
+  html body #videos .video-card .video-date .clock-icon,
+  html body #videos .video-card:hover .video-date .clock-icon {
     translate: 0 0 !important;
     transform: none !important;
     animation: none !important;
@@ -2789,9 +2784,9 @@ html body .main-footer .footer-partnership-email::after {
 
 @media (min-width: 861px) {
   html body #videos .video-card,
-html body #videos .video-card:hover,
-html body #videos .video-card:focus-visible,
-html body #videos .video-card:focus-within {
+  html body #videos .video-card:hover,
+  html body #videos .video-card:focus-visible,
+  html body #videos .video-card:focus-within {
     height: 300px !important;
     min-height: 300px !important;
     max-height: 300px !important;
@@ -2879,20 +2874,20 @@ html body .main-footer .footer-legal > .footer-partnership {
 
 @media (min-width: 861px) {
   html body #videos .video-card:not(.skeleton),
-html body #videos .video-card:not(.skeleton):hover,
-html body #videos .video-card:not(.skeleton):focus-visible,
-html body #videos .video-card:not(.skeleton):active,
-html body #videos .video-card.skeleton,
-html body #videos .video-card.skeleton:hover,
-html body #videos .video-card.skeleton:focus-visible,
-html body #videos .video-card.skeleton:active {
+  html body #videos .video-card:not(.skeleton):hover,
+  html body #videos .video-card:not(.skeleton):focus-visible,
+  html body #videos .video-card:not(.skeleton):active,
+  html body #videos .video-card.skeleton,
+  html body #videos .video-card.skeleton:hover,
+  html body #videos .video-card.skeleton:focus-visible,
+  html body #videos .video-card.skeleton:active {
     height: 300px !important;
     min-height: 300px !important;
     max-height: 300px !important;
   }
 
   html body #videos .video-card:not(.skeleton) .video-media,
-html body #videos .video-card.skeleton .video-media--loading {
+  html body #videos .video-card.skeleton .video-media--loading {
     height: 178px !important;
     min-height: 178px !important;
     max-height: 178px !important;
@@ -2901,7 +2896,7 @@ html body #videos .video-card.skeleton .video-media--loading {
   }
 
   html body #videos .video-card:not(.skeleton) .video-info,
-html body #videos .video-card.skeleton .video-info {
+  html body #videos .video-card.skeleton .video-info {
     height: 122px !important;
     min-height: 122px !important;
     max-height: 122px !important;
@@ -2940,15 +2935,13 @@ html body .hero .floating-images img.floating-vp-coin--two {
 }
 
 @keyframes vpCoinFloatOne {
-  0%,
-100% { transform: translate3d(0, 0, 0) rotate(-8deg) scale(1); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-8deg) scale(1); }
   34% { transform: translate3d(10px, -20px, 0) rotate(8deg) scale(1.06); }
   68% { transform: translate3d(-7px, -9px, 0) rotate(-2deg) scale(0.97); }
 }
 
 @keyframes vpCoinFloatTwo {
-  0%,
-100% { transform: translate3d(0, 0, 0) rotate(10deg) scale(0.96); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(10deg) scale(0.96); }
   40% { transform: translate3d(-12px, -14px, 0) rotate(-11deg) scale(1.04); }
   73% { transform: translate3d(7px, -25px, 0) rotate(4deg) scale(1); }
 }
@@ -2978,10 +2971,10 @@ html body .hero .floating-images img.floating-vp-coin--two {
 /* Center both Latest Videos arrows against the 300px card body. */
 @media (min-width: 861px) {
   html body #videos .videos-carousel-arrow,
-html body #videos .videos-carousel-arrow:hover,
-html body #videos .videos-carousel-arrow:focus-visible,
-html body #videos .videos-carousel-arrow:active,
-html body #videos .videos-carousel-arrow:disabled {
+  html body #videos .videos-carousel-arrow:hover,
+  html body #videos .videos-carousel-arrow:focus-visible,
+  html body #videos .videos-carousel-arrow:active,
+  html body #videos .videos-carousel-arrow:disabled {
     top: 150px !important;
   }
 }
@@ -2996,40 +2989,35 @@ html body .hero .floating-images img.floating-vp-coin--one { animation: vpCoinFl
 html body .hero .floating-images img.floating-vp-coin--two { animation: vpCoinFloatTwo 8.2s cubic-bezier(0.45, 0, 0.24, 1) -3.8s infinite !important; }
 
 @keyframes vpFloatOrbitOne {
-  0%,
-100% { transform: translate3d(0, 0, 0) rotate(-5deg) scale(1); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-5deg) scale(1); }
   28% { transform: translate3d(18px, -22px, 0) rotate(3deg) scale(1.05); }
   55% { transform: translate3d(5px, -34px, 0) rotate(7deg) scale(0.98); }
   78% { transform: translate3d(-12px, -13px, 0) rotate(-1deg) scale(1.03); }
 }
 
 @keyframes vpFloatOrbitTwo {
-  0%,
-100% { transform: translate3d(0, 0, 0) rotate(5deg) scale(1); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(5deg) scale(1); }
   25% { transform: translate3d(-15px, -17px, 0) rotate(-4deg) scale(1.04); }
   52% { transform: translate3d(-3px, -31px, 0) rotate(-8deg) scale(0.97); }
   76% { transform: translate3d(13px, -10px, 0) rotate(2deg) scale(1.02); }
 }
 
 @keyframes vpFloatOrbitThree {
-  0%,
-100% { transform: translate3d(0, 0, 0) rotate(1deg) scale(1); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(1deg) scale(1); }
   30% { transform: translate3d(-24px, -20px, 0) rotate(-3deg) scale(1.035); }
   58% { transform: translate3d(-9px, -38px, 0) rotate(2deg) scale(0.98); }
   82% { transform: translate3d(11px, -14px, 0) rotate(4deg) scale(1.02); }
 }
 
 @keyframes vpFloatOrbitFour {
-  0%,
-100% { transform: translate3d(0, 0, 0) rotate(-2deg) scale(1); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-2deg) scale(1); }
   26% { transform: translate3d(22px, -18px, 0) rotate(3deg) scale(1.04); }
   54% { transform: translate3d(8px, -36px, 0) rotate(-4deg) scale(0.975); }
   80% { transform: translate3d(-14px, -12px, 0) rotate(1deg) scale(1.025); }
 }
 
 @keyframes vpFloatOrbitFive {
-  0%,
-100% { transform: translate3d(0, 0, 0) rotate(-4deg) scale(1); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-4deg) scale(1); }
   32% { transform: translate3d(14px, -26px, 0) rotate(5deg) scale(1.05); }
   61% { transform: translate3d(-8px, -35px, 0) rotate(1deg) scale(0.98); }
   84% { transform: translate3d(-15px, -9px, 0) rotate(-7deg) scale(1.02); }
@@ -3060,17 +3048,17 @@ html body .hero .floating-images img.floating-vp-coin--two { animation: vpCoinFl
   }
 
   html body #videos .video-card,
-html body #videos .video-card:hover,
-html body #videos .video-card:focus-visible,
-html body #videos .video-card:active,
-html body #videos .video-card.skeleton {
+  html body #videos .video-card:hover,
+  html body #videos .video-card:focus-visible,
+  html body #videos .video-card:active,
+  html body #videos .video-card.skeleton {
     height: 300px !important;
     min-height: 300px !important;
     max-height: 300px !important;
   }
 
   html body #videos .video-card .video-media,
-html body #videos .video-card.skeleton .video-media--loading {
+  html body #videos .video-card.skeleton .video-media--loading {
     height: 178px !important;
     min-height: 178px !important;
     max-height: 178px !important;
@@ -3079,7 +3067,7 @@ html body #videos .video-card.skeleton .video-media--loading {
   }
 
   html body #videos .video-card .video-info,
-html body #videos .video-card.skeleton .video-info {
+  html body #videos .video-card.skeleton .video-info {
     height: 122px !important;
     min-height: 122px !important;
     max-height: 122px !important;
@@ -3093,10 +3081,10 @@ html body #videos .video-card.skeleton .video-info {
   }
 
   html body #videos .videos-carousel-arrow,
-html body #videos .videos-carousel-arrow:hover,
-html body #videos .videos-carousel-arrow:focus-visible,
-html body #videos .videos-carousel-arrow:active,
-html body #videos .videos-carousel-arrow:disabled {
+  html body #videos .videos-carousel-arrow:hover,
+  html body #videos .videos-carousel-arrow:focus-visible,
+  html body #videos .videos-carousel-arrow:active,
+  html body #videos .videos-carousel-arrow:disabled {
     top: 150px !important;
   }
 
@@ -3114,17 +3102,17 @@ html body #videos .videos-carousel-arrow:disabled {
 
 @media (max-width: 620px) {
   html body #videos .video-card,
-html body #videos .video-card:hover,
-html body #videos .video-card:focus-visible,
-html body #videos .video-card:active,
-html body #videos .video-card.skeleton {
+  html body #videos .video-card:hover,
+  html body #videos .video-card:focus-visible,
+  html body #videos .video-card:active,
+  html body #videos .video-card.skeleton {
     height: 286px !important;
     min-height: 286px !important;
     max-height: 286px !important;
   }
 
   html body #videos .video-card .video-media,
-html body #videos .video-card.skeleton .video-media--loading {
+  html body #videos .video-card.skeleton .video-media--loading {
     height: 164px !important;
     min-height: 164px !important;
     max-height: 164px !important;
@@ -3138,10 +3126,10 @@ html body #videos .video-card.skeleton .video-media--loading {
   }
 
   html body #videos .videos-carousel-arrow,
-html body #videos .videos-carousel-arrow:hover,
-html body #videos .videos-carousel-arrow:focus-visible,
-html body #videos .videos-carousel-arrow:active,
-html body #videos .videos-carousel-arrow:disabled {
+  html body #videos .videos-carousel-arrow:hover,
+  html body #videos .videos-carousel-arrow:focus-visible,
+  html body #videos .videos-carousel-arrow:active,
+  html body #videos .videos-carousel-arrow:disabled {
     top: 143px !important;
   }
 }
@@ -3149,9 +3137,9 @@ html body #videos .videos-carousel-arrow:disabled {
 /* Final mobile override: opening navigation never locks or shifts the page. */
 @media (max-width: 860px) {
   html.menu-open,
-html.menu-open body,
-html.vp-mobile-menu-open,
-html.vp-mobile-menu-open body {
+  html.menu-open body,
+  html.vp-mobile-menu-open,
+  html.vp-mobile-menu-open body {
     position: static !important;
     top: auto !important;
     right: auto !important;
